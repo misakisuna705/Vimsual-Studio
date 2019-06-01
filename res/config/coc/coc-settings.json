@@ -1,0 +1,5 @@
+{
+  "coc.preferences.noselect": false,
+  "coc.preferences.minTriggerInputLength": 2,
+  "coc.preferences.diagnostic.enable": false
+}

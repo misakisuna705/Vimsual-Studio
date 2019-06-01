@@ -1,0 +1,7 @@
+cppman
+flake8
+ipython
+isort
+jedi
+pipenv
+yapf
