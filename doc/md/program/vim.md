@@ -36,6 +36,8 @@ set noswapfile
 set hidden
 " 簡化狀態列訊息
 set shortmess+=c
+" 游標刷新時間
+set updatetime=300
 
 " 共用系統剪貼板
 set clipboard=unnamed
