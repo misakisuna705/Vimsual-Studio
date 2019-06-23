@@ -164,6 +164,9 @@ au FileType c,cpp
 " let g:ale_open_list = 1
 " let g:ale_keep_list_window_open = 1
 
+" 設定linter參數
+let g:ale_cpp_clang_options = '-std=c++17 -Wall'
+
 " 設定linter
 let g:ale_linters = {
             \   'c': ['clang', 'cppcheck'],
