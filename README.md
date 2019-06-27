@@ -74,7 +74,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.1.2. brew
 
--   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/system/brew.md)
+-   [詳情按此](doc/md/system/brew.md)
 
 #### cellar
 
