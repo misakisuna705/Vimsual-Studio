@@ -2,49 +2,49 @@
 
 <!-- vim-markdown-toc GFM -->
 
-+ [1. 自動安裝](#1-自動安裝)
++ [1. 快速安裝](#1-快速安裝)
 + [2. 手動配置](#2-手動配置)
-  * [2.1. 系統環境](#21-系統環境)
-    - [2.1.1. xcode](#211-xcode)
-    - [2.1.2. brew](#212-brew)
-      + [cellar](#cellar)
-      + [cask](#cask)
-      + [font](#font)
-    - [2.1.3. pip](#213-pip)
-      + [global](#global)
-    - [2.1.4. yarn](#214-yarn)
-      + [global](#global-1)
-  * [2.2. 終端環境](#22-終端環境)
-    - [2.2.1. iterm2](#221-iterm2)
-    - [2.2.2. tmux](#222-tmux)
-    - [2.2.3. zsh](#223-zsh)
-  * [2.3. 編程環境](#23-編程環境)
-    - [2.3.1. vim](#231-vim)
-      + [配置](#配置)
-      + [映射](#映射)
-    - [2.3.2. cpp](#232-cpp)
-      + [配置](#配置-1)
-      + [映射](#映射-1)
-    - [2.3.3. python](#233-python)
-      + [配置](#配置-2)
-      + [映射](#映射-2)
-    - [2.3.4. webpage](#234-webpage)
-      + [配置](#配置-3)
-      + [映射](#映射-3)
-    - [2.3.5. markdown](#235-markdown)
-      + [配置](#配置-4)
-      + [映射](#映射-4)
-    - [2.3.6. verilog](#236-verilog)
-      + [配置](#配置-5)
-      + [映射](#映射-5)
-    - [2.3.7. x86_64](#237-x86_64)
-    - [2.3.8. shell](#238-shell)
+    * [2.1. 系統環境](#21-系統環境)
+        - [2.1.1. xcode](#211-xcode)
+        - [2.1.2. brew](#212-brew)
+            + [cellar](#cellar)
+            + [cask](#cask)
+            + [font](#font)
+        - [2.1.3. pip](#213-pip)
+            + [global](#global)
+        - [2.1.4. yarn](#214-yarn)
+            + [global](#global-1)
+    * [2.2. 終端環境](#22-終端環境)
+        - [2.2.1. iterm2](#221-iterm2)
+        - [2.2.2. tmux](#222-tmux)
+        - [2.2.3. zsh](#223-zsh)
+    * [2.3. 編程環境](#23-編程環境)
+        - [2.3.1. vim](#231-vim)
+            + [配置](#配置)
+            + [映射](#映射)
+        - [2.3.2. cpp](#232-cpp)
+            + [配置](#配置-1)
+            + [映射](#映射-1)
+        - [2.3.3. python](#233-python)
+            + [配置](#配置-2)
+            + [映射](#映射-2)
+        - [2.3.4. webpage](#234-webpage)
+            + [配置](#配置-3)
+            + [映射](#映射-3)
+        - [2.3.5. markdown](#235-markdown)
+            + [配置](#配置-4)
+            + [映射](#映射-4)
+        - [2.3.6. verilog](#236-verilog)
+            + [配置](#配置-5)
+            + [映射](#映射-5)
+        - [2.3.7. x86_64](#237-x86_64)
+        - [2.3.8. shell](#238-shell)
 
 <!-- vim-markdown-toc -->
 
 ---
 
-# 1. 自動安裝
+# 1. 快速安裝
 
 ```zsh
 xcode-select --install
@@ -74,7 +74,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.1.2. brew
 
-- [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/system/brew.md)
+-   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/system/brew.md)
 
 #### cellar
 
@@ -131,7 +131,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.1.3. pip
 
-- [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/system/pip.md)
+-   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/system/pip.md)
 
 #### global
 
@@ -147,7 +147,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.1.4. yarn
 
-- [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/system/yarn.md)
+-   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/system/yarn.md)
 
 #### global
 
@@ -175,7 +175,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.2.1. iterm2
 
-- [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/terminal/iterm.md)
+-   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/terminal/iterm.md)
 
 | iterm |                 |
 | :---: | :-------------: |
@@ -185,11 +185,11 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.2.2. tmux
 
-- [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/terminal/tmux.md)
+-   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/terminal/tmux.md)
 
 ### 2.2.3. zsh
 
-- [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/terminal/zsh.md)
+-   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/terminal/zsh.md)
 
 |         antigen         |
 | :---------------------: |
@@ -211,7 +211,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.1. vim
 
-- [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/vim.md)
+-   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/vim.md)
 
 #### 配置
 
@@ -259,7 +259,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.2. cpp
 
-- [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/c_cpp.md)
+-   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/c_cpp.md)
 
 #### 配置
 
@@ -300,7 +300,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.3. python
 
-- [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/python.md)
+-   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/python.md)
 
 #### 配置
 
@@ -326,7 +326,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.4. webpage
 
-- [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/webpage.md)
+-   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/webpage.md)
 
 #### 配置
 
@@ -361,7 +361,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.5. markdown
 
-- [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/markdown.md)
+-   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/markdown.md)
 
 #### 配置
 
@@ -387,7 +387,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.6. verilog
 
-- [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/verilog.md)
+-   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/verilog.md)
 
 #### 配置
 
