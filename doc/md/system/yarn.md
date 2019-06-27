@@ -43,22 +43,24 @@ yarn cache clean # 清理暫存檔
 
 ```json
 {
-    "dependencies": {
-        "browser-sync": "^x.x.x",
-        "browser-sync-close-hook": "^x.x.x",
-        "del": "^x.x.x",
-        "gulp": "^x.x.x",
-        "gulp-clean-css": "^x.x.x",
-        "gulp-htmlmin": "^x.x.x",
-        "gulp-sass": "^x.x.x",
-        "gulp-terser": "^x.x.x",
-        "gulp-typescript": "^x.x.x",
-        "htmlhint": "^x.x.x",
-        "prettier": "^x.x.x",
-        "stylelint": "^x.x.x",
-        "stylelint-config-standard": "^x.x.x",
-        "typescript": "^x.x.x",
-        "typescript-formatter": "^x.x.x"
-    }
+  "dependencies": {
+    "browser-sync": "^x.x.x",
+    "browser-sync-close-hook": "^x.x.x",
+    "del": "^x.x.x",
+    "gulp": "^x.x.x",
+    "gulp-clean-css": "^x.x.x",
+    "gulp-concat": "^x.x.x",
+    "gulp-html-replace": "^x.x.x",
+    "gulp-htmlmin": "^x.x.x",
+    "gulp-sass": "^x.x.x",
+    "gulp-terser": "^x.x.x",
+    "gulp-typescript": "^x.x.x",
+    "htmlhint": "^x.x.x",
+    "prettier": "^x.x.x",
+    "stylelint": "^x.x.x",
+    "stylelint-config-standard": "^x.x.x",
+    "typescript": "^x.x.x",
+    "typescript-formatter": "^x.x.x"
+  }
 }
 ```

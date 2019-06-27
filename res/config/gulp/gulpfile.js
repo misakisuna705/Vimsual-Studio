@@ -1,15 +1,33 @@
+//system
+
 const gulp = require("gulp");
 const del = require("del");
+
+//html
+
+const gulp_html_replace = require("gulp-html-replace");
 const gulp_htmlmin = require("gulp-htmlmin");
+
+//css + scss
+
 const gulp_sass = require("gulp-sass");
 const gulp_clean_css = require("gulp-clean-css");
+
+//js + ts
+
 const gulp_typescript = require("gulp-typescript");
+const gulp_concat = require("gulp-concat");
 const gulp_terser = require("gulp-terser");
+
+//browser
+
 const browser_sync = require("browser-sync").create();
 const browser_close = require("browser-sync-close-hook");
 
+//src
+
 const src = {
-  html: "src/**/*.html",
+  html: "src/index.html",
   css: "src/**/*.css",
   scss: "src/**/*.scss",
   js: "src/**/*.js",
@@ -19,22 +37,48 @@ const src = {
   mp4: "src/**/*.mp4"
 };
 
+//build
+
 const build = {
+  html: "build/index.html",
   css: "build/**/*.css",
   js: "build/**/*.js"
 };
+
+//init
+
+exports.default = gulp.series(
+  clean,
+  gulp.parallel(replace_html, mov_css, trans_scss, minify_js, trans_ts),
+  gulp.parallel(minify_html, minify_css, concat_js, mov_png, mov_mp3, mov_mp4),
+  init_server,
+  watch
+);
+
+//system
 
 function clean() {
   return del(["build/", "dist/"]);
 }
 
-function min_html() {
+//html
+
+function replace_html() {
   return gulp
     .src(src.html)
+    .pipe(gulp_html_replace({ js: "script.min.js" }))
+    .pipe(gulp.dest("build/"));
+}
+
+function minify_html() {
+  return gulp
+    .src(build.html)
     .pipe(gulp_htmlmin())
     .pipe(gulp.dest("dist/"))
     .pipe(browser_sync.stream());
 }
+
+//css + scss
 
 function mov_css() {
   return gulp.src(src.css).pipe(gulp.dest("build/"));
@@ -47,7 +91,7 @@ function trans_scss() {
     .pipe(gulp.dest("build/"));
 }
 
-function min_css() {
+function minify_css() {
   return gulp
     .src(build.css)
     .pipe(gulp_clean_css())
@@ -55,24 +99,32 @@ function min_css() {
     .pipe(browser_sync.stream());
 }
 
-function mov_js() {
-  return gulp.src(src.js).pipe(gulp.dest("build/"));
+//js + ts
+
+function minify_js() {
+  return gulp
+    .src(src.js)
+    .pipe(gulp_terser())
+    .pipe(gulp.dest("build/"));
 }
 
 function trans_ts() {
   return gulp
     .src(src.ts)
     .pipe(gulp_typescript())
+    .pipe(gulp_terser())
     .pipe(gulp.dest("build/"));
 }
 
-function min_js() {
+function concat_js() {
   return gulp
     .src(build.js)
-    .pipe(gulp_terser())
+    .pipe(gulp_concat("script.min.js"))
     .pipe(gulp.dest("dist/"))
     .pipe(browser_sync.stream());
 }
+
+//assets
 
 function mov_png() {
   return gulp
@@ -110,20 +162,17 @@ function init_server(done) {
   done();
 }
 
+//browser
+
 function watch() {
-  gulp.watch(src.html, min_html);
+  gulp.watch(src.html, replace_html);
+  gulp.watch(build.html, minify_html);
+
   gulp.watch(src.css, mov_css);
   gulp.watch(src.scss, trans_scss);
-  gulp.watch(build.css, min_css);
-  gulp.watch(src.js, min_js);
-  gulp.watch(src.ts, trans_ts);
-  gulp.watch(build.js, min_js);
-}
+  gulp.watch(build.css, minify_css);
 
-exports.default = gulp.series(
-  clean,
-  gulp.parallel(mov_css, trans_scss, mov_js, trans_ts),
-  gulp.parallel(min_html, min_css, min_js, mov_png, mov_mp3, mov_mp4),
-  init_server,
-  watch
-);
+  gulp.watch(src.js, minify_js);
+  gulp.watch(src.ts, trans_ts);
+  gulp.watch(build.js, concat_js);
+}

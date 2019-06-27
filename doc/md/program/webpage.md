@@ -3,63 +3,66 @@
 <!-- vim-markdown-toc GFM -->
 
 * [1. 環境](#1-環境)
-    - [1.1. yarn](#11-yarn)
-        + [安裝](#安裝)
-        + [命令](#命令)
-    - [1.2. typescript](#12-typescript)
-        + [安裝](#安裝-1)
-        + [命令](#命令-1)
+  - [1.1. yarn](#11-yarn)
+    + [安裝](#安裝)
+    + [命令](#命令)
+  - [1.2. typescript](#12-typescript)
+    + [安裝](#安裝-1)
+    + [命令](#命令-1)
 * [2. 補全](#2-補全)
-    - [2.1. coc.nvim](#21-cocnvim)
-        + [安裝](#安裝-2)
-        + [配置](#配置)
-        + [命令](#命令-2)
-        + [插件](#插件)
-        + [配置（ coc-settings.json ）](#配置-coc-settingsjson-)
-    - [2.2. emmet-vim](#22-emmet-vim)
-        + [安裝](#安裝-3)
-        + [配置](#配置-1)
+  - [2.1. coc.nvim](#21-cocnvim)
+    + [安裝](#安裝-2)
+    + [配置](#配置)
+    + [命令](#命令-2)
+    + [插件](#插件)
+    + [配置（ coc-settings.json ）](#配置-coc-settingsjson-)
+  - [2.2. emmet-vim](#22-emmet-vim)
+    + [安裝](#安裝-3)
+    + [配置](#配置-1)
 * [3. 偵錯](#3-偵錯)
-    - [3.1. htmlhint](#31-htmlhint)
-    - [3.2. stylelint](#32-stylelint)
-        + [安裝](#安裝-4)
-        + [配置（ .stylelintrc ）](#配置-stylelintrc-)
-    - [3.3. stylelint-config-standard](#33-stylelint-config-standard)
-    - [3.4. ale](#34-ale)
-        + [安裝](#安裝-5)
-        + [配置](#配置-2)
-        + [命令](#命令-3)
+  - [3.1. htmlhint](#31-htmlhint)
+  - [3.2. stylelint](#32-stylelint)
+    + [安裝](#安裝-4)
+    + [配置（ .stylelintrc ）](#配置-stylelintrc-)
+  - [3.3. stylelint-config-standard](#33-stylelint-config-standard)
+  - [3.4. ale](#34-ale)
+    + [安裝](#安裝-5)
+    + [配置](#配置-2)
+    + [命令](#命令-3)
 * [4. 排版](#4-排版)
-    - [4.1. prettier](#41-prettier)
-    - [4.2. typescript-formatter](#42-typescript-formatter)
-    - [4.3. vim-autoformat](#43-vim-autoformat)
-        + [安裝](#安裝-6)
-        + [配置](#配置-3)
+  - [4.1. prettier](#41-prettier)
+  - [4.2. typescript-formatter](#42-typescript-formatter)
+  - [4.3. vim-autoformat](#43-vim-autoformat)
+    + [安裝](#安裝-6)
+    + [配置](#配置-3)
 * [5. 推播](#5-推播)
-    - [5.1. del](#51-del)
-    - [5.2. gulp](#52-gulp)
-        + [安裝](#安裝-7)
-        + [配置（ gulpfile.js ）](#配置-gulpfilejs-)
-        + [命令](#命令-4)
-    - [5.3. gulp-htmlmin](#53-gulp-htmlmin)
-    - [5.4. gulp-sass](#54-gulp-sass)
-    - [5.5. gulp-clean-css](#55-gulp-clean-css)
-    - [5.6. gulp-terser](#56-gulp-terser)
-    - [5.7. browser-sync](#57-browser-sync)
-    - [5.8. browser-sync-close-hook](#58-browser-sync-close-hook)
-    - [5.9. neoterm](#59-neoterm)
-        + [安裝](#安裝-8)
-        + [配置](#配置-4)
+  - [5.1. del](#51-del)
+  - [5.2. gulp](#52-gulp)
+    + [安裝](#安裝-7)
+    + [配置（ gulpfile.js ）](#配置-gulpfilejs-)
+    + [命令](#命令-4)
+  - [5.3. gulp-html-replace](#53-gulp-html-replace)
+  - [5.4. gulp-htmlmin](#54-gulp-htmlmin)
+  - [5.5. gulp-sass](#55-gulp-sass)
+  - [5.6. gulp-clean-css](#56-gulp-clean-css)
+  - [5.7. gulp-typescript](#57-gulp-typescript)
+  - [5.8. gulp-concat](#58-gulp-concat)
+  - [5.9. gulp-terser](#59-gulp-terser)
+  - [5.10. browser-sync](#510-browser-sync)
+  - [5.11. browser-sync-close-hook](#511-browser-sync-close-hook)
+  - [5.12. neoterm](#512-neoterm)
+    + [安裝](#安裝-8)
+    + [配置](#配置-4)
 * [6. 發佈](#6-發佈)
-    - [6.1. git](#61-git)
-        + [.gitconfig](#gitconfig)
-        + [.gitignore](#gitignore)
-    - [6.2. vim-signify](#62-vim-signify)
-        + [安裝](#安裝-9)
-        + [配置](#配置-5)
-    - [6.3. asyncrun.vim](#63-asyncrunvim)
-        + [安裝](#安裝-10)
-        + [配置](#配置-6)
+  - [6.1. git](#61-git)
+    + [.gitconfig](#gitconfig)
+    + [.gitignore](#gitignore)
+  - [6.2. vim-signify](#62-vim-signify)
+    + [安裝](#安裝-9)
+    + [配置](#配置-5)
+  - [6.3. asyncrun.vim](#63-asyncrunvim)
+    + [安裝](#安裝-10)
+    + [配置](#配置-6)
 
 <!-- vim-markdown-toc -->
 
@@ -322,135 +325,184 @@ yarn global add gulp # 在全局安裝gulp
 #### 配置（ gulpfile.js ）
 
 ```js
+//system
+
 const gulp = require("gulp");
 const del = require("del");
+
+//html
+
+const gulp_html_replace = require("gulp-html-replace");
 const gulp_htmlmin = require("gulp-htmlmin");
+
+//css + scss
+
 const gulp_sass = require("gulp-sass");
 const gulp_clean_css = require("gulp-clean-css");
+
+//js + ts
+
 const gulp_typescript = require("gulp-typescript");
+const gulp_concat = require("gulp-concat");
 const gulp_terser = require("gulp-terser");
+
+//browser
+
 const browser_sync = require("browser-sync").create();
 const browser_close = require("browser-sync-close-hook");
 
+//src
+
 const src = {
-    html: "src/**/*.html",
-    css: "src/**/*.css",
-    scss: "src/**/*.scss",
-    js: "src/**/*.js",
-    ts: "src/**/*.ts",
-    png: "src/**/*.png",
-    mp3: "src/**/*.mp3",
-    mp4: "src/**/*.mp4"
+  html: "src/index.html",
+  css: "src/**/*.css",
+  scss: "src/**/*.scss",
+  js: "src/**/*.js",
+  ts: "src/**/*.ts",
+  png: "src/**/*.png",
+  mp3: "src/**/*.mp3",
+  mp4: "src/**/*.mp4"
 };
+
+//build
 
 const build = {
-    css: "build/**/*.css",
-    js: "build/**/*.js"
+  html: "build/index.html",
+  css: "build/**/*.css",
+  js: "build/**/*.js"
 };
 
+//init
+
+exports.default = gulp.series(
+  clean,
+  gulp.parallel(replace_html, mov_css, trans_scss, minify_js, trans_ts),
+  gulp.parallel(minify_html, minify_css, concat_js, mov_png, mov_mp3, mov_mp4),
+  init_server,
+  watch
+);
+
+//system
+
 function clean() {
-    return del(["build/", "dist/"]);
+  return del(["build/", "dist/"]);
 }
 
-function min_html() {
-    return gulp
-        .src(src.html)
-        .pipe(gulp_htmlmin())
-        .pipe(gulp.dest("dist/"))
-        .pipe(browser_sync.stream());
+//html
+
+function replace_html() {
+  return gulp
+    .src(src.html)
+    .pipe(gulp_html_replace({ js: "script.min.js" }))
+    .pipe(gulp.dest("build/"));
 }
+
+function minify_html() {
+  return gulp
+    .src(build.html)
+    .pipe(gulp_htmlmin())
+    .pipe(gulp.dest("dist/"))
+    .pipe(browser_sync.stream());
+}
+
+//css + scss
 
 function mov_css() {
-    return gulp.src(src.css).pipe(gulp.dest("build/"));
+  return gulp.src(src.css).pipe(gulp.dest("build/"));
 }
 
 function trans_scss() {
-    return gulp
-        .src(src.scss)
-        .pipe(gulp_sass())
-        .pipe(gulp.dest("build/"));
+  return gulp
+    .src(src.scss)
+    .pipe(gulp_sass())
+    .pipe(gulp.dest("build/"));
 }
 
-function min_css() {
-    return gulp
-        .src(build.css)
-        .pipe(gulp_clean_css())
-        .pipe(gulp.dest("dist/"))
-        .pipe(browser_sync.stream());
+function minify_css() {
+  return gulp
+    .src(build.css)
+    .pipe(gulp_clean_css())
+    .pipe(gulp.dest("dist/"))
+    .pipe(browser_sync.stream());
 }
 
-function mov_js() {
-    return gulp.src(src.js).pipe(gulp.dest("build/"));
+//js + ts
+
+function minify_js() {
+  return gulp
+    .src(src.js)
+    .pipe(gulp_terser())
+    .pipe(gulp.dest("build/"));
 }
 
 function trans_ts() {
-    return gulp
-        .src(src.ts)
-        .pipe(gulp_typescript())
-        .pipe(gulp.dest("build/"));
+  return gulp
+    .src(src.ts)
+    .pipe(gulp_typescript())
+    .pipe(gulp_terser())
+    .pipe(gulp.dest("build/"));
 }
 
-function min_js() {
-    return gulp
-        .src(build.js)
-        .pipe(gulp_terser())
-        .pipe(gulp.dest("dist/"))
-        .pipe(browser_sync.stream());
+function concat_js() {
+  return gulp
+    .src(build.js)
+    .pipe(gulp_concat("script.min.js"))
+    .pipe(gulp.dest("dist/"))
+    .pipe(browser_sync.stream());
 }
+
+//assets
 
 function mov_png() {
-    return gulp
-        .src(src.png)
-        .pipe(gulp.dest("dist/"))
-        .pipe(browser_sync.stream());
+  return gulp
+    .src(src.png)
+    .pipe(gulp.dest("dist/"))
+    .pipe(browser_sync.stream());
 }
 
 function mov_mp3() {
-    return gulp
-        .src(src.mp3)
-        .pipe(gulp.dest("dist/"))
-        .pipe(browser_sync.stream());
+  return gulp
+    .src(src.mp3)
+    .pipe(gulp.dest("dist/"))
+    .pipe(browser_sync.stream());
 }
 
 function mov_mp4() {
-    return gulp
-        .src(src.mp4)
-        .pipe(gulp.dest("dist/"))
-        .pipe(browser_sync.stream());
+  return gulp
+    .src(src.mp4)
+    .pipe(gulp.dest("dist/"))
+    .pipe(browser_sync.stream());
 }
 
 function init_server(done) {
-    browser_sync.init({
-        server: "dist/"
-    });
+  browser_sync.init({
+    server: "dist/"
+  });
 
-    browser_sync.use({
-        plugin() {},
-        hooks: {
-            "client:js": browser_close
-        }
-    });
+  browser_sync.use({
+    plugin() {},
+    hooks: {
+      "client:js": browser_close
+    }
+  });
 
-    done();
+  done();
 }
+
+//browser
 
 function watch() {
-    gulp.watch(src.html, min_html);
-    gulp.watch(src.css, mov_css);
-    gulp.watch(src.scss, trans_scss);
-    gulp.watch(build.css, min_css);
-    gulp.watch(src.js, min_js);
-    gulp.watch(src.ts, trans_ts);
-    gulp.watch(build.js, min_js);
-}
+  gulp.watch(src.html, replace_html);
+  gulp.watch(build.html, minify_html);
 
-exports.default = gulp.series(
-    clean,
-    gulp.parallel(mov_css, trans_scss, mov_js, trans_ts),
-    gulp.parallel(min_html, min_css, min_js, mov_png, mov_mp3, mov_mp4),
-    init_server,
-    watch
-);
+  gulp.watch(src.css, mov_css);
+  gulp.watch(src.scss, trans_scss);
+  gulp.watch(build.css, minify_css);
+
+  gulp.watch(src.js, minify_js);
+  gulp.watch(src.ts, trans_ts);
+  gulp.watch(build.js, concat_js);
+}
 ```
 
 #### 命令
@@ -459,43 +511,61 @@ exports.default = gulp.series(
 gulp # 將webpage推播到瀏覽器
 ```
 
-### 5.3. gulp-htmlmin
+### 5.3. gulp-html-replace
+
+```zsh
+yarn global add gulp-html-replace # 在全局安裝gulp-html-replace
+```
+
+### 5.4. gulp-htmlmin
 
 ```zsh
 yarn global add gulp-htmlmin # 在全局安裝gulp-htmlmin
 ```
 
-### 5.4. gulp-sass
+### 5.5. gulp-sass
 
 ```zsh
 yarn global add gulp-sass # 在全局安裝gulp-sass
 ```
 
-### 5.5. gulp-clean-css
+### 5.6. gulp-clean-css
 
 ```zsh
 yarn global add gulp-clean-css # 在全局安裝gulp-clean-css
 ```
 
-### 5.6. gulp-terser
+### 5.7. gulp-typescript
+
+```zsh
+yarn global add gulp-typescript # 在全局安裝gulp-typescript
+```
+
+### 5.8. gulp-concat
+
+```zsh
+yarn global add gulp-concat # 在全局安裝gulp-concat
+```
+
+### 5.9. gulp-terser
 
 ```zsh
 yarn global add gulp-terser # 在全局安裝gulp-terser
 ```
 
-### 5.7. browser-sync
+### 5.10. browser-sync
 
 ```zsh
 yarn global add browser-sync # 在全局安裝browser-sync
 ```
 
-### 5.8. browser-sync-close-hook
+### 5.11. browser-sync-close-hook
 
 ```zsh
 yarn global add browser-sync-close-hook # 在全局安裝browser-sync-close-hook
 ```
 
-### 5.9. neoterm
+### 5.12. neoterm
 
 #### 安裝
 
