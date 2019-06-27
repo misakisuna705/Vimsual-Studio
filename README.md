@@ -131,7 +131,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.1.3. pip
 
--   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/system/pip.md)
+-   [詳情按此](doc/md/system/pip.md)
 
 #### global
 
@@ -147,7 +147,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.1.4. yarn
 
--   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/system/yarn.md)
+-   [詳情按此](doc/md/system/yarn.md)
 
 #### global
 
@@ -175,7 +175,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.2.1. iterm2
 
--   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/terminal/iterm.md)
+-   [詳情按此](doc/md/terminal/iterm.md)
 
 | iterm |                 |
 | :---: | :-------------: |
@@ -185,11 +185,11 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.2.2. tmux
 
--   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/terminal/tmux.md)
+-   [詳情按此](doc/md/terminal/tmux.md)
 
 ### 2.2.3. zsh
 
--   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/terminal/zsh.md)
+-   [詳情按此](doc/md/terminal/zsh.md)
 
 |         antigen         |
 | :---------------------: |
@@ -211,7 +211,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.1. vim
 
--   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/vim.md)
+-   [詳情按此](doc/md/program/vim.md)
 
 #### 配置
 
@@ -259,7 +259,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.2. cpp
 
--   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/c_cpp.md)
+-   [詳情按此](doc/md/program/c_cpp.md)
 
 #### 配置
 
@@ -300,7 +300,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.3. python
 
--   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/python.md)
+-   [詳情按此](doc/md/program/python.md)
 
 #### 配置
 
@@ -326,7 +326,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.4. webpage
 
--   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/webpage.md)
+-   [詳情按此](doc/md/program/webpage.md)
 
 #### 配置
 
@@ -361,7 +361,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.5. markdown
 
--   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/markdown.md)
+-   [詳情按此](doc/md/program/markdown.md)
 
 #### 配置
 
@@ -387,7 +387,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.6. verilog
 
--   [詳情按此](https://github.com/misakisuna705/Vimsual_Studio/blob/master/doc/document/program/verilog.md)
+-   [詳情按此](doc/md/program/verilog.md)
 
 #### 配置
 
