@@ -50,7 +50,7 @@ Plug 'scrooloose/nerdcommenter',{'on':'<plug>NERDCommenterToggle'}
 " 安裝代碼補全插件
 Plug 'Valloric/YouCompleteMe',{'for':['c','cpp','python','verilog_systemverilog'],'do':'./install.py --all'}
 Plug 'rdnetto/YCM-Generator',{'on':'YcmGenerateConfig','branch': 'stable'}
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh', 'for':['html','css','scss','javascript','typescript','json','yaml']}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'for':['html','css','scss','javascript','typescript','json','yaml']}
 Plug 'mattn/emmet-vim', {'for':'html'}
 
 " =========================================================== "
