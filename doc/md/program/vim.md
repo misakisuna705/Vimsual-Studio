@@ -393,7 +393,7 @@ let g:multi_cursor_use_default_mapping=0
 " 全選多光標關鍵字
 let g:multi_cursor_select_all_word_key = '<S-a>'
 " 離開多光標模式
-let g:multi_cursor_quit_key = '<Esc>'
+let g:multi_cursor_quit_key = 'kj'
 
 " 避開插件衝突
 function Multiple_cursors_before()
