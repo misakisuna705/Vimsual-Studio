@@ -101,6 +101,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 |           cask           |
 | :----------------------: |
+|        1password         |
 |        appcleaner        |
 |         calibre          |
 |           duet           |
