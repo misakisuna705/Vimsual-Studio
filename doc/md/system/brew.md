@@ -110,7 +110,6 @@ brew cask upgrade # 升級所有程式
 -   mediainfo
 -   megasync
 -   mipony
--   music-manager
 -   osxfuse
 -   tickeys
 -   transmission
