@@ -113,7 +113,6 @@ brew cask upgrade # 升級所有程式
 -   osxfuse
 -   tickeys
 -   transmission
--   xld
 -   xquartz
 
 ## 3. font

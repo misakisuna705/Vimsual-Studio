@@ -118,7 +118,6 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |         osxfuse          |
 |         tickeys          |
 |       transmission       |
-|           xld            |
 |         xquartz          |
 
 #### font
