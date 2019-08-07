@@ -113,7 +113,6 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |          iterm2          |
 |           keka           |
 |        mediainfo         |
-|         megasync         |
 |          mipony          |
 |         osxfuse          |
 |         tickeys          |
