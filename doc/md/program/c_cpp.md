@@ -222,6 +222,9 @@ Plug 'ludovicchabant/vim-gutentags' " 安裝gutentags
 #### 配置
 
 ```vim
+" 顯示標籤詳細資料
+" let g:gutentags_trace = 1
+
 " 設定標籤搜尋所在專案之根目錄
 let g:gutentags_project_root = ['.git']
 
