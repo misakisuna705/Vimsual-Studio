@@ -108,6 +108,7 @@ brew cask upgrade # 升級所有程式
 -   iterm2
 -   keka
 -   mediainfo
+-   megasync
 -   mipony
 -   osxfuse
 -   tickeys
