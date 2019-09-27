@@ -95,6 +95,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |      tmux       |
 | universal-ctags |
 |       vim       |
+|      wget       |
 |      yarn       |
 
 #### cask

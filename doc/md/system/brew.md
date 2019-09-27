@@ -70,6 +70,7 @@ brew bundle dump --force # 複寫Brewfile
 -   tmux
 -   universal-ctags
 -   vim
+-   wget
 -   yarn
 
 ## 2. cask
