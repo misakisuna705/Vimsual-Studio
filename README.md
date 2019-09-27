@@ -142,6 +142,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 | ipython |
 |  isort  |
 |  jedi   |
+| lizard  |
 | pipenv  |
 |  yapf   |
 

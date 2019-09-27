@@ -45,5 +45,6 @@ pip3 check # 檢查插件版本相容性
 -   ipython
 -   isort
 -   jedi
+-   lizard
 -   pipenv
 -   yapf
