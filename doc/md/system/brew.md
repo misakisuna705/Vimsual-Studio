@@ -114,6 +114,7 @@ brew cask upgrade # 升級所有程式
 -   osxfuse
 -   tickeys
 -   transmission
+-   wireshark
 -   xquartz
 
 ## 3. font
