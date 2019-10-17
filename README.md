@@ -86,6 +86,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |      cmake      |
 |    cppcheck     |
 |       gdb       |
+|     global      |
 | icarus-verilog  |
 |      nasm       |
 |      ninja      |
