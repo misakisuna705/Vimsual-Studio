@@ -110,7 +110,7 @@ au BufLeave * Rooter
 " 顯示隱藏檔案
 let g:NERDTreeShowHidden=1
 " 不顯示的檔案
-let NERDTreeIgnore = ['.DS_Store','^build$','^test$']
+let NERDTreeIgnore = ['.DS_Store','^build$']
 
 " 設定nerdtree位置
 let g:NERDTreeWinPos='right'
@@ -159,7 +159,7 @@ let g:Lf_ShowHidden=1
 let g:Lf_FollowLinks=1
 " 不搜尋的檔案與路徑
 let g:Lf_WildIgnore = {
-            \ 'dir': ['Library', 'Documents', 'Pictures', 'Music', 'Movies', 'Google Drive File Stream', 'Adobe', '.adobe', '.antigen', '.cache', '.config', '.docker', '.dotfiles', '.ipython', '.local', '.mitmproxy', '.node-gyp', '.npm', '.ssh', '.subversion', '.Trash', '.vim', 'bin', 'build', 'assets', 'dist', '.git', 'test', 'node_modules'],
+            \ 'dir': ['Library', 'Documents', 'Pictures', 'Music', 'Movies', 'Google Drive File Stream', 'Adobe', '.adobe', '.antigen', '.cache', '.config', '.docker', '.dotfiles', '.ipython', '.local', '.mitmproxy', '.node-gyp', '.npm', '.ssh', '.subversion', '.Trash', '.vim', 'bin', 'build', 'assets', 'dist', '.git', 'node_modules'],
             \ 'file': ['.DS_Store']
             \}
 
