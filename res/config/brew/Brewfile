@@ -18,6 +18,7 @@ brew "global"
 brew "icarus-verilog"
 brew "nasm"
 brew "ninja"
+brew "ripgrep"
 brew "ruby", link: true
 brew "shellcheck"
 brew "sshfs"

@@ -66,6 +66,7 @@ brew bundle dump --force # 複寫Brewfile
 -   nasm
 -   ninja
 -   python
+-   ripgrep
 -   shellcheck
 -   sshfs
 -   tmux

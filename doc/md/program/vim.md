@@ -333,7 +333,7 @@ let g:Lf_StlPalette = {
             \ }
 
 " 按下control+p鍵時，開啟模糊搜尋文件功能
-function! LFtoggle()
+function! LFpathtoggle()
     if exists("g:qfix_win")
         cclose
         wincmd h
@@ -352,10 +352,32 @@ function! LFtoggle()
         LeaderfFile
     endif
 endfunction
-nnoremap <silent> <C-p> :call LFtoggle()<CR>
+nnoremap <silent> <C-p> :call LFpathtoggle()<CR>
+
+" 按下control+g鍵時，開啟模糊搜索關鍵字功能
+function! LFgreptoggle()
+    if exists("g:qfix_win")
+        cclose
+        wincmd h
+        wincmd k
+        Leaderf rg
+        unlet g:qfix_win
+    elseif exists("g:Topenflag")
+        Tclose
+        wincmd h
+        wincmd k
+        Leaderf rg
+        unlet g:Topenflag
+    else
+        wincmd h
+        wincmd k
+        Leaderf rg
+    endif
+endfunction
+nnoremap <silent> <C-f> :call LFgreptoggle()<CR>
 
 " 配置快捷鍵
-let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<ESC>': ['<C-p>']}
+let g:Lf_CommandMap = {'<C-]>': ['<C-o>']}
 ```
 
 ```vim

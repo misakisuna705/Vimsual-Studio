@@ -91,6 +91,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |      nasm       |
 |      ninja      |
 |     python      |
+|     ripgrep     |
 |   shellcheck    |
 |      sshfs      |
 |      tmux       |
