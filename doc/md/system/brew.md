@@ -109,6 +109,7 @@ brew cask upgrade # 升級所有程式
 -   handbrake
 -   iina
 -   iterm2
+-   java
 -   keka
 -   mediainfo
 -   megasync

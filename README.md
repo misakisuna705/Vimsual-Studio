@@ -114,6 +114,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |        handbrake         |
 |           iina           |
 |          iterm2          |
+|           java           |
 |           keka           |
 |        mediainfo         |
 |         megasync         |
