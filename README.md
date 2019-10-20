@@ -246,6 +246,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |      |     `CTRL`+`p`      |           搜尋文件開關            |
 |      |     `CTRL`+`o`      |        在垂直分屏開啟檔案         |
 | 標籤 |     `CTRL`+`n`      |        切換檔案總管與標籤         |
+|      |     `CTRL`+`f`      |           搜尋標籤開關            |
 | 文字 |         `s`         |            關鍵字跳轉             |
 | 游標 |         `j`         |             游標左移              |
 |      |         `l`         |             游標右移              |
