@@ -420,7 +420,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ### 2.3.7. asm
 
--   [詳情按此](doc/md/program/asm.md)
+-   [詳情按此](doc/md/program/assembly.md)
 
 #### 配置
 
