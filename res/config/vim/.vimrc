@@ -65,6 +65,7 @@ Plug 'Chiel92/vim-autoformat',{'on':'Autoformat'}
 Plug 'fisadev/vim-isort',{'on':'Isort'}
 Plug 'vhda/verilog_systemverilog.vim',{'for':'verilog_systemverilog'}
 Plug 'mzlogin/vim-markdown-toc', {'on': ['GenTocGFM', 'RemoveToc']}
+Plug 'philj56/vim-asm-indent', {'for': 'asm'}
 
 " =========================================================== "
 

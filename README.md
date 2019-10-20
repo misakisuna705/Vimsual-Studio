@@ -37,7 +37,8 @@
         - [2.3.6. verilog](#236-verilog)
             + [配置](#配置-5)
             + [映射](#映射-5)
-        - [2.3.7. x86_64](#237-x86_64)
+        - [2.3.7. asm](#237-asm)
+            + [配置](#配置-6)
         - [2.3.8. shell](#238-shell)
 
 <!-- vim-markdown-toc -->
@@ -210,7 +211,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 | [webpage](#3.4)  |  o   |  o   |  o   |  x   |  o   |         o          |  x   |  o   |
 | [markdown](#3.5) |  x   |  x   |  x   |  x   |  o   |         o          |  x   |  o   |
 | [verilog](#3.6)  |  o   |  o   |  o   |  x   |  x   |         o          |  x   |  o   |
-|  [x86_64](#3.7)  |  x   |  x   |  x   |  x   |  x   |         x          |  x   |  x   |
+|   [asm](#3.7)    |  x   |  x   |  x   |  x   |  o   |         x          |  x   |  x   |
 
 ---
 
@@ -397,12 +398,12 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 #### 配置
 
-| verilog |   環境   |     補全      | 偵錯 | 標籤 |           排版            |     編譯     |  執行   |  推播   | 調試 |     發佈     |
-| :-----: | :------: | :-----------: | :--: | :--: | :-----------------------: | :----------: | :-----: | :-----: | :--: | :----------: |
-|  依賴   | iverilog |       x       |  x   |  x   |             x             |      x       |    x    | xquartz |  x   |     git      |
-|         |    x     |       x       |  x   |  x   |             x             |      x       |    x    | gtkwave |  x   |      x       |
-|  插件   |    x     | YouCompleteMe | ale  |  x   | verilog_systemverilog.vim | asyncrun.vim | neoterm | neoterm |  x   | vim-signify  |
-|         |    x     |       x       |  x   |  x   |             x             |      x       |    x    |    x    |  x   | asyncrun.vim |
+| verilog |   環境   |     補全      | 偵錯 |           排版            |     編譯     |  執行   |  推播   |     發佈     |
+| :-----: | :------: | :-----------: | :--: | :-----------------------: | :----------: | :-----: | :-----: | :----------: |
+|  依賴   | iverilog |       x       |  x   |             x             |      x       |    x    | xquartz |     git      |
+|         |    x     |       x       |  x   |             x             |      x       |    x    | gtkwave |      x       |
+|  插件   |    x     | YouCompleteMe | ale  | verilog_systemverilog.vim | asyncrun.vim | neoterm | neoterm | vim-signify  |
+|         |    x     |       x       |  x   |             x             |      x       |    x    |    x    | asyncrun.vim |
 
 #### 映射
 
@@ -417,7 +418,16 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |  終端   |        `F12`        | 切換終端機與 quickfix |
 |         | `SPACE`+`q`+`ENTER` |      關閉終端機       |
 
-### 2.3.7. x86_64
+### 2.3.7. asm
+
+-   [詳情按此](doc/md/program/asm.md)
+
+#### 配置
+
+| asm  |      排版      |
+| :--: | :------------: |
+| 依賴 |       x        |
+| 插件 | vim-asm-indent |
 
 ### 2.3.8. shell
 
