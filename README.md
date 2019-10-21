@@ -221,12 +221,11 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 #### 配置
 
-| vim  |         環境         |       檔案        |         文字         |
-| :--: | :------------------: | :---------------: | :------------------: |
-| 插件 |      indentLine      |     nerdtree      |    vim-easymotion    |
-|      | vim-sublime-monokai  | NERD-tree-project | vim-multiple-cursors |
-|      |    lightline.vim     |      LeaderF      |    nerdcommenter     |
-|      | lightline-bufferline |                   |                      |
+| vim  |        環境         |       檔案        |         文字         |
+| :--: | :-----------------: | :---------------: | :------------------: |
+| 插件 |     indentLine      |     nerdtree      |    vim-easymotion    |
+|      | vim-sublime-monokai | NERD-tree-project | vim-multiple-cursors |
+|      |    lightline.vim    |      LeaderF      |    nerdcommenter     |
 
 #### 映射
 

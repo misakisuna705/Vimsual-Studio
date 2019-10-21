@@ -87,7 +87,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'itchyny/lightline.vim'
-Plug 'mgee/lightline-bufferline'
 
 " =========================================================== "
 
@@ -124,7 +123,7 @@ let NERDTreeQuitOnOpen=1
 
 " 按下control+o鍵時，垂直分屏後開啟舊檔
 let g:NERDTreeMapOpenVSplit='<C-o>'
-
+let g:NERDTreeMapOpenInTab = '<C-m>'
 " 重新映射快速鍵以釋放按鍵
 let g:NERDTreeMapOpenSplit='xxxi'
 let g:NERDTreeMapJumpNextSibling='xxxcj'
@@ -261,7 +260,7 @@ endfunction
 nnoremap <silent> <C-f> :call LFgreptoggle()<CR>
 
 " 配置快捷鍵
-let g:Lf_CommandMap = {'<C-]>': ['<C-o>']}
+let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<C-t>': ['<CR>']}
 
 " ==================================================================================================================== "
 
@@ -810,6 +809,8 @@ colorscheme sublimemonokai
 
 " lightline
 
+" 顯示tab列
+set showtabline=2
 " 設定狀態列高度
 set laststatus=2
 
@@ -827,40 +828,18 @@ let g:lightline.subseparator = {
             \   'left': '', 'right': ''
             \}
 
-" =========================================================== "
-
-" bufferline
-
-" 使終端機不要出現在buffer列表
-au TerminalOpen * set nobuflisted
-
-" 使quickfix不要出現在buffer列表
-au FileType qf set nobuflisted
-
-" 顯示buffer列
-set showtabline=2
-
-" 顯示buffer名稱
-let g:lightline#bufferline#filename_modifier = ':t'
-let g:lightline#bufferline#unnamed      = '[No Name]'
-
-" 啟用bufferline主題
-let g:lightline.tabline          = {'left': [['buffers']]}
-let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
-let g:lightline.component_type   = {'buffers': 'tabsel'}
-
-" 按下shift+tab鍵時，跳轉到上一個buffer
-nnoremap <silent> n :bpre<CR>
-" 按下tab鍵時，跳轉到下一個buffer
-nnoremap <silent> m :bnext<CR>
-" 按下空白鍵+q+enter鍵時，關閉buffer或vim
-function! Bye()
-    if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+" 按下n鍵時，跳轉到上一個tab
+nnoremap <silent> n :tabN<CR>
+" 按下m鍵時，跳轉到下一個tab
+nnoremap <silent> m :tabn<CR>
+" 按下空白鍵+q+enter鍵時，關閉tab或vim
+function Bye()
+    if tabpagenr('$') == 1
         q
     else
         cclose
         Tclose
-        bdelete
+        tabc
     endif
 endfunction
 nnoremap <silent> <SPACE>q :call Bye()
