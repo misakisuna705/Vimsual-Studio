@@ -833,7 +833,14 @@ nnoremap <silent> n :tabN<CR>
 " 按下m鍵時，跳轉到下一個tab
 nnoremap <silent> m :tabn<CR>
 " 按下空白鍵+q+enter鍵時，關閉tab或vim
-nnoremap <silent> <SPACE>q :q
+function Bye()
+    if tabpagenr('$') > 1
+        cclose
+        Tclose
+    endif
+    q
+endfunction
+nnoremap <silent> <SPACE>q :call Bye()
 
 " ==================================================================================================================== "
 
