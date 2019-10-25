@@ -376,7 +376,7 @@ endfunction
 nnoremap <silent> <C-f> :call LFgreptoggle()<CR>
 
 " 配置快捷鍵
-let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<C-t>': ['<CR>']}
+let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<C-t>': ['<CR>'], '<ESC>': ['<C-p>', '<C-f>']}
 ```
 
 ```vim
