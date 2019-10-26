@@ -263,6 +263,8 @@ nnoremap <silent> <C-n> :call NVtoggle()<CR>
 ```vim
 " LeaderF
 
+" 設定leaderF開檔覆蓋空buffer
+let g:Lf_DiscardEmptyBuffer = 1
 " 設定LeaderF檔案所在目錄
 let g:Lf_CacheDirectory=expand('~/.cache')
 " 設定LeaderF搜尋所在專案之根目錄
