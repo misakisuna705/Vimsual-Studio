@@ -257,8 +257,8 @@ let g:preview_nolist=1
 
 " 按下shift+m鍵時，垂直分屏後預覽函數標籤
 nnoremap <silent> <S-m> :PreviewTag<CR>
-" 按下shift+n鍵時，開新buffer後預覽函數標籤
-nnoremap <silent> <S-n> :PreviewGoto edit<CR>:PreviewClose<CR>
+" 按下shift+n鍵時，開新tab後預覽函數標籤
+nnoremap <silent> <S-n> :PreviewGoto tabe<CR>:PreviewClose<CR>
 " 按下shift+h鍵時，關閉分屏後跳轉回檔案
 nnoremap <silent> <S-h> :PreviewClose<CR>
 ```
