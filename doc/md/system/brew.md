@@ -99,6 +99,7 @@ brew cask upgrade # 升級所有程式
 ### 2.3. 程式
 
 -   1password
+-   android-studio
 -   appcleaner
 -   calibre
 -   duet
