@@ -161,7 +161,7 @@ let g:Lf_ShowHidden=1
 let g:Lf_FollowLinks=1
 " 不搜尋的檔案與路徑
 let g:Lf_WildIgnore = {
-            \ 'dir': ['Library', 'Documents', 'Pictures', 'Music', 'Movies', 'Google Drive File Stream', 'Adobe', '.adobe', '.antigen', '.cache', '.config', '.docker', '.dotfiles', '.ipython', '.local', '.mitmproxy', '.node-gyp', '.npm', '.ssh', '.subversion', '.Trash', '.vim', 'bin', 'build', 'assets', 'dist', '.git', 'node_modules'],
+            \ 'dir': ['.adobe', '.android', '.antigen', '.cache', '.config', '.dotfiles', '.dotnet', '.gradle', '.local', '.mitmproxy', '.mono', '.node-gyp', '.npm', '.nuget', '.omnisharp', '.oracle_jre_usage', '.ssh', '.subversion', '.swt', '.templateengine', '.vim', 'Documents', 'Music', 'Pictures', 'Movies', 'Applications', 'Applications (Parallels)', 'Google Drive File Stream', 'bin', 'lib', 'Library', 'node_modules', 'Server', '.git', 'build', 'dist'],
             \ 'file': ['.DS_Store']
             \}
 
