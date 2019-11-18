@@ -649,6 +649,7 @@ function ExeCpp()
     else
         let save_view = winsaveview()
         Tclear
+        let g:Topenflag=1
         T [ "$(ls data/)" ] && bin/main < data/*.* || bin/main
         call winrestview(save_view)
     endif
@@ -692,7 +693,25 @@ au FileType html nnoremap <silent> <F1> :call ExeWeb()<CR>
 au FileType html nnoremap <silent> <F2> :Tkill<CR>
 
 " 按下F1鍵時，編譯執行csharp專案
-au FileType cs nnoremap <silent> <F1> :cclose<CR>:let save_view = winsaveview()<CR>:Tclear<CR>:T dotnet run<CR>:call winrestview(save_view)<CR>
+function CompileExeCsharp()
+    if exists("g:qfix_win")
+        cclose
+        let save_view = winsaveview()
+        Topen
+        let g:Topenflag=1
+        Tclear
+        T dotnet run
+        call winrestview(save_view)
+        unlet g:qfix_win
+    else
+        let save_view = winsaveview()
+        let g:Topenflag=1
+        Tclear
+        T dotnet run
+        call winrestview(save_view)
+    endif
+endfunction
+au FileType cs nnoremap <silent> <F1> :call CompileExeCsharp()<CR>
 
 " 按下F2鍵時，執行verilog檔案
 function ExeVerilog()

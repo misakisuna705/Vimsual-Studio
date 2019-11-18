@@ -182,7 +182,25 @@ hi NonText ctermfg=242 ctermbg=NONE
 au TerminalOpen * set list listchars=space:_
 
 " 按下F1鍵時，編譯執行csharp專案
-au FileType cs nnoremap <silent> <F1> :cclose<CR>:let save_view = winsaveview()<CR>:Tclear<CR>:T dotnet run<CR>:call winrestview(save_view)<CR>
+function CompileExeCsharp()
+    if exists("g:qfix_win")
+        cclose
+        let save_view = winsaveview()
+        Topen
+        let g:Topenflag=1
+        Tclear
+        T dotnet run
+        call winrestview(save_view)
+        unlet g:qfix_win
+    else
+        let save_view = winsaveview()
+        let g:Topenflag=1
+        Tclear
+        T dotnet run
+        call winrestview(save_view)
+    endif
+endfunction
+au FileType cs nnoremap <silent> <F1> :call CompileExeCsharp()<CR>
 
 " 按下F12鍵，切換終端機與quickfix
 function! QTtoggle()

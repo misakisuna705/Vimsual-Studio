@@ -465,6 +465,7 @@ function ExeCpp()
     else
         let save_view = winsaveview()
         Tclear
+        let g:Topenflag=1
         T [ "$(ls data/)" ] && bin/main < data/*.* || bin/main
         call winrestview(save_view)
     endif
