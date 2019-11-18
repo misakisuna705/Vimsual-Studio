@@ -322,7 +322,7 @@ Plug 'Chiel92/vim-autoformat',{'on':'Autoformat'} " 安裝autoformat
 au BufWrite * :Autoformat
 
 " 載入astyle的google風格排版c/cpp檔案
-let g:formatdef_xxx_astyle='"astyle --style=google --indent-switches --indent-namespaces "'
+let g:formatdef_misakisuna_astyle='"astyle --style=google --indent-switches --indent-namespaces -p"'
 let g:formatters_c=['xxx_astyle']
 let g:formatters_cpp=['xxx_astyle']
 ```

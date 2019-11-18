@@ -50,7 +50,7 @@ Plug 'scrooloose/nerdcommenter',{'on':'<plug>NERDCommenterToggle'}
 " 安裝代碼補全插件
 Plug 'Valloric/YouCompleteMe',{'for':['c','cpp','python','verilog_systemverilog'],'do':'./install.py --all'}
 Plug 'rdnetto/YCM-Generator',{'on':'YcmGenerateConfig','branch': 'stable'}
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'for':['html','css','scss','javascript','typescript','json','yaml']}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'for':['html','css','scss','javascript','typescript','json','yaml','cs']}
 Plug 'mattn/emmet-vim', {'for':'html'}
 
 " =========================================================== "
@@ -416,6 +416,9 @@ au FileType verilog_systemverilog inoremap (<CR> (<CR>);<ESC><UP>o
 
 " coc.nvim
 
+" 安裝coc插件
+let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-omnisharp']
+
 " 按下tab鍵或shift+tab鍵時，上下瀏覽補全視窗
 inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
@@ -496,10 +499,11 @@ nmap f <Plug>(ale_next_wrap)
 " 檔案保存時，自動排版
 au BufWrite * :Autoformat
 
-" 載入astyle的google風格排版c/cpp檔案
-let g:formatdef_misakisuna_astyle='"astyle --style=google --indent-switches --indent-namespaces "'
+" 載入astyle的google風格排版c/cpp/cs檔案
+let g:formatdef_misakisuna_astyle='"astyle --style=google --indent-switches --indent-namespaces -p"'
 let g:formatters_c=['misakisuna_astyle']
 let g:formatters_cpp=['misakisuna_astyle']
+let g:formatters_cs=['misakisuna_astyle']
 
 " 載入yapf的google風格排版py檔案
 let g:formatdef_misakisuna_yapf='"yapf --style=''{based_on_style: google}''"'
@@ -686,6 +690,9 @@ au FileType html nnoremap <silent> <F1> :call ExeWeb()<CR>
 
 " 按下F2鍵時，停止推播html文件
 au FileType html nnoremap <silent> <F2> :Tkill<CR>
+
+" 按下F1鍵時，編譯執行csharp專案
+au FileType cs nnoremap <silent> <F1> :cclose<CR>:let save_view = winsaveview()<CR>:Tclear<CR>:T dotnet run<CR>:call winrestview(save_view)<CR>
 
 " 按下F2鍵時，執行verilog檔案
 function ExeVerilog()

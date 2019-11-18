@@ -111,6 +111,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release', 'for':['html','css','scss','java
 #### 配置
 
 ```vim
+" 安裝coc插件
+let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-omnisharp']
+
 " 按下tab鍵或shift+tab鍵時，上下瀏覽補全視窗
 inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :

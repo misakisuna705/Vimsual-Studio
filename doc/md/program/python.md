@@ -6,7 +6,7 @@
     - [1.0. pipenv](#10-pipenv)
         + [安裝](#安裝)
         + [命令](#命令)
-* [2. 補全</h2>](#2-補全h2)
+* [2. 補全](#2-補全)
     - [2.1. jedi](#21-jedi)
     - [2.2. YouCompleteMe](#22-youcompleteme)
         + [安裝](#安裝-1)
@@ -71,7 +71,7 @@ pipenv uninstall 插件 # 在虛擬環境解除安裝該插件
 pipenv shell # 載入虛擬環境
 ```
 
-## 2. 補全</h2>
+## 2. 補全
 
 ### 2.1. jedi
 
@@ -154,7 +154,7 @@ let g:ale_linters = {
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 
 " 設定符號
-let g:ale_sign_error='✗'
+qet g:ale_sign_error='✗'
 let g:ale_sign_warning='⚡'
 " 符號背景使用iterm
 hi clear ALEErrorSign

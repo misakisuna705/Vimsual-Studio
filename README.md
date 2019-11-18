@@ -31,15 +31,18 @@
         - [2.3.4. webpage](#234-webpage)
             + [配置](#配置-3)
             + [映射](#映射-3)
-        - [2.3.5. markdown](#235-markdown)
+        - [2.3.5. csharp](#235-csharp)
             + [配置](#配置-4)
             + [映射](#映射-4)
-        - [2.3.6. verilog](#236-verilog)
+        - [2.3.6. markdown](#236-markdown)
             + [配置](#配置-5)
             + [映射](#映射-5)
-        - [2.3.7. asm](#237-asm)
+        - [2.3.7. verilog](#237-verilog)
             + [配置](#配置-6)
-        - [2.3.8. shell](#238-shell)
+            + [映射](#映射-6)
+        - [2.3.8. asm](#238-asm)
+            + [配置](#配置-7)
+        - [2.3.9. shell](#239-shell)
 
 <!-- vim-markdown-toc -->
 
@@ -108,6 +111,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |      android-studio      |
 |        appcleaner        |
 |         calibre          |
+|        dotnet-sdk        |
 |           duet           |
 |  google-backup-and-sync  |
 | google-drive-file-stream |
@@ -123,6 +127,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |         osxfuse          |
 |         tickeys          |
 |       transmission       |
+|        unity-hub         |
 |        wireshark         |
 |         xquartz          |
 
@@ -365,17 +370,31 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |  終端   |        `F12`        | 切換終端機與 quickfix |
 |         | `SPACE`+`q`+`ENTER` |      關閉終端機       |
 
-### 2.3.5. markdown
+### 2.3.5. csharp
+
+-   [詳情按此](doc/md/program/csharp.md)
+
+#### 配置
+
+| csharp |    環境    |   補全   | 偵錯 |      排版      |    編譯    |    執行    |     發佈     |
+| :----: | :--------: | :------: | :--: | :------------: | :--------: | :--------: | :----------: |
+|  依賴  | dotnet-sdk |    x     |  x   |     astyle     | dotnet-sdk | dotnet-sdk |     git      |
+|  插件  |     x      | coc.nvim |  x   | vim-autoformat |  neoterm   |  neoterm   | vim-signify  |
+|        |     x      |    x     |  x   |       x        |            |     x      | asyncrun.vim |
+
+#### 映射
+
+### 2.3.6. markdown
 
 -   [詳情按此](doc/md/program/markdown.md)
 
 #### 配置
 
-| markdown | 環境 |       補全       | 偵錯 | 標籤 |      排版      |           推播           | 調試 |     發佈     |
-| :------: | :--: | :--------------: | :--: | :--: | :------------: | :----------------------: | :--: | :----------: |
-|   依賴   |  x   |        x         |  x   |  x   |    prettier    |            x             |  x   |     git      |
-|   插件   |  x   | vim-markdown-toc |  x   |  x   | vim-autoformat |     markdown-preview     |  x   | vim-signify  |
-|          |  x   |        x         |  x   |  x   |       x        | mathjax-support-for-mkdp |  x   | asyncrun.vim |
+| markdown | 環境 |       補全       |      排版      |           推播           |     發佈     |
+| :------: | :--: | :--------------: | :------------: | :----------------------: | :----------: |
+|   依賴   |  x   |        x         |    prettier    |            x             |     git      |
+|   插件   |  x   | vim-markdown-toc | vim-autoformat |     markdown-preview     | vim-signify  |
+|          |  x   |        x         |       x        | mathjax-support-for-mkdp | asyncrun.vim |
 
 #### 映射
 
@@ -391,7 +410,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |   終端   |        `F12`        | 切換終端機與 quickfix |
 |          | `SPACE`+`q`+`ENTER` |      關閉終端機       |
 
-### 2.3.6. verilog
+### 2.3.7. verilog
 
 -   [詳情按此](doc/md/program/verilog.md)
 
@@ -417,7 +436,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |  終端   |        `F12`        | 切換終端機與 quickfix |
 |         | `SPACE`+`q`+`ENTER` |      關閉終端機       |
 
-### 2.3.7. asm
+### 2.3.8. asm
 
 -   [詳情按此](doc/md/program/assembly.md)
 
@@ -428,7 +447,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 | 依賴 |       x        |
 | 插件 | vim-asm-indent |
 
-### 2.3.8. shell
+### 2.3.9. shell
 
 shellcheck
 

@@ -102,6 +102,7 @@ brew cask upgrade # 升級所有程式
 -   android-studio
 -   appcleaner
 -   calibre
+-   dotnet-sdk
 -   duet
 -   google-backup-and-sync
 -   google-drive-file-stream
@@ -117,6 +118,7 @@ brew cask upgrade # 升級所有程式
 -   osxfuse
 -   tickeys
 -   transmission
+-   unity-hub
 -   wireshark
 -   xquartz
 
