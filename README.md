@@ -384,6 +384,15 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 #### 映射
 
+| csharp |        按鍵         |         功能          |
+| :----: | :-----------------: | :-------------------: |
+|  跳轉  |         `f`         |     偵錯訊息跳轉      |
+|        |     `shift`+`f`     |     版本訊息跳轉      |
+|  編程  |        `F1`         |       編譯執行        |
+|        |        `F11`        |         發佈          |
+|  終端  |        `F12`        | 切換終端機與 quickfix |
+|        | `SPACE`+`q`+`ENTER` |      關閉終端機       |
+
 ### 2.3.6. markdown
 
 -   [詳情按此](doc/md/program/markdown.md)
