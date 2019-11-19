@@ -293,7 +293,7 @@ Plug 'gauteh/vim-cppman',{'on':'Cppman'}
 
 ```vim
 " 按下q鍵時，垂直分屏後預覽cppman
-au FileType cpp nnoremap <silent> q :Cppman <cword><CR><CR>:hi Normal ctermbg=NONE<CR>:hi LineNr ctermbg=NONE<CR>:hi CursorLineNr cterm=bold<CR>:hi PMenu ctermfg=0 ctermbg=242<CR>
+au FileType cpp nnoremap <silent> q :Cppman <cword><CR><CR>:hi Normal ctermbg=NONE<CR>:hi LineNr ctermbg=NONE<CR>:hi CursorLineNr cterm=bold<CR>:hi PMenu ctermfg=0 ctermbg=237<CR>:hi PMenuSbar ctermfg=NONE ctermbg=237<CR>:hi PmenuThumb ctermfg=NONE ctermbg=237<CR>
 ```
 
 ## 4. 排版

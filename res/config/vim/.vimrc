@@ -171,6 +171,9 @@ let g:Lf_WindowHeight=0.18
 let g:Lf_HideHelp=1
 " 顯示模糊搜索文件的絕對路徑
 let g:Lf_ShowRelativePath = 0
+" 設定LeaderF預覽視窗
+let g:Lf_PreviewInPopup = 1
+let g:Lf_PreviewHorizontalPosition = 'right'
 " 設定LeaderF主題
 let g:Lf_StlSeparator = {'left':'', 'right': ''}
 
@@ -262,7 +265,7 @@ endfunction
 nnoremap <silent> <C-f> :call LFgreptoggle()<CR>
 
 " 配置快捷鍵
-let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<C-t>': ['<CR>'], '<ESC>': ['<C-p>', '<C-f>']}
+let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<C-t>': ['<CR>'], '<ESC>': ['<C-p>', '<C-f>'], '<C-p>': ['<C-n>']}
 
 " ==================================================================================================================== "
 
@@ -328,7 +331,7 @@ au FileType c map q <Leader>kl
 " vim-cppman
 
 " 按下q鍵時，垂直分屏後開關cppman
-au FileType cpp nnoremap <silent> q :Cppman <cword><CR><CR>:hi Normal ctermbg=NONE<CR>:hi LineNr ctermbg=NONE<CR>:hi CursorLineNr cterm=bold<CR>:hi PMenu ctermfg=0 ctermbg=242<CR>
+au FileType cpp nnoremap <silent> q :Cppman <cword><CR><CR>:hi Normal ctermbg=NONE<CR>:hi LineNr ctermbg=NONE<CR>:hi CursorLineNr cterm=bold<CR>:hi PMenu ctermfg=0 ctermbg=237<CR>:hi PMenuSbar ctermfg=NONE ctermbg=237<CR>:hi PmenuThumb ctermfg=NONE ctermbg=237<CR>
 
 " =========================================================== "
 
@@ -924,7 +927,9 @@ au FileType make set noexpandtab
 hi Normal ctermbg=NONE
 
 " popmenu背景使用灰色
-hi PMenu ctermfg=0 ctermbg=242
+hi PMenu ctermfg=255 ctermbg=237
+hi PMenuSbar ctermfg=NONE ctermbg=237
+hi PmenuThumb ctermfg=NONE ctermbg=237
 
 " 自動顯示sign欄位
 set signcolumn=yes
