@@ -241,7 +241,7 @@ let NERDTreeQuitOnOpen=1
 
 " 按下control+o鍵時，垂直分屏後開啟舊檔
 let g:NERDTreeMapOpenVSplit='<C-o>'
-let g:NERDTreeMapOpenInTab = '<C-m>'
+let g:NERDTreeCustomOpenArgs = {'file':{'where':'t'}}
 " 重新映射快速鍵以釋放按鍵
 let g:NERDTreeMapOpenSplit='xxxi'
 let g:NERDTreeMapJumpNextSibling='xxxcj'
