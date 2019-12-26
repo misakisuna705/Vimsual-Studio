@@ -161,7 +161,7 @@ let g:Lf_ShowHidden=1
 let g:Lf_FollowLinks=1
 " 不搜尋的檔案與路徑
 let g:Lf_WildIgnore = {
-            \ 'dir': ['.adobe', '.android', '.antigen', '.cache', '.config', '.dotfiles', '.dotnet', '.gradle', '.local', '.mitmproxy', '.mono', '.node-gyp', '.npm', '.nuget', '.omnisharp', '.oracle_jre_usage', '.ssh', '.subversion', '.swt', '.templateengine', '.vim', 'Documents', 'Music', 'Pictures', 'Movies', 'Applications', 'Applications (Parallels)', 'Google Drive File Stream', 'bin', 'lib', 'Library', 'node_modules', 'Server', '.git', 'build', 'dist'],
+            \ 'dir': ['.adobe', '.android', '.antigen', '.cache', '.config', '.dotfiles', '.dotnet', '.gradle', '.local', '.mitmproxy', '.mono', '.node-gyp', '.npm', '.nuget', '.omnisharp', '.oracle_jre_usage', '.ssh', '.subversion', '.swt', '.templateengine', '.vim', 'Documents', 'Music', 'Pictures', 'Movies', 'Applications', 'Applications (Parallels)', 'Google Drive File Stream', 'bin', 'Library', 'node_modules', 'Server', '.git', 'build', 'dist'],
             \ 'file': ['.DS_Store']
             \}
 
@@ -461,6 +461,7 @@ au FileType c,cpp,python,html,css,scss,javascript,typescript,verilog_systemveril
 
 " 設定linter參數
 let g:ale_cpp_clang_options = '-std=c++17 -Wall'
+let g:ale_python_flake8_options = '--ignore=E501,E302,E225,E226,E251,E201,E305,E711,E117,E101,F403,F405,W191,W291,W293'
 
 " 設定linter
 let g:ale_linters = {
@@ -499,8 +500,8 @@ nmap f <Plug>(ale_next_wrap)
 " 顯示格式化詳細資料
 " let g:autoformat_verbosemode=1
 
-" 檔案保存時，自動排版
-au BufWrite * :Autoformat
+" 按下空白鍵+e時，自動排版
+nnoremap <silent> <SPACE>e :Autoformat
 
 " 載入astyle的google風格排版c/cpp/cs檔案
 let g:formatdef_misakisuna_astyle='"astyle --style=google --indent-switches --indent-namespaces -p"'
@@ -509,7 +510,7 @@ let g:formatters_cpp=['misakisuna_astyle']
 let g:formatters_cs=['misakisuna_astyle']
 
 " 載入yapf的google風格排版py檔案
-let g:formatdef_misakisuna_yapf='"yapf --style=''{based_on_style: google}''"'
+let g:formatdef_misakisuna_yapf='"yapf --style=''{based_on_style: google, column_limit: 150}''"'
 let g:formatters_python=['misakisuna_yapf']
 
 " 載入prettier排版web/md檔案

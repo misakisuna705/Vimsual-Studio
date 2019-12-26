@@ -293,6 +293,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |  預覽   |     `SHIFT`+`m`     |  在垂直分屏預覽標籤   |
 |         |     `SHIFT`+`n`     |    跳轉至選定標籤     |
 |         |     `SHIFT`+`h`     |     關閉預覽視窗      |
+|  編輯   | `SPACE`+`e`+`ENTER` |       自動排版        |
 |  跳轉   |         `f`         |     偵錯訊息跳轉      |
 |         |     `shift`+`f`     |     版本訊息跳轉      |
 |  編程   |        `F1`         |      編譯發行版       |
@@ -328,6 +329,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 | :----: | :-----------------: | :-------------------: |
 |  跳轉  |         `f`         |     偵錯訊息跳轉      |
 |        |     `shift`+`f`     |     版本訊息跳轉      |
+|  編輯  | `SPACE`+`e`+`ENTER` |       自動排版        |
 |  編程  |        `F1`         |       單行直譯        |
 |        |        `F2`         |       多行直譯        |
 |        |        `F3`         |       文件直譯        |
@@ -362,6 +364,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 | webpage |        按鍵         |         功能          |
 | :-----: | :-----------------: | :-------------------: |
 |  編輯   |   `CTRL`+`z`+`,`    |       補全標籤        |
+|         | `SPACE`+`e`+`ENTER` |       自動排版        |
 |  跳轉   |         `f`         |     偵錯訊息跳轉      |
 |         |     `shift`+`f`     |     版本訊息跳轉      |
 |  編程   |        `F1`         |       開始推播        |
@@ -388,6 +391,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 | :----: | :-----------------: | :-------------------: |
 |  跳轉  |         `f`         |     偵錯訊息跳轉      |
 |        |     `shift`+`f`     |     版本訊息跳轉      |
+|  編輯  | `SPACE`+`e`+`ENTER` |       自動排版        |
 |  編程  |        `F1`         |       編譯執行        |
 |        |        `F11`        |         發佈          |
 |  終端  |        `F12`        | 切換終端機與 quickfix |
@@ -411,6 +415,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 | :------: | :-----------------: | :-------------------: |
 |   跳轉   |         `f`         |     偵錯訊息跳轉      |
 |          |     `shift`+`f`     |     版本訊息跳轉      |
+|   編輯   | `SPACE`+`e`+`ENTER` |       自動排版        |
 |   編程   |        `F1`         |       開始推播        |
 |          |        `F2`         |       停止推播        |
 |          |        `F3`         |       生成目錄        |

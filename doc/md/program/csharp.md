@@ -136,8 +136,8 @@ Plug 'Chiel92/vim-autoformat',{'on':'Autoformat'} " 安裝autoformat
 " 顯示格式化詳細資料
 " let g:autoformat_verbosemode=1
 
-" 檔案保存時，自動排版
-au BufWrite * :Autoformat
+" 按下空白鍵+e時，自動排版
+nnoremap <silent> <SPACE>e :Autoformat
 
 " 載入astyle的google風格排版cs檔案
 let g:formatdef_misakisuna_astyle='"astyle --style=google --indent-switches --indent-namespaces -p"'
