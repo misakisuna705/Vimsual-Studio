@@ -63,7 +63,7 @@ chsh -s /bin/zsh
 ```
 
 ```zsh
-sh ~/.dotfiles/src/setup.sh
+bash ~/.dotfiles/src/setup.sh
 ```
 
 # 2. 手動配置

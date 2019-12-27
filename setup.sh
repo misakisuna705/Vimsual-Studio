@@ -1,8 +1,10 @@
+#!/bin/bash
+
 main () {
-    sh "$HOME/.dotfiles/src/brew.sh"
-    sh "$HOME/.dotfiles/src/symlink.sh"
-    sh "$HOME/.dotfiles/src/yarn.sh"
-    sh "$HOME/.dotfiles/src/pip.sh"
+    bash "$HOME/.dotfiles/src/brew.sh"
+    bash "$HOME/.dotfiles/src/symlink.sh"
+    bash "$HOME/.dotfiles/src/yarn.sh"
+    bash "$HOME/.dotfiles/src/pip.sh"
 }
 
 main
