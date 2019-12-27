@@ -37,7 +37,7 @@ symlink () {
         printf "Succeeded to symlink .ycm_extra_conf.py!\n\n"
 
         printf "Symlink .zshrc...\n"
-        ln -sf "$HOME/.dotfiles/res/config/zsh/.zshrc" "$HOME"
+        ln -sf "$HOME/.dotfiles/res/config/zsh/macOS/.zshrc" "$HOME"
         printf "Succeeded to symlink .zshrc!\n\n"
         #elif [[ "$OSTYPE" == "linux-gnu" ]]
         #then

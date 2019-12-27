@@ -3,7 +3,7 @@
 install_brew () {
     if [[ "$OSTYPE" == "darwin"* ]]
     then
-        printf "\nTest Homebrew...\n"
+        printf "Test Homebrew...\n"
         if test ! "$(brew -v)"
         then
             printf "Install Homebrew...\n"
@@ -12,8 +12,17 @@ install_brew () {
         else
             printf "Already have Homebrew!\n\n"
         fi
-        #elif [[ "$OSTYPE" == "linux-gnu" ]]
-        #then
+    elif [[ "$OSTYPE" == "linux-gnu" ]]
+    then
+        printf "Test Homebrew...\n"
+        if test ! "$(brew -v)"
+        then
+            printf "Install Homebrew...\n"
+            sudo apt install linuxbrew-wrapper
+            printf "Succeeded to install Homebrew!\n\n"
+        else
+            printf "Already have Homebrew!\n\n"
+        fi
     fi
 }
 

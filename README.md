@@ -51,15 +51,7 @@
 # 1. 快速安裝
 
 ```zsh
-xcode-select --install
-```
-
-```zsh
 git clone https://github.com/misakisuna705/Vimsual_Studio.git ~/.dotfiles
-```
-
-```zsh
-chsh -s /bin/zsh
 ```
 
 ```zsh
