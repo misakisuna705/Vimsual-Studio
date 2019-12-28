@@ -12,6 +12,11 @@ install_brew () {
         then
             sudo apt install linuxbrew-wrapper
             brew
+            {
+                echo "export PATH='/home/linuxbrew/.linuxbrew/bin:$PATH'"
+                echo "export MANPATH='/home/linuxbrew/.linuxbrew/share/man:$MANPATH'"
+                echo "export INFOPATH='/home/linuxbrew/.linuxbrew/share/info:$INFOPATH'"
+            } >> ~/.zshrc
         fi
         printf "Succeeded to install Homebrew!\n\n"
     else
