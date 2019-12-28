@@ -28,27 +28,17 @@ setup_env() {
         printf "Succeeded to clean apt cache!\n\n"
     fi
 
-    if [[ "$OSTYPE" == "darwin"* ]]
+    printf "Test zsh...\n"
+    if test ! "which zsh"
     then
-        printf "Test zsh...\n"
-        if test ! "which zsh"
+        printf "Install zsh..."
+        if [[ "$OSTYPE" == "linux-gnu" ]]
         then
-            printf "Install zsh..."
-            printf "Succeeded to install zsh!\n\n"
-        else
-            printf "Already have zsh!\n\n"
-        fi
-    elif [[ "$OSTYPE" == "linux-gnu" ]]
-    then
-        printf "Test zsh...\n"
-        if test ! "which zsh"
-        then
-            printf "Install zsh..."
             sudo apt install zsh
-            printf "Succeeded to install zsh!\n\n"
-        else
-            printf "Already have zsh!\n\n"
         fi
+        printf "Succeeded to install zsh!\n\n"
+    else
+        printf "Already have zsh!\n\n"
     fi
 
     printf "Setup zsh...\n"
