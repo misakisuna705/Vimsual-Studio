@@ -6,13 +6,16 @@
 + [2. 手動配置](#2-手動配置)
     * [2.1. 系統環境](#21-系統環境)
         - [2.1.1. xcode](#211-xcode)
-        - [2.1.2. brew](#212-brew)
+        - [2.1.2. apt](#212-apt)
+            + [VM](#vm)
+            + [WSL](#wsl)
+        - [2.1.3. brew](#213-brew)
             + [cellar](#cellar)
             + [cask](#cask)
             + [font](#font)
-        - [2.1.3. pip](#213-pip)
+        - [2.1.4. pip](#214-pip)
             + [global](#global)
-        - [2.1.4. yarn](#214-yarn)
+        - [2.1.5. yarn](#215-yarn)
             + [global](#global-1)
     * [2.2. 終端環境](#22-終端環境)
         - [2.2.1. iterm2](#221-iterm2)
@@ -68,7 +71,28 @@ bash ~/.dotfiles/src/setup.sh
 xcode-select --install # 安裝Command Line Tools for Xcode
 ```
 
-### 2.1.2. brew
+### 2.1.2. apt
+
+-   [詳情按此](doc/md/system/apt.md)
+
+#### VM
+
+|      package      |
+| :---------------: |
+| chromium-browser  |
+|       hime        |
+| linuxbrew-wrapper |
+|  xfce4-terminal   |
+|        zsh        |
+
+#### WSL
+
+|      package      |
+| :---------------: |
+| linuxbrew-wrapper |
+|        zsh        |
+
+### 2.1.3. brew
 
 -   [詳情按此](doc/md/system/brew.md)
 
@@ -131,7 +155,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ---
 
-### 2.1.3. pip
+### 2.1.4. pip
 
 -   [詳情按此](doc/md/system/pip.md)
 
@@ -148,7 +172,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 | pipenv  |
 |  yapf   |
 
-### 2.1.4. yarn
+### 2.1.5. yarn
 
 -   [詳情按此](doc/md/system/yarn.md)
 
