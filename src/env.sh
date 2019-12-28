@@ -29,12 +29,12 @@ setup_env() {
     fi
 
     printf "Test zsh...\n"
-    if test ! "which zsh"
+    if test ! "$(zsh -v)"
     then
         printf "Install zsh..."
         if [[ "$OSTYPE" == "linux-gnu" ]]
         then
-            sudo apt install zsh
+            sudo apt install -y zsh
         fi
         printf "Succeeded to install zsh!\n\n"
     else
@@ -48,7 +48,7 @@ setup_env() {
         chsh -s /bin/zsh
         printf "Succeeded to setup zsh!\n\n"
     else
-        printf "Already have zsh!\n\n"
+        printf "Already setup zsh!\n\n"
     fi
 }
 
