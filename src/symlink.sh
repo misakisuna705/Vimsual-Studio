@@ -39,8 +39,11 @@ symlink () {
         printf "Symlink .zshrc...\n"
         ln -sf "$HOME/.dotfiles/res/config/zsh/macOS/.zshrc" "$HOME"
         printf "Succeeded to symlink .zshrc!\n\n"
-        #elif [[ "$OSTYPE" == "linux-gnu" ]]
-        #then
+    elif [[ "$OSTYPE" == "linux-gnu" ]]
+    then
+        printf "Symlink Brewfile...\n"
+        ln -sf "$HOME/.dotfiles/res/config/brew/VM/Brewfile" "$HOME"
+        printf "Succeeded to symlink Brewfile!\n\n"
     fi
 }
 
