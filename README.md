@@ -58,7 +58,7 @@ git clone https://github.com/misakisuna705/Vimsual_Studio.git ~/.dotfiles
 ```
 
 ```zsh
-bash ~/.dotfiles/src/setup.sh
+~/.dotfiles/src/setup.sh # 或 bash ~/.dotfiles/src/setup.sh
 ```
 
 # 2. 手動配置
