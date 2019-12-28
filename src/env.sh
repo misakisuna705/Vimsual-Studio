@@ -19,7 +19,7 @@ setup_env() {
         printf "Succeeded to update apt!\n\n"
 
         printf "Setup apt...\n"
-        sudo apt ugprade
+        sudo apt upgrade -y
         printf "Succeeded to setup apt!\n\n"
 
         printf "Clean apt cache...\n"
