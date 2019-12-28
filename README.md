@@ -54,7 +54,7 @@
 # 1. 快速安裝
 
 ```zsh
-git clone https://github.com/misakisuna705/Vimsual_Studio.git ~/.dotfiles
+git clone https://github.com/misakisuna705/Vimsual_Studio.git ~/.dotfiles # 或下載解壓後 mv Vimsual_Studio-master ~/.dotfiles
 ```
 
 ```zsh
