@@ -6,6 +6,7 @@
 * [2. 插件](#2-插件)
     - [2.1. 安裝](#21-安裝)
     - [2.2. 配置](#22-配置)
+    - [2.3. 命令](#23-命令)
 
 <!-- vim-markdown-toc -->
 
@@ -40,4 +41,14 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # antigen 啟用終點
 antigen apply
+```
+
+### 2.3. 命令
+
+```zsh
+antigen list # 查詢已安裝插件清單
+
+antigen update 插件 # 安裝該插件
+
+antigen update # 升級所有插件
 ```
