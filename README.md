@@ -5,18 +5,21 @@
 + [1. 快速安裝](#1-快速安裝)
 + [2. 手動配置](#2-手動配置)
     * [2.1. 系統環境](#21-系統環境)
-        - [2.1.1. xcode](#211-xcode)
-        - [2.1.2. apt](#212-apt)
-            + [VM](#vm)
-            + [WSL](#wsl)
-        - [2.1.3. brew](#213-brew)
-            + [cellar](#cellar)
-            + [cask](#cask)
-            + [font](#font)
-        - [2.1.4. pip](#214-pip)
-            + [global](#global)
-        - [2.1.5. yarn](#215-yarn)
-            + [global](#global-1)
+        - [2.1.1. macOS](#211-macos)
+            + [xcode](#xcode)
+            + [brew](#brew)
+                * [cellar](#cellar)
+                * [cask](#cask)
+                * [font](#font)
+            + [pip](#pip)
+                * [global](#global)
+            + [yarn](#yarn)
+                * [global](#global-1)
+        - [2.1.2 linux](#212-linux)
+            + [docker](#docker)
+            + [apt](#apt)
+                * [VM](#vm)
+                * [WSL](#wsl)
     * [2.2. 終端環境](#22-終端環境)
         - [2.2.1. iterm2](#221-iterm2)
         - [2.2.2. tmux](#222-tmux)
@@ -65,38 +68,19 @@ git clone https://github.com/misakisuna705/Vimsual_Studio.git ~/.dotfiles # 或�
 
 ## 2.1. 系統環境
 
-### 2.1.1. xcode
+### 2.1.1. macOS
+
+#### xcode
 
 ```zsh
 xcode-select --install # 安裝Command Line Tools for Xcode
 ```
 
-### 2.1.2. apt
-
--   [詳情按此](doc/md/system/apt.md)
-
-#### VM
-
-|      package      |
-| :---------------: |
-| chromium-browser  |
-|       hime        |
-| linuxbrew-wrapper |
-|  xfce4-terminal   |
-|        zsh        |
-
-#### WSL
-
-|      package      |
-| :---------------: |
-| linuxbrew-wrapper |
-|        zsh        |
-
-### 2.1.3. brew
+#### brew
 
 -   [詳情按此](doc/md/system/brew.md)
 
-#### cellar
+##### cellar
 
 |     cellar      |
 | :-------------: |
@@ -119,7 +103,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |      wget       |
 |      yarn       |
 
-#### cask
+##### cask
 
 |           cask           |
 | :----------------------: |
@@ -147,19 +131,17 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |        wireshark         |
 |         xquartz          |
 
-#### font
+##### font
 
 |         font         |
 | :------------------: |
 | font-source-code-pro |
 
----
-
-### 2.1.4. pip
+#### pip
 
 -   [詳情按此](doc/md/system/pip.md)
 
-#### global
+##### global
 
 | global  |
 | :-----: |
@@ -172,11 +154,11 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 | pipenv  |
 |  yapf   |
 
-### 2.1.5. yarn
+#### yarn
 
 -   [詳情按此](doc/md/system/yarn.md)
 
-#### global
+##### global
 
 |          global           |
 | :-----------------------: |
@@ -197,6 +179,66 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 | stylelint-config-standard |
 |        typescript         |
 |   typescript-formatter    |
+
+### 2.1.2 linux
+
+#### docker
+
+```zsh
+# system
+
+docker system df # 表列映像、容器、儲區
+
+docker system prune -f # 清理多餘映像、容器、儲區
+
+# image
+
+docker search 映像 # 搜尋某映像
+
+docker images # 查詢已安裝映像
+
+docker pull 映像 # 安裝該映像
+docker rmi -v 映像 # 解除安裝該映像與對應儲區
+
+docker build -t 映像 路徑 # 建構該映像
+
+# container
+
+docker ps -a # 查詢已實體化的容器
+
+docker run --name 容器 -it -v 被掛載檔案系統路徑:掛載點 映像 # 實體化該映像為容器
+docker rm -v 容器 # 移除該容器與對應儲區
+
+docker start -i 容器 # 啟動該容器
+docker stop 容器 # 停止該容器
+
+# volume
+
+docker volume ls # 查詢已分配的儲區
+
+docker volume rm 儲區 # 移除已分配儲區
+```
+
+#### apt
+
+-   [詳情按此](doc/md/system/apt.md)
+
+##### VM
+
+|      package      |
+| :---------------: |
+| chromium-browser  |
+|       hime        |
+| linuxbrew-wrapper |
+|  xfce4-terminal   |
+|        zsh        |
+
+##### WSL
+
+|      package      |
+| :---------------: |
+| linuxbrew-wrapper |
+|        zsh        |
 
 ## 2.2. 終端環境
 
