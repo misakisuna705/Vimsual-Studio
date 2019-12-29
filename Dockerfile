@@ -1,3 +1,5 @@
+#========================================base========================================#
+
 FROM ubuntu
 MAINTAINER Misaki Yukiasuna <misakisuna705@gmail.com>
 
@@ -54,6 +56,8 @@ RUN \
         ~/.dotfiles/setup.sh
 
 #run docker
-ENTRYPOINT ["/bin/zsh"]
+RUN TERM=xterm-256color
 
+ENV LANG C.UTF-8
 WORKDIR /home/vimer
+ENTRYPOINT ["/bin/zsh"]
