@@ -1,8 +1,10 @@
-# macOS
+# macOS / linux
 
 <!-- vim-markdown-toc GFM -->
 
 + [1. 快速安裝](#1-快速安裝)
+    * [1.1 git](#11-git)
+    * [1.2 docker](#12-docker)
 + [2. 手動配置](#2-手動配置)
     * [2.1. 系統環境](#21-系統環境)
         - [2.1.1. macOS](#211-macos)
@@ -56,12 +58,20 @@
 
 # 1. 快速安裝
 
+## 1.1 git
+
 ```zsh
 git clone https://github.com/misakisuna705/Vimsual_Studio.git ~/.dotfiles # 或下載解壓後 cp -r Vimsual_Studio-master ~/.dotfiles
 ```
 
 ```zsh
 ~/.dotfiles/setup.sh # 或 bash ~/.dotfiles/src/setup.sh
+```
+
+## 1.2 docker
+
+```zsh
+docker pull misakisuna705/vimsual-studio
 ```
 
 # 2. 手動配置
@@ -191,6 +201,13 @@ docker system df # 表列映像、容器、儲區
 
 docker system prune -f # 清理多餘映像、容器、儲區
 
+# build
+
+docker login # 登入用戶
+docker build -t 映像 路徑 # 建構映像
+docker tag 映像 用戶/映像 # tag映像
+docker push 用戶/映像 # 上傳映像
+
 # image
 
 docker search 映像 # 搜尋某映像
@@ -199,8 +216,6 @@ docker images # 查詢已安裝映像
 
 docker pull 映像 # 安裝該映像
 docker rmi -v 映像 # 解除安裝該映像與對應儲區
-
-docker build -t 映像 路徑 # 建構該映像
 
 # container
 
