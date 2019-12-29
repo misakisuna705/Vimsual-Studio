@@ -44,6 +44,15 @@ symlink () {
         printf "Symlink Brewfile...\n"
         ln -sf "$HOME/.dotfiles/res/config/brew/VM/Brewfile" "$HOME"
         printf "Succeeded to symlink Brewfile!\n\n"
+
+        printf "Symlink .zshrc...\n"
+        if grep -q Microsoft /proc/version
+        then
+            ln -sf "$HOME/.dotfiles/res/config/zsh/WSL/.zshrc" "$HOME"
+        else
+            ln -sf "$HOME/.dotfiles/res/config/zsh/PD/.zshrc" "$HOME"
+        fi
+        printf "Succeeded to symlink .zshrc!\n\n"
     fi
 }
 
