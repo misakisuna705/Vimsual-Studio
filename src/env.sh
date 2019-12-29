@@ -24,12 +24,12 @@ setup_env() {
 
         printf "Clean apt cache...\n"
         sudo apt autoclean
-        sudo apt autoremove
+        sudo apt autoremove -y
         printf "Succeeded to clean apt cache!\n\n"
     fi
 
     printf "Test zsh...\n"
-    if test ! "$(zsh -v)"
+    if test ! "$(zsh --version)"
     then
         printf "Install zsh..."
         if [[ "$OSTYPE" == "linux-gnu" ]]
