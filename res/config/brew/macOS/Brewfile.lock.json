@@ -2,19 +2,19 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "b8446cc243e1f9041aa3fad54d9fb757a4c1feca"
+        "revision": "57962bf70e2107dd410bc2b21be58fbd16d9bab3"
       },
       "homebrew/bundle": {
-        "revision": "8c0ab71c3de2b84af4c35e50fc7f0fd3a6971c9c"
+        "revision": "ea8fd4ebaf85a7744749643f2568113930329503"
       },
       "homebrew/cask": {
-        "revision": "b8446cc243e1f9041aa3fad54d9fb757a4c1feca"
+        "revision": "57962bf70e2107dd410bc2b21be58fbd16d9bab3"
       },
       "homebrew/cask-fonts": {
         "revision": "1407d48a88309eb141dd1900d81398e18ed95ee8"
       },
       "homebrew/core": {
-        "revision": "637cae19d9801278be8a5f97bce347c9acb1b328"
+        "revision": "54270d61eb2f468d4f196d386d42a4181eef8c7a"
       },
       "mattisg/mattisg": {
         "revision": "a65b6c99617598d79a9a0957192569bb9b6b6d62"
@@ -37,7 +37,7 @@
         "version": "3.5"
       },
       "calibre": {
-        "version": "4.6.0"
+        "version": "4.7.0"
       },
       "dotnet-sdk": {
         "version": "3.1.100,787e81f1-f0da-4e3b-a989-8a199132ed8c:61a8dba81fbf2b3d533562d7b96443ec"
@@ -224,22 +224,22 @@
         }
       },
       "python": {
-        "version": "3.7.5",
+        "version": "3.7.6",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/python-3.7.5.catalina.bottle.tar.gz",
-              "sha256": "623d2a1110674974c0ea3ff0498c1ac865b858ba5293bdc29f3ce4dbd421fd42"
+              "url": "https://homebrew.bintray.com/bottles/python-3.7.6.catalina.bottle.tar.gz",
+              "sha256": "f9053f7d2b371b6c1960e790be5603f8662d65f44bfdfe2c3854ac287f10d705"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/python-3.7.5.mojave.bottle.tar.gz",
-              "sha256": "bcbdc3612a10d06facca7ec9499265731d530c8273b1a2dc28f16258d4410552"
+              "url": "https://homebrew.bintray.com/bottles/python-3.7.6.mojave.bottle.tar.gz",
+              "sha256": "011f76aac1362a7df8618ec10751a87b3745afccabfdf5e354f9980f04e9b064"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/python-3.7.5.high_sierra.bottle.tar.gz",
-              "sha256": "32e080b97e0075d2563c1f454e6925dbdd57ad683b857fc2a42e46a0a30959f6"
+              "url": "https://homebrew.bintray.com/bottles/python-3.7.6.high_sierra.bottle.tar.gz",
+              "sha256": "853a5c89053fa747daf1779a515df60648b56968317aa8865dfdd058f1520bad"
             }
           }
         }
@@ -512,7 +512,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "637cae19d9801278be8a5f97bce347c9acb1b328",
+        "Homebrew/homebrew-core": "54270d61eb2f468d4f196d386d42a4181eef8c7a",
         "CLT": "11.0.33.8",
         "Xcode": "11.3",
         "macOS": "10.15.2"

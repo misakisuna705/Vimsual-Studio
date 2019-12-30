@@ -2,15 +2,13 @@
 
 install_brew () {
     printf "Test Homebrew...\n"
-    if test ! "$(brew -v)"
-    then
+    if test ! "$(brew -v)"; then
         printf "Install Homebrew...\n"
-        if [[ "$OSTYPE" == "darwin"* ]]
-        then
+        if [[ "$OSTYPE" == "darwin"* ]]; then
             /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        elif [[ "$OSTYPE" == "linux-gnu" ]]
-        then
-            sudo apt install linuxbrew-wrapper
+        elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+            sudo apt-get install linuxbrew-wrapper
+
             brew
             {
                 echo "export PATH='/home/linuxbrew/.linuxbrew/bin:$PATH'"
@@ -26,11 +24,9 @@ install_brew () {
 
 setup_brew() {
     printf "Setup brew bundle...\n"
-    if [[ "$OSTYPE" == "darwin"* ]]
-    then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
         brew bundle --file="$HOME/.dotfiles/res/config/brew/macOS/Brewfile"
-    elif [[ "$OSTYPE" == "linux-gnu" ]]
-    then
+    elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         brew bundle --file="$HOME/.dotfiles/res/config/brew/VM/Brewfile"
     fi
     #printf "Install gdb 8.0.1..."

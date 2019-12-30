@@ -1,8 +1,7 @@
 #!/bin/bash
 
 setup_pip () {
-    if [[ "$OSTYPE" == "darwin"* ]]
-    then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
         printf "Update pip...\n"
         pip3 install -U pip
         printf "Succeeded to update pip!\n\n"

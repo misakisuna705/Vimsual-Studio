@@ -1,8 +1,7 @@
 #!/bin/bash
 
 setup_yarn () {
-    if [[ "$OSTYPE" == "darwin"* ]]
-    then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
         printf "Setup yarn...\n"
         cd "$HOME/.config/yarn/global" || exit
         yarn install
