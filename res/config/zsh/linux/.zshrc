@@ -1,4 +1,6 @@
-[ "$(ls /mnt/e/)" ] || sudo mount -t drvfs E: /mnt/e
+if grep -q Microsoft /proc/version; then
+    [ "$(ls /mnt/e/)" ] || sudo mount -t drvfs E: /mnt/e
+fi
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"

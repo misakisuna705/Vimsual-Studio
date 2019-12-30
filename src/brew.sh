@@ -27,7 +27,7 @@ setup_brew() {
     if [[ "$OSTYPE" == "darwin"* ]]; then
         brew bundle --file="$HOME/.dotfiles/res/config/brew/macOS/Brewfile"
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-        brew bundle --file="$HOME/.dotfiles/res/config/brew/VM/Brewfile"
+        brew bundle --file="$HOME/.dotfiles/res/config/brew/linux/Brewfile"
     fi
     #printf "Install gdb 8.0.1..."
     #brew unlink gdb

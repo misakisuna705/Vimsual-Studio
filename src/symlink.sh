@@ -5,7 +5,7 @@ symlink () {
     if [[ "$OSTYPE" == "darwin"* ]]; then
         ln -sf "$HOME/.dotfiles/res/config/brew/macOS/Brewfile" "$HOME/"
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-        ln -sf "$HOME/.dotfiles/res/config/brew/VM/Brewfile" "$HOME/"
+        ln -sf "$HOME/.dotfiles/res/config/brew/linux/Brewfile" "$HOME/"
     fi
     printf "Succeeded to symlink Brewfile!\n\n"
 
@@ -52,9 +52,9 @@ symlink () {
         ln -sf "$HOME/.dotfiles/res/config/zsh/macOS/.zshrc" "$HOME/"
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         if grep -q Microsoft /proc/version; then
-            ln -sf "$HOME/.dotfiles/res/config/zsh/WSL/.zshrc" "$HOME/"
+            cp -u "$HOME/.dotfiles/res/config/zsh/linux/.zshrc" "$HOME/"
         else
-            ln -sf "$HOME/.dotfiles/res/config/zsh/PD/.zshrc" "$HOME/"
+            ln -sf "$HOME/.dotfiles/res/config/zsh/linux/.zshrc" "$HOME/"
         fi
     fi
     printf "Succeeded to symlink .zshrc!\n\n"
