@@ -6,6 +6,8 @@
     - [1.1. 安裝](#11-安裝)
     - [1.2. 命令](#12-命令)
     - [1.3. 插件](#13-插件)
+        + [macOS](#macos)
+        + [linux](#linux)
 * [2. cask](#2-cask)
     - [2.1. 安裝](#21-安裝)
     - [2.2. 命令](#22-命令)
@@ -55,6 +57,8 @@ brew bundle dump --force # 複寫Brewfile
 
 ### 1.3. 插件
 
+#### macOS
+
 -   allegro
 -   antigen
 -   astyle
@@ -72,6 +76,26 @@ brew bundle dump --force # 複寫Brewfile
 -   universal-ctags
 -   vim
 -   wget
+-   yarn
+
+#### linux
+
+-   antigen
+-   astyle
+-   cmake
+-   cppcheck
+-   gdb
+-   icarus-verilog
+-   llvm
+-   nasm
+-   ninja
+-   python
+-   ripgrep
+-   shellcheck
+-   sshfs
+-   tmux
+-   universal-ctags
+-   vim
 -   yarn
 
 ## 2. cask

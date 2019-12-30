@@ -22,6 +22,8 @@
             + [apt](#apt)
                 * [VM](#vm)
                 * [WSL](#wsl)
+            + [brew](#brew-1)
+                * [cellar](#cellar-1)
     * [2.2. 終端環境](#22-終端環境)
         - [2.2.1. iterm2](#221-iterm2)
         - [2.2.2. tmux](#222-tmux)
@@ -254,6 +256,32 @@ docker volume rm 儲區 # 移除已分配儲區
 | :---------------: |
 | linuxbrew-wrapper |
 |        zsh        |
+
+#### brew
+
+-   [詳情按此](doc/md/system/brew.md)
+
+##### cellar
+
+|     cellar      |
+| :-------------: |
+|     antigen     |
+|     astyle      |
+|      cmake      |
+|    cppcheck     |
+|       gdb       |
+| icarus-verilog  |
+|      llvm       |
+|      nasm       |
+|      ninja      |
+|     python      |
+|     ripgrep     |
+|   shellcheck    |
+|      sshfs      |
+|      tmux       |
+| universal-ctags |
+|       vim       |
+|      yarn       |
 
 ## 2.2. 終端環境
 
