@@ -54,4 +54,6 @@ antigen list # 查詢已安裝插件清單
 antigen update 插件 # 安裝該插件
 
 antigen update # 升級所有插件
+
+antigen reset # 重設所有插件
 ```
