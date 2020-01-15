@@ -83,6 +83,7 @@ Plug 'mhinz/vim-signify'
 " =========================================================== "
 
 " 安裝環境插件
+Plug 'skywind3000/vim-quickui'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'ErichDonGubler/vim-sublime-monokai'
@@ -312,7 +313,7 @@ let g:preview_nolist=1
 " 按下shift+m鍵時，垂直分屏後預覽函數標籤
 nnoremap <silent> <S-m> :PreviewTag<CR>
 " 按下shift+n鍵時，開新tab後預覽函數標籤
-nnoremap <silent> <S-n> :PreviewGoto tabe<CR>:PreviewClose<CR>
+nnoremap <silent> <S-n> :PreviewGoto tabe<CR>
 " 按下shift+h鍵時，關閉分屏後跳轉回檔案
 nnoremap <silent> <S-h> :PreviewClose<CR>
 
@@ -560,26 +561,27 @@ let g:asyncrun_rootmarks=['.git']
 let g:asyncrun_open=8
 
 " 按下F1鍵時，更新build.ninja並建構c / cpp專案
-function! CompileCpp()
+function Build_Release_Cpp()
     if exists("g:qfix_win")
-        "AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && cd build/release && ninja
-        AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja  -Bbuild/release && cd build/release && ninja
+        AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && cd build/release && ninja
     elseif exists("g:Topenflag")
         Tclose
         unlet g:Topenflag
-        "AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && cd build/release && ninja
-        AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja  -Bbuild/release && cd build/release && ninja
+        AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && cd build/release && ninja
         let g:qfix_win = bufnr("$")
     else
-        "AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && cd build/release && ninja
-        AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja  -Bbuild/release && cd build/release && ninja
+        AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && cd build/release && ninja
         let g:qfix_win = bufnr("$")
     endif
 endfunction
-au FileType c,cpp nnoremap <silent> <F1> :call CompileCpp()<CR>
+au FileType c,cpp nnoremap <silent> <F1> :call Build_Release_Cpp()<CR>
 
 " 按下F3鍵時，更新build.ninja並建構c / cpp測試
-au FileType c,cpp nnoremap <silent> <F3> :Tclose<CR>:AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug -Bbuild/test && cd build/test && ninja<CR>
+function Build_Debug_Cpp()
+    Tclose
+    AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug -Bbuild/test && cd build/test && ninja
+endfunction
+au FileType c,cpp nnoremap <silent> <F3> :call Build_Debug_Cpp()<CR>
 
 " 按下F1鍵時，編譯verilog檔案
 function! CompileVerilog()
@@ -640,7 +642,7 @@ hi NonText ctermfg=242 ctermbg=NONE
 au TerminalOpen * set list listchars=space:_
 
 " 按下F2鍵時，執行c / cpp專案
-function ExeCpp()
+function Execute_Release_Cpp()
     if exists("g:qfix_win")
         cclose
         let save_view = winsaveview()
@@ -658,7 +660,7 @@ function ExeCpp()
         call winrestview(save_view)
     endif
 endfunction
-au FileType c,cpp nnoremap <silent> <F2> :call ExeCpp()<CR>
+au FileType c,cpp nnoremap <silent> <F2> :call Execute_Release_Cpp()<CR>
 
 " 按下F1鍵時，直譯該行
 au FileType python nnoremap <silent> <F1> :cclose<CR>:let save_view = winsaveview()<CR>:Tclear<CR>:TREPLSendLine<CR>:call winrestview(save_view)<CR>
@@ -784,7 +786,16 @@ au TerminalOpen * hi debugPC ctermbg=242
 au BufLeave * nnoremap <S-k> }
 
 " 按下F4鍵時，測試c / cpp專案
-au FileType c,cpp nnoremap <silent> <F4> :cclose<CR>:Tclose<CR>:cd %:p:h<CR>:packadd termdebug<CR>:Termdebug test/%:t:r<CR><C-w><C-h>:aunmenu WinBar<CR>
+function Execute_Debug_Cpp()
+    cclose
+    Tclose
+    cd %:p:h
+    packadd termdebug
+    Termdebug test/%:t:r
+    wincmd h
+    aunmenu WinBar
+endfunction
+au FileType c,cpp nnoremap <silent> <F4> :call Execute_Debug_Cpp()<CR>
 
 " 按下F5鍵時，設置斷點
 au FileType c,cpp nnoremap <silent> <F5> :Break<CR>
@@ -824,6 +835,97 @@ nnoremap <silent> <expr> <plug>(sy-hunk-next) &diff
 nmap <S-f> <plug>(sy-hunk-next)
 
 " ==================================================================================================================== "
+
+" vim-quickui
+
+nnoremap <silent> <TAB><TAB> :call quickui#menu#open()<CR>
+
+let g:quickui_color_scheme = 'gruvbox'
+
+call quickui#menu#install('Vim', [
+            \ [ "Tag/Directory Switch\tCtrl+n", 'call NVtoggle()' ],
+            \ [ "REPL/Quickfix Switch\tF12", 'call QTtoggle()' ],
+            \ [ "Save\tSpace+w", 'w' ],
+            \ [ "Exit\tSpace+q", 'q' ],
+            \ ])
+
+call quickui#menu#install('Mode', [
+            \ [ "Normal Mode\tkj", '' ],
+            \ [ "Insert Mode\ta", '' ],
+            \ [ "Multicursor Mode\tShift+a", '' ],
+            \ ])
+
+call quickui#menu#install('Edit', [
+            \ [ "Undo\tu", '' ],
+            \ [ "Redo\tShift+u", '' ],
+            \ [ "Format\tSpace+e", 'Autoformat' ],
+            \ [ "Insert Blank Line\tEnter", '' ],
+            \ [ "Insert Comment\t//", '' ],
+            \ [ "Extend HTML Tag\tCtrl+z+,", '' ],
+            \ ])
+
+call quickui#menu#install('View', [
+            \ [ "Cursor to Left\tj", '' ],
+            \ [ "Cursor to Right\tl", '' ],
+            \ [ "Cursor to Up\ti", '' ],
+            \ [ "Cursor to Down\tk", '' ],
+            \ [ "Tab to Next\tm", 'tabn' ],
+            \ [ "Tab to Previous\tn", 'tabN' ],
+            \ [ "Window to Left\tCtrl+j", 'wincmd h' ],
+            \ [ "Window to Right\tCtrl+l", 'wincmd l' ],
+            \ [ "Window to Up\tCtrl+i", 'wincmd k' ],
+            \ [ "Window to Down\tCtrl+k", 'wincmd j' ],
+            \ ])
+
+call quickui#menu#install('Find', [
+            \ [ "File Search\tCtrl+p", 'call LFpathtoggle()' ],
+            \ [ "Function Declare/Definition Preview\tShift+m", 'PreviewTag' ],
+            \ [ "Function Declare/Definition Jump\tShift+n", 'PreviewGoto tabe' ],
+            \ [ "Function Declare/Definition Close\tShift+h", 'PreviewClose' ],
+            \ [ "Keyword in Buffer Search\ts", '' ],
+            \ [ "Keyword in Project Search\tCtrl+f", 'call LFgreptoggle()' ],
+            \ [ "Error/Warning Jump\tf", '' ],
+            \ [ "Git Diff Jump\tShift+f", '' ],
+            \ [ "Man/Cppman Jump\tq", '' ],
+            \ ])
+
+call quickui#menu#install('Share', [
+            \ [ "Publish to Github\tF11", 'call GitUpdate()' ],
+            \ ])
+
+
+call quickui#menu#install('Cpp', [
+            \ [ "Release Build\tF1", 'call Build_Release_Cpp()' ],
+            \ [ "Release Execute\tF2", 'call Execute_Release_Cpp()' ],
+            \ [ "Debug Build\tF3", 'call Build_Debug_Cpp()' ],
+            \ [ "Debug Execute\tF4", 'call Execute_Debug_Cpp()' ],
+            \ [ "Breakpoint Set\tF5", '' ],
+            \ [ "Breakpoint Clear\tF6", '' ],
+            \ [ "Debugger Run\tF7", '' ],
+            \ [ "Debugger Continue\tF8", '' ],
+            \ [ "Next\tF9", '' ],
+            \ [ "Step\tF10", '' ],
+            \ ])
+
+call quickui#menu#install('Python', [
+            \ [ "Interprete Line\tF1", '' ],
+            \ [ "Interprete Multiline\tF2", '' ],
+            \ [ "Interprete File\tF3", '' ],
+            \ ])
+
+call quickui#menu#install('Web', [
+            \ [ "Sync to Browser\tF1", '' ],
+            \ [ "Stop Sync\tF2", '' ],
+            \ ])
+
+call quickui#menu#install('Markdown', [
+            \ [ "Sync to Browser\tF1", '' ],
+            \ [ "Stop Sync\tF2", '' ],
+            \ [ "Extend TOC\tF3", '' ],
+            \ [ "Delete TOC\tF4", '' ],
+            \ ])
+
+" =========================================================== "
 
 " vim-polyglot
 

@@ -47,6 +47,7 @@ yarn cache clean # 清理暫存檔
     "browser-sync": "^x.x.x",
     "browser-sync-close-hook": "^x.x.x",
     "del": "^x.x.x",
+    "firebase-tools": "^x.x.x,
     "gulp": "^x.x.x",
     "gulp-clean-css": "^x.x.x",
     "gulp-concat": "^x.x.x",

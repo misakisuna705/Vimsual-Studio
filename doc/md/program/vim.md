@@ -201,6 +201,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdcommenter',{'on':'<plug>NERDCommenterToggle'}
 
 " 安裝環境插件
+Plug 'skywind3000/vim-quickui'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'ErichDonGubler/vim-sublime-monokai'
@@ -447,6 +448,97 @@ vnoremap <silent> a c
 " 按下/+/鍵增刪註解
 nmap <silent> // <plug>NERDCommenterToggle
 vmap <silent> // <plug>NERDCommenterToggle
+```
+
+```vim
+" vim-quickui
+
+nnoremap <silent> <TAB><TAB> :call quickui#menu#open()<CR>
+
+let g:quickui_color_scheme = 'gruvbox'
+
+call quickui#menu#install('Vim', [
+            \ [ "Tag/Directory Switch\tCtrl+n", 'call NVtoggle()' ],
+            \ [ "REPL/Quickfix Switch\tF12", 'call QTtoggle()' ],
+            \ [ "Save\tSpace+w", 'w' ],
+            \ [ "Exit\tSpace+q", 'q' ],
+            \ ])
+
+call quickui#menu#install('Mode', [
+            \ [ "Normal Mode\tkj", '' ],
+            \ [ "Insert Mode\ta", '' ],
+            \ [ "Multicursor Mode\tShift+a", '' ],
+            \ ])
+
+call quickui#menu#install('Edit', [
+            \ [ "Undo\tu", '' ],
+            \ [ "Redo\tShift+u", '' ],
+            \ [ "Format\tSpace+e", 'Autoformat' ],
+            \ [ "Insert Blank Line\tEnter", '' ],
+            \ [ "Insert Comment\t//", '' ],
+            \ [ "Extend HTML Tag\tCtrl+z+,", '' ],
+            \ ])
+
+call quickui#menu#install('View', [
+            \ [ "Cursor to Left\tj", '' ],
+            \ [ "Cursor to Right\tl", '' ],
+            \ [ "Cursor to Up\ti", '' ],
+            \ [ "Cursor to Down\tk", '' ],
+            \ [ "Tab to Next\tm", 'tabn' ],
+            \ [ "Tab to Previous\tn", 'tabN' ],
+            \ [ "Window to Left\tCtrl+j", 'wincmd h' ],
+            \ [ "Window to Right\tCtrl+l", 'wincmd l' ],
+            \ [ "Window to Up\tCtrl+i", 'wincmd k' ],
+            \ [ "Window to Down\tCtrl+k", 'wincmd j' ],
+            \ ])
+
+call quickui#menu#install('Find', [
+            \ [ "File Search\tCtrl+p", 'call LFpathtoggle()' ],
+            \ [ "Function Declare/Definition Preview\tShift+m", 'PreviewTag' ],
+            \ [ "Function Declare/Definition Jump\tShift+n", 'PreviewGoto tabe' ],
+            \ [ "Function Declare/Definition Close\tShift+h", 'PreviewClose' ],
+            \ [ "Keyword in Buffer Search\ts", '' ],
+            \ [ "Keyword in Project Search\tCtrl+f", 'call LFgreptoggle()' ],
+            \ [ "Error/Warning Jump\tf", '' ],
+            \ [ "Git Diff Jump\tShift+f", '' ],
+            \ [ "Man/Cppman Jump\tq", '' ],
+            \ ])
+
+call quickui#menu#install('Share', [
+            \ [ "Publish to Github\tF11", 'call GitUpdate()' ],
+            \ ])
+
+
+call quickui#menu#install('Cpp', [
+            \ [ "Release Build\tF1", 'call Build_Release_Cpp()' ],
+            \ [ "Release Execute\tF2", 'call Execute_Release_Cpp()' ],
+            \ [ "Debug Build\tF3", 'call Build_Debug_Cpp()' ],
+            \ [ "Debug Execute\tF4", 'call Execute_Debug_Cpp()' ],
+            \ [ "Breakpoint Set\tF5", '' ],
+            \ [ "Breakpoint Clear\tF6", '' ],
+            \ [ "Debugger Run\tF7", '' ],
+            \ [ "Debugger Continue\tF8", '' ],
+            \ [ "Next\tF9", '' ],
+            \ [ "Step\tF10", '' ],
+            \ ])
+
+call quickui#menu#install('Python', [
+            \ [ "Interprete Line\tF1", '' ],
+            \ [ "Interprete Multiline\tF2", '' ],
+            \ [ "Interprete File\tF3", '' ],
+            \ ])
+
+call quickui#menu#install('Web', [
+            \ [ "Sync to Browser\tF1", '' ],
+            \ [ "Stop Sync\tF2", '' ],
+            \ ])
+
+call quickui#menu#install('Markdown', [
+            \ [ "Sync to Browser\tF1", '' ],
+            \ [ "Stop Sync\tF2", '' ],
+            \ [ "Extend TOC\tF3", '' ],
+            \ [ "Delete TOC\tF4", '' ],
+            \ ])
 ```
 
 ```vim

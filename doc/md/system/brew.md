@@ -126,6 +126,7 @@ brew cask upgrade # 升級所有程式
 -   android-studio
 -   appcleaner
 -   calibre
+-   docker
 -   dotnet-sdk
 -   duet
 -   google-backup-and-sync

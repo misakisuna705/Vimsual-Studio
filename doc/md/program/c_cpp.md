@@ -258,7 +258,7 @@ let g:preview_nolist=1
 " 按下shift+m鍵時，垂直分屏後預覽函數標籤
 nnoremap <silent> <S-m> :PreviewTag<CR>
 " 按下shift+n鍵時，開新tab後預覽函數標籤
-nnoremap <silent> <S-n> :PreviewGoto tabe<CR>:PreviewClose<CR>
+nnoremap <silent> <S-n> :PreviewGoto tabe<CR>
 " 按下shift+h鍵時，關閉分屏後跳轉回檔案
 nnoremap <silent> <S-h> :PreviewClose<CR>
 ```
@@ -409,20 +409,27 @@ let g:asyncrun_rootmarks=['.git']
 let g:asyncrun_open=8
 
 " 按下F1鍵時，更新build.ninja並建構c / cpp專案
-function! CompileCpp()
+function Build_Release_Cpp()
     if exists("g:qfix_win")
         AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && cd build/release && ninja
-    else
+    elseif exists("g:Topenflag")
         Tclose
         unlet g:Topenflag
         AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && cd build/release && ninja
         let g:qfix_win = bufnr("$")
+    else
+        AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && cd build/release && ninja
+        let g:qfix_win = bufnr("$")
     endif
 endfunction
-au FileType c,cpp nnoremap <silent> <F1> :call CompileCpp()<CR>
+au FileType c,cpp nnoremap <silent> <F1> :call Build_Release_Cpp()<CR>
 
 " 按下F3鍵時，更新build.ninja並建構c / cpp測試
-au FileType c,cpp nnoremap <silent> <F3> :Tclose<CR>:AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug -Bbuild/test && cd build/test && ninja<CR>
+function Build_Debug_Cpp()
+    Tclose
+    AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug -Bbuild/test && cd build/test && ninja
+endfunction
+au FileType c,cpp nnoremap <silent> <F3> :call Build_Debug_Cpp()<CR>
 ```
 
 ## 6. 執行
@@ -452,7 +459,7 @@ hi NonText ctermfg=242 ctermbg=NONE
 au TerminalOpen * set list listchars=space:_
 
 " 按下F2鍵時，執行c / cpp專案
-function ExeCpp()
+function Execute_Release_Cpp()
     if exists("g:qfix_win")
         cclose
         let save_view = winsaveview()
@@ -470,7 +477,7 @@ function ExeCpp()
         call winrestview(save_view)
     endif
 endfunction
-au FileType c,cpp nnoremap <silent> <F2> :call ExeCpp()<CR>
+au FileType c,cpp nnoremap <silent> <F2> :call Execute_Release_Cpp()<CR>
 
 " 按下F12鍵，切換終端機與quickfix
 function! QTtoggle()
@@ -553,7 +560,16 @@ au TerminalOpen * hi debugPC ctermbg=242
 au BufLeave * nnoremap <S-k> }
 
 " 按下F4鍵時，測試c / cpp專案
-au FileType c,cpp nnoremap <silent> <F4> :cclose<CR>:Tclose<CR>:cd %:p:h<CR>:packadd termdebug<CR>:Termdebug test/%:t:r<CR><C-w><C-h>:aunmenu WinBar<CR>
+function Execute_Debug_Cpp()
+    cclose
+    Tclose
+    cd %:p:h
+    packadd termdebug
+    Termdebug test/%:t:r
+    wincmd h
+    aunmenu WinBar
+endfunction
+au FileType c,cpp nnoremap <silent> <F4> :call Execute_Debug_Cpp()<CR>
 
 " 按下F5鍵時，設置斷點
 au FileType c,cpp nnoremap <silent> <F5> :Break<CR>

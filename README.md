@@ -123,6 +123,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |      android-studio      |
 |        appcleaner        |
 |         calibre          |
+|          docker          |
 |        dotnet-sdk        |
 |           duet           |
 |  google-backup-and-sync  |
@@ -177,6 +178,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |       browser-sync        |
 |  browser-sync-close-hook  |
 |            del            |
+|         firebase          |
 |           gulp            |
 |      gulp-clean-css       |
 |        gulp-concat        |
@@ -327,11 +329,12 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| vim  |        環境         |       檔案        |         文字         |
-| :--: | :-----------------: | :---------------: | :------------------: |
-| 插件 |     indentLine      |     nerdtree      |    vim-easymotion    |
-|      | vim-sublime-monokai | NERD-tree-project | vim-multiple-cursors |
-|      |    lightline.vim    |      LeaderF      |    nerdcommenter     |
+| vim  |     專案環境      |      主題環境       |    瀏覽環境    |       編輯環境       |
+| :--: | :---------------: | :-----------------: | :------------: | :------------------: |
+| 插件 |    vim-rooter     |    vim-polyglot     | vim-easymotion | vim-multiple-cursors |
+|      | NERD-tree-project |     indentLine      |                |    nerdcommenter     |
+|      |     nerdtree      | vim-sublime-monokai |                |                      |
+|      |      LeaderF      |    lightline.vim    |                |                      |
 
 #### 映射
 
