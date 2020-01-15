@@ -3,56 +3,56 @@
 <!-- vim-markdown-toc GFM -->
 
 + [1. 快速安裝](#1-快速安裝)
-    * [1.1 git](#11-git)
-    * [1.2 docker](#12-docker)
+  * [1.1 git](#11-git)
+  * [1.2 docker](#12-docker)
 + [2. 手動配置](#2-手動配置)
-    * [2.1. 系統環境](#21-系統環境)
-        - [2.1.1. macOS](#211-macos)
-            + [xcode](#xcode)
-            + [brew](#brew)
-                * [cellar](#cellar)
-                * [cask](#cask)
-                * [font](#font)
-            + [pip](#pip)
-                * [global](#global)
-            + [yarn](#yarn)
-                * [global](#global-1)
-        - [2.1.2 linux](#212-linux)
-            + [docker](#docker)
-            + [apt](#apt)
-                * [VM](#vm)
-                * [WSL](#wsl)
-            + [brew](#brew-1)
-                * [cellar](#cellar-1)
-    * [2.2. 終端環境](#22-終端環境)
-        - [2.2.1. iterm2](#221-iterm2)
-        - [2.2.2. tmux](#222-tmux)
-        - [2.2.3. zsh](#223-zsh)
-    * [2.3. 編程環境](#23-編程環境)
-        - [2.3.1. vim](#231-vim)
-            + [配置](#配置)
-            + [映射](#映射)
-        - [2.3.2. cpp](#232-cpp)
-            + [配置](#配置-1)
-            + [映射](#映射-1)
-        - [2.3.3. python](#233-python)
-            + [配置](#配置-2)
-            + [映射](#映射-2)
-        - [2.3.4. webpage](#234-webpage)
-            + [配置](#配置-3)
-            + [映射](#映射-3)
-        - [2.3.5. csharp](#235-csharp)
-            + [配置](#配置-4)
-            + [映射](#映射-4)
-        - [2.3.6. markdown](#236-markdown)
-            + [配置](#配置-5)
-            + [映射](#映射-5)
-        - [2.3.7. verilog](#237-verilog)
-            + [配置](#配置-6)
-            + [映射](#映射-6)
-        - [2.3.8. asm](#238-asm)
-            + [配置](#配置-7)
-        - [2.3.9. shell](#239-shell)
+  * [2.1. 系統環境](#21-系統環境)
+    - [2.1.1. macOS](#211-macos)
+      + [xcode](#xcode)
+      + [brew](#brew)
+        * [cellar](#cellar)
+        * [cask](#cask)
+        * [font](#font)
+      + [pip](#pip)
+        * [global](#global)
+      + [yarn](#yarn)
+        * [global](#global-1)
+    - [2.1.2 linux](#212-linux)
+      + [docker](#docker)
+      + [apt](#apt)
+        * [VM](#vm)
+        * [WSL](#wsl)
+      + [brew](#brew-1)
+        * [cellar](#cellar-1)
+  * [2.2. 終端環境](#22-終端環境)
+    - [2.2.1. iterm2](#221-iterm2)
+    - [2.2.2. tmux](#222-tmux)
+    - [2.2.3. zsh](#223-zsh)
+  * [2.3. 編程環境](#23-編程環境)
+    - [2.3.1. vim](#231-vim)
+      + [配置](#配置)
+      + [映射](#映射)
+    - [2.3.2. cpp](#232-cpp)
+      + [配置](#配置-1)
+      + [映射](#映射-1)
+    - [2.3.3. python](#233-python)
+      + [配置](#配置-2)
+      + [映射](#映射-2)
+    - [2.3.4. webpage](#234-webpage)
+      + [配置](#配置-3)
+      + [映射](#映射-3)
+    - [2.3.5. csharp](#235-csharp)
+      + [配置](#配置-4)
+      + [映射](#映射-4)
+    - [2.3.6. markdown](#236-markdown)
+      + [配置](#配置-5)
+      + [映射](#映射-5)
+    - [2.3.7. verilog](#237-verilog)
+      + [配置](#配置-6)
+      + [映射](#映射-6)
+    - [2.3.8. asm](#238-asm)
+      + [配置](#配置-7)
+    - [2.3.9. shell](#239-shell)
 
 <!-- vim-markdown-toc -->
 
@@ -90,7 +90,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 #### brew
 
--   [詳情按此](doc/md/system/brew.md)
+- [詳情按此](doc/md/system/brew.md)
 
 ##### cellar
 
@@ -152,7 +152,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 #### pip
 
--   [詳情按此](doc/md/system/pip.md)
+- [詳情按此](doc/md/system/pip.md)
 
 ##### global
 
@@ -169,16 +169,15 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 #### yarn
 
--   [詳情按此](doc/md/system/yarn.md)
+- [詳情按此](doc/md/system/yarn.md)
 
 ##### global
 
 |          global           |
 | :-----------------------: |
 |       browser-sync        |
-|  browser-sync-close-hook  |
 |            del            |
-|         firebase          |
+|      firebase-tools       |
 |           gulp            |
 |      gulp-clean-css       |
 |        gulp-concat        |
@@ -240,7 +239,7 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### apt
 
--   [詳情按此](doc/md/system/apt.md)
+- [詳情按此](doc/md/system/apt.md)
 
 ##### VM
 
@@ -261,7 +260,7 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### brew
 
--   [詳情按此](doc/md/system/brew.md)
+- [詳情按此](doc/md/system/brew.md)
 
 ##### cellar
 
@@ -289,7 +288,7 @@ docker volume rm 儲區 # 移除已分配儲區
 
 ### 2.2.1. iterm2
 
--   [詳情按此](doc/md/terminal/iterm.md)
+- [詳情按此](doc/md/terminal/iterm.md)
 
 | iterm |                 |
 | :---: | :-------------: |
@@ -299,11 +298,11 @@ docker volume rm 儲區 # 移除已分配儲區
 
 ### 2.2.2. tmux
 
--   [詳情按此](doc/md/terminal/tmux.md)
+- [詳情按此](doc/md/terminal/tmux.md)
 
 ### 2.2.3. zsh
 
--   [詳情按此](doc/md/terminal/zsh.md)
+- [詳情按此](doc/md/terminal/zsh.md)
 
 |         antigen         |
 | :---------------------: |
@@ -325,7 +324,7 @@ docker volume rm 儲區 # 移除已分配儲區
 
 ### 2.3.1. vim
 
--   [詳情按此](doc/md/program/vim.md)
+- [詳情按此](doc/md/program/vim.md)
 
 #### 配置
 
@@ -374,7 +373,7 @@ docker volume rm 儲區 # 移除已分配儲區
 
 ### 2.3.2. cpp
 
--   [詳情按此](doc/md/program/c_cpp.md)
+- [詳情按此](doc/md/program/c_cpp.md)
 
 #### 配置
 
@@ -416,7 +415,7 @@ docker volume rm 儲區 # 移除已分配儲區
 
 ### 2.3.3. python
 
--   [詳情按此](doc/md/program/python.md)
+- [詳情按此](doc/md/program/python.md)
 
 #### 配置
 
@@ -443,25 +442,24 @@ docker volume rm 儲區 # 移除已分配儲區
 
 ### 2.3.4. webpage
 
--   [詳情按此](doc/md/program/webpage.md)
+- [詳情按此](doc/md/program/webpage.md)
 
 #### 配置
 
-| webpage |    環境    |   補全    |           偵錯            | 標籤 |         排版         |          推播           | 調試 |     發佈     |
-| :-----: | :--------: | :-------: | :-----------------------: | :--: | :------------------: | :---------------------: | :--: | :----------: |
-|  依賴   |    yarn    |     x     |         htmlhint          |  x   |       prettier       |           del           |  x   |     git      |
-|         | typescript |     x     |         stylelint         |  x   | typescript-formatter |          gulp           |  x   |      x       |
-|         |     x      |     x     | stylelint-config-standard |  x   |          x           |    gulp-html-replace    |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |      gulp-htmlmin       |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |        gulp-sass        |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |     gulp-clean-css      |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |     gulp-typescript     |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |       gulp-terser       |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |       gulp-concat       |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |      browser-sync       |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           | browser-sync-close-hook |  x   |      x       |
-|  插件   |     x      | coc.nvim  |            ale            |  x   |    vim-autoformat    |         neoterm         |  x   | vim-signify  |
-|         |     x      | emmet-vim |             x             |  x   |          x           |            x            |  x   | asyncrun.vim |
+| webpage |    環境    |   補全    |           偵錯            | 標籤 |         排版         |       推播        | 調試 |     發佈     |
+| :-----: | :--------: | :-------: | :-----------------------: | :--: | :------------------: | :---------------: | :--: | :----------: |
+|  依賴   |    yarn    |     x     |         htmlhint          |  x   |       prettier       |        del        |  x   |     git      |
+|         | typescript |     x     |         stylelint         |  x   | typescript-formatter |       gulp        |  x   |      x       |
+|         |     x      |     x     | stylelint-config-standard |  x   |          x           | gulp-html-replace |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |          x           |   gulp-htmlmin    |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |          x           |     gulp-sass     |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |          x           |  gulp-clean-css   |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |          x           |  gulp-typescript  |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |          x           |    gulp-terser    |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |          x           |    gulp-concat    |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |          x           |   browser-sync    |  x   |      x       |
+|  插件   |     x      | coc.nvim  |            ale            |  x   |    vim-autoformat    |      neoterm      |  x   | vim-signify  |
+|         |     x      | emmet-vim |             x             |  x   |          x           |         x         |  x   | asyncrun.vim |
 
 #### 映射
 
@@ -479,7 +477,7 @@ docker volume rm 儲區 # 移除已分配儲區
 
 ### 2.3.5. csharp
 
--   [詳情按此](doc/md/program/csharp.md)
+- [詳情按此](doc/md/program/csharp.md)
 
 #### 配置
 
@@ -503,7 +501,7 @@ docker volume rm 儲區 # 移除已分配儲區
 
 ### 2.3.6. markdown
 
--   [詳情按此](doc/md/program/markdown.md)
+- [詳情按此](doc/md/program/markdown.md)
 
 #### 配置
 
@@ -530,7 +528,7 @@ docker volume rm 儲區 # 移除已分配儲區
 
 ### 2.3.7. verilog
 
--   [詳情按此](doc/md/program/verilog.md)
+- [詳情按此](doc/md/program/verilog.md)
 
 #### 配置
 
@@ -556,7 +554,7 @@ docker volume rm 儲區 # 移除已分配儲區
 
 ### 2.3.8. asm
 
--   [詳情按此](doc/md/program/assembly.md)
+- [詳情按此](doc/md/program/assembly.md)
 
 #### 配置
 

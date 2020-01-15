@@ -22,7 +22,6 @@ const gulp_terser = require("gulp-terser");
 //browser
 
 const browser_sync = require("browser-sync").create();
-const browser_close = require("browser-sync-close-hook");
 
 //src
 
@@ -155,7 +154,7 @@ function init_server(done) {
   browser_sync.use({
     plugin() {},
     hooks: {
-      "client:js": browser_close
+      "client:js": "(function (bs) {bs.socket.on('disconnect', function (client) { window.close(); });})(___browserSync___);"
     }
   });
 
