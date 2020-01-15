@@ -39,6 +39,9 @@ antigen bundle sindresorhus/pure
 # 安裝 zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+# 安裝zsh-autosuggestions
+antigen bundle zsh-users/zsh-autosuggestions
+
 # antigen 啟用終點
 antigen apply
 ```
