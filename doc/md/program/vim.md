@@ -266,6 +266,8 @@ nnoremap <silent> <C-n> :call NVtoggle()<CR>
 ```vim
 " LeaderF
 
+" 使用popup模式
+let g:Lf_WindowPosition = 'popup'
 " 設定leaderF開檔覆蓋空buffer
 let g:Lf_DiscardEmptyBuffer = 1
 " 設定LeaderF檔案所在目錄
@@ -349,7 +351,7 @@ let g:Lf_PopupPalette = {
             \       'Lf_hl_popup_window': {
             \           'cterm': 'NONE',
             \           'ctermfg': '255',
-            \           'ctermbg': 'NONE'
+            \           'ctermbg': '0'
             \       },
             \       'Lf_hl_popup_category': {
             \           'cterm': 'NONE',
@@ -400,11 +402,9 @@ let g:Lf_PopupPalette = {
             \ }
 
 " 按下control+p鍵時，開啟模糊搜尋文件功能
-nnoremap <silent> <C-p> :LeaderfFile --popup<CR>
-
+nnoremap <silent> <C-p> :LeaderfFile<CR>
 " 按下control+g鍵時，開啟模糊搜索關鍵字功能
-nnoremap <silent> <C-f> :Leaderf rg --popup<CR>
-
+nnoremap <silent> <C-f> :Leaderf rg<CR>
 " 配置快捷鍵
 let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<C-t>': ['<CR>'], '<ESC>': ['<C-p>', '<C-f>'], '<C-p>': ['<C-n>']}
 ```
