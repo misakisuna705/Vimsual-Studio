@@ -321,7 +321,7 @@ nnoremap <silent> <S-h> :PreviewClose<CR>
 " vim-cppman
 
 " 設定manual開啟位置
-let g:cppman_open_mode = "vert botright"
+let g:cppman_open_mode = "vertical"
 
 " 按下q鍵時，開啟cppman
 au FileType c,cpp nnoremap q :Cppman <C-r><C-w><CR>
