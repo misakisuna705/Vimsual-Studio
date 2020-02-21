@@ -31,8 +31,7 @@ Plug 'Yggdroot/LeaderF',{'on':'LeaderfFile','do':'./install.sh'}
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vista.vim',{'on': ['Vista', 'Vista!']}
 Plug 'skywind3000/vim-preview',{'on':['PreviewTag','PreviewQuickfix']}
-Plug 'ludwig/split-manpage.vim',{'for':'c'}
-Plug 'gauteh/vim-cppman',{'on':'Cppman'}
+Plug 'skywind3000/vim-cppman',{'on':'Cppman'}
 
 " =========================================================== "
 
@@ -162,8 +161,8 @@ let g:Lf_ShowHidden=1
 let g:Lf_FollowLinks=1
 " 不搜尋的檔案與路徑
 let g:Lf_WildIgnore = {
-            \ 'dir': ['.adobe', '.android', '.antigen', '.cache', '.config', '.dotfiles', '.dotnet', '.gradle', '.local', '.mitmproxy', '.mono', '.node-gyp', '.npm', '.nuget', '.omnisharp', '.oracle_jre_usage', '.ssh', '.subversion', '.swt', '.templateengine', '.vim', 'Documents', 'Music', 'Pictures', 'Movies', 'Applications', 'Applications (Parallels)', 'Cache', 'Google Drive File Stream', 'bin', 'Library', 'node_modules', 'Server', '.git', 'build', 'dist'],
-            \ 'file': ['.DS_Store']
+            \ 'dir': ['.adobe', '.android', '.antigen', '.cache', '.config', '.dotfiles', '.dotnet', '.gradle', '.local', '.mitmproxy', '.mono', '.node-gyp', '.npm', '.nuget', '.omnisharp', '.oracle_jre_usage', '.ssh', '.subversion', '.swt', '.templateengine', '.vim', 'Documents', 'Music', 'Pictures', 'Movies', 'Applications', 'Applications (Parallels)', 'Cache', 'Google Drive File Stream', 'bin', 'Library', 'node_modules', 'Server', 'temp', '.git', 'build', 'dist'],
+            \ 'file': ['.DS_Store', '*.pvm']
             \}
 
 " 設定LeaderF高度
@@ -319,20 +318,13 @@ nnoremap <silent> <S-h> :PreviewClose<CR>
 
 " =========================================================== "
 
-" split-manpage.vim
-
-" 啟動K鍵
-let g:split_manpage_disable_K = 0
-
-" 按下q鍵時，垂直分屏後開關man
-au FileType c map q <Leader>kl
-
-" =========================================================== "
-
 " vim-cppman
 
-" 按下q鍵時，垂直分屏後開關cppman
-au FileType cpp nnoremap <silent> q :Cppman <cword><CR><CR>:hi Normal ctermbg=NONE<CR>:hi LineNr ctermbg=NONE<CR>:hi CursorLineNr cterm=bold<CR>:hi PMenu ctermfg=0 ctermbg=237<CR>:hi PMenuSbar ctermfg=NONE ctermbg=237<CR>:hi PmenuThumb ctermfg=NONE ctermbg=237<CR>
+" 設定manual開啟位置
+let g:cppman_open_mode = "vert botright"
+
+" 按下q鍵時，開啟cppman
+autocmd FileType c,cpp nnoremap q :Cppman <c-r><c-w><cr>
 
 " =========================================================== "
 

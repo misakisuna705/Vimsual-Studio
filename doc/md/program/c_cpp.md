@@ -26,32 +26,29 @@
     - [3.4. vim-preview](#34-vim-preview)
         + [安裝](#安裝-4)
         + [配置](#配置-3)
-    - [3.5. split-manpage.vim](#35-split-manpagevim)
+    - [3.5. vim-cppman](#35-vim-cppman)
         + [安裝](#安裝-5)
         + [配置](#配置-4)
-    - [3.6. vim-cppman](#36-vim-cppman)
-        + [安裝](#安裝-6)
-        + [配置](#配置-5)
 * [4. 排版](#4-排版)
     - [4.1. astyle](#41-astyle)
     - [4.2. vim-autoformat](#42-vim-autoformat)
-        + [安裝](#安裝-7)
-        + [配置](#配置-6)
+        + [安裝](#安裝-6)
+        + [配置](#配置-5)
 * [5. 編譯](#5-編譯)
     - [5.1. ninja](#51-ninja)
     - [5.2. cmake](#52-cmake)
-        + [安裝](#安裝-8)
+        + [安裝](#安裝-7)
         + [配置（ CMakeLists.txt ）](#配置-cmakeliststxt-)
     - [5.3. asyncrun.vim](#53-asyncrunvim)
-        + [安裝](#安裝-9)
-        + [配置](#配置-7)
+        + [安裝](#安裝-8)
+        + [配置](#配置-6)
 * [6. 執行](#6-執行)
     - [6.0. neoterm](#60-neoterm)
-        + [安裝](#安裝-10)
-        + [配置](#配置-8)
+        + [安裝](#安裝-9)
+        + [配置](#配置-7)
 * [7. 調試](#7-調試)
     - [7.1. gdb](#71-gdb)
-        + [安裝](#安裝-11)
+        + [安裝](#安裝-10)
         + [配置（ .gdbinit ）](#配置-gdbinit-)
         + [命令](#命令-3)
     - [7.2. termdebug](#72-termdebug)
@@ -60,11 +57,11 @@
         + [.gitconfig](#gitconfig)
         + [.gitignore](#gitignore)
     - [8.2. vim-signify](#82-vim-signify)
+        + [安裝](#安裝-11)
+        + [配置](#配置-8)
+    - [8.3. asyncrun.vim](#83-asyncrunvim)
         + [安裝](#安裝-12)
         + [配置](#配置-9)
-    - [8.3. asyncrun.vim](#83-asyncrunvim)
-        + [安裝](#安裝-13)
-        + [配置](#配置-10)
 
 <!-- vim-markdown-toc -->
 
@@ -263,37 +260,22 @@ nnoremap <silent> <S-n> :PreviewGoto tabe<CR>
 nnoremap <silent> <S-h> :PreviewClose<CR>
 ```
 
-### 3.5. split-manpage.vim
+### 3.5. vim-cppman
 
 #### 安裝
 
 ```vim
-Plug 'ludwig/split-manpage.vim',{'for':'c'}
+Plug 'skywind3000/vim-cppman',{'on':'Cppman'}
 ```
 
 #### 配置
 
 ```vim
-" 啟動K鍵
-let g:split_manpage_disable_K = 0
+" 設定manual開啟位置
+let g:cppman_open_mode = "vert botright"
 
-" 按下q鍵時，垂直分屏後預覽man
-au FileType c map q <Leader>kl
-```
-
-### 3.6. vim-cppman
-
-#### 安裝
-
-```vim
-Plug 'gauteh/vim-cppman',{'on':'Cppman'}
-```
-
-#### 配置
-
-```vim
-" 按下q鍵時，垂直分屏後預覽cppman
-au FileType cpp nnoremap <silent> q :Cppman <cword><CR><CR>:hi Normal ctermbg=NONE<CR>:hi LineNr ctermbg=NONE<CR>:hi CursorLineNr cterm=bold<CR>:hi PMenu ctermfg=0 ctermbg=237<CR>:hi PMenuSbar ctermfg=NONE ctermbg=237<CR>:hi PmenuThumb ctermfg=NONE ctermbg=237<CR>
+" 按下q鍵時，開啟cppman
+autocmd FileType c,cpp nnoremap q :Cppman <c-r><c-w><cr>
 ```
 
 ## 4. 排版
