@@ -220,49 +220,71 @@ let g:Lf_StlPalette = {
             \   }
             \ }
 
+let g:Lf_PopupPalette = {
+            \   'dark': {
+            \       'Lf_hl_popup_inputText': {
+            \           'cterm': 'NONE',
+            \           'ctermfg': 'NONE',
+            \           'ctermbg': '0'
+            \       },
+            \       'Lf_hl_popup_window': {
+            \           'cterm': 'NONE',
+            \           'ctermfg': '255',
+            \           'ctermbg': 'NONE'
+            \       },
+            \       'Lf_hl_popup_category': {
+            \           'cterm': 'NONE',
+            \           'ctermfg': '233',
+            \           'ctermbg': '141'
+            \       },
+            \       'Lf_hl_popup_inputMode': {
+            \           'cterm': 'NONE',
+            \           'ctermfg': '233',
+            \           'ctermbg': '81'
+            \       },
+            \       'Lf_hl_popup_fullPathMode': {
+            \           'cterm': 'NONE',
+            \           'ctermfg': '233',
+            \           'ctermbg': '161'
+            \           },
+            \       'Lf_hl_popup_fuzzyMode': {
+            \           'cterm': 'NONE',
+            \           'ctermfg': '233',
+            \           'ctermbg': '141'
+            \       },
+            \       'Lf_hl_popup_normalMode': {
+            \           'cterm': 'NONE',
+            \           'ctermfg': '233',
+            \           'ctermbg': '81'
+            \       },
+            \       'Lf_hl_popup_blank': {
+            \           'cterm': 'NONE',
+            \           'ctermfg': 'NONE',
+            \           'ctermbg': '233'
+            \       },
+            \       'Lf_hl_popup_lineInfo': {
+            \           'cterm': 'NONE',
+            \           'ctermfg': '161',
+            \           'ctermbg': '233'
+            \       },
+            \       'Lf_hl_popup_total': {
+            \           'cterm': 'NONE',
+            \           'ctermfg': '233',
+            \           'ctermbg': '161'
+            \       },
+            \       'Lf_hl_popup_cwd': {
+            \           'cterm': 'NONE',
+            \           'ctermfg': '166',
+            \           'ctermbg': '233'
+            \       }
+            \   }
+            \ }
+
 " 按下control+p鍵時，開啟模糊搜尋文件功能
-function! LFpathtoggle()
-    if exists("g:qfix_win")
-        cclose
-        wincmd h
-        wincmd k
-        LeaderfFile
-        unlet g:qfix_win
-    elseif exists("g:Topenflag")
-        Tclose
-        wincmd h
-        wincmd k
-        LeaderfFile
-        unlet g:Topenflag
-    else
-        wincmd h
-        wincmd k
-        LeaderfFile
-    endif
-endfunction
-nnoremap <silent> <C-p> :call LFpathtoggle()<CR>
+nnoremap <silent> <C-p> :LeaderfFile --popup<CR>
 
 " 按下control+g鍵時，開啟模糊搜索關鍵字功能
-function! LFgreptoggle()
-    if exists("g:qfix_win")
-        cclose
-        wincmd h
-        wincmd k
-        Leaderf rg
-        unlet g:qfix_win
-    elseif exists("g:Topenflag")
-        Tclose
-        wincmd h
-        wincmd k
-        Leaderf rg
-        unlet g:Topenflag
-    else
-        wincmd h
-        wincmd k
-        Leaderf rg
-    endif
-endfunction
-nnoremap <silent> <C-f> :call LFgreptoggle()<CR>
+nnoremap <silent> <C-f> :Leaderf rg --popup<CR>
 
 " 配置快捷鍵
 let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<C-t>': ['<CR>'], '<ESC>': ['<C-p>', '<C-f>'], '<C-p>': ['<C-n>']}
