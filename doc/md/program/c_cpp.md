@@ -275,7 +275,7 @@ Plug 'skywind3000/vim-cppman',{'on':'Cppman'}
 let g:cppman_open_mode = "vert botright"
 
 " 按下q鍵時，開啟cppman
-autocmd FileType c,cpp nnoremap q :Cppman <c-r><c-w><cr>
+au FileType c,cpp nnoremap q :Cppman <C-r><C-w><CR>
 ```
 
 ## 4. 排版
