@@ -60,7 +60,6 @@ yarn cache clean # 清理暫存檔
     "stylelint": "^x.x.x",
     "stylelint-config-standard": "^x.x.x",
     "typescript": "^x.x.x",
-    "typescript-formatter": "^x.x.x"
   }
 }
 ```

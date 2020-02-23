@@ -533,7 +533,8 @@ let g:formatters_html=['prettier']
 let g:formatters_css = ['prettier']
 let g:formatters_scss=['prettier']
 let g:formatters_javascript=['prettier']
-let g:formatters_typescript = ['tsfmt']
+let g:formatters_typescript = ['prettier']
+let g:formatters_json = ['prettier']
 let g:formatters_markdown=['prettier']
 
 " 在web檔案中，按下tab鍵時，電腦顯示為2個空格(不一定辨認為space語法)

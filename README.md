@@ -192,7 +192,6 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |         stylelint         |
 | stylelint-config-standard |
 |        typescript         |
-|   typescript-formatter    |
 
 ### 2.1.2 linux
 
@@ -447,20 +446,20 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| webpage |    環境    |   補全    |           偵錯            | 標籤 |         排版         |       推播        | 調試 |     發佈     |
-| :-----: | :--------: | :-------: | :-----------------------: | :--: | :------------------: | :---------------: | :--: | :----------: |
-|  依賴   |    yarn    |     x     |         htmlhint          |  x   |       prettier       |        del        |  x   |     git      |
-|         | typescript |     x     |         stylelint         |  x   | typescript-formatter |       gulp        |  x   |      x       |
-|         |     x      |     x     | stylelint-config-standard |  x   |          x           | gulp-html-replace |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |   gulp-htmlmin    |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |     gulp-sass     |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |  gulp-clean-css   |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |  gulp-typescript  |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |    gulp-terser    |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |    gulp-concat    |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |          x           |   browser-sync    |  x   |      x       |
-|  插件   |     x      | coc.nvim  |            ale            |  x   |    vim-autoformat    |      neoterm      |  x   | vim-signify  |
-|         |     x      | emmet-vim |             x             |  x   |          x           |         x         |  x   | asyncrun.vim |
+| webpage |    環境    |   補全    |           偵錯            | 標籤 |      排版      |       推播        | 調試 |     發佈     |
+| :-----: | :--------: | :-------: | :-----------------------: | :--: | :------------: | :---------------: | :--: | :----------: |
+|  依賴   |    yarn    |     x     |         htmlhint          |  x   |    prettier    |        del        |  x   |     git      |
+|         | typescript |     x     |         stylelint         |  x   |       x        |       gulp        |  x   |      x       |
+|         |     x      |     x     | stylelint-config-standard |  x   |       x        | gulp-html-replace |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |       x        |   gulp-htmlmin    |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |       x        |     gulp-sass     |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |       x        |  gulp-clean-css   |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |       x        |  gulp-typescript  |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |       x        |    gulp-terser    |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |       x        |    gulp-concat    |  x   |      x       |
+|         |     x      |     x     |             x             |  x   |       x        |   browser-sync    |  x   |      x       |
+|  插件   |     x      | coc.nvim  |            ale            |  x   | vim-autoformat |      neoterm      |  x   | vim-signify  |
+|         |     x      | emmet-vim |             x             |  x   |       x        |         x         |  x   | asyncrun.vim |
 
 #### 映射
 
