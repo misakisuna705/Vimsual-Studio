@@ -64,7 +64,6 @@ Plug 'Chiel92/vim-autoformat',{'on':'Autoformat'}
 Plug 'fisadev/vim-isort',{'on':'Isort'}
 Plug 'vhda/verilog_systemverilog.vim',{'for':'verilog_systemverilog'}
 Plug 'mzlogin/vim-markdown-toc', {'on': ['GenTocGFM', 'RemoveToc']}
-Plug 'philj56/vim-asm-indent', {'for': 'asm'}
 
 " =========================================================== "
 
@@ -539,7 +538,11 @@ let g:formatters_typescript = ['prettier']
 let g:formatters_json = ['prettier']
 let g:formatters_markdown=['prettier']
 
-" 載入shfmt排版shell檔案
+" 載入asm_format排版asm檔案
+let g:formatdef_asm_format = '"asmfmt"'
+let g:formatters_asm = ['asm_format']
+
+" 載入shfmt排版sh檔案
 let g:formatters_sh = ['shfmt']
 
 " 在web檔案中，按下tab鍵時，電腦顯示為2個空格(不一定辨認為space語法)

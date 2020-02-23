@@ -563,7 +563,7 @@ docker volume rm 儲區 # 移除已分配儲區
 | asm  |      排版      |
 | :--: | :------------: |
 | 依賴 |       x        |
-| 插件 | vim-asm-indent |
+| 插件 | vim-autoformat |
 
 ### 2.3.9. shell
 
