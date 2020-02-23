@@ -41,7 +41,7 @@ Plug 'easymotion/vim-easymotion',{'on':'<Plug>(easymotion-sn)'}
 " =========================================================== "
 
 " 安裝編輯輔助插件
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'scrooloose/nerdcommenter',{'on':'<plug>NERDCommenterToggle'}
 
 " =========================================================== "
@@ -362,32 +362,30 @@ nmap s <Plug>(easymotion-sn)
 
 " ==================================================================================================================== "
 
-" vim-multiple-cursors
+" mg979/vim-visual-multi
+
+" 關閉預設訊息
+let g:VM_set_statusline = 0
+let g:VM_silent_exit = 1
 
 " 關閉預設映射
-let g:multi_cursor_use_default_mapping=0
+let g:VM_default_mappings = 0
+let g:VM_maps = {}
 
 " 全選多光標關鍵字
-let g:multi_cursor_select_all_word_key = '<S-a>'
+let g:VM_maps['Visual All']  = '<S-a>'
 " 離開多光標模式
-let g:multi_cursor_quit_key = 'kj'
+fun! VM_Start()
+    nmap <buffer> <C-C> <Esc>
+    imap <buffer> <C-C> <Esc>
+endfun
 
-" 避開插件衝突
-function Multiple_cursors_before()
-    if exists("g:ycm_filetype_whitelist")
-        let s:old_ycm_whitelist = g:ycm_filetype_whitelist
-        let g:ycm_filetype_whitelist = {}
-    endif
-endfunction
-
-function Multiple_cursors_after()
-    if exists("g:ycm_filetype_whitelist")
-        let g:ycm_filetype_whitelist = s:old_ycm_whitelist
-    endif
-endfunction
-
+fun! VM_Exit()
+    nunmap <buffer> <C-C>
+    iunmap <buffer> <C-C>
+endfun
 " 按下a鍵時，開始多光標編輯
-vnoremap <silent> a c
+let g:VM_maps['c'] = 'a'
 
 " =========================================================== "
 
