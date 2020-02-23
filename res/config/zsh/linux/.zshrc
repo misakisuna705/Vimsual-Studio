@@ -1,3 +1,5 @@
+# zmodload zsh/zprof
+
 if grep -q Microsoft /proc/version; then
     [ "$(ls /mnt/e/)" ] || sudo mount -t drvfs E: /mnt/e
 fi
@@ -7,9 +9,10 @@ export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 
-umask 002
+export GOPATH="${HOME}/go"
+export PATH="${GOPATH}/bin:${PATH}"
 
-# zmodload zsh/zprof
+umask 002
 
 # antigen啟用
 source /home/linuxbrew/.linuxbrew/Cellar/antigen/2.2.3/share/antigen/antigen.zsh
