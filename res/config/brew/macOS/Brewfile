@@ -6,7 +6,7 @@ tap "homebrew/core"
 tap "mattisg/mattisg"
 tap "universal-ctags/universal-ctags"
 cask "osxfuse"
-brew "allegro", link: false
+brew "allegro"
 brew "antigen"
 brew "astyle"
 brew "cmake"
