@@ -523,6 +523,8 @@ let g:formatdef_misakisuna_astyle='"astyle --style=google --indent-switches --in
 let g:formatters_c=['misakisuna_astyle']
 let g:formatters_cpp=['misakisuna_astyle']
 let g:formatters_cs=['misakisuna_astyle']
+" 載入cmake_format排版cmake檔案
+let g:formatters_cmake = ['cmake_format']
 
 " 載入yapf的google風格排版py檔案
 let g:formatdef_misakisuna_yapf='"yapf --style=''{based_on_style: google, column_limit: 150}''"'

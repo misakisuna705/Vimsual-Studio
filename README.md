@@ -157,16 +157,17 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 
 ##### global
 
-| global  |
-| :-----: |
-| cppman  |
-| flake8  |
-| ipython |
-|  isort  |
-|  jedi   |
-| lizard  |
-| pipenv  |
-|  yapf   |
+|    global    |
+| :----------: |
+| cmake_format |
+|    cppman    |
+|    flake8    |
+|   ipython    |
+|    isort     |
+|     jedi     |
+|    lizard    |
+|    pipenv    |
+|     yapf     |
 
 #### yarn
 
@@ -381,7 +382,7 @@ docker volume rm 儲區 # 移除已分配儲區
 | c / c++ | 環境 |     補全      |   偵錯   |      標籤       |      排版      |     編譯     |  執行   |   調試    |     發佈     |
 | :-----: | :--: | :-----------: | :------: | :-------------: | :------------: | :----------: | :-----: | :-------: | :----------: |
 |  依賴   |  x   |     clang     |  clang   | universal-ctags |     astyle     |    clang     |    x    |    gdb    |     git      |
-|         |  x   |     cmake     | cppcheck |     cppman      |       x        |    ninja     |    x    |     x     |      x       |
+|         |  x   |     cmake     | cppcheck |     cppman      |  cmake_format  |    ninja     |    x    |     x     |      x       |
 |         |  x   |       x       |    x     |        x        |       x        |    cmake     |    x    |     x     |      x       |
 |  插件   |  x   | YouCompleteMe |   ale    |  vim-gutentags  | vim-autoformat | asyncrun.vim | neoterm | termdebug | vim-signify  |
 |         |  x   | YCM-Generator |    x     |   vim-preview   |       x        |      x       |    x    |     x     | asyncrun.vim |

@@ -31,7 +31,8 @@
         + [配置](#配置-4)
 * [4. 排版](#4-排版)
     - [4.1. astyle](#41-astyle)
-    - [4.2. vim-autoformat](#42-vim-autoformat)
+    - [4.2. cmake_format](#42-cmake_format)
+    - [4.3. vim-autoformat](#43-vim-autoformat)
         + [安裝](#安裝-6)
         + [配置](#配置-5)
 * [5. 編譯](#5-編譯)
@@ -286,7 +287,13 @@ au FileType c,cpp nnoremap q :Cppman <C-r><C-w><CR>
 brew install astyle # 安裝astyle
 ```
 
-### 4.2. vim-autoformat
+### 4.2. cmake_format
+
+```zsh
+pip3 install cmake_format
+```
+
+### 4.3. vim-autoformat
 
 #### 安裝
 
@@ -307,6 +314,8 @@ nnoremap <silent> <SPACE>e :Autoformat
 let g:formatdef_misakisuna_astyle='"astyle --style=google --indent-switches --indent-namespaces -p"'
 let g:formatters_c=['xxx_astyle']
 let g:formatters_cpp=['xxx_astyle']
+" 載入cmake_format排版cmake檔案
+let g:formatters_cmake = ['cmake_format']
 ```
 
 ## 5. 編譯

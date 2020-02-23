@@ -40,6 +40,7 @@ pip3 check # 檢查插件版本相容性
 
 ## 3. 插件
 
+-   cmake_format
 -   cppman
 -   flake8
 -   ipython
