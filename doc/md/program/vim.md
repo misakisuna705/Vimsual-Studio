@@ -27,9 +27,6 @@ brew install vim # 安裝vim
 ### 2.1. 系統
 
 ```vim
-" 設定js檔案類型
-au BufNewFile,BufRead *.js setlocal filetype=javascript
-
 " 不產生暫存檔
 set noswapfile
 " 切換buffer不關閉文件

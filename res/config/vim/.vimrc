@@ -995,9 +995,6 @@ nnoremap <silent> <SPACE>q :call Bye()
 
 " ==================================================================================================================== "
 
-" 設定js檔案類型
-au BufNewFile,BufRead *.js setlocal filetype=javascript
-
 " 不產生暫存檔
 set noswapfile
 " 切換buffer不關閉文件
