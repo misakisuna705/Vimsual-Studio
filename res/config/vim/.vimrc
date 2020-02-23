@@ -539,6 +539,9 @@ let g:formatters_typescript = ['prettier']
 let g:formatters_json = ['prettier']
 let g:formatters_markdown=['prettier']
 
+" 載入shfmt排版shell檔案
+let g:formatters_sh = ['shfmt']
+
 " 在web檔案中，按下tab鍵時，電腦顯示為2個空格(不一定辨認為space語法)
 au FileType html,css,scss,javascript,json,yaml set softtabstop=2
 " 在web檔案中，使用tab語法時，電腦顯示為2個空格

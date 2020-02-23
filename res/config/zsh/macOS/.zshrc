@@ -16,4 +16,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 # antigen啟用終點
 antigen apply
 
+export GOPATH="${HOME}/go"
+export PATH="${GOPATH}/bin:${PATH}"
+
 # zprof

@@ -103,6 +103,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |      cmake      |
 |    cppcheck     |
 |       gdb       |
+|       go        |
 | icarus-verilog  |
 |      nasm       |
 |      ninja      |
@@ -569,6 +570,8 @@ docker volume rm 儲區 # 移除已分配儲區
 shellcheck
 
 Plug 'w0rp/ale',{'for':['sh']}
+
+shfmt
 
 ### 2.4.0. ios
 

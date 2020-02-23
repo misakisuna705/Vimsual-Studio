@@ -1,6 +1,6 @@
 #!/bin/bash
 
-main () {
+main() {
     bash "$HOME/.dotfiles/src/env.sh"
     bash "$HOME/.dotfiles/src/brew.sh"
     bash "$HOME/.dotfiles/src/symlink.sh"

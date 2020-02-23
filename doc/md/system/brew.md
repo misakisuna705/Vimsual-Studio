@@ -65,6 +65,7 @@ brew bundle dump --force # 複寫Brewfile
 -   cmake
 -   cppcheck
 -   gdb
+-   go
 -   icarus-verilog
 -   nasm
 -   ninja
