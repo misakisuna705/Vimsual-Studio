@@ -448,6 +448,8 @@ let g:VM_maps = {}
 
 " 全選多光標關鍵字
 let g:VM_maps['Visual All']  = '<S-a>'
+let g:VM_maps['Find Under']  = ''
+let g:VM_maps['Find Subword Under']  = ''
 " 離開多光標模式
 fun! VM_Start()
     nmap <buffer> <C-C> <Esc>

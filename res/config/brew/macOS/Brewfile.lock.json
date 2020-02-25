@@ -2,19 +2,19 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "2eac7b34c2739277cdec7f05db2c0cb9fba46cdb"
+        "revision": "035380823bce8965d7e965df97e47db142958d26"
       },
       "homebrew/bundle": {
         "revision": "04a8b37bbdd9bb801a5fde72fd82232846cf2b69"
       },
       "homebrew/cask": {
-        "revision": "2eac7b34c2739277cdec7f05db2c0cb9fba46cdb"
+        "revision": "035380823bce8965d7e965df97e47db142958d26"
       },
       "homebrew/cask-fonts": {
-        "revision": "1dd9f144253e8b2f067eb9c4dfdc3ee8e226a680"
+        "revision": "fca9a79d88b9b9da43d47b0b959854fc8506ac69"
       },
       "homebrew/core": {
-        "revision": "ae7c184b597c88df00655d2c94955f4e993d27f1"
+        "revision": "e8a015d68bf26aa1bee92003a7d8f7fc376cb3be"
       },
       "mattisg/mattisg": {
         "revision": "a65b6c99617598d79a9a0957192569bb9b6b6d62"
@@ -49,7 +49,7 @@
         }
       },
       "calibre": {
-        "version": "4.11.1",
+        "version": "4.11.2",
         "options": {
           "full_name": "calibre"
         }
@@ -599,7 +599,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.6",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "ae7c184b597c88df00655d2c94955f4e993d27f1",
+        "Homebrew/homebrew-core": "e8a015d68bf26aa1bee92003a7d8f7fc376cb3be",
         "CLT": "11.0.33.8",
         "Xcode": "11.3.1",
         "macOS": "10.15.2"
