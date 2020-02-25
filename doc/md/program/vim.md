@@ -435,6 +435,9 @@ nmap s <Plug>(easymotion-sn)
 ```vim
 " mg979/vim-visual-multi
 
+" 游標復位
+let g:VM_reselect_first = 1
+
 " 關閉預設訊息
 let g:VM_set_statusline = 0
 let g:VM_silent_exit = 1
