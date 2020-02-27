@@ -21,56 +21,56 @@ call plug#begin('~/.vim/plugged')
 " =========================================================== "
 
 " 安裝檔案搜尋插件
-Plug 'airblade/vim-rooter',{'on':'Rooter'}
-Plug 'scrooloose/nerdtree',{'on': ['NERDTreeVCS', 'NERDTreeClose']}
-Plug 'Yggdroot/LeaderF',{'on':'LeaderfFile','do':'./install.sh'}
+Plug 'airblade/vim-rooter', {'on': 'Rooter'}
+Plug 'scrooloose/nerdtree', {'on': ['NERDTreeVCS', 'NERDTreeClose']}
+Plug 'Yggdroot/LeaderF', {'on': 'LeaderfFile', 'do': './install.sh'}
 
 " =========================================================== "
 
 " 安裝標籤搜尋插件
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'liuchengxu/vista.vim',{'on': ['Vista', 'Vista!']}
-Plug 'skywind3000/vim-preview',{'on':['PreviewTag','PreviewQuickfix']}
-Plug 'skywind3000/vim-cppman',{'on':'Cppman'}
+Plug 'liuchengxu/vista.vim', {'on': ['Vista', 'Vista!']}
+Plug 'skywind3000/vim-preview', {'on': ['PreviewTag', 'PreviewQuickfix']}
+Plug 'skywind3000/vim-cppman', {'on': 'Cppman'}
 
 " =========================================================== "
 
 " 安裝關鍵字搜尋插件
-Plug 'easymotion/vim-easymotion',{'on':'<Plug>(easymotion-sn)'}
+Plug 'easymotion/vim-easymotion', {'on': '<Plug>(easymotion-sn)'}
 
 " =========================================================== "
 
 " 安裝編輯輔助插件
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'scrooloose/nerdcommenter',{'on':'<plug>NERDCommenterToggle'}
+Plug 'scrooloose/nerdcommenter', {'on': '<plug>NERDCommenterToggle'}
 
 " =========================================================== "
 
 " 安裝代碼補全插件
-Plug 'Valloric/YouCompleteMe',{'for':['c','cpp','python','verilog_systemverilog'],'do':'./install.py --all'}
-Plug 'rdnetto/YCM-Generator',{'on':'YcmGenerateConfig','branch': 'stable'}
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'for':['html','css','scss','javascript','typescript','json','yaml','cs','swift']}
-Plug 'mattn/emmet-vim', {'for':'html'}
+Plug 'Valloric/YouCompleteMe', {'for': ['c', 'cpp', 'python', 'verilog_systemverilog'], 'do': './install.py --all'}
+Plug 'rdnetto/YCM-Generator', {'on': 'YcmGenerateConfig', 'branch': 'stable'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['html', 'css', 'scss', 'javascript', 'typescript', 'json', 'yaml', 'cs', 'swift']}
+Plug 'mattn/emmet-vim', {'for': 'html'}
 
 " =========================================================== "
 
 " 安裝代碼偵錯插件
-Plug 'w0rp/ale',{'on':'ALELint'}
+Plug 'w0rp/ale', {'on': 'ALELint'}
 
 " =========================================================== "
 
 " 安裝代碼排版插件
-Plug 'Chiel92/vim-autoformat',{'on':'Autoformat'}
-Plug 'fisadev/vim-isort',{'on':'Isort'}
-Plug 'vhda/verilog_systemverilog.vim',{'for':'verilog_systemverilog'}
+Plug 'Chiel92/vim-autoformat', {'on': 'Autoformat'}
+Plug 'fisadev/vim-isort', {'on': 'Isort'}
+Plug 'vhda/verilog_systemverilog.vim', {'for': 'verilog_systemverilog'}
 Plug 'mzlogin/vim-markdown-toc', {'on': ['GenTocGFM', 'RemoveToc']}
 
 " =========================================================== "
 
 " 安裝代碼推播插件
-Plug 'skywind3000/asyncrun.vim',{'on':'AsyncRun'}
-Plug 'iamcco/markdown-preview.vim',{'on':'<Plug>MarkdownPreview'}
-Plug 'iamcco/mathjax-support-for-mkdp',{'on':'<Plug>MarkdownPreview'}
+Plug 'skywind3000/asyncrun.vim', {'on': 'AsyncRun'}
+Plug 'iamcco/markdown-preview.vim', {'on': '<Plug>MarkdownPreview'}
+Plug 'iamcco/mathjax-support-for-mkdp', {'on': '<Plug>MarkdownPreview'}
 Plug 'kassio/neoterm', {'on': ['T', 'Topen', 'Tclose', 'Tclear']}
 
 " =========================================================== "
@@ -107,26 +107,26 @@ au BufLeave * Rooter
 " nerdtree
 
 " 顯示隱藏檔案
-let g:NERDTreeShowHidden=1
+let g:NERDTreeShowHidden = 1
 " 不顯示的檔案
-let NERDTreeIgnore = ['.DS_Store','^build$']
+let NERDTreeIgnore = ['.DS_Store', '^build$']
 
 " 設定nerdtree位置
-let g:NERDTreeWinPos='right'
+let g:NERDTreeWinPos = 'right'
 " 設定nertree寬度
-let g:NERDTreeWinSize=25
+let g:NERDTreeWinSize = 25
 " 不顯示nerdtree的Press ? for help提醒
-let NERDTreeMinimalUI=1
+let NERDTreeMinimalUI = 1
 " 開啟檔案後關閉nerdtree
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen = 1
 
 " 按下control+o鍵時，垂直分屏後開啟舊檔
-let g:NERDTreeMapOpenVSplit='<C-o>'
-let g:NERDTreeCustomOpenArgs = {'file':{'where':'t'}}
+let g:NERDTreeMapOpenVSplit = '<C-o>'
+let g:NERDTreeCustomOpenArgs = {'file': {'where': 't'}}
 " 重新映射快速鍵以釋放按鍵
-let g:NERDTreeMapOpenSplit='xxxi'
-let g:NERDTreeMapJumpNextSibling='xxxcj'
-let g:NERDTreeMapJumpPrevSibling='xxxck'
+let g:NERDTreeMapOpenSplit = 'xxxi'
+let g:NERDTreeMapJumpNextSibling = 'xxxcj'
+let g:NERDTreeMapJumpPrevSibling = 'xxxck'
 
 " 按下control+n鍵時，切換nerdtree與vista.vim
 function! NVtoggle()
@@ -151,15 +151,15 @@ let g:Lf_WindowPosition = 'popup'
 " 設定leaderF開檔覆蓋空buffer
 let g:Lf_DiscardEmptyBuffer = 1
 " 設定LeaderF檔案所在目錄
-let g:Lf_CacheDirectory=expand('~/.cache')
+let g:Lf_CacheDirectory = expand('~/.cache')
 " 設定LeaderF搜尋所在專案之根目錄
-let g:Lf_WorkingDirectoryMode='Ac'
-let g:Lf_RootMarkers=['.git']
-let g:Lf_UseVersionControlTool=0
+let g:Lf_WorkingDirectoryMode = 'Ac'
+let g:Lf_RootMarkers = ['.git']
+let g:Lf_UseVersionControlTool = 0
 " 搜尋隱藏檔案
-let g:Lf_ShowHidden=1
+let g:Lf_ShowHidden = 1
 " 搜尋symlink插件
-let g:Lf_FollowLinks=1
+let g:Lf_FollowLinks = 1
 " 不搜尋的檔案與路徑
 let g:Lf_WildIgnore = {
             \ 'dir': ['.adobe', '.android', '.antigen', '.cache', '.config', '.dotfiles', '.dotnet', '.gradle', '.local', '.mitmproxy', '.mono', '.node-gyp', '.npm', '.nuget', '.omnisharp', '.oracle_jre_usage', '.ssh', '.subversion', '.swt', '.templateengine', '.Trash', '.vim', 'Documents', 'Music', 'Pictures', 'Movies', 'Applications', 'Applications (Parallels)', 'Cache', 'go', 'Google Drive File Stream', 'bin', 'Library', 'node_modules', 'Server', 'temp', '.git', 'build', 'dist'],
@@ -167,16 +167,16 @@ let g:Lf_WildIgnore = {
             \}
 
 " 設定LeaderF高度
-let g:Lf_WindowHeight=0.18
+let g:Lf_WindowHeight = 0.18
 " 隱藏LeaderF的help提醒
-let g:Lf_HideHelp=1
+let g:Lf_HideHelp = 1
 " 顯示模糊搜索文件的絕對路徑
 let g:Lf_ShowRelativePath = 0
 " 設定LeaderF預覽視窗
 let g:Lf_PreviewInPopup = 1
 let g:Lf_PreviewHorizontalPosition = 'right'
 " 設定LeaderF主題
-let g:Lf_StlSeparator = {'left':'', 'right': ''}
+let g:Lf_StlSeparator = {'left': '', 'right': ''}
 
 let g:Lf_StlPalette = {
             \   'stlName': {
@@ -184,36 +184,43 @@ let g:Lf_StlPalette = {
             \       'ctermfg': '233',
             \       'ctermbg': '81'
             \   },
+            \
             \   'stlCategory': {
             \       'cterm': 'NONE',
             \       'ctermfg': '233',
             \       'ctermbg': '141'
             \   },
+            \
             \   'stlFullPathMode': {
             \       'cterm': 'NONE',
             \       'ctermfg': '233',
             \       'ctermbg': '161'
             \   },
+            \
             \   'stlFuzzyMode': {
             \       'cterm': 'NONE',
             \       'ctermfg': '233',
             \       'ctermbg': '141'
             \   },
+            \
             \   'stlCwd': {
             \       'cterm': 'NONE',
             \       'ctermfg': '166',
             \       'ctermbg': '233'
             \   },
+            \
             \   'stlBlank': {
             \       'cterm': 'NONE',
             \       'ctermfg': 'NONE',
             \       'ctermbg': '233'
             \   },
+            \
             \   'stlLineInfo': {
             \       'cterm': 'NONE',
             \       'ctermfg': '161',
             \       'ctermbg': '233'
             \   },
+            \
             \   'stlTotal': {
             \       'cterm': 'NONE',
             \       'ctermfg': '233',
@@ -228,51 +235,61 @@ let g:Lf_PopupPalette = {
             \           'ctermfg': 'NONE',
             \           'ctermbg': '0'
             \       },
+            \
             \       'Lf_hl_popup_window': {
             \           'cterm': 'NONE',
             \           'ctermfg': '255',
             \           'ctermbg': '0'
             \       },
+            \
             \       'Lf_hl_popup_category': {
             \           'cterm': 'NONE',
             \           'ctermfg': '233',
             \           'ctermbg': '141'
             \       },
+            \
             \       'Lf_hl_popup_inputMode': {
             \           'cterm': 'NONE',
             \           'ctermfg': '233',
             \           'ctermbg': '81'
             \       },
+            \
             \       'Lf_hl_popup_fullPathMode': {
             \           'cterm': 'NONE',
             \           'ctermfg': '233',
             \           'ctermbg': '161'
             \           },
+            \
             \       'Lf_hl_popup_fuzzyMode': {
             \           'cterm': 'NONE',
             \           'ctermfg': '233',
             \           'ctermbg': '141'
             \       },
+            \
             \       'Lf_hl_popup_normalMode': {
             \           'cterm': 'NONE',
             \           'ctermfg': '233',
             \           'ctermbg': '81'
             \       },
+            \
             \       'Lf_hl_popup_blank': {
             \           'cterm': 'NONE',
             \           'ctermfg': 'NONE',
             \           'ctermbg': '233'
             \       },
+            \
             \       'Lf_hl_popup_lineInfo': {
             \           'cterm': 'NONE',
             \           'ctermfg': '161',
             \           'ctermbg': '233'
             \       },
+            \
             \       'Lf_hl_popup_total': {
             \           'cterm': 'NONE',
             \           'ctermfg': '233',
             \           'ctermbg': '161'
             \       },
+            \
             \       'Lf_hl_popup_cwd': {
             \           'cterm': 'NONE',
             \           'ctermfg': '166',
@@ -328,7 +345,7 @@ let g:vista_close_on_jump = 1
 " vim-preview
 
 " 使預覽視窗不要出現在buffer列表
-let g:preview_nolist=1
+let g:preview_nolist = 1
 
 " 按下shift+m鍵時，垂直分屏後預覽函數標籤
 nnoremap <silent> <S-m> :PreviewTag<CR>
@@ -405,27 +422,27 @@ vmap <silent> // <plug>NERDCommenterToggle
 " YouCompleteMe
 
 " 設定.ycm_extra_conf.py預設位置
-let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " 自動偵測.ycm_extra_conf.py
-let g:ycm_confirm_extra_conf=0
+let g:ycm_confirm_extra_conf = 0
 
 " 輸入兩個字元時，開始匹配標籤補全視窗
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_min_num_identifier_candidate_chars = 2
 " 輸入兩個字元時，開始匹配語法/語意補全視窗
-let g:ycm_semantic_triggers =  {
+let g:ycm_semantic_triggers = {
             \ 'c,cpp,python': ['re!\w{2}'],
             \ }
 
 " 不顯示補全定義
 set completeopt-=preview
 " 不用YCM進行實時語法偵錯(使用ale)
-let g:ycm_show_diagnostics_ui=0
-let g:ycm_enable_diagnostic_signs=0
-let g:ycm_enable_diagnostic_highlighting=0
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 0
 
 " 按下enter鍵時，自動選中當前選項，並關閉補全視窗
-let g:ycm_key_list_stop_completion=['<CR>']
+let g:ycm_key_list_stop_completion = ['<CR>']
 
 " 按下begin+enter鍵時，自動換行縮進補全end
 au FileType verilog_systemverilog inoremap begin<CR> begin<CR>end<ESC><UP>$<LEFT><LEFT><LEFT><LEFT><LEFT><LEFT>
@@ -437,7 +454,7 @@ au FileType verilog_systemverilog inoremap (<CR> (<CR>);<ESC><UP>o
 " coc.nvim
 
 " 安裝coc插件
-let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-omnisharp']
+let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-omnisharp', 'coc-sourcekit']
 
 " 按下tab鍵或shift+tab鍵時，上下瀏覽補全視窗
 inoremap <silent><expr> <TAB>
@@ -458,15 +475,15 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " emmet-vim
 
 " 按下Control+z+,鍵時，自動補全標籤
-let g:user_emmet_leader_key='<C-z>'
+let g:user_emmet_leader_key = '<C-z>'
 
 " ==================================================================================================================== "
 
 " ale
 
 " 不進行實時偵錯，保存時才偵錯
-let g:ale_lint_on_text_changed=0
-let g:ale_lint_on_save=0
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_save = 0
 au FileType c,cpp,python,html,css,scss,javascript,typescript,verilog_systemverilog,sh
             \ au! BufWrite <buffer> ALELint
 
@@ -498,8 +515,8 @@ let g:ale_linters = {
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 
 " 設定符號
-let g:ale_sign_error='✗'
-let g:ale_sign_warning='⚡'
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚡'
 " 符號背景使用iterm
 hi clear ALEErrorSign
 hi clear ALEWarningSign
@@ -521,25 +538,25 @@ nmap f <Plug>(ale_next_wrap)
 nnoremap <silent> <SPACE>e :Autoformat
 
 " 載入astyle的google風格排版c/cpp/cs檔案
-let g:formatdef_misakisuna_astyle='"astyle --style=google --indent-switches --indent-namespaces -p"'
-let g:formatters_c=['misakisuna_astyle']
-let g:formatters_cpp=['misakisuna_astyle']
-let g:formatters_cs=['misakisuna_astyle']
+let g:formatdef_misakisuna_astyle = '"astyle --style=google --indent-switches --indent-namespaces -p"'
+let g:formatters_c = ['misakisuna_astyle']
+let g:formatters_cpp = ['misakisuna_astyle']
+let g:formatters_cs = ['misakisuna_astyle']
 " 載入cmake_format排版cmake檔案
 let g:formatters_cmake = ['cmake_format']
 
 " 載入yapf的google風格排版py檔案
-let g:formatdef_misakisuna_yapf='"yapf --style=''{based_on_style: google, column_limit: 150}''"'
-let g:formatters_python=['misakisuna_yapf']
+let g:formatdef_misakisuna_yapf = '"yapf --style=''{based_on_style: google, column_limit: 150}''"'
+let g:formatters_python = ['misakisuna_yapf']
 
 " 載入prettier排版web/md檔案
-let g:formatters_html=['prettier']
+let g:formatters_html = ['prettier']
 let g:formatters_css = ['prettier']
-let g:formatters_scss=['prettier']
-let g:formatters_javascript=['prettier']
+let g:formatters_scss = ['prettier']
+let g:formatters_javascript = ['prettier']
 let g:formatters_typescript = ['prettier']
 let g:formatters_json = ['prettier']
-let g:formatters_markdown=['prettier']
+let g:formatters_markdown = ['prettier']
 
 " 載入asm_format排版asm檔案
 let g:formatdef_asm_format = '"asmfmt"'
@@ -567,7 +584,7 @@ au BufWrite *.py :Isort
 " vim-markdown-toc
 
 " 生成github格式目錄
-let g:vmt_fence_hidden_markdown_style='GFM'
+let g:vmt_fence_hidden_markdown_style = 'GFM'
 " 優化目錄語法
 let g:vmt_cycle_list_item_markers = 1
 
@@ -581,13 +598,13 @@ au FileType markdown nnoremap <F4> :RemoveToc<CR>
 " asyncrun
 
 " 設定asyncrun編譯所在專案之根目錄
-let g:asyncrun_rootmarks=['.git']
+let g:asyncrun_rootmarks = ['.git']
 
 " 設定quickfix高度
-let g:asyncrun_open=8
+let g:asyncrun_open = 8
 
 " 按下F1鍵時，更新build.ninja並建構c / cpp專案
-function Build_Release_Cpp()
+function! Build_Release_Cpp()
     if exists("g:qfix_win")
         AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && cd build/release && ninja
     elseif exists("g:Topenflag")
@@ -603,7 +620,7 @@ endfunction
 au FileType c,cpp nnoremap <silent> <F1> :call Build_Release_Cpp()<CR>
 
 " 按下F3鍵時，更新build.ninja並建構c / cpp測試
-function Build_Debug_Cpp()
+function! Build_Debug_Cpp()
     Tclose
     AsyncRun -cwd=$(VIM_ROOT) cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug -Bbuild/test && cd build/test && ninja
 endfunction
@@ -626,7 +643,7 @@ endfunction
 au FileType verilog_systemverilog nnoremap <silent> <F1> :call CompileVerilog()<CR>
 
 " 按下F11鍵時，把專案上傳github
-function GitUpdate()
+function! GitUpdate()
     if exists("g:qfix_win")
         AsyncRun -cwd=$(VIM_ROOT) git add . && git commit -m "commit" && git push
     elseif exists("g:Topenflag")
@@ -655,10 +672,10 @@ au FileType markdown nmap <F2> <Plug>StopMarkdownPreview
 " neoterm
 
 " 設定neoterm位置
-let g:neoterm_default_mod='botright'
+let g:neoterm_default_mod = 'botright'
 
 " 設定neoterm高度
-let g:neoterm_size=8
+let g:neoterm_size = 8
 
 " 自動顯示行號
 au BufLeave *.cpp set number
@@ -668,12 +685,12 @@ hi NonText ctermfg=242 ctermbg=NONE
 au TerminalOpen * set list listchars=space:_
 
 " 按下F2鍵時，執行c / cpp專案
-function Execute_Release_Cpp()
+function! Execute_Release_Cpp()
     if exists("g:qfix_win")
         cclose
         let save_view = winsaveview()
         Topen
-        let g:Topenflag=1
+        let g:Topenflag = 1
         Tclear
         T [ "$(ls data/)" ] && bin/main < data/*.* || bin/main
         call winrestview(save_view)
@@ -681,7 +698,7 @@ function Execute_Release_Cpp()
     else
         let save_view = winsaveview()
         Tclear
-        let g:Topenflag=1
+        let g:Topenflag = 1
         T [ "$(ls data/)" ] && bin/main < data/*.* || bin/main
         call winrestview(save_view)
     endif
@@ -698,13 +715,13 @@ au FileType python vnoremap <silent> <F2> :cclose<CR>:let save_view = winsavevie
 au FileType python nnoremap <silent> <F3> :cclose<CR>:let save_view = winsaveview()<CR>:Tclear<CR>:TREPLSendFile<CR>:call winrestview(save_view)<CR>
 
 " 按下F1鍵時，推播html文件
-function ExeWeb()
+function! ExeWeb()
     if exists("g:qfix_win")
         cclose
         let save_view = winsaveview()
         Tclear
         Topen
-        let g:Topenflag=1
+        let g:Topenflag = 1
         Tclear
         T gulp
         call winrestview(save_view)
@@ -713,7 +730,7 @@ function ExeWeb()
         cclose
         let save_view = winsaveview()
         Topen
-        let g:Topenflag=1
+        let g:Topenflag = 1
         Tclear
         T gulp
         call winrestview(save_view)
@@ -725,19 +742,19 @@ au FileType html nnoremap <silent> <F1> :call ExeWeb()<CR>
 au FileType html nnoremap <silent> <F2> :Tkill<CR>
 
 " 按下F1鍵時，編譯執行csharp專案
-function CompileExeCsharp()
+function! CompileExeCsharp()
     if exists("g:qfix_win")
         cclose
         let save_view = winsaveview()
         Topen
-        let g:Topenflag=1
+        let g:Topenflag = 1
         Tclear
         T dotnet run
         call winrestview(save_view)
         unlet g:qfix_win
     else
         let save_view = winsaveview()
-        let g:Topenflag=1
+        let g:Topenflag = 1
         Tclear
         T dotnet run
         call winrestview(save_view)
@@ -746,20 +763,20 @@ endfunction
 au FileType cs nnoremap <silent> <F1> :call CompileExeCsharp()<CR>
 
 " 按下F2鍵時，執行verilog檔案
-function ExeVerilog()
+function! ExeVerilog()
     if exists("g:qfix_win")
         cclose
         let save_view = winsaveview()
         Tclear
         Topen
-        let g:Topenflag=1
+        let g:Topenflag = 1
         T clear && vvp ./%:t:r
         call winrestview(save_view)
         unlet g:qfix_win
     else
         let save_view = winsaveview()
         Topen
-        let g:Topenflag=1
+        let g:Topenflag = 1
         T clear && vvp ./%:t:r
         call winrestview(save_view)
     endif
@@ -774,7 +791,7 @@ function! QTtoggle()
     if exists("g:qfix_win")
         cclose
         Topen
-        let g:Topenflag=1
+        let g:Topenflag = 1
         wincmd h
         wincmd k
         unlet g:qfix_win
@@ -812,7 +829,7 @@ au TerminalOpen * hi debugPC ctermbg=242
 au BufLeave * nnoremap <S-k> }
 
 " 按下F4鍵時，測試c / cpp專案
-function Execute_Debug_Cpp()
+function! Execute_Debug_Cpp()
     cclose
     Tclose
     cd %:p:h
@@ -993,7 +1010,7 @@ nnoremap <silent> n :tabN<CR>
 " 按下m鍵時，跳轉到下一個tab
 nnoremap <silent> m :tabn<CR>
 " 按下空白鍵+q+enter鍵時，關閉tab或vim
-function Bye()
+function! Bye()
     if tabpagenr('$') > 1
         cclose
         Tclose
@@ -1060,9 +1077,9 @@ hi PmenuThumb ctermfg=NONE ctermbg=237
 " 自動顯示sign欄位
 set signcolumn=yes
 " sign欄位去背
-hi SignifySignAdd    cterm=bold ctermbg=None  ctermfg=119
-hi SignifySignDelete cterm=bold ctermbg=None  ctermfg=167
-hi SignifySignChange cterm=bold ctermbg=None  ctermfg=227
+hi SignifySignAdd    cterm=bold ctermbg=None ctermfg=119
+hi SignifySignDelete cterm=bold ctermbg=None ctermfg=167
+hi SignifySignChange cterm=bold ctermbg=None ctermfg=227
 
 " 自動顯示行號
 set number
