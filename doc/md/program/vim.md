@@ -85,6 +85,7 @@ hi PmenuThumb ctermfg=NONE ctermbg=237
 " 自動顯示sign欄位
 set signcolumn=yes
 " sign欄位去背
+hi signcolumn ctermbg=None
 hi SignifySignAdd    cterm=bold ctermbg=None  ctermfg=119
 hi SignifySignDelete cterm=bold ctermbg=None  ctermfg=167
 hi SignifySignChange cterm=bold ctermbg=None  ctermfg=227
