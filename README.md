@@ -2,12 +2,12 @@
 
 <!-- vim-markdown-toc GFM -->
 
-+ [1. 快速安裝](#1-快速安裝)
-    * [1.1 git](#11-git)
-    * [1.2 docker](#12-docker)
-+ [2. 手動配置](#2-手動配置)
-    * [2.1. 系統環境](#21-系統環境)
-        - [2.1.1. macOS](#211-macos)
++ [快速安裝](#快速安裝)
+    * [git](#git)
+    * [docker](#docker)
++ [手動配置](#手動配置)
+    * [系統環境](#系統環境)
+        - [macOS](#macos)
             + [xcode](#xcode)
             + [brew](#brew)
                 * [cellar](#cellar)
@@ -17,19 +17,19 @@
                 * [global](#global)
             + [yarn](#yarn)
                 * [global](#global-1)
-        - [2.1.2 linux](#212-linux)
-            + [docker](#docker)
+        - [linux](#linux)
+            + [docker](#docker-1)
             + [apt](#apt)
                 * [VM](#vm)
                 * [WSL](#wsl)
             + [brew](#brew-1)
                 * [cellar](#cellar-1)
-    * [2.2. 終端環境](#22-終端環境)
-        - [2.2.1. iterm2](#221-iterm2)
-        - [2.2.2. tmux](#222-tmux)
-        - [2.2.3. zsh](#223-zsh)
-    * [2.3. 編程環境](#23-編程環境)
-        - [2.3.1. vim](#231-vim)
+    * [終端環境](#終端環境)
+        - [iterm2](#iterm2)
+        - [tmux](#tmux)
+        - [zsh](#zsh)
+    * [編程環境](#編程環境)
+        - [vim](#vim)
             + [配置](#配置)
             + [映射](#映射)
         - [2.3.2. cpp](#232-cpp)
@@ -50,7 +50,7 @@
         - [2.3.7. verilog](#237-verilog)
             + [配置](#配置-6)
             + [映射](#映射-6)
-        - [2.3.8. asm](#238-asm)
+        - [2.3.8. assembly](#238-assembly)
             + [配置](#配置-7)
         - [2.3.9. shell](#239-shell)
         - [2.4.0. ios](#240-ios)
@@ -59,29 +59,27 @@
 
 ---
 
-# 1. 快速安裝
+# 快速安裝
 
-## 1.1 git
-
-```zsh
-git clone https://github.com/misakisuna705/Vimsual_Studio.git ~/.dotfiles # 或下載解壓後 cp -r Vimsual_Studio-master ~/.dotfiles
-```
+## git
 
 ```zsh
-~/.dotfiles/setup.sh # 或 bash ~/.dotfiles/src/setup.sh
+git clone https://github.com/misakisuna705/Vimsual_Studio.git ~/.dotfiles
+
+~/.dotfiles/setup.sh
 ```
 
-## 1.2 docker
+## docker
 
 ```zsh
 docker pull misakisuna705/vimsual-studio
 ```
 
-# 2. 手動配置
+# 手動配置
 
-## 2.1. 系統環境
+## 系統環境
 
-### 2.1.1. macOS
+### macOS
 
 #### xcode
 
@@ -195,7 +193,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 | stylelint-config-standard |
 |        typescript         |
 
-### 2.1.2 linux
+### linux
 
 #### docker
 
@@ -286,9 +284,9 @@ docker volume rm 儲區 # 移除已分配儲區
 |       vim       |
 |      yarn       |
 
-## 2.2. 終端環境
+## 終端環境
 
-### 2.2.1. iterm2
+### iterm2
 
 -   [詳情按此](doc/md/terminal/iterm.md)
 
@@ -298,11 +296,11 @@ docker volume rm 儲區 # 移除已分配儲區
 | 主題  |     Monokai     |
 | 背景  |     iCloud      |
 
-### 2.2.2. tmux
+### tmux
 
 -   [詳情按此](doc/md/terminal/tmux.md)
 
-### 2.2.3. zsh
+### zsh
 
 -   [詳情按此](doc/md/terminal/zsh.md)
 
@@ -312,7 +310,7 @@ docker volume rm 儲區 # 移除已分配儲區
 | zsh-syntax-highlighting |
 |   zsh-autosuggestions   |
 
-## 2.3. 編程環境
+## 編程環境
 
 |   [vim](#3.1)    | 環境 | 補全 | 偵錯 | 標籤 | 排版 | 編譯 / 執行 / 推播 | 調試 | 發佈 |
 | :--------------: | :--: | :--: | :--: | :--: | :--: | :----------------: | :--: | :--: |
@@ -325,39 +323,51 @@ docker volume rm 儲區 # 移除已分配儲區
 
 ---
 
-### 2.3.1. vim
+### vim
 
 -   [詳情按此](doc/md/program/vim.md)
 
 #### 配置
 
-| vim  |     專案環境      |      主題環境       |    瀏覽環境    |       編輯環境       |
-| :--: | :---------------: | :-----------------: | :------------: | :------------------: |
-| 插件 |    vim-rooter     |    vim-polyglot     | vim-easymotion | vim-multiple-cursors |
-|      | NERD-tree-project |     indentLine      |                |    nerdcommenter     |
-|      |     nerdtree      | vim-sublime-monokai |                |                      |
-|      |      LeaderF      |    lightline.vim    |                |                      |
+| vim  |      瀏覽      |       編輯       |     補全      | 偵錯 |           排版            |           任務           |        環境         |
+| :--: | :------------: | :--------------: | :-----------: | :--: | :-----------------------: | :----------------------: | :-----------------: |
+| 插件 |    LeaderF     | vim-visual-multi | YouCompleteMe | ale  |      vim-autoformat       |       vim-quickui        |    vim-polyglot     |
+|      |    nerdtree    |  nerdcommenter   | YCM-Generator |      |         vim-isort         |       asyncrun.vim       |     indentLine      |
+|      |     vista      |                  |   coc.nvim    |      |     vim-markdown-toc      |       asyncrun.vim       |    lightline.vim    |
+|      |  vim-preview   |                  |   emmet-vim   |      | verilog_systemverilog.vim |   markdown-preview.vim   | vim-sublime-monokai |
+|      | vim-gutentags  |                  |               |      |                           | mathjax-support-for-mkdp |                     |
+|      |   vim-cppman   |                  |               |      |                           |         neoterm          |                     |
+|      | vim-easymotion |                  |               |      |                           |                          |                     |
+|      |  vim-signify   |                  |               |      |                           |                          |                     |
 
 #### 映射
 
 | vim  |        按鍵         |               功能                |
 | :--: | :-----------------: | :-------------------------------: |
+| 模式 |         `a`         | 從命令模式 / 終端模式進入插入模式 |
+|      |         `;`         | 從命令模式進入插入模式並遞進一格  |
+|      |       `k`+`j`       | 從插入模式回到命令模式 / 終端模式 |
 | 視窗 | `SPACE`+`q`+`ENTER` |             關閉 vim              |
-|      | `SPACE`+`q`+`ENTER` |            關閉緩衝區             |
-|      |         `n`         |          移至左邊緩衝區           |
-|      |         `m`         |          移至右邊緩衝區           |
+|      | `SPACE`+`q`+`ENTER` |            關閉標籤頁             |
+|      |         `n`         |           移至左標籤頁            |
+|      |         `m`         |           移至右標籤頁            |
 |      |     `CTRL`+`j`      |         游標移至左方視窗          |
 |      |     `CTRL`+`l`      |         游標移至右方視窗          |
 |      |     `CTRL`+`i`      |         游標移至上方視窗          |
 |      |     `CTRL`+`k`      |         游標移至下方視窗          |
-| 模式 |         `a`         | 從命令模式 / 終端模式進入插入模式 |
-|      |         `;`         | 從命令模式進入插入模式並遞進一格  |
-|      |       `k`+`j`       | 從插入模式回到命令模式 / 終端模式 |
+| 終端 | `SPACE`+`q`+`ENTER` |            關閉終端機             |
 | 檔案 |     `CTRL`+`n`      |        切換檔案總管與標籤         |
 |      |     `CTRL`+`p`      |           搜尋文件開關            |
 |      |     `CTRL`+`o`      |        在垂直分屏開啟檔案         |
 | 標籤 |     `CTRL`+`n`      |        切換檔案總管與標籤         |
 |      |     `CTRL`+`f`      |           搜尋標籤開關            |
+| 跳轉 |         `f`         |           偵錯訊息跳轉            |
+|      |     `shift`+`f`     |           版本訊息跳轉            |
+| 預覽 |     `SHIFT`+`m`     |        在垂直分屏預覽標籤         |
+|      |     `SHIFT`+`n`     |          跳轉至選定標籤           |
+|      |     `SHIFT`+`h`     |           關閉預覽視窗            |
+| 手冊 |         `q`         |        垂直分屏後開關 man         |
+|      |         `q`         |       垂直分屏後開關 cppman       |
 | 文字 |         `s`         |            關鍵字跳轉             |
 | 游標 |         `j`         |             游標左移              |
 |      |         `l`         |             游標右移              |
@@ -373,6 +383,7 @@ docker volume rm 儲區 # 移除已分配儲區
 |      |         `a`         |        進入多光標插入模式         |
 |      |       `/`+`/`       |          插入 / 移除註解          |
 |      |     `SHIFT`+`u`     |          重做上一個動作           |
+|      | `SPACE`+`e`+`ENTER` |             自動排版              |
 
 ### 2.3.2. cpp
 
@@ -380,40 +391,29 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| c / c++ | 環境 |     補全      |   偵錯   |      標籤       |      排版      |     編譯     |  執行   |   調試    |     發佈     |
-| :-----: | :--: | :-----------: | :------: | :-------------: | :------------: | :----------: | :-----: | :-------: | :----------: |
-|  依賴   |  x   |     clang     |  clang   | universal-ctags |     astyle     |    clang     |    x    |    gdb    |     git      |
-|         |  x   |     cmake     | cppcheck |     cppman      |  cmake_format  |    ninja     |    x    |     x     |      x       |
-|         |  x   |       x       |    x     |        x        |       x        |    cmake     |    x    |     x     |      x       |
-|  插件   |  x   | YouCompleteMe |   ale    |  vim-gutentags  | vim-autoformat | asyncrun.vim | neoterm | termdebug | vim-signify  |
-|         |  x   | YCM-Generator |    x     |   vim-preview   |       x        |      x       |    x    |     x     | asyncrun.vim |
-|         |  x   |       x       |    x     |   vim-cppman    |       x        |      x       |    x    |     x     |      x       |
+| c / c++ | 環境 |     補全      |   偵錯   |      排版      |      編譯      |      執行      |     調試     |      發佈      |
+| :-----: | :--: | :-----------: | :------: | :------------: | :------------: | :------------: | :----------: | :------------: |
+|  依賴   |  x   |     clang     |  clang   |     astyle     |     clang      |       x        |     gdb      |      git       |
+|         |  x   |     cmake     | cppcheck |  cmake_format  |     ninja      |       x        |      x       |       x        |
+|         |  x   |       x       |    x     |       x        |     cmake      |       x        |      x       |       x        |
+|  插件   |  x   | YouCompleteMe |   ale    | vim-autoformat | asynctasks.vim | asynctasks.vim |  termdebug   | asynctasks.vim |
+|         |  x   | YCM-Generator |    x     |       x        |  asyncrun.vim  |  asyncrun.vim  | asyncrun.vim |  asyncrun.vim  |
 
 #### 映射
 
-| c / c++ |        按鍵         |         功能          |
-| :-----: | :-----------------: | :-------------------: |
-|  手冊   |         `q`         |  垂直分屏後開關 man   |
-|         |         `q`         | 垂直分屏後開關 cppman |
-|  預覽   |     `SHIFT`+`m`     |  在垂直分屏預覽標籤   |
-|         |     `SHIFT`+`n`     |    跳轉至選定標籤     |
-|         |     `SHIFT`+`h`     |     關閉預覽視窗      |
-|  編輯   | `SPACE`+`e`+`ENTER` |       自動排版        |
-|  跳轉   |         `f`         |     偵錯訊息跳轉      |
-|         |     `shift`+`f`     |     版本訊息跳轉      |
-|  編程   |        `F1`         |      編譯發行版       |
-|         |        `F2`         |         執行          |
-|         |        `F3`         |      編譯開發版       |
-|         |        `F4`         |         除錯          |
-|         |        `F5`         |       設置斷點        |
-|         |        `F6`         |       清除斷點        |
-|         |        `F7`         |       執行調試        |
-|         |        `F8`         |       繼續調試        |
-|         |        `F9`         |       單步繼續        |
-|         |        `F10`        |       單步進入        |
-|         |        `F11`        |         發佈          |
-|  終端   |        `F12`        | 切換終端機與 quickfix |
-|         | `SPACE`+`q`+`ENTER` |      關閉終端機       |
+| c / c++ | 按鍵  |    功能    |
+| :-----: | :---: | :--------: |
+|  編程   | `F1`  | 編譯發行版 |
+|         | `F2`  |    執行    |
+|         | `F3`  | 編譯開發版 |
+|         | `F4`  |    除錯    |
+|         | `F5`  |  設置斷點  |
+|         | `F6`  |  清除斷點  |
+|         | `F7`  |  執行調試  |
+|         | `F8`  |  繼續調試  |
+|         | `F9`  |  單步繼續  |
+|         | `F10` |  單步進入  |
+|         | `F12` |    發佈    |
 
 ### 2.3.3. python
 
@@ -421,26 +421,21 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| python |  環境  |     補全      |  偵錯  | 標籤 |      排版      |  直譯   | 調試 |     發佈     |
-| :----: | :----: | :-----------: | :----: | :--: | :------------: | :-----: | :--: | :----------: |
-|  依賴  | pipenv |     jedi      | flake8 |  x   |      yapf      | ipython |  x   |     git      |
-|        |   x    |       x       |   x    |  x   |     isort      |    x    |  x   |      x       |
-|  插件  |   x    | YouCompleteMe |  ale   |  x   | vim-autoformat | neoterm |  x   | vim-signify  |
-|        |   x    |       x       |   x    |  x   |   vim-isort    |    x    |  x   | asyncrun.vim |
+| python |  環境  |     補全      |  偵錯  |      排版      |  直譯   |      發佈      |
+| :----: | :----: | :-----------: | :----: | :------------: | :-----: | :------------: |
+|  依賴  | pipenv |     jedi      | flake8 |      yapf      | ipython |      git       |
+|        |   x    |       x       |   x    |     isort      |    x    |       x        |
+|  插件  |   x    | YouCompleteMe |  ale   | vim-autoformat | neoterm | asynctasks.vim |
+|        |   x    |       x       |   x    |   vim-isort    |    x    |  asyncrun.vim  |
 
 #### 映射
 
-| python |        按鍵         |         功能          |
-| :----: | :-----------------: | :-------------------: |
-|  跳轉  |         `f`         |     偵錯訊息跳轉      |
-|        |     `shift`+`f`     |     版本訊息跳轉      |
-|  編輯  | `SPACE`+`e`+`ENTER` |       自動排版        |
-|  編程  |        `F1`         |       單行直譯        |
-|        |        `F2`         |       多行直譯        |
-|        |        `F3`         |       文件直譯        |
-|        |        `F11`        |         發佈          |
-|  終端  |        `F12`        | 切換終端機與 quickfix |
-|        | `SPACE`+`q`+`ENTER` |      關閉終端機       |
+| python | 按鍵  |   功能   |
+| :----: | :---: | :------: |
+|  編程  | `F1`  | 單行直譯 |
+|        | `F2`  | 多行直譯 |
+|        | `F3`  | 文件直譯 |
+|        | `F12` |   發佈   |
 
 ### 2.3.4. webpage
 
@@ -448,34 +443,29 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| webpage |    環境    |   補全    |           偵錯            | 標籤 |      排版      |       推播        | 調試 |     發佈     |
-| :-----: | :--------: | :-------: | :-----------------------: | :--: | :------------: | :---------------: | :--: | :----------: |
-|  依賴   |    yarn    |     x     |         htmlhint          |  x   |    prettier    |        del        |  x   |     git      |
-|         | typescript |     x     |         stylelint         |  x   |       x        |       gulp        |  x   |      x       |
-|         |     x      |     x     | stylelint-config-standard |  x   |       x        | gulp-html-replace |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |       x        |   gulp-htmlmin    |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |       x        |     gulp-sass     |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |       x        |  gulp-clean-css   |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |       x        |  gulp-typescript  |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |       x        |    gulp-terser    |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |       x        |    gulp-concat    |  x   |      x       |
-|         |     x      |     x     |             x             |  x   |       x        |   browser-sync    |  x   |      x       |
-|  插件   |     x      | coc.nvim  |            ale            |  x   | vim-autoformat |      neoterm      |  x   | vim-signify  |
-|         |     x      | emmet-vim |             x             |  x   |       x        |         x         |  x   | asyncrun.vim |
+| webpage |    環境    |   補全    |           偵錯            |      排版      |       推播        | 調試 |      發佈      |
+| :-----: | :--------: | :-------: | :-----------------------: | :------------: | :---------------: | :--: | :------------: |
+|  依賴   |    yarn    |     x     |         htmlhint          |    prettier    |        del        |  x   |      git       |
+|         | typescript |     x     |         stylelint         |       x        |       gulp        |  x   |       x        |
+|         |     x      |     x     | stylelint-config-standard |       x        | gulp-html-replace |  x   |       x        |
+|         |     x      |     x     |             x             |       x        |   gulp-htmlmin    |  x   |       x        |
+|         |     x      |     x     |             x             |       x        |     gulp-sass     |  x   |       x        |
+|         |     x      |     x     |             x             |       x        |  gulp-clean-css   |  x   |       x        |
+|         |     x      |     x     |             x             |       x        |  gulp-typescript  |  x   |       x        |
+|         |     x      |     x     |             x             |       x        |    gulp-terser    |  x   |       x        |
+|         |     x      |     x     |             x             |       x        |    gulp-concat    |  x   |       x        |
+|         |     x      |     x     |             x             |       x        |   browser-sync    |  x   |       x        |
+|  插件   |     x      | coc.nvim  |            ale            | vim-autoformat |      neoterm      |  x   | asynctasks.vim |
+|         |     x      | emmet-vim |             x             |       x        |         x         |  x   |  asyncrun.vim  |
 
 #### 映射
 
-| webpage |        按鍵         |         功能          |
-| :-----: | :-----------------: | :-------------------: |
-|  編輯   |   `CTRL`+`z`+`,`    |       補全標籤        |
-|         | `SPACE`+`e`+`ENTER` |       自動排版        |
-|  跳轉   |         `f`         |     偵錯訊息跳轉      |
-|         |     `shift`+`f`     |     版本訊息跳轉      |
-|  編程   |        `F1`         |       開始推播        |
-|         |        `F2`         |       停止推播        |
-|         |        `F11`        |         發佈          |
-|  終端   |        `F12`        | 切換終端機與 quickfix |
-|         | `SPACE`+`q`+`ENTER` |      關閉終端機       |
+| webpage |      按鍵      |   功能   |
+| :-----: | :------------: | :------: |
+|  編輯   | `CTRL`+`z`+`,` | 補全標籤 |
+|  編程   |      `F1`      | 開始推播 |
+|         |      `F2`      | 停止推播 |
+|         |     `F12`      |   發佈   |
 
 ### 2.3.5. csharp
 
@@ -483,23 +473,18 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| csharp |    環境    |   補全   | 偵錯 |      排版      |    編譯    |    執行    |     發佈     |
-| :----: | :--------: | :------: | :--: | :------------: | :--------: | :--------: | :----------: |
-|  依賴  | dotnet-sdk |    x     |  x   |     astyle     | dotnet-sdk | dotnet-sdk |     git      |
-|  插件  |     x      | coc.nvim |  x   | vim-autoformat |  neoterm   |  neoterm   | vim-signify  |
-|        |     x      |    x     |  x   |       x        |            |     x      | asyncrun.vim |
+| csharp |    環境    |   補全   | 偵錯 |      排版      |    編譯    |    執行    |      發佈      |
+| :----: | :--------: | :------: | :--: | :------------: | :--------: | :--------: | :------------: |
+|  依賴  | dotnet-sdk |    x     |  x   |     astyle     | dotnet-sdk | dotnet-sdk |      git       |
+|  插件  |     x      | coc.nvim |  x   | vim-autoformat |  neoterm   |  neoterm   | asynctasks.vim |
+|        |     x      |    x     |  x   |       x        |            |     x      |  asyncrun.vim  |
 
 #### 映射
 
-| csharp |        按鍵         |         功能          |
-| :----: | :-----------------: | :-------------------: |
-|  跳轉  |         `f`         |     偵錯訊息跳轉      |
-|        |     `shift`+`f`     |     版本訊息跳轉      |
-|  編輯  | `SPACE`+`e`+`ENTER` |       自動排版        |
-|  編程  |        `F1`         |       編譯執行        |
-|        |        `F11`        |         發佈          |
-|  終端  |        `F12`        | 切換終端機與 quickfix |
-|        | `SPACE`+`q`+`ENTER` |      關閉終端機       |
+| csharp | 按鍵  |   功能   |
+| :----: | :---: | :------: |
+|  編程  | `F1`  | 編譯執行 |
+|        | `F12` |   發佈   |
 
 ### 2.3.6. markdown
 
@@ -507,26 +492,21 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| markdown | 環境 |       補全       |      排版      |           推播           |     發佈     |
-| :------: | :--: | :--------------: | :------------: | :----------------------: | :----------: |
-|   依賴   |  x   |        x         |    prettier    |            x             |     git      |
-|   插件   |  x   | vim-markdown-toc | vim-autoformat |     markdown-preview     | vim-signify  |
-|          |  x   |        x         |       x        | mathjax-support-for-mkdp | asyncrun.vim |
+| markdown | 環境 |       補全       |      排版      |           推播           |      發佈      |
+| :------: | :--: | :--------------: | :------------: | :----------------------: | :------------: |
+|   依賴   |  x   |        x         |    prettier    |            x             |      git       |
+|   插件   |  x   | vim-markdown-toc | vim-autoformat |     markdown-preview     | asynctasks.vim |
+|          |  x   |        x         |       x        | mathjax-support-for-mkdp |  asyncrun.vim  |
 
 #### 映射
 
-| markdown |        按鍵         |         功能          |
-| :------: | :-----------------: | :-------------------: |
-|   跳轉   |         `f`         |     偵錯訊息跳轉      |
-|          |     `shift`+`f`     |     版本訊息跳轉      |
-|   編輯   | `SPACE`+`e`+`ENTER` |       自動排版        |
-|   編程   |        `F1`         |       開始推播        |
-|          |        `F2`         |       停止推播        |
-|          |        `F3`         |       生成目錄        |
-|          |        `F4`         |       刪去目錄        |
-|          |        `F11`        |         發佈          |
-|   終端   |        `F12`        | 切換終端機與 quickfix |
-|          | `SPACE`+`q`+`ENTER` |      關閉終端機       |
+| markdown | 按鍵  |   功能   |
+| :------: | :---: | :------: |
+|   編程   | `F1`  | 開始推播 |
+|          | `F2`  | 停止推播 |
+|          | `F3`  | 生成目錄 |
+|          | `F4`  | 刪去目錄 |
+|          | `F12` |   發佈   |
 
 ### 2.3.7. verilog
 
@@ -534,36 +514,32 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| verilog |   環境   |     補全      | 偵錯 |           排版            |     編譯     |  執行   |  推播   |     發佈     |
-| :-----: | :------: | :-----------: | :--: | :-----------------------: | :----------: | :-----: | :-----: | :----------: |
-|  依賴   | iverilog |       x       |  x   |             x             |      x       |    x    | xquartz |     git      |
-|         |    x     |       x       |  x   |             x             |      x       |    x    | gtkwave |      x       |
-|  插件   |    x     | YouCompleteMe | ale  | verilog_systemverilog.vim | asyncrun.vim | neoterm | neoterm | vim-signify  |
-|         |    x     |       x       |  x   |             x             |      x       |    x    |    x    | asyncrun.vim |
+| verilog |   環境   |     補全      | 偵錯 |           排版            |      編譯      |      執行      |      調試      |      發佈      |
+| :-----: | :------: | :-----------: | :--: | :-----------------------: | :------------: | :------------: | :------------: | :------------: |
+|  依賴   | iverilog |       x       |  x   |             x             |       x        |       x        |    xquartz     |      git       |
+|         |    x     |       x       |  x   |             x             |       x        |       x        |    gtkwave     |       x        |
+|  插件   |    x     | YouCompleteMe | ale  | verilog_systemverilog.vim | asynctasks.vim | asynctasks.vim | asynctasks.vim | asynctasks.vim |
+|         |    x     |       x       |  x   |             x             |  asyncrun.vim  |  asyncrun.vim  |  asyncrun.vim  |  asyncrun.vim  |
 
 #### 映射
 
-| verilog |        按鍵         |         功能          |
-| :-----: | :-----------------: | :-------------------: |
-|  跳轉   |         `f`         |     偵錯訊息跳轉      |
-|         |     `shift`+`f`     |     版本訊息跳轉      |
-|  編程   |        `F1`         |         編譯          |
-|         |        `F2`         |         執行          |
-|         |        `F3`         |         推播          |
-|         |        `F11`        |         發佈          |
-|  終端   |        `F12`        | 切換終端機與 quickfix |
-|         | `SPACE`+`q`+`ENTER` |      關閉終端機       |
+| verilog | 按鍵  | 功能 |
+| :-----: | :---: | :--: |
+|  編程   | `F1`  | 編譯 |
+|         | `F2`  | 執行 |
+|         | `F3`  | 推播 |
+|         | `F12` | 發佈 |
 
-### 2.3.8. asm
+### 2.3.8. assembly
 
 -   [詳情按此](doc/md/program/assembly.md)
 
 #### 配置
 
-| asm  |      排版      |
-| :--: | :------------: |
-| 依賴 |       x        |
-| 插件 | vim-autoformat |
+| assembly |      排版      |
+| :------: | :------------: |
+|   依賴   |       x        |
+|   插件   | vim-autoformat |
 
 ### 2.3.9. shell
 

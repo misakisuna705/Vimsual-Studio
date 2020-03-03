@@ -2,21 +2,20 @@
 
 <!-- vim-markdown-toc GFM -->
 
-* [1. 安裝](#1-安裝)
-* [2. 命令](#2-命令)
-* [3. 插件](#3-插件)
+* [安裝](#安裝)
+* [命令](#命令)
 
 <!-- vim-markdown-toc -->
 
 ---
 
-## 1. 安裝
+## 安裝
 
 ```zsh
 brew install python # 安裝python（ pip ）
 ```
 
-## 2. 命令
+## 命令
 
 ```zsh
 pip3 search 插件 # 搜尋某插件與其相關插件
@@ -37,15 +36,3 @@ pip3 install -U 插件 # 升級該插件
 
 pip3 check # 檢查插件版本相容性
 ```
-
-## 3. 插件
-
--   cmake_format
--   cppman
--   flake8
--   ipython
--   isort
--   jedi
--   lizard
--   pipenv
--   yapf
