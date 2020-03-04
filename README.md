@@ -331,12 +331,13 @@ docker volume rm 儲區 # 移除已分配儲區
 
 | vim  |      瀏覽      |       編輯       |     補全      | 偵錯 |           排版            |           任務           |        環境         |
 | :--: | :------------: | :--------------: | :-----------: | :--: | :-----------------------: | :----------------------: | :-----------------: |
-| 插件 |    LeaderF     | vim-visual-multi | YouCompleteMe | ale  |      vim-autoformat       |       vim-quickui        |    vim-polyglot     |
-|      |    nerdtree    |  nerdcommenter   | YCM-Generator |      |         vim-isort         |       asyncrun.vim       |     indentLine      |
-|      |     vista      |                  |   coc.nvim    |      |     vim-markdown-toc      |       asyncrun.vim       |    lightline.vim    |
-|      |  vim-preview   |                  |   emmet-vim   |      | verilog_systemverilog.vim |   markdown-preview.vim   | vim-sublime-monokai |
-|      | vim-gutentags  |                  |               |      |                           | mathjax-support-for-mkdp |                     |
-|      |   vim-cppman   |                  |               |      |                           |         neoterm          |                     |
+| 插件 |   vim-rooter   | vim-visual-multi | YouCompleteMe | ale  |      vim-autoformat       |       vim-quickui        |    vim-polyglot     |
+|      |    LeaderF     |  nerdcommenter   | YCM-Generator |      |         vim-isort         |   markdown-preview.vim   |     indentLine      |
+|      |    nerdtree    |                  |   coc.nvim    |      |     vim-markdown-toc      | mathjax-support-for-mkdp |    lightline.vim    |
+|      |     vista      |                  |   emmet-vim   |      | verilog_systemverilog.vim |         neoterm          | vim-sublime-monokai |
+|      |  vim-preview   |                  |               |      |                           |                          |                     |
+|      | vim-gutentags  |                  |               |      |                           |                          |                     |
+|      |   vim-cppman   |                  |               |      |                           |                          |                     |
 |      | vim-easymotion |                  |               |      |                           |                          |                     |
 |      |  vim-signify   |                  |               |      |                           |                          |                     |
 
@@ -348,6 +349,7 @@ docker volume rm 儲區 # 移除已分配儲區
 |      |         `;`         | 從命令模式進入插入模式並遞進一格  |
 |      |       `k`+`j`       | 從插入模式回到命令模式 / 終端模式 |
 | 視窗 | `SPACE`+`q`+`ENTER` |             關閉 vim              |
+|      | `SPACE`+`q`+`ENTER` |            關閉終端機             |
 |      | `SPACE`+`q`+`ENTER` |            關閉標籤頁             |
 |      |         `n`         |           移至左標籤頁            |
 |      |         `m`         |           移至右標籤頁            |
@@ -355,20 +357,6 @@ docker volume rm 儲區 # 移除已分配儲區
 |      |     `CTRL`+`l`      |         游標移至右方視窗          |
 |      |     `CTRL`+`i`      |         游標移至上方視窗          |
 |      |     `CTRL`+`k`      |         游標移至下方視窗          |
-| 終端 | `SPACE`+`q`+`ENTER` |            關閉終端機             |
-| 檔案 |     `CTRL`+`n`      |        切換檔案總管與標籤         |
-|      |     `CTRL`+`p`      |           搜尋文件開關            |
-|      |     `CTRL`+`o`      |        在垂直分屏開啟檔案         |
-| 標籤 |     `CTRL`+`n`      |        切換檔案總管與標籤         |
-|      |     `CTRL`+`f`      |           搜尋標籤開關            |
-| 跳轉 |         `f`         |           偵錯訊息跳轉            |
-|      |     `shift`+`f`     |           版本訊息跳轉            |
-| 預覽 |     `SHIFT`+`m`     |        在垂直分屏預覽標籤         |
-|      |     `SHIFT`+`n`     |          跳轉至選定標籤           |
-|      |     `SHIFT`+`h`     |           關閉預覽視窗            |
-| 手冊 |         `q`         |        垂直分屏後開關 man         |
-|      |         `q`         |       垂直分屏後開關 cppman       |
-| 文字 |         `s`         |            關鍵字跳轉             |
 | 游標 |         `j`         |             游標左移              |
 |      |         `l`         |             游標右移              |
 |      |         `i`         |             游標上移              |
@@ -377,6 +365,18 @@ docker volume rm 儲區 # 移除已分配儲區
 |      |     `SHIFT`+`l`     |           游標高速右移            |
 |      |     `SHIFT`+`i`     |           游標高速上移            |
 |      |     `SHIFT`+`k`     |           游標高速下移            |
+| 瀏覽 |     `CTRL`+`n`      |        切換檔案總管與標籤         |
+|      |     `CTRL`+`p`      |           搜尋文件開關            |
+|      |     `CTRL`+`f`      |           搜尋標籤開關            |
+|      |     `CTRL`+`o`      |        在垂直分屏開啟檔案         |
+|      |     `SHIFT`+`m`     |        在垂直分屏預覽標籤         |
+|      |     `SHIFT`+`n`     |          跳轉至選定標籤           |
+|      |     `SHIFT`+`h`     |           關閉預覽視窗            |
+|      |         `q`         |        垂直分屏後開關 man         |
+|      |         `q`         |       垂直分屏後開關 cppman       |
+|      |         `s`         |            關鍵字跳轉             |
+|      |         `f`         |           偵錯訊息跳轉            |
+|      |     `shift`+`f`     |           版本訊息跳轉            |
 | 編輯 |       `ENTER`       |          向下插入空白行           |
 |      |     `{`+`ENTER`     |        自動換行縮進補全`}`        |
 |      |     `SHIFT`+`a`     |          啟動多光標引擎           |

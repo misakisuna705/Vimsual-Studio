@@ -24,9 +24,8 @@ au VimEnter *
 " 插件開始位置
 call plug#begin('~/.vim/plugged')
 
-Plug 'airblade/vim-rooter', {'on': 'Rooter'}
-
 " 瀏覽插件
+Plug 'airblade/vim-rooter'
 Plug 'Yggdroot/LeaderF', {'on': 'LeaderfFile', 'do': './install.sh'}
 Plug 'scrooloose/nerdtree', {'on': ['NERDTreeVCS', 'NERDTreeClose']}
 Plug 'liuchengxu/vista.vim', {'on': ['Vista', 'Vista!']}
@@ -57,8 +56,6 @@ Plug 'vhda/verilog_systemverilog.vim', {'for': 'vlang'}
 
 " 任務插件
 Plug 'skywind3000/vim-quickui'
-Plug 'skywind3000/asyncrun.vim', {'on': 'AsyncRun'}
-Plug 'skywind3000/asynctasks.vim', {'on': 'AsyncTask'}
 Plug 'iamcco/markdown-preview.vim', {'on': '<Plug>MarkdownPreview'}
 Plug 'iamcco/mathjax-support-for-mkdp', {'on': '<Plug>MarkdownPreview'}
 Plug 'kassio/neoterm', {'on': ['T', 'Topen', 'Tclose', 'Tclear']}
@@ -76,17 +73,16 @@ call plug#end()
 
 " 插件配置
 
-" vim-rooter
-
-" 切換根目錄時不顯示訊息
-let g:rooter_silent_chdir = 1
-
-" 自動切換根目錄
-au BufLeave * Rooter
-
 " ==================================================================================================================== "
 
 " 瀏覽插件
+
+" =========================================================== "
+
+" airblade/vim-rooter
+
+" 切換根目錄時不顯示訊息
+let g:rooter_silent_chdir = 1
 
 " =========================================================== "
 
@@ -492,12 +488,6 @@ let g:ale_lint_on_save = 0
 au FileType c,cpp,python,html,css,scss,javascript,typescript,verilog_systemverilog,sh
             \ au! BufWrite <buffer> ALELint
 
-" 在quickfix顯示偵錯訊息
-" let g:ale_set_loclist = 0
-" let g:ale_set_quickfix = 1
-" let g:ale_open_list = 1
-" let g:ale_keep_list_window_open = 1
-
 " 設定linter參數
 let g:ale_cpp_clang_options = '-std=c++17 -Wall'
 let g:ale_python_flake8_options = '--ignore=E501,E302,E225,E226,E251,E201,E305,E711,E117,E101,F403,F405,W191,W291,W293'
@@ -603,50 +593,13 @@ au FileType markdown nnoremap <F4> :RemoveToc<CR>
 " skywind3000/vim-quickui
 
 let content = [
-            \ [ 'push to github', 'AsyncTask github-push' ],
-            \ [ 'publish to npm', 'AsyncTask npm-publish' ],
-            \ [ 'deploy to firebase', 'AsyncTask firebase-deploy' ],
-            \]
+            \ [ 'push to github', 'call Push_Github()' ],
+            \ [ 'publish to npm', 'call Publish_Npm()' ],
+            \ [ 'deploy to firebase', 'call Deploy_Firebase()' ],
+            \ ]
 
 " 按下F12鍵時，發布專案
 nnoremap <silent> <F12> :call quickui#listbox#open(content, {})<CR>
-
-" =========================================================== "
-
-" skywind3000/asyncrun.vim
-
-" 設定asyncrun編譯所在專案之根目錄
-let g:asyncrun_rootmarks = ['.git']
-
-" 設定quickfix高度
-let g:asyncrun_open = 8
-
-" =========================================================== "
-
-" skywind3000/asynctasks.vim
-
-let g:asynctasks_extra_config = ['~/.vim/tasks.ini']
-
-let g:asynctasks_term_pos = 'bottom'
-let g:asynctasks_term_rows = 8
-let g:asynctasks_term_focus = 0
-
-"let g:asynctasks_term_reuse = 1
-
-" 建構專案發行版
-au FileType c,cpp nnoremap <silent> <F1> :AsyncTask release-build<CR>
-au FileType vlang nnoremap <silent> <F1> :AsyncTask release-build<CR>
-
-" 執行專案
-au FileType c,cpp nnoremap <silent> <F2> :AsyncTask release-run<CR>
-au FileType vlang nnoremap <silent> <F2> :AsyncTask release-run<CR>
-au FileType python nnoremap <silent> <F2> :AsyncTask release-run<CR>
-
-" 建構專案測試版
-au FileType c,cpp nnoremap <silent> <F3> :AsyncTask debug-build<CR>
-
-" 調試專案
-au FileType vlang nnoremap <silent> <F4> :AsyncTask debug-run<CR>
 
 " =========================================================== "
 
@@ -671,6 +624,13 @@ let g:neoterm_size = 8
 hi NonText ctermfg=242 ctermbg=NONE
 au TerminalOpen * set list listchars=space:_
 
+" 建構c/cpp專案發行版
+au FileType c,cpp nnoremap <silent> <F1> :Tclear<CR>:T cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && ninja -C ./build/release<CR>
+" 執行c/cpp專案
+au FileType c,cpp nnoremap <silent> <F2> :Tclear<CR>:T [ "$(ls data/)" ] && bin/main < data/*.* \|\| bin/main<CR>
+" 建構c/cpp專案測試版
+au FileType c,cpp nnoremap <silent> <F3> :Tclear<CR>:T cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug -Bbuild/test && ninja -C ./build/test<CR>
+
 " 按下F1鍵時，直譯該行
 au FileType python nnoremap <silent> <F1> :Tclear<CR>:TREPLSendLine<CR>
 " 按下F2鍵時，直譯多行
@@ -678,28 +638,50 @@ au FileType python vnoremap <silent> <F2> :Tclear<CR>:TREPLSendSelection<CR>
 " 按下F3鍵時，直譯python文件
 au FileType python nnoremap <silent> <F3> :Tclear<CR>:TREPLSendFile<CR>
 
-" 按下F1鍵時，推播html文件
-au FileType html nnoremap <silent> <F1> :call Run_Web_Gulp()<CR>
-" 按下F2鍵時，停止推播html文件
+" 按下F1鍵時，推播webpage專案
+au FileType html nnoremap <silent> <F1> :call Run_Web()<CR>
+" 按下F2鍵時，停止推播webpage專案
 au FileType html nnoremap <silent> <F2> :Tkill<CR>
 
 " 按下F1鍵時，編譯執行csharp專案
-au FileType cs nnoremap <silent> <F1> :call CompileExeCsharp()<CR>
+au FileType cs nnoremap <silent> <F1> :call Run_Csharp()<CR>
+
+" 建構verilog專案發行版
+au FileType vlang nnoremap <silent> <F1> :Tclear<CR>:T iverilog -o main main.v<CR>
+" 執行verilog專案
+au FileType vlang nnoremap <silent> <F2> :Tclear<CR>:T vvp main<CR>
+" 調試verilog專案
+au FileType vlang nnoremap <silent> <F3> :Tclear<CR>:T open -a gtkwave main.vcd<CR>
 
 " 按下空白鍵+q+enter鍵時，關閉終端機
 tnoremap <silent> <SPACE>q exit
 
-function! Run_Web_Gulp()
+function! Run_Web()
     Tclear
     T gulp
 endfunction
 
-function! CompileExeCsharp()
+function! Run_Csharp()
     "let save_view = winsaveview()
     Topen
     Tclear
     T dotnet run
     "call winrestview(save_view)
+endfunction
+
+function! Push_Github()
+    Tclear
+    T git add . && git commit -m "commit" && git push
+endfunction
+
+function! Publish_Npm()
+    Tclear
+    T npm publish
+endfunction
+
+function! Deploy_Firebase()
+    Tclear
+    firebase deploy
 endfunction
 
 " =========================================================== "
