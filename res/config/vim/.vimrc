@@ -663,7 +663,6 @@ endfunction
 
 function! Run_Csharp()
     "let save_view = winsaveview()
-    Topen
     Tclear
     T dotnet run
     "call winrestview(save_view)
