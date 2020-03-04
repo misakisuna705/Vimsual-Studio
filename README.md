@@ -391,13 +391,13 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| c / c++ | 環境 |     補全      |   偵錯   |      排版      |      編譯      |      執行      |     調試     |      發佈      |
-| :-----: | :--: | :-----------: | :------: | :------------: | :------------: | :------------: | :----------: | :------------: |
-|  依賴   |  x   |     clang     |  clang   |     astyle     |     clang      |       x        |     gdb      |      git       |
-|         |  x   |     cmake     | cppcheck |  cmake_format  |     ninja      |       x        |      x       |       x        |
-|         |  x   |       x       |    x     |       x        |     cmake      |       x        |      x       |       x        |
-|  插件   |  x   | YouCompleteMe |   ale    | vim-autoformat | asynctasks.vim | asynctasks.vim |  termdebug   | asynctasks.vim |
-|         |  x   | YCM-Generator |    x     |       x        |  asyncrun.vim  |  asyncrun.vim  | asyncrun.vim |  asyncrun.vim  |
+| c / c++ |     補全      |   偵錯   |      排版      |  編譯   |  執行   |   調試    |  發佈   |
+| :-----: | :-----------: | :------: | :------------: | :-----: | :-----: | :-------: | :-----: |
+|  依賴   |     clang     |  clang   |     astyle     |  clang  |    x    |    gdb    |   git   |
+|         |     cmake     | cppcheck |  cmake_format  |  ninja  |    x    |     x     |    x    |
+|         |       x       |    x     |       x        |  cmake  |    x    |     x     |    x    |
+|  插件   | YouCompleteMe |   ale    | vim-autoformat | neoterm | neoterm | termdebug | neoterm |
+|         | YCM-Generator |    x     |       x        |    x    |    x    |     x     |    x    |
 
 #### 映射
 
@@ -421,12 +421,12 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| python |  環境  |     補全      |  偵錯  |      排版      |  直譯   |      發佈      |
-| :----: | :----: | :-----------: | :----: | :------------: | :-----: | :------------: |
-|  依賴  | pipenv |     jedi      | flake8 |      yapf      | ipython |      git       |
-|        |   x    |       x       |   x    |     isort      |    x    |       x        |
-|  插件  |   x    | YouCompleteMe |  ale   | vim-autoformat | neoterm | asynctasks.vim |
-|        |   x    |       x       |   x    |   vim-isort    |    x    |  asyncrun.vim  |
+| python |  環境  |     補全      |  偵錯  |      排版      |  直譯   |  發佈   |
+| :----: | :----: | :-----------: | :----: | :------------: | :-----: | :-----: |
+|  依賴  | pipenv |     jedi      | flake8 |      yapf      | ipython |   git   |
+|        |   x    |       x       |   x    |     isort      |    x    |    x    |
+|  插件  |   x    | YouCompleteMe |  ale   | vim-autoformat | neoterm | neoterm |
+|        |   x    |       x       |   x    |   vim-isort    |    x    |    x    |
 
 #### 映射
 
@@ -443,20 +443,20 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| webpage |    環境    |   補全    |           偵錯            |      排版      |       推播        | 調試 |      發佈      |
-| :-----: | :--------: | :-------: | :-----------------------: | :------------: | :---------------: | :--: | :------------: |
-|  依賴   |    yarn    |     x     |         htmlhint          |    prettier    |        del        |  x   |      git       |
-|         | typescript |     x     |         stylelint         |       x        |       gulp        |  x   |       x        |
-|         |     x      |     x     | stylelint-config-standard |       x        | gulp-html-replace |  x   |       x        |
-|         |     x      |     x     |             x             |       x        |   gulp-htmlmin    |  x   |       x        |
-|         |     x      |     x     |             x             |       x        |     gulp-sass     |  x   |       x        |
-|         |     x      |     x     |             x             |       x        |  gulp-clean-css   |  x   |       x        |
-|         |     x      |     x     |             x             |       x        |  gulp-typescript  |  x   |       x        |
-|         |     x      |     x     |             x             |       x        |    gulp-terser    |  x   |       x        |
-|         |     x      |     x     |             x             |       x        |    gulp-concat    |  x   |       x        |
-|         |     x      |     x     |             x             |       x        |   browser-sync    |  x   |       x        |
-|  插件   |     x      | coc.nvim  |            ale            | vim-autoformat |      neoterm      |  x   | asynctasks.vim |
-|         |     x      | emmet-vim |             x             |       x        |         x         |  x   |  asyncrun.vim  |
+| webpage |    環境    |   補全    |           偵錯            |      排版      |       推播        | 調試 |  發佈   |
+| :-----: | :--------: | :-------: | :-----------------------: | :------------: | :---------------: | :--: | :-----: |
+|  依賴   |    yarn    |     x     |         htmlhint          |    prettier    |        del        |  x   |   git   |
+|         | typescript |     x     |         stylelint         |       x        |       gulp        |  x   |    x    |
+|         |     x      |     x     | stylelint-config-standard |       x        | gulp-html-replace |  x   |    x    |
+|         |     x      |     x     |             x             |       x        |   gulp-htmlmin    |  x   |    x    |
+|         |     x      |     x     |             x             |       x        |     gulp-sass     |  x   |    x    |
+|         |     x      |     x     |             x             |       x        |  gulp-clean-css   |  x   |    x    |
+|         |     x      |     x     |             x             |       x        |  gulp-typescript  |  x   |    x    |
+|         |     x      |     x     |             x             |       x        |    gulp-terser    |  x   |    x    |
+|         |     x      |     x     |             x             |       x        |    gulp-concat    |  x   |    x    |
+|         |     x      |     x     |             x             |       x        |   browser-sync    |  x   |    x    |
+|  插件   |     x      | coc.nvim  |            ale            | vim-autoformat |      neoterm      |  x   | neoterm |
+|         |     x      | emmet-vim |             x             |       x        |         x         |  x   |    x    |
 
 #### 映射
 
@@ -473,11 +473,10 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| csharp |    環境    |   補全   | 偵錯 |      排版      |    編譯    |    執行    |      發佈      |
-| :----: | :--------: | :------: | :--: | :------------: | :--------: | :--------: | :------------: |
-|  依賴  | dotnet-sdk |    x     |  x   |     astyle     | dotnet-sdk | dotnet-sdk |      git       |
-|  插件  |     x      | coc.nvim |  x   | vim-autoformat |  neoterm   |  neoterm   | asynctasks.vim |
-|        |     x      |    x     |  x   |       x        |            |     x      |  asyncrun.vim  |
+| csharp |    環境    |   補全   | 偵錯 |      排版      |    編譯    |    執行    |  發佈   |
+| :----: | :--------: | :------: | :--: | :------------: | :--------: | :--------: | :-----: |
+|  依賴  | dotnet-sdk |    x     |  x   |     astyle     | dotnet-sdk | dotnet-sdk |   git   |
+|  插件  |     x      | coc.nvim |  x   | vim-autoformat |  neoterm   |  neoterm   | neoterm |
 
 #### 映射
 
@@ -492,11 +491,11 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| markdown | 環境 |       補全       |      排版      |           推播           |      發佈      |
-| :------: | :--: | :--------------: | :------------: | :----------------------: | :------------: |
-|   依賴   |  x   |        x         |    prettier    |            x             |      git       |
-|   插件   |  x   | vim-markdown-toc | vim-autoformat |     markdown-preview     | asynctasks.vim |
-|          |  x   |        x         |       x        | mathjax-support-for-mkdp |  asyncrun.vim  |
+| markdown | 環境 |       補全       |      排版      |           推播           |  發佈   |
+| :------: | :--: | :--------------: | :------------: | :----------------------: | :-----: |
+|   依賴   |  x   |        x         |    prettier    |            x             |   git   |
+|   插件   |  x   | vim-markdown-toc | vim-autoformat |     markdown-preview     | neoterm |
+|          |  x   |        x         |       x        | mathjax-support-for-mkdp |    x    |
 
 #### 映射
 
@@ -514,12 +513,11 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| verilog |   環境   |     補全      | 偵錯 |           排版            |      編譯      |      執行      |      調試      |      發佈      |
-| :-----: | :------: | :-----------: | :--: | :-----------------------: | :------------: | :------------: | :------------: | :------------: |
-|  依賴   | iverilog |       x       |  x   |             x             |       x        |       x        |    xquartz     |      git       |
-|         |    x     |       x       |  x   |             x             |       x        |       x        |    gtkwave     |       x        |
-|  插件   |    x     | YouCompleteMe | ale  | verilog_systemverilog.vim | asynctasks.vim | asynctasks.vim | asynctasks.vim | asynctasks.vim |
-|         |    x     |       x       |  x   |             x             |  asyncrun.vim  |  asyncrun.vim  |  asyncrun.vim  |  asyncrun.vim  |
+| verilog |   環境   |     補全      | 偵錯 |           排版            |  編譯   |  執行   |  調試   |  發佈   |
+| :-----: | :------: | :-----------: | :--: | :-----------------------: | :-----: | :-----: | :-----: | :-----: |
+|  依賴   | iverilog |       x       |  x   |             x             |    x    |    x    | xquartz |   git   |
+|         |    x     |       x       |  x   |             x             |    x    |    x    | gtkwave |    x    |
+|  插件   |    x     | YouCompleteMe | ale  | verilog_systemverilog.vim | neoterm | neoterm | neoterm | neoterm |
 
 #### 映射
 
