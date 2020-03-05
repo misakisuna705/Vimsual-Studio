@@ -422,6 +422,9 @@ vmap <silent> // <plug>NERDCommenterToggle
 
 " Valloric/YouCompleteMe
 
+" 禁用clangd
+let g:ycm_use_clangd = 0
+
 " 設定.ycm_extra_conf.py預設位置
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " 自動偵測.ycm_extra_conf.py
