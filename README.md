@@ -218,7 +218,7 @@ docker search 映像 # 搜尋某映像
 docker images # 查詢已安裝映像
 
 docker pull 映像 # 安裝該映像
-docker rmi -v 映像 # 解除安裝該映像與對應儲區
+docker rmi 映像 # 解除安裝該映像
 
 # container
 
