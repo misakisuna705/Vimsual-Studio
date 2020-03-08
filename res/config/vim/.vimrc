@@ -352,7 +352,8 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 let g:cppman_open_mode = "vertical"
 
 " 按下q鍵時，開啟cppman
-au FileType c,cpp nnoremap q :Cppman <C-r><C-w><CR>
+au FileType cpp nnoremap q :Cppman <C-r><C-w><CR>
+au FileType c nnoremap q :Cppman! <C-r><C-w><CR>
 
 " =========================================================== "
 
