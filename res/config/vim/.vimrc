@@ -89,7 +89,15 @@ let share = [
             \ [ 'deploy to firebase', 'call Deploy_Firebase()' ],
             \ ]
 
-" 預覽定義
+let goto = [
+            \ [ 'find definition', 'exec "Leaderf gtags --path-style absolute -d " . expand("<cword>")' ],
+            \ [ 'find reference', 'exec "Leaderf gtags --path-style absolute -r " . expand("<cword>")' ],
+            \ [ 'find keyword', 'Leaderf rg' ],
+            \ ]
+
+" 搜尋標籤
+nnoremap <silent> <C-f> :call quickui#context#open(goto, {'index':g:quickui#context#cursor})<CR>
+" 預覽標籤
 nnoremap <S-m> :call quickui#tools#preview_tag('')<CR>
 nnoremap <S-h> :call quickui#preview#scroll(-1)<CR>
 nnoremap <S-n> :call quickui#preview#scroll(1)<CR>
@@ -256,8 +264,6 @@ let g:Lf_PopupPalette = {
 
 " 搜尋文件
 nnoremap <silent> <C-p> :LeaderfFile<CR>
-" 搜尋參考
-nnoremap <silent> <C-f> :Leaderf gtags --path-style absolute -r <C-r><C-w><CR>
 " 其他快捷鍵
 let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<C-t>': ['<CR>'], '<ESC>': ['<C-p>', '<C-f>'], '<C-p>': ['<C-n>']}
 
