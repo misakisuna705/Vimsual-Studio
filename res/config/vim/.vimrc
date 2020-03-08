@@ -26,10 +26,10 @@ call plug#begin('~/.vim/plugged')
 
 " 瀏覽插件
 Plug 'airblade/vim-rooter'
+Plug 'skywind3000/vim-quickui'
 Plug 'Yggdroot/LeaderF', {'on': 'LeaderfFile', 'do': './install.sh'}
 Plug 'scrooloose/nerdtree', {'on': ['NERDTreeVCS', 'NERDTreeClose']}
 Plug 'liuchengxu/vista.vim', {'on': ['Vista', 'Vista!']}
-Plug 'skywind3000/vim-preview', {'on': ['PreviewTag', 'PreviewQuickfix']}
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/vim-cppman', {'on': 'Cppman'}
 Plug 'easymotion/vim-easymotion', {'on': '<Plug>(easymotion-sn)'}
@@ -54,8 +54,7 @@ Plug 'fisadev/vim-isort', {'on': 'Isort'}
 Plug 'mzlogin/vim-markdown-toc', {'on': ['GenTocGFM', 'RemoveToc']}
 Plug 'vhda/verilog_systemverilog.vim', {'for': 'vlang'}
 
-" 任務插件
-Plug 'skywind3000/vim-quickui'
+" 建構插件
 Plug 'iamcco/markdown-preview.vim', {'on': '<Plug>MarkdownPreview'}
 Plug 'iamcco/mathjax-support-for-mkdp', {'on': '<Plug>MarkdownPreview'}
 Plug 'kassio/neoterm', {'on': ['T', 'Topen', 'Tclose', 'Tclear']}
@@ -75,10 +74,6 @@ call plug#end()
 
 " ==================================================================================================================== "
 
-" 瀏覽插件
-
-" =========================================================== "
-
 " airblade/vim-rooter
 
 " 切換根目錄時不顯示訊息
@@ -86,8 +81,27 @@ let g:rooter_silent_chdir = 1
 
 " =========================================================== "
 
+" skywind3000/vim-quickui
+
+let share = [
+            \ [ 'push to github', 'call Push_Github()' ],
+            \ [ 'publish to npm', 'call Publish_Npm()' ],
+            \ [ 'deploy to firebase', 'call Deploy_Firebase()' ],
+            \ ]
+
+" 預覽定義
+nnoremap <S-m> :call quickui#tools#preview_tag('')<CR>
+nnoremap <S-h> :call quickui#preview#scroll(-1)<CR>
+nnoremap <S-n> :call quickui#preview#scroll(1)<CR>
+" 發布專案
+nnoremap <silent> <F12> :call quickui#listbox#open(share, {})<CR>
+
+" =========================================================== "
+
 " Yggdroot/LeaderF
 
+" 使用gtags
+let g:Lf_GtagsAutoGenerate = 1
 " 使用popup模式
 let g:Lf_WindowPosition = 'popup'
 " 設定leaderF開檔覆蓋空buffer
@@ -240,11 +254,11 @@ let g:Lf_PopupPalette = {
             \   }
             \ }
 
-" 按下control+p鍵時，開啟模糊搜尋文件功能
+" 搜尋文件
 nnoremap <silent> <C-p> :LeaderfFile<CR>
-" 按下control+g鍵時，開啟模糊搜索關鍵字功能
-nnoremap <silent> <C-f> :Leaderf rg<CR>
-" 配置快捷鍵
+" 搜尋參考
+nnoremap <silent> <C-f> :Leaderf gtags -r <C-r><C-w><CR>
+" 其他快捷鍵
 let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<C-t>': ['<CR>'], '<ESC>': ['<C-p>', '<C-f>'], '<C-p>': ['<C-n>']}
 
 " =========================================================== "
@@ -300,20 +314,6 @@ let g:vista_sidebar_width = 25
 let g:vista_echo_cursor = 0
 " 跳轉標籤後關閉vista
 let g:vista_close_on_jump = 1
-
-" =========================================================== "
-
-" skywind3000/vim-preview
-
-" 使預覽視窗不要出現在buffer列表
-let g:preview_nolist = 1
-
-" 按下shift+m鍵時，垂直分屏後預覽函數標籤
-nnoremap <silent> <S-m> :PreviewTag<CR>
-" 按下shift+n鍵時，開新tab後預覽函數標籤
-nnoremap <silent> <S-n> :PreviewGoto tabe<CR>
-" 按下shift+h鍵時，關閉分屏後跳轉回檔案
-nnoremap <silent> <S-h> :PreviewClose<CR>
 
 " =========================================================== "
 
@@ -592,19 +592,6 @@ au FileType markdown nnoremap <F3> :GenTocGFM<CR>
 au FileType markdown nnoremap <F4> :RemoveToc<CR>
 
 " ==================================================================================================================== "
-
-" skywind3000/vim-quickui
-
-let content = [
-            \ [ 'push to github', 'call Push_Github()' ],
-            \ [ 'publish to npm', 'call Publish_Npm()' ],
-            \ [ 'deploy to firebase', 'call Deploy_Firebase()' ],
-            \ ]
-
-" 按下F12鍵時，發布專案
-nnoremap <silent> <F12> :call quickui#listbox#open(content, {})<CR>
-
-" =========================================================== "
 
 " iamcco/markdown-preview.vim
 

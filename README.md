@@ -331,11 +331,11 @@ docker volume rm 儲區 # 移除已分配儲區
 
 | vim  |      瀏覽      |       編輯       |     補全      | 偵錯 |           排版            |           任務           |        環境         |
 | :--: | :------------: | :--------------: | :-----------: | :--: | :-----------------------: | :----------------------: | :-----------------: |
-| 插件 |   vim-rooter   | vim-visual-multi | YouCompleteMe | ale  |      vim-autoformat       |       vim-quickui        |    vim-polyglot     |
-|      |    LeaderF     |  nerdcommenter   | YCM-Generator |      |         vim-isort         |   markdown-preview.vim   |     indentLine      |
-|      |    nerdtree    |                  |   coc.nvim    |      |     vim-markdown-toc      | mathjax-support-for-mkdp |    lightline.vim    |
-|      |     vista      |                  |   emmet-vim   |      | verilog_systemverilog.vim |         neoterm          | vim-sublime-monokai |
-|      |  vim-preview   |                  |               |      |                           |                          |                     |
+| 插件 |  vim-quickui   | vim-visual-multi | YouCompleteMe | ale  |      vim-autoformat       |   markdown-preview.vim   |    vim-polyglot     |
+|      |   vim-rooter   |  nerdcommenter   | YCM-Generator |      |         vim-isort         | mathjax-support-for-mkdp |     indentLine      |
+|      |    LeaderF     |                  |   coc.nvim    |      |     vim-markdown-toc      |         neoterm          |    lightline.vim    |
+|      |    nerdtree    |                  |   emmet-vim   |      | verilog_systemverilog.vim |                          | vim-sublime-monokai |
+|      |     vista      |                  |               |      |                           |                          |                     |
 |      | vim-gutentags  |                  |               |      |                           |                          |                     |
 |      |   vim-cppman   |                  |               |      |                           |                          |                     |
 |      | vim-easymotion |                  |               |      |                           |                          |                     |
@@ -369,9 +369,9 @@ docker volume rm 儲區 # 移除已分配儲區
 |      |     `CTRL`+`p`      |           搜尋文件開關            |
 |      |     `CTRL`+`f`      |           搜尋標籤開關            |
 |      |     `CTRL`+`o`      |        在垂直分屏開啟檔案         |
-|      |     `SHIFT`+`m`     |        在垂直分屏預覽標籤         |
-|      |     `SHIFT`+`n`     |          跳轉至選定標籤           |
-|      |     `SHIFT`+`h`     |           關閉預覽視窗            |
+|      |     `SHIFT`+`m`     |         循環預覽函數定義          |
+|      |     `SHIFT`+`n`     |         向下滾動預覽視窗          |
+|      |     `SHIFT`+`h`     |         向上滾動預覽視窗          |
 |      |         `q`         |        垂直分屏後開關 man         |
 |      |         `q`         |       垂直分屏後開關 cppman       |
 |      |         `s`         |            關鍵字跳轉             |
