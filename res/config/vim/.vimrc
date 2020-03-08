@@ -130,15 +130,16 @@ let g:Lf_WildIgnore = {
             \ 'file': ['.DS_Store', '*.pvm']
             \}
 
-" 設定LeaderF高度
-let g:Lf_WindowHeight = 0.18
 " 隱藏LeaderF的help提醒
 let g:Lf_HideHelp = 1
 " 顯示模糊搜索文件的絕對路徑
 let g:Lf_ShowRelativePath = 0
-" 設定LeaderF預覽視窗
+" 設定主視窗
+let g:Lf_PopupHeight = 0.23
+let g:Lf_PopupWidth = &columns * 0.8
+" 設定預覽視窗
 let g:Lf_PreviewInPopup = 1
-let g:Lf_PreviewHorizontalPosition = 'right'
+
 " 設定LeaderF主題
 let g:Lf_StlSeparator = {'left': '', 'right': ''}
 
