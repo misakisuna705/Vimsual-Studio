@@ -353,7 +353,7 @@ let g:cppman_open_mode = "vertical"
 
 " 按下q鍵時，開啟cppman
 au FileType cpp nnoremap q :Cppman <C-r><C-w><CR>
-au FileType c nnoremap q :Cppman! <C-r><C-w><CR>
+au FileType c nnoremap q :Cppman! 3 <C-r><C-w><CR>
 
 " =========================================================== "
 
