@@ -257,7 +257,7 @@ let g:Lf_PopupPalette = {
 " 搜尋文件
 nnoremap <silent> <C-p> :LeaderfFile<CR>
 " 搜尋參考
-nnoremap <silent> <C-f> :Leaderf gtags -r <C-r><C-w><CR>
+nnoremap <silent> <C-f> :Leaderf gtags --path-style absolute -r <C-r><C-w><CR>
 " 其他快捷鍵
 let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<C-t>': ['<CR>'], '<ESC>': ['<C-p>', '<C-f>'], '<C-p>': ['<C-n>']}
 
