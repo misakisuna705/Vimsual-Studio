@@ -17,10 +17,12 @@ add_executable(${PROJECT_NAME} ${SRC})
 include_directories(
     ${PROJECT_SOURCE_DIR}/include
     # /usr/local/Cellar/allegro/*/include
-)
+    )
 
-# lib設定 link_directories( /usr/local/Cellar/allegro/*/lib ) file(GLOB LIB "/usr/local/Cellar/allegro/*/lib/*.dylib" )
-# target_link_libraries(${PROJECT_NAME} ${LIB})
+lib設定
+#link_directories( /usr/local/Cellar/allegro/*/lib )
+#file(GLOB LIB "/usr/local/Cellar/allegro/*/lib/*.dylib" )
+#target_link_libraries(${PROJECT_NAME} ${LIB})
 
 # flag設定
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
