@@ -760,8 +760,6 @@ nnoremap <silent> <SPACE>q :call Bye()
 
 function! Bye()
     if tabpagenr('$') > 1
-        cclose
-        Tclose
     endif
     q
 endfunction
