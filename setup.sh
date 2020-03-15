@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 main() {
     bash "$HOME/.dotfiles/src/env.sh"

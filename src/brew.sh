@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-install_brew () {
+install_brew() {
     printf "Test Homebrew...\n"
     if test ! "$(brew -v)"; then
         printf "Install Homebrew...\n"
@@ -14,7 +14,7 @@ install_brew () {
                 echo "export PATH='/home/linuxbrew/.linuxbrew/bin:$PATH'"
                 echo "export MANPATH='/home/linuxbrew/.linuxbrew/share/man:$MANPATH'"
                 echo "export INFOPATH='/home/linuxbrew/.linuxbrew/share/info:$INFOPATH'"
-            } >> ~/.zshrc
+            } >>~/.zshrc
         fi
         printf "Succeeded to install Homebrew!\n\n"
     else

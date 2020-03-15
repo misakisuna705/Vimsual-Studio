@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 setup_env() {
     if [[ "$OSTYPE" == "darwin"* ]]; then

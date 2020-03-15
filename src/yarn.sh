@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-setup_yarn () {
+setup_yarn() {
     if [[ "$OSTYPE" == "darwin"* ]]; then
         printf "Setup yarn...\n"
         cd "$HOME/.config/yarn/global" || exit

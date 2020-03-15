@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-symlink () {
+symlink() {
     printf "Symlink Brewfile...\n"
     if [[ "$OSTYPE" == "darwin"* ]]; then
         ln -sf "$HOME/.dotfiles/res/config/brew/macOS/Brewfile" "$HOME/"
