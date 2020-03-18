@@ -2,19 +2,19 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "56e21a1085214e9e87a294f00b28edd293aa379e"
+        "revision": "26cb8229bdd6b707b2957e838471ca0f7b00e520"
       },
       "homebrew/bundle": {
-        "revision": "ad1f1974dab6bad9720383977a0b23af30a82fe8"
+        "revision": "491180c6f8bbd2b1496ab25aee4889b7c3de8caf"
       },
       "homebrew/cask": {
-        "revision": "56e21a1085214e9e87a294f00b28edd293aa379e"
+        "revision": "26cb8229bdd6b707b2957e838471ca0f7b00e520"
       },
       "homebrew/cask-fonts": {
-        "revision": "8a876fb1228023f2bc95e783567e3adf264367b1"
+        "revision": "9cceb85a7a963ed393d70bedf008f50e543eef8d"
       },
       "homebrew/core": {
-        "revision": "afc5b5b578fde52e38057e839532fce5e77f9712"
+        "revision": "c57ea5af0ba9c11f61330a8dc10b4f1da1fd0919"
       },
       "mattisg/mattisg": {
         "revision": "a65b6c99617598d79a9a0957192569bb9b6b6d62"
@@ -61,7 +61,7 @@
         }
       },
       "dotnet-sdk": {
-        "version": "3.1.102,3533d626-4784-4944-9d3a-e62b9b46d11a:770e2b9c1a40546a19e063c39996fe7d",
+        "version": "3.1.200,fd4c60cd-04a0-4175-ad80-e05d3d90e45e:e7e55bd77cdd6cc99c4ff37dc6fe1ce2",
         "options": {
           "full_name": "dotnet-sdk"
         }
@@ -172,6 +172,12 @@
         "version": "2.7.11",
         "options": {
           "full_name": "xquartz"
+        }
+      },
+      "vmware-fusion": {
+        "version": "11.5.2-15794494",
+        "options": {
+          "full_name": "vmware-fusion"
         }
       }
     },
@@ -449,22 +455,22 @@
         }
       },
       "ripgrep": {
-        "version": "11.0.2",
+        "version": "12.0.0",
         "bottle": {
           "cellar": ":any",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/ripgrep-11.0.2.catalina.bottle.1.tar.gz",
-              "sha256": "2807391bd15f5529d15c88357b6a54de405ea22272a81613bb53bcef0c40717d"
+              "url": "https://homebrew.bintray.com/bottles/ripgrep-12.0.0.catalina.bottle.tar.gz",
+              "sha256": "b81f5baed031c2081dfce0a05a4d442aa7232bf4b637882236ccd68560baee3a"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/ripgrep-11.0.2.mojave.bottle.1.tar.gz",
-              "sha256": "e8916c30f1eea952b2429c1268a7f91aa19178e56c97106bc71f53778d2084aa"
+              "url": "https://homebrew.bintray.com/bottles/ripgrep-12.0.0.mojave.bottle.tar.gz",
+              "sha256": "d1e4b4394918bdf1e15f2de73e978b23574e4b05f134b01373e30d637fd7ada7"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/ripgrep-11.0.2.high_sierra.bottle.1.tar.gz",
-              "sha256": "2e28d6ebf756c5bd0d952d885166b39d5f1f19a10421a66f722fc5a22ad206a9"
+              "url": "https://homebrew.bintray.com/bottles/ripgrep-12.0.0.high_sierra.bottle.tar.gz",
+              "sha256": "bcdd5dbf707adad635d5b765247d839d89a5f48eb3a025dca3480b2ce77c0e40"
             }
           }
         }
@@ -620,7 +626,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.10",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "afc5b5b578fde52e38057e839532fce5e77f9712",
+        "Homebrew/homebrew-core": "c57ea5af0ba9c11f61330a8dc10b4f1da1fd0919",
         "CLT": "11.0.33.8",
         "Xcode": "11.3.1",
         "macOS": "10.15.3"

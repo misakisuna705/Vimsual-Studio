@@ -353,7 +353,8 @@ let g:cppman_open_mode = "vertical"
 
 " 按下q鍵時，開啟cppman
 au FileType cpp nnoremap q :Cppman <C-r><C-w><CR>
-au FileType c nnoremap q :Cppman! 3 <C-r><C-w><CR>
+au FileType c nnoremap q :Cppman! 2 <C-r><C-w><CR>
+au FileType c nnoremap <S-q> :Cppman! 3 <C-r><C-w><CR>
 
 " =========================================================== "
 
@@ -756,13 +757,7 @@ nnoremap <silent> n :tabN<CR>
 nnoremap <silent> m :tabn<CR>
 
 " 按下空白鍵+q+enter鍵時，關閉tab或vim
-nnoremap <silent> <SPACE>q :call Bye()
-
-function! Bye()
-    if tabpagenr('$') > 1
-    endif
-    q
-endfunction
+nnoremap <silent> <SPACE>q :q
 
 " =========================================================== "
 

@@ -101,6 +101,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |      cmake      |
 |    cppcheck     |
 |       gdb       |
+|     global      |
 |       go        |
 | icarus-verilog  |
 |      nasm       |
@@ -136,11 +137,11 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |           keka           |
 |        mediainfo         |
 |         megasync         |
-|          mipony          |
+|          motrix          |
 |         osxfuse          |
 |         tickeys          |
-|       transmission       |
 |        unity-hub         |
+|      vmware-fusion       |
 |        wireshark         |
 |         xquartz          |
 
