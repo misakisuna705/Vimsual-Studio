@@ -5,6 +5,7 @@ cmake_minimum_required(VERSION 3.13)
 project(main)
 
 # exe設定
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Weverything")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/test)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${PROJECT_SOURCE_DIR}/bin)
@@ -19,8 +20,14 @@ include_directories(
     # /usr/local/Cellar/allegro/*/include
 )
 
-# lib設定 link_directories( /usr/local/Cellar/allegro/*/lib ) file(GLOB LIB "/usr/local/Cellar/allegro/*/lib/*.dylib" )
-# target_link_libraries(${PROJECT_NAME} ${LIB})
+# lib設定
+link_directories(
+    ${PROJECT_SOURCE_DIR}/lib
+    # /usr/local/Cellar/allegro/*/lib
+)
+file(GLOB_RECURSE LIB "${PROJECT_SOURCE_DIR}/lib/*.dylib" # "/usr/local/Cellar/allegro/*/lib/*.dylib"
+)
+target_link_libraries(${PROJECT_NAME} ${LIB})
 
 # flag設定
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)

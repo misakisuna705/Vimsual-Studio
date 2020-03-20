@@ -2,19 +2,19 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "26cb8229bdd6b707b2957e838471ca0f7b00e520"
+        "revision": "6993e9f53e7c56a19702d45aee5be4079c2cbf8a"
       },
       "homebrew/bundle": {
-        "revision": "491180c6f8bbd2b1496ab25aee4889b7c3de8caf"
+        "revision": "7280d53efeda7ad377cc8d41cc7692d74d474bb2"
       },
       "homebrew/cask": {
-        "revision": "26cb8229bdd6b707b2957e838471ca0f7b00e520"
+        "revision": "6993e9f53e7c56a19702d45aee5be4079c2cbf8a"
       },
       "homebrew/cask-fonts": {
         "revision": "9cceb85a7a963ed393d70bedf008f50e543eef8d"
       },
       "homebrew/core": {
-        "revision": "c57ea5af0ba9c11f61330a8dc10b4f1da1fd0919"
+        "revision": "722e64cf6ac02dfb0a2159ddb0698c5d707a41b9"
       },
       "mattisg/mattisg": {
         "revision": "a65b6c99617598d79a9a0957192569bb9b6b6d62"
@@ -133,7 +133,7 @@
         }
       },
       "megasync": {
-        "version": "4.3.0.8",
+        "version": "4.3.1",
         "options": {
           "full_name": "megasync"
         }
@@ -178,6 +178,12 @@
         "version": "11.5.2-15794494",
         "options": {
           "full_name": "vmware-fusion"
+        }
+      },
+      "motrix": {
+        "version": "1.4.1",
+        "options": {
+          "full_name": "motrix"
         }
       }
     },
@@ -567,22 +573,22 @@
         }
       },
       "vim": {
-        "version": "8.2.0350",
+        "version": "8.2.0400",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/vim-8.2.0350.catalina.bottle.tar.gz",
-              "sha256": "4c6a222857f1b03c63806fc5dae4665bb7f7142b3faa26472c404703484a1f15"
+              "url": "https://homebrew.bintray.com/bottles/vim-8.2.0400.catalina.bottle.tar.gz",
+              "sha256": "8540d076e37008fc730fe1ddd2d884f67d4d9bf93751794b08bde266e8114062"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/vim-8.2.0350.mojave.bottle.tar.gz",
-              "sha256": "dfaf059904fef868bdf8fa763fa5b572cbfbfec158c1068188bab9d965834cf2"
+              "url": "https://homebrew.bintray.com/bottles/vim-8.2.0400.mojave.bottle.tar.gz",
+              "sha256": "6cda32b4c78b89b2ae9ab952defef6c096260f58b8826d1f543af45c85eb4d79"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/vim-8.2.0350.high_sierra.bottle.tar.gz",
-              "sha256": "48d5647d4cfa68f46c37e064a01530c9f1e731a673634f5895be40444abf78e8"
+              "url": "https://homebrew.bintray.com/bottles/vim-8.2.0400.high_sierra.bottle.tar.gz",
+              "sha256": "fff1af3a38918c2e740c27e320e27e73a8cba55b4468d5b5289a7d7a94e257d0"
             }
           }
         }
@@ -626,7 +632,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.10",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "c57ea5af0ba9c11f61330a8dc10b4f1da1fd0919",
+        "Homebrew/homebrew-core": "722e64cf6ac02dfb0a2159ddb0698c5d707a41b9",
         "CLT": "11.0.33.8",
         "Xcode": "11.3.1",
         "macOS": "10.15.3"
