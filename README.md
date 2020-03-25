@@ -424,12 +424,12 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| python |  環境  |     補全      |  偵錯  |      排版      |  直譯   |  發佈   |
-| :----: | :----: | :-----------: | :----: | :------------: | :-----: | :-----: |
-|  依賴  | pipenv |     jedi      | flake8 |      yapf      | ipython |   git   |
-|        |   x    |       x       |   x    |     isort      |    x    |    x    |
-|  插件  |   x    | YouCompleteMe |  ale   | vim-autoformat | neoterm | neoterm |
-|        |   x    |       x       |   x    |   vim-isort    |    x    |    x    |
+| python |  環境  |   補全   |  偵錯  |      排版      |  直譯   |  發佈   |
+| :----: | :----: | :------: | :----: | :------------: | :-----: | :-----: |
+|  依賴  | pipenv |   jedi   | flake8 |      yapf      | ipython |   git   |
+|        |   x    |    x     |   x    |     isort      |    x    |    x    |
+|  插件  |   x    | coc.nvim |  ale   | vim-autoformat | neoterm | neoterm |
+|        |   x    |    x     |   x    |   vim-isort    |    x    |    x    |
 
 #### 映射
 

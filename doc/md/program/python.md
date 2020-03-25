@@ -3,7 +3,9 @@
 <!-- vim-markdown-toc GFM -->
 
 * [pipenv](#pipenv)
-* [YouCompleteMe](#youcompleteme)
+* [coc.nvim](#cocnvim)
+    - [命令](#命令)
+    - [插件](#插件)
 * [ale](#ale)
 
 <!-- vim-markdown-toc -->
@@ -23,10 +25,25 @@ pipenv uninstall 插件 # 在虛擬環境解除安裝該插件
 pipenv shell # 載入虛擬環境
 ```
 
-## YouCompleteMe
+## coc.nvim
+
+### 命令
 
 ```vim
-:YcmDebugInfo " debug YCM
+:CocList extensions
+
+:CocInstall
+:CocUninstall
+
+:CocUpdate
+
+:CocConfig
+```
+
+### 插件
+
+```vim
+coc-clangd
 ```
 
 ## ale

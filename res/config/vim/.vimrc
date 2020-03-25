@@ -40,9 +40,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'scrooloose/nerdcommenter', {'on': '<plug>NERDCommenterToggle'}
 
 " 補全插件
-Plug 'Valloric/YouCompleteMe', {'for': ['python', 'vlang'], 'do': './install.py --all'}
-Plug 'rdnetto/YCM-Generator', {'on': 'YcmGenerateConfig', 'branch': 'stable'}
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['c', 'cpp', 'html', 'css', 'scss', 'javascript', 'typescript', 'json', 'yaml', 'cs', 'swift']}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim', {'for': 'html'}
 
 " 偵錯插件
@@ -429,45 +427,10 @@ vmap <silent> // <plug>NERDCommenterToggle
 
 " ==================================================================================================================== "
 
-" Valloric/YouCompleteMe
-
-" 禁用clangd
-let g:ycm_use_clangd = 0
-
-" 設定.ycm_extra_conf.py預設位置
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-" 自動偵測.ycm_extra_conf.py
-let g:ycm_confirm_extra_conf = 0
-
-" 輸入兩個字元時，開始匹配標籤補全視窗
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_min_num_identifier_candidate_chars = 2
-" 輸入兩個字元時，開始匹配語法/語意補全視窗
-let g:ycm_semantic_triggers = {
-            \ 'c,cpp,python': ['re!\w{2}'],
-            \ }
-
-" 不顯示補全定義
-set completeopt-=preview
-" 不用YCM進行實時語法偵錯(使用ale)
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 0
-
-" 按下enter鍵時，自動選中當前選項，並關閉補全視窗
-let g:ycm_key_list_stop_completion = ['<CR>']
-
-" 按下begin+enter鍵時，自動換行縮進補全end
-au FileType vlang inoremap begin<CR> begin<CR>end<ESC><UP>$<LEFT><LEFT><LEFT><LEFT><LEFT><LEFT>
-" 按下(+enter鍵時，自動換行縮進補全)
-au FileType vlang inoremap (<CR> (<CR>);<ESC><UP>o
-
-" =========================================================== "
-
 " neoclide/coc.nvim
 
 " 安裝coc插件
-let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-omnisharp', 'coc-sourcekit']
+let g:coc_global_extensions = ['coc-clangd', 'coc-python', 'coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-omnisharp', 'coc-sourcekit']
 
 " 按下tab鍵或shift+tab鍵時，上下瀏覽補全視窗
 inoremap <silent><expr> <TAB>
@@ -897,11 +860,15 @@ tnoremap <C-i> <C-w><C-k>
 nnoremap <C-k> <C-w><C-j>
 tnoremap <C-k> <C-w><C-j>
 
-" 按下{+enter鍵時，自動換行縮進補全}
-inoremap {<CR> {<CR>}<ESC><UP>$<LEFT><LEFT>
-" 按下enter鍵時，在普通模式新增空白行
-nnoremap <CR> o<ESC>
 " 按下shift+u鍵時，重做上一個動作
 nnoremap <S-u> <C-r>
+" 按下enter鍵時，在普通模式新增空白行
+nnoremap <CR> o<ESC>
+" 按下{+enter鍵時，自動換行縮進補全}
+inoremap {<CR> {<CR>}<ESC><UP>$<LEFT><LEFT>
+" 按下begin+enter鍵時，自動換行縮進補全end
+au filetype vlang inoremap begin<cr> begin<cr>end<esc><up>$<left><left><left><left><left><left>
+" 按下(+enter鍵時，自動換行縮進補全)
+au filetype vlang inoremap (<cr> (<cr>);<esc><up>o
 
 " ==================================================================================================================== "
