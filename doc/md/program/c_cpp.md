@@ -2,8 +2,9 @@
 
 <!-- vim-markdown-toc GFM -->
 
-* [YouCompleteMe](#youcompleteme)
-* [YCM-Generator](#ycm-generator)
+* [coc.nvim](#cocnvim)
+    - [命令](#命令)
+    - [插件](#插件)
 * [ale](#ale)
 * [gdb 8.0.1](#gdb-801)
 
@@ -11,16 +12,25 @@
 
 ---
 
-## YouCompleteMe
+## coc.nvim
+
+### 命令
 
 ```vim
-:YcmDebugInfo " debug YCM
+:CocList extensions
+
+:CocInstall
+:CocUninstall
+
+:CocUpdate
+
+:CocConfig
 ```
 
-## YCM-Generator
+### 插件
 
 ```vim
-:YcmGenerateConfig " 自動生成.ycm_extra_conf.py
+coc-clangd
 ```
 
 ## ale

@@ -2,6 +2,9 @@
 
 export GOPATH="${HOME}/go"
 export PATH="${GOPATH}/bin:${PATH}"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+#export LDFLAGS="-L/usr/local/opt/llvm/lib"
+#export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
 # antigen啟用
 source /usr/local/share/antigen/antigen.zsh

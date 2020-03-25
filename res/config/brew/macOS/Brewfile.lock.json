@@ -2,19 +2,19 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "6993e9f53e7c56a19702d45aee5be4079c2cbf8a"
+        "revision": "8dd06392481bd7ec0ff5b35bdf74b5702a7bed79"
       },
       "homebrew/bundle": {
         "revision": "7280d53efeda7ad377cc8d41cc7692d74d474bb2"
       },
       "homebrew/cask": {
-        "revision": "6993e9f53e7c56a19702d45aee5be4079c2cbf8a"
+        "revision": "8dd06392481bd7ec0ff5b35bdf74b5702a7bed79"
       },
       "homebrew/cask-fonts": {
-        "revision": "9cceb85a7a963ed393d70bedf008f50e543eef8d"
+        "revision": "08c20b31cee57d8f067053b51786f80c000794e5"
       },
       "homebrew/core": {
-        "revision": "722e64cf6ac02dfb0a2159ddb0698c5d707a41b9"
+        "revision": "a45a8feff8dbda2f0e0595289796a102eb78e94e"
       },
       "mattisg/mattisg": {
         "revision": "a65b6c99617598d79a9a0957192569bb9b6b6d62"
@@ -115,7 +115,7 @@
         }
       },
       "java": {
-        "version": "13.0.2,8:d4173c853231432d94f001e99d882ca7",
+        "version": "14,36:076bab302c7b4508975440c56f6cc26a",
         "options": {
           "full_name": "java"
         }
@@ -632,7 +632,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.10",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "722e64cf6ac02dfb0a2159ddb0698c5d707a41b9",
+        "Homebrew/homebrew-core": "a45a8feff8dbda2f0e0595289796a102eb78e94e",
         "CLT": "11.0.33.8",
         "Xcode": "11.3.1",
         "macOS": "10.15.3"

@@ -43,10 +43,6 @@ symlink() {
     fi
     printf "Succeeded to symlink package.json!\n\n"
 
-    printf "Symlink .ycm_extra_conf.py...\n"
-    ln -sf "$HOME/.dotfiles/res/config/ycm/global/.ycm_extra_conf.py" "$HOME/"
-    printf "Succeeded to symlink .ycm_extra_conf.py!\n\n"
-
     printf "Symlink .zshrc...\n"
     if [[ "$OSTYPE" == "darwin"* ]]; then
         ln -sf "$HOME/.dotfiles/res/config/zsh/macOS/.zshrc" "$HOME/"

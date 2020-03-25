@@ -41,19 +41,19 @@
         - [2.3.4. webpage](#234-webpage)
             + [配置](#配置-3)
             + [映射](#映射-3)
-        - [2.3.5. csharp](#235-csharp)
+        - [csharp](#csharp)
             + [配置](#配置-4)
             + [映射](#映射-4)
-        - [2.3.6. markdown](#236-markdown)
+        - [markdown](#markdown)
             + [配置](#配置-5)
             + [映射](#映射-5)
-        - [2.3.7. verilog](#237-verilog)
+        - [verilog](#verilog)
             + [配置](#配置-6)
             + [映射](#映射-6)
-        - [2.3.8. assembly](#238-assembly)
+        - [assembly](#assembly)
             + [配置](#配置-7)
-        - [2.3.9. shell](#239-shell)
-        - [2.4.0. ios](#240-ios)
+        - [shell](#shell)
+        - [ios](#ios)
 
 <!-- vim-markdown-toc -->
 
@@ -104,6 +104,7 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |     global      |
 |       go        |
 | icarus-verilog  |
+|      llvm       |
 |      nasm       |
 |      ninja      |
 |     python      |
@@ -249,6 +250,8 @@ docker volume rm 儲區 # 移除已分配儲區
 | chromium-browser  |
 |       hime        |
 | linuxbrew-wrapper |
+|     net-tools     |
+|  openssh-server   |
 |  xfce4-terminal   |
 |        zsh        |
 
@@ -392,13 +395,12 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| c / c++ |     補全      |   偵錯   |      排版      |  編譯   |  執行   |   調試    |  發佈   |
-| :-----: | :-----------: | :------: | :------------: | :-----: | :-----: | :-------: | :-----: |
-|  依賴   |     clang     |  clang   |     astyle     |  clang  |    x    |    gdb    |   git   |
-|         |     cmake     | cppcheck |  cmake_format  |  ninja  |    x    |     x     |    x    |
-|         |       x       |    x     |       x        |  cmake  |    x    |     x     |    x    |
-|  插件   | YouCompleteMe |   ale    | vim-autoformat | neoterm | neoterm | termdebug | neoterm |
-|         | YCM-Generator |    x     |       x        |    x    |    x    |     x     |    x    |
+| c / c++ |   補全   |   偵錯   |      排版      |  編譯   |  執行   |   調試    |  發佈   |
+| :-----: | :------: | :------: | :------------: | :-----: | :-----: | :-------: | :-----: |
+|  依賴   |   llvm   |   llvm   |     astyle     |  llvm   |    x    |    gdb    |   git   |
+|         |    x     | cppcheck |  cmake_format  |  ninja  |    x    |     x     |    x    |
+|         |    x     |    x     |       x        |  cmake  |    x    |     x     |    x    |
+|  插件   | coc.nvim |   ale    | vim-autoformat | neoterm | neoterm | termdebug | neoterm |
 
 #### 映射
 
@@ -468,7 +470,7 @@ docker volume rm 儲區 # 移除已分配儲區
 |         |      `F2`      | 停止推播 |
 |         |     `F12`      |   發佈   |
 
-### 2.3.5. csharp
+### csharp
 
 -   [詳情按此](doc/md/program/csharp.md)
 
@@ -486,7 +488,7 @@ docker volume rm 儲區 # 移除已分配儲區
 |  編程  | `F1`  | 編譯執行 |
 |        | `F12` |   發佈   |
 
-### 2.3.6. markdown
+### markdown
 
 -   [詳情按此](doc/md/program/markdown.md)
 
@@ -508,7 +510,7 @@ docker volume rm 儲區 # 移除已分配儲區
 |          | `F4`  | 刪去目錄 |
 |          | `F12` |   發佈   |
 
-### 2.3.7. verilog
+### verilog
 
 -   [詳情按此](doc/md/program/verilog.md)
 
@@ -529,7 +531,7 @@ docker volume rm 儲區 # 移除已分配儲區
 |         | `F3`  | 推播 |
 |         | `F12` | 發佈 |
 
-### 2.3.8. assembly
+### assembly
 
 -   [詳情按此](doc/md/program/assembly.md)
 
@@ -540,7 +542,7 @@ docker volume rm 儲區 # 移除已分配儲區
 |   依賴   |       x        |
 |   插件   | vim-autoformat |
 
-### 2.3.9. shell
+### shell
 
 shellcheck
 
@@ -548,6 +550,6 @@ Plug 'w0rp/ale',{'for':['sh']}
 
 shfmt
 
-### 2.4.0. ios
+### ios
 
 coc-sourcekit

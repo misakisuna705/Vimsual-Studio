@@ -40,9 +40,9 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'scrooloose/nerdcommenter', {'on': '<plug>NERDCommenterToggle'}
 
 " 補全插件
-Plug 'Valloric/YouCompleteMe', {'for': ['c', 'cpp', 'python', 'vlang'], 'do': './install.py --all'}
+Plug 'Valloric/YouCompleteMe', {'for': ['python', 'vlang'], 'do': './install.py --all'}
 Plug 'rdnetto/YCM-Generator', {'on': 'YcmGenerateConfig', 'branch': 'stable'}
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['html', 'css', 'scss', 'javascript', 'typescript', 'json', 'yaml', 'cs', 'swift']}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['c', 'cpp', 'html', 'css', 'scss', 'javascript', 'typescript', 'json', 'yaml', 'cs', 'swift']}
 Plug 'mattn/emmet-vim', {'for': 'html'}
 
 " 偵錯插件
@@ -126,7 +126,7 @@ let g:Lf_ShowHidden = 1
 let g:Lf_FollowLinks = 1
 " 不搜尋的檔案與路徑
 let g:Lf_WildIgnore = {
-            \ 'dir': ['.adobe', '.android', '.antigen', '.cache', '.config', '.dotfiles', '.dotnet', '.gradle', '.local', '.mitmproxy', '.mono', '.node-gyp', '.npm', '.nuget', '.omnisharp', '.oracle_jre_usage', '.ssh', '.subversion', '.swt', '.templateengine', '.Trash', '.vim', 'Documents', 'Music', 'Pictures', 'Movies', 'Applications', 'Applications (Parallels)', 'Cache', 'go', 'Google Drive File Stream', 'bin', 'Library', 'node_modules', 'Server', 'temp', '.git', 'build', 'dist'],
+            \ 'dir': ['.adobe', '.android', '.antigen', '.cache', '.config', '.dotfiles', '.dotnet', '.gradle', '.local', '.mitmproxy', '.mono', '.node-gyp', '.npm', '.nuget', '.omnisharp', '.oracle_jre_usage', '.ssh', '.subversion', '.swt', '.templateengine', '.Trash', '.vim', 'Documents', 'Music', 'Desktop', 'Pictures', 'Movies', 'Applications', 'Applications (Parallels)', 'Cache', 'go', 'Google Drive File Stream', 'bin', 'Library', 'node_modules', 'Server', 'temp', '.git', 'build', 'dist'],
             \ 'file': ['.DS_Store', '*.pvm']
             \}
 
