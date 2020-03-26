@@ -32,13 +32,13 @@
         - [vim](#vim)
             + [配置](#配置)
             + [映射](#映射)
-        - [2.3.2. cpp](#232-cpp)
+        - [cpp](#cpp)
             + [配置](#配置-1)
             + [映射](#映射-1)
-        - [2.3.3. python](#233-python)
+        - [python](#python)
             + [配置](#配置-2)
             + [映射](#映射-2)
-        - [2.3.4. webpage](#234-webpage)
+        - [webpage](#webpage)
             + [配置](#配置-3)
             + [映射](#映射-3)
         - [csharp](#csharp)
@@ -389,7 +389,7 @@ docker volume rm 儲區 # 移除已分配儲區
 |      |     `SHIFT`+`u`     |          重做上一個動作           |
 |      | `SPACE`+`e`+`ENTER` |             自動排版              |
 
-### 2.3.2. cpp
+### cpp
 
 -   [詳情按此](doc/md/program/c_cpp.md)
 
@@ -418,7 +418,7 @@ docker volume rm 儲區 # 移除已分配儲區
 |         | `F10` |  單步進入  |
 |         | `F12` |    發佈    |
 
-### 2.3.3. python
+### python
 
 -   [詳情按此](doc/md/program/python.md)
 
@@ -440,7 +440,7 @@ docker volume rm 儲區 # 移除已分配儲區
 |        | `F3`  | 文件直譯 |
 |        | `F12` |   發佈   |
 
-### 2.3.4. webpage
+### webpage
 
 -   [詳情按此](doc/md/program/webpage.md)
 

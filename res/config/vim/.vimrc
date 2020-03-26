@@ -44,7 +44,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim', {'for': 'html'}
 
 " 偵錯插件
-Plug 'w0rp/ale', {'on': 'ALELint'}
+Plug 'w0rp/ale', {'for': ['c', 'cpp', 'python', 'html', 'css', 'javascript', 'typescript', 'verilog_systemverilog', 'sh']}
 
 " 排版插件
 Plug 'Chiel92/vim-autoformat', {'on': 'Autoformat'}
@@ -457,11 +457,10 @@ let g:user_emmet_leader_key = '<C-z>'
 
 " w0rp/ale
 
-" 不進行實時偵錯，保存時才偵錯
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_save = 0
-au FileType c,cpp,python,html,css,scss,javascript,typescript,verilog_systemverilog,sh
-            \ au! BufWrite <buffer> ALELint
+" 設定偵錯時機
+let g:ale_linters_explicit = 1
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
 
 " 設定linter參數
 let g:ale_cpp_clang_options = '-std=c++17 -Wall'
@@ -474,7 +473,6 @@ let g:ale_linters = {
             \   'python': ['flake8'],
             \   'html': ['htmlhint'],
             \   'css': ['stylelint'],
-            \   'scss': ['stylelint'],
             \   'javascript': ['tsserver'],
             \   'typescript': ['tsserver'],
             \   'verilog_systemverilog': ['iverilog'],
@@ -491,8 +489,8 @@ let g:ale_sign_warning = '⚡'
 hi clear ALEErrorSign
 hi clear ALEWarningSign
 " 標示背景使用底線
-au VimEnter * hi ALEWarning cterm=underline
-au VimEnter * hi ALEError cterm=underline
+hi ALEWarning cterm=underline
+hi ALEError cterm=underline
 
 " 按下f鍵時，跳轉偵錯訊息
 nmap f <Plug>(ale_next_wrap)
@@ -522,7 +520,6 @@ let g:formatters_python = ['misakisuna_yapf']
 " 載入prettier排版web/md檔案
 let g:formatters_html = ['prettier']
 let g:formatters_css = ['prettier']
-let g:formatters_scss = ['prettier']
 let g:formatters_javascript = ['prettier']
 let g:formatters_typescript = ['prettier']
 let g:formatters_json = ['prettier']
@@ -536,11 +533,11 @@ let g:formatters_asm = ['asm_format']
 let g:formatters_sh = ['shfmt']
 
 " 在web檔案中，按下tab鍵時，電腦顯示為2個空格(不一定辨認為space語法)
-au FileType html,css,scss,javascript,json,yaml set softtabstop=2
+au FileType html,css,javascript,json,yaml set softtabstop=2
 " 在web檔案中，使用tab語法時，電腦顯示為2個空格
-au FileType html,css,scss,javascript,json,yaml set tabstop=2
+au FileType html,css,javascript,json,yaml set tabstop=2
 " 在web檔案中，使用tab語法時，電腦顯示為2個空格
-au FileType html,css,scss,javascript,json,yaml set shiftwidth=2
+au FileType html,css,javascript,json,yaml set shiftwidth=2
 
 " =========================================================== "
 
