@@ -111,7 +111,9 @@ xcode-select --install # 安裝Command Line Tools for Xcode
 |     ripgrep     |
 |   shellcheck    |
 |      sshfs      |
+|   swiftformat   |
 |      tmux       |
+|      tree       |
 | universal-ctags |
 |       vim       |
 |      wget       |
@@ -333,17 +335,17 @@ docker volume rm 儲區 # 移除已分配儲區
 
 #### 配置
 
-| vim  |      瀏覽      |       編輯       |     補全      | 偵錯 |           排版            |           任務           |        環境         |
-| :--: | :------------: | :--------------: | :-----------: | :--: | :-----------------------: | :----------------------: | :-----------------: |
-| 插件 |  vim-quickui   | vim-visual-multi | YouCompleteMe | ale  |      vim-autoformat       |   markdown-preview.vim   |    vim-polyglot     |
-|      |   vim-rooter   |  nerdcommenter   | YCM-Generator |      |         vim-isort         | mathjax-support-for-mkdp |     indentLine      |
-|      |    LeaderF     |                  |   coc.nvim    |      |     vim-markdown-toc      |         neoterm          |    lightline.vim    |
-|      |    nerdtree    |                  |   emmet-vim   |      | verilog_systemverilog.vim |                          | vim-sublime-monokai |
-|      |     vista      |                  |               |      |                           |                          |                     |
-|      | vim-gutentags  |                  |               |      |                           |                          |                     |
-|      |   vim-cppman   |                  |               |      |                           |                          |                     |
-|      | vim-easymotion |                  |               |      |                           |                          |                     |
-|      |  vim-signify   |                  |               |      |                           |                          |                     |
+| vim  |      瀏覽      |       編輯       |   補全    | 偵錯 |           排版            |           任務           |        環境         |
+| :--: | :------------: | :--------------: | :-------: | :--: | :-----------------------: | :----------------------: | :-----------------: |
+| 插件 |  vim-quickui   | vim-visual-multi | coc.nvim  | ale  |      vim-autoformat       |   markdown-preview.vim   |    vim-polyglot     |
+|      |   vim-rooter   |  nerdcommenter   | emmet-vim |      |         vim-isort         | mathjax-support-for-mkdp |     indentLine      |
+|      |    LeaderF     |                  |           |      |     vim-markdown-toc      |         neoterm          |    lightline.vim    |
+|      |    nerdtree    |                  |           |      | verilog_systemverilog.vim |                          | vim-sublime-monokai |
+|      |     vista      |                  |           |      |                           |                          |                     |
+|      | vim-gutentags  |                  |           |      |                           |                          |                     |
+|      |   vim-cppman   |                  |           |      |                           |                          |                     |
+|      | vim-easymotion |                  |           |      |                           |                          |                     |
+|      |  vim-signify   |                  |           |      |                           |                          |                     |
 
 #### 映射
 
@@ -551,5 +553,10 @@ Plug 'w0rp/ale',{'for':['sh']}
 shfmt
 
 ### ios
+
+| ios  | 環境  |   補全   | 偵錯 |      排版      | 編譯 | 執行 | 調試 |  發佈   |
+| :--: | :---: | :------: | :--: | :------------: | :--: | :--: | :--: | :-----: |
+| 依賴 | xcode |    x     |  x   |  swiftformat   |  x   |  x   |  x   |   git   |
+| 插件 |   x   | coc.nvim |  x   | vim-autoformat |  x   |  x   |  x   | neoterm |
 
 coc-sourcekit

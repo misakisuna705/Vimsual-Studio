@@ -525,6 +525,10 @@ let g:formatters_typescript = ['prettier']
 let g:formatters_json = ['prettier']
 let g:formatters_markdown = ['prettier']
 
+" 載入swiftformat排版swift檔案
+let g:formatdef_misakisuna_swiftformat = '"swiftformat"'
+let g:formatters_swift = ['misakisuna_swiftformat']
+
 " 載入asm_format排版asm檔案
 let g:formatdef_asm_format = '"asmfmt"'
 let g:formatters_asm = ['asm_format']
@@ -538,6 +542,12 @@ au FileType html,css,javascript,json,yaml set softtabstop=2
 au FileType html,css,javascript,json,yaml set tabstop=2
 " 在web檔案中，使用tab語法時，電腦顯示為2個空格
 au FileType html,css,javascript,json,yaml set shiftwidth=2
+" 在swift檔案中，按下tab鍵時，電腦顯示為4個空格(不一定辨認為space語法)
+au FileType swift set softtabstop=4
+" 在swift檔案中，使用tab語法時，電腦顯示為4個空格
+au FileType swift set tabstop=4
+" 在swift檔案中，使用tab語法時，電腦顯示為4個空格
+au FileType swift set shiftwidth=4
 
 " =========================================================== "
 
