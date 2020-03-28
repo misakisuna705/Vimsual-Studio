@@ -24,19 +24,20 @@
         - [webpage](#webpage)
             + [配置](#配置-2)
             + [映射](#映射-3)
-        - [csharp](#csharp)
+        - [ios](#ios)
             + [配置](#配置-3)
+        - [csharp](#csharp)
+            + [配置](#配置-4)
             + [映射](#映射-4)
         - [markdown](#markdown)
-            + [配置](#配置-4)
+            + [配置](#配置-5)
             + [映射](#映射-5)
         - [verilog](#verilog)
-            + [配置](#配置-5)
+            + [配置](#配置-6)
             + [映射](#映射-6)
         - [assembly](#assembly)
-            + [配置](#配置-6)
+            + [配置](#配置-7)
         - [shellscript](#shellscript)
-        - [ios](#ios)
 
 <!-- vim-markdown-toc -->
 
@@ -128,8 +129,6 @@ docker pull misakisuna705/vimsual-studio
 
 ### cpp
 
--   [詳情按此](doc/md/program/c_cpp.md)
-
 #### 配置
 
 | c / c++ |   補全   |   偵錯   |      排版      |  編譯   |  執行   |   調試    |  發佈   |
@@ -157,8 +156,6 @@ docker pull misakisuna705/vimsual-studio
 
 ### python
 
--   [詳情按此](doc/md/program/python.md)
-
 #### 配置
 
 | python |  環境  |   補全   |  偵錯  |      排版      |  直譯   |  發佈   |
@@ -178,8 +175,6 @@ docker pull misakisuna705/vimsual-studio
 |        | `F12` |   發佈   |
 
 ### webpage
-
--   [詳情按此](doc/md/program/webpage.md)
 
 #### 配置
 
@@ -207,9 +202,16 @@ docker pull misakisuna705/vimsual-studio
 |         |      `F2`      | 停止推播 |
 |         |     `F12`      |   發佈   |
 
-### csharp
+### ios
 
--   [詳情按此](doc/md/program/csharp.md)
+#### 配置
+
+| ios  | 環境  |   補全   | 偵錯 |      排版      | 編譯 | 執行 | 調試 |  發佈   |
+| :--: | :---: | :------: | :--: | :------------: | :--: | :--: | :--: | :-----: |
+| 依賴 | xcode |    x     |  x   |  swiftformat   |  x   |  x   |  x   |   git   |
+| 插件 |   x   | coc.nvim |  x   | vim-autoformat |  x   |  x   |  x   | neoterm |
+
+### csharp
 
 #### 配置
 
@@ -226,8 +228,6 @@ docker pull misakisuna705/vimsual-studio
 |        | `F12` |   發佈   |
 
 ### markdown
-
--   [詳情按此](doc/md/program/markdown.md)
 
 #### 配置
 
@@ -249,8 +249,6 @@ docker pull misakisuna705/vimsual-studio
 
 ### verilog
 
--   [詳情按此](doc/md/program/verilog.md)
-
 #### 配置
 
 | verilog |   環境   |     補全      | 偵錯 |           排版            |  編譯   |  執行   |  調試   |  發佈   |
@@ -270,8 +268,6 @@ docker pull misakisuna705/vimsual-studio
 
 ### assembly
 
--   [詳情按此](doc/md/program/assembly.md)
-
 #### 配置
 
 | assembly |      排版      |
@@ -279,18 +275,9 @@ docker pull misakisuna705/vimsual-studio
 |   依賴   |     asmfmt     |
 |   插件   | vim-autoformat |
 
-go
-
 ### shellscript
 
 | shellscript |    偵錯    |      排版      |
 | :---------: | :--------: | :------------: |
 |    依賴     | shellcheck |     shfmt      |
 |    插件     |    ale     | vim-autoformat |
-
-### ios
-
-| ios  | 環境  |   補全   | 偵錯 |      排版      | 編譯 | 執行 | 調試 |  發佈   |
-| :--: | :---: | :------: | :--: | :------------: | :--: | :--: | :--: | :-----: |
-| 依賴 | xcode |    x     |  x   |  swiftformat   |  x   |  x   |  x   |   git   |
-| 插件 |   x   | coc.nvim |  x   | vim-autoformat |  x   |  x   |  x   | neoterm |
