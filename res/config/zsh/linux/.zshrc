@@ -4,13 +4,9 @@ if grep -q Microsoft /proc/version; then
     [ "$(ls /mnt/e/)" ] || sudo mount -t drvfs E: /mnt/e
 fi
 
+export PATH="$HOME/go/bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"
-export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
-
-export GOPATH="${HOME}/go"
-export PATH="${GOPATH}/bin:${PATH}"
 
 umask 002
 

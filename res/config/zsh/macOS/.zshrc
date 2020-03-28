@@ -1,7 +1,6 @@
 # zmodload zsh/zprof
 
-export GOPATH="${HOME}/go"
-export PATH="${GOPATH}/bin:${PATH}"
+export PATH="$HOME/go/bin:$PATH"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # antigen啟用

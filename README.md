@@ -1,58 +1,41 @@
-# macOS / linux
+# macOS / ubuntu
 
 <!-- vim-markdown-toc GFM -->
 
 + [快速安裝](#快速安裝)
-    * [git](#git)
+    * [macOS / Ubuntu](#macos--ubuntu)
     * [docker](#docker)
 + [手動配置](#手動配置)
-    * [系統環境](#系統環境)
-        - [macOS](#macos)
-            + [xcode](#xcode)
-            + [brew](#brew)
-                * [cellar](#cellar)
-                * [cask](#cask)
-                * [font](#font)
-            + [pip](#pip)
-                * [global](#global)
-            + [yarn](#yarn)
-                * [global](#global-1)
-        - [linux](#linux)
-            + [docker](#docker-1)
-            + [apt](#apt)
-                * [VM](#vm)
-                * [WSL](#wsl)
-            + [brew](#brew-1)
-                * [cellar](#cellar-1)
     * [終端環境](#終端環境)
-        - [iterm2](#iterm2)
-        - [tmux](#tmux)
-        - [zsh](#zsh)
-    * [編程環境](#編程環境)
+        - [macOS (iterm + tmux + zsh)](#macos-iterm--tmux--zsh)
+    * [依賴環境](#依賴環境)
+        - [macOS (xcode + brew + pip + yarn)](#macos-xcode--brew--pip--yarn)
+        - [linux (apt + brew)](#linux-apt--brew)
+        - [docker](#docker-1)
+    * [編程環境 (vim)](#編程環境-vim)
         - [vim](#vim)
-            + [配置](#配置)
             + [映射](#映射)
         - [cpp](#cpp)
-            + [配置](#配置-1)
+            + [配置](#配置)
             + [映射](#映射-1)
         - [python](#python)
-            + [配置](#配置-2)
+            + [配置](#配置-1)
             + [映射](#映射-2)
         - [webpage](#webpage)
-            + [配置](#配置-3)
+            + [配置](#配置-2)
             + [映射](#映射-3)
         - [csharp](#csharp)
-            + [配置](#配置-4)
+            + [配置](#配置-3)
             + [映射](#映射-4)
         - [markdown](#markdown)
-            + [配置](#配置-5)
+            + [配置](#配置-4)
             + [映射](#映射-5)
         - [verilog](#verilog)
-            + [配置](#配置-6)
+            + [配置](#配置-5)
             + [映射](#映射-6)
         - [assembly](#assembly)
-            + [配置](#配置-7)
-        - [shell](#shell)
+            + [配置](#配置-6)
+        - [shellscript](#shellscript)
         - [ios](#ios)
 
 <!-- vim-markdown-toc -->
@@ -61,7 +44,7 @@
 
 # 快速安裝
 
-## git
+## macOS / Ubuntu
 
 ```zsh
 git clone https://github.com/misakisuna705/Vimsual_Studio.git ~/.dotfiles
@@ -77,275 +60,27 @@ docker pull misakisuna705/vimsual-studio
 
 # 手動配置
 
-## 系統環境
-
-### macOS
-
-#### xcode
-
-```zsh
-xcode-select --install # 安裝Command Line Tools for Xcode
-```
-
-#### brew
-
--   [詳情按此](doc/md/system/brew.md)
-
-##### cellar
-
-|     cellar      |
-| :-------------: |
-|     allegro     |
-|     antigen     |
-|     astyle      |
-|      cmake      |
-|    cppcheck     |
-|       gdb       |
-|     global      |
-|       go        |
-| icarus-verilog  |
-|      llvm       |
-|      nasm       |
-|      ninja      |
-|     python      |
-|     ripgrep     |
-|   shellcheck    |
-|      sshfs      |
-|   swiftformat   |
-|      tmux       |
-|      tree       |
-| universal-ctags |
-|       vim       |
-|      wget       |
-|      yarn       |
-
-##### cask
-
-|           cask           |
-| :----------------------: |
-|        1password         |
-|      android-studio      |
-|        appcleaner        |
-|         calibre          |
-|          docker          |
-|        dotnet-sdk        |
-|           duet           |
-|  google-backup-and-sync  |
-| google-drive-file-stream |
-|         gtkwave          |
-|        handbrake         |
-|           iina           |
-|          iterm2          |
-|           java           |
-|           keka           |
-|        mediainfo         |
-|         megasync         |
-|          motrix          |
-|         osxfuse          |
-|         tickeys          |
-|        unity-hub         |
-|      vmware-fusion       |
-|        wireshark         |
-|         xquartz          |
-
-##### font
-
-|         font         |
-| :------------------: |
-| font-source-code-pro |
-
-#### pip
-
--   [詳情按此](doc/md/system/pip.md)
-
-##### global
-
-|    global    |
-| :----------: |
-| cmake_format |
-|    cppman    |
-|    flake8    |
-|   ipython    |
-|    isort     |
-|     jedi     |
-|    lizard    |
-|    pipenv    |
-|     yapf     |
-
-#### yarn
-
--   [詳情按此](doc/md/system/yarn.md)
-
-##### global
-
-|          global           |
-| :-----------------------: |
-|       browser-sync        |
-|            del            |
-|      firebase-tools       |
-|           gulp            |
-|      gulp-clean-css       |
-|        gulp-concat        |
-|     gulp-html-replace     |
-|       gulp-htmlmin        |
-|         gulp-sass         |
-|        gulp-terser        |
-|      gulp-typescript      |
-|         htmlhint          |
-|         prettier          |
-|         stylelint         |
-| stylelint-config-standard |
-|        typescript         |
-
-### linux
-
-#### docker
-
-```zsh
-# system
-
-docker system df # 表列映像、容器、儲區
-
-docker system prune -f # 清理多餘映像、容器、儲區
-
-# build
-
-docker login # 登入用戶
-docker build -t 映像 路徑 # 建構映像
-docker tag 映像 用戶/映像 # tag映像
-docker push 用戶/映像 # 上傳映像
-
-# image
-
-docker search 映像 # 搜尋某映像
-
-docker images # 查詢已安裝映像
-
-docker pull 映像 # 安裝該映像
-docker rmi 映像 # 解除安裝該映像
-
-# container
-
-docker ps -a # 查詢已實體化的容器
-
-docker run --name 容器 -it -v 被掛載檔案系統路徑:掛載點 映像 # 實體化該映像為容器
-docker rm -v 容器 # 移除該容器與對應儲區
-
-docker start -i 容器 # 啟動該容器
-docker stop 容器 # 停止該容器
-
-# volume
-
-docker volume ls # 查詢已分配的儲區
-
-docker volume rm 儲區 # 移除已分配儲區
-```
-
-#### apt
-
--   [詳情按此](doc/md/system/apt.md)
-
-##### VM
-
-|      package      |
-| :---------------: |
-| chromium-browser  |
-|       hime        |
-| linuxbrew-wrapper |
-|     net-tools     |
-|  openssh-server   |
-|  xfce4-terminal   |
-|        zsh        |
-
-##### WSL
-
-|      package      |
-| :---------------: |
-| linuxbrew-wrapper |
-|        zsh        |
-
-#### brew
-
--   [詳情按此](doc/md/system/brew.md)
-
-##### cellar
-
-|     cellar      |
-| :-------------: |
-|     antigen     |
-|     astyle      |
-|      cmake      |
-|    cppcheck     |
-|       gdb       |
-| icarus-verilog  |
-|      llvm       |
-|      nasm       |
-|      ninja      |
-|     python      |
-|     ripgrep     |
-|   shellcheck    |
-|      sshfs      |
-|      tmux       |
-| universal-ctags |
-|       vim       |
-|      yarn       |
-
 ## 終端環境
 
-### iterm2
+-   [詳情按此](doc/md/terminal.md)
 
--   [詳情按此](doc/md/terminal/iterm.md)
+### macOS (iterm + tmux + zsh)
 
-| iterm |                 |
-| :---: | :-------------: |
-| 字型  | Source Code Pro |
-| 主題  |     Monokai     |
-| 背景  |     iCloud      |
+## 依賴環境
 
-### tmux
+-   [詳情按此](doc/md/package.md)
 
--   [詳情按此](doc/md/terminal/tmux.md)
+### macOS (xcode + brew + pip + yarn)
 
-### zsh
+### linux (apt + brew)
 
--   [詳情按此](doc/md/terminal/zsh.md)
+### docker
 
-|         antigen         |
-| :---------------------: |
-|          pure           |
-| zsh-syntax-highlighting |
-|   zsh-autosuggestions   |
+## 編程環境 (vim)
 
-## 編程環境
-
-|   [vim](#3.1)    | 環境 | 補全 | 偵錯 | 標籤 | 排版 | 編譯 / 執行 / 推播 | 調試 | 發佈 |
-| :--------------: | :--: | :--: | :--: | :--: | :--: | :----------------: | :--: | :--: |
-| [c / c++](#3.2)  |  x   |  o   |  o   |  o   |  o   |         o          |  o   |  o   |
-|  [python](#3.3)  |  o   |  o   |  o   |  x   |  o   |         o          |  x   |  o   |
-| [webpage](#3.4)  |  o   |  o   |  o   |  x   |  o   |         o          |  x   |  o   |
-| [markdown](#3.5) |  x   |  x   |  x   |  x   |  o   |         o          |  x   |  o   |
-| [verilog](#3.6)  |  o   |  o   |  o   |  x   |  x   |         o          |  x   |  o   |
-|   [asm](#3.7)    |  x   |  x   |  x   |  x   |  o   |         x          |  x   |  x   |
-
----
+-   [詳情按此](doc/md/vim.md)
 
 ### vim
-
--   [詳情按此](doc/md/program/vim.md)
-
-#### 配置
-
-| vim  |      瀏覽      |       編輯       |   補全    | 偵錯 |           排版            |           任務           |        環境         |
-| :--: | :------------: | :--------------: | :-------: | :--: | :-----------------------: | :----------------------: | :-----------------: |
-| 插件 |  vim-quickui   | vim-visual-multi | coc.nvim  | ale  |      vim-autoformat       |   markdown-preview.vim   |    vim-polyglot     |
-|      |   vim-rooter   |  nerdcommenter   | emmet-vim |      |         vim-isort         | mathjax-support-for-mkdp |     indentLine      |
-|      |    LeaderF     |                  |           |      |     vim-markdown-toc      |         neoterm          |    lightline.vim    |
-|      |    nerdtree    |                  |           |      | verilog_systemverilog.vim |                          | vim-sublime-monokai |
-|      |     vista      |                  |           |      |                           |                          |                     |
-|      | vim-gutentags  |                  |           |      |                           |                          |                     |
-|      |   vim-cppman   |                  |           |      |                           |                          |                     |
-|      | vim-easymotion |                  |           |      |                           |                          |                     |
-|      |  vim-signify   |                  |           |      |                           |                          |                     |
 
 #### 映射
 
@@ -541,16 +276,17 @@ docker volume rm 儲區 # 移除已分配儲區
 
 | assembly |      排版      |
 | :------: | :------------: |
-|   依賴   |       x        |
+|   依賴   |     asmfmt     |
 |   插件   | vim-autoformat |
 
-### shell
+go
 
-shellcheck
+### shellscript
 
-Plug 'w0rp/ale',{'for':['sh']}
-
-shfmt
+| shellscript |    偵錯    |      排版      |
+| :---------: | :--------: | :------------: |
+|    依賴     | shellcheck |     shfmt      |
+|    插件     |    ale     | vim-autoformat |
 
 ### ios
 
@@ -558,5 +294,3 @@ shfmt
 | :--: | :---: | :------: | :--: | :------------: | :--: | :--: | :--: | :-----: |
 | 依賴 | xcode |    x     |  x   |  swiftformat   |  x   |  x   |  x   |   git   |
 | 插件 |   x   | coc.nvim |  x   | vim-autoformat |  x   |  x   |  x   | neoterm |
-
-coc-sourcekit
