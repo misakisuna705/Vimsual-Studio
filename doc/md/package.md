@@ -2,66 +2,118 @@
 
 <!-- vim-markdown-toc GFM -->
 
-* [macOS](#macos)
-    - [xcode](#xcode)
-    - [brew](#brew)
-        + [cellar](#cellar)
-            * [安裝](#安裝)
-            * [命令](#命令)
-            * [插件](#插件)
-        + [cask](#cask)
-            * [設置](#設置)
-            * [命令](#命令-1)
-            * [插件](#插件-1)
-        + [font](#font)
-            * [設置](#設置-1)
-            * [命令](#命令-2)
-            * [插件](#插件-2)
-    - [pip](#pip)
-        + [安裝](#安裝-1)
+* [docker](#docker)
+* [xcode](#xcode)
+* [apt](#apt)
+    - [命令](#命令)
+    - [插件](#插件)
+* [brew](#brew)
+    - [cellar](#cellar)
+        + [安裝](#安裝)
+        + [命令](#命令-1)
+        + [插件](#插件-1)
+    - [cask](#cask)
+        + [設置](#設置)
+        + [命令](#命令-2)
+        + [插件](#插件-2)
+    - [font](#font)
+        + [設置](#設置-1)
         + [命令](#命令-3)
         + [插件](#插件-3)
-    - [yarn](#yarn)
-        + [安裝](#安裝-2)
-        + [命令](#命令-4)
-        + [插件](#插件-4)
-    - [go](#go)
-        + [命令](#命令-5)
-        + [插件](#插件-5)
-* [ubuntu](#ubuntu)
-    - [apt](#apt)
-        + [命令](#命令-6)
-        + [插件](#插件-6)
-    - [brew](#brew-1)
-        + [cellar](#cellar-1)
-            * [安裝](#安裝-3)
-            * [命令](#命令-7)
-            * [插件](#插件-7)
-* [docker](#docker)
+* [pip](#pip)
+    - [安裝](#安裝-1)
+    - [命令](#命令-4)
+    - [插件](#插件-4)
+* [yarn](#yarn)
+    - [安裝](#安裝-2)
+    - [命令](#命令-5)
+    - [插件](#插件-5)
+* [go](#go)
+    - [命令](#命令-6)
+    - [插件](#插件-6)
 
 <!-- vim-markdown-toc -->
 
 ---
 
-## macOS
+## docker
 
-### xcode
+```zsh
+# system
+
+docker system df # 表列映像、容器、儲區
+docker system prune -f # 清理多餘映像、容器、儲區
+
+# build
+
+docker login # 登入用戶
+docker build -t 映像 路徑 # 建構映像
+docker tag 映像 用戶/映像 # tag映像
+docker push 用戶/映像 # 上傳映像
+
+# image
+
+docker search 映像 # 搜尋某映像
+docker images # 查詢已安裝映像
+docker pull 映像 # 安裝該映像
+docker rmi 映像 # 解除安裝該映像
+
+# container
+
+docker ps -a # 查詢已實體化的容器
+docker run --name 容器 -it -v 被掛載檔案系統路徑:掛載點 映像 # 實體化該映像為容器
+docker rm -v 容器 # 移除該容器與對應儲區
+docker start -i 容器 # 啟動該容器
+docker stop 容器 # 停止該容器
+
+# volume
+
+docker volume ls # 查詢已分配的儲區
+docker volume rm 儲區 # 移除已分配儲區
+```
+
+## xcode
 
 ```zsh
 xcode-select --install # 安裝Command Line Tools for Xcode
 ```
 
-### brew
+## apt
 
-#### cellar
+### 命令
 
-##### 安裝
+```zsh
+sudo apt list --installed # 查詢已安裝插件清單
+sudo apt install # 安裝該插件
+sudo apt remove # 解除安裝該插件
+sudo apt update # 更新apt源
+sudo apt upgrade # 升級所有插件
+sudo apt autoclean # 清理暫存檔
+sudo apt autoremove # 清理依賴
+```
+
+### 插件
+
+|        VM         |        WSL        |
+| :---------------: | :---------------: |
+|        zsh        | linuxbrew-wrapper |
+| linuxbrew-wrapper |        zsh        |
+|  openssh-server   |                   |
+|  xfce4-terminal   |                   |
+|       hime        |                   |
+| chromium-browser  |                   |
+
+## brew
+
+### cellar
+
+#### 安裝
 
 ```zsh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" # 安裝brew
 ```
 
-##### 命令
+#### 命令
 
 ```zsh
 brew search 插件 # 搜尋某插件與其相關插件
@@ -82,43 +134,44 @@ brew link # 串連命令與插件
 brew unlink # 斷開命令與插件
 ```
 
-##### 插件
+#### 插件
 
-|     cellar      |
-| :-------------: |
-|     allegro     |
-|     antigen     |
-|     astyle      |
-|      cmake      |
-|    cppcheck     |
-|       gdb       |
-|     global      |
-|       go        |
-| icarus-verilog  |
-|      llvm       |
-|      nasm       |
-|      ninja      |
-|     python      |
-|     ripgrep     |
-|   shellcheck    |
-|      sshfs      |
-|   swiftformat   |
-|      tmux       |
-|      tree       |
-| universal-ctags |
-|       vim       |
-|      wget       |
-|      yarn       |
+|      macOS      |     ubuntu      |
+| :-------------: | :-------------: |
+|     allegro     |                 |
+|     antigen     |     antigen     |
+|     astyle      |     astyle      |
+|      cmake      |      cmake      |
+|    cppcheck     |    cppcheck     |
+|       gdb       |       gdb       |
+|     global      |                 |
+|       go        |                 |
+| icarus-verilog  | icarus-verilog  |
+|      llvm       |      llvm       |
+|      nasm       |      nasm       |
+|      ninja      |      ninja      |
+|     python      |     python      |
+|     ripgrep     |     ripgrep     |
+|   shellcheck    |   shellcheck    |
+|      sshfs      |      sshfs      |
+|   swiftformat   |                 |
+|      tmux       |      tmux       |
+|      tree       |                 |
+| universal-ctags | universal-ctags |
+|       vim       |       vim       |
+|      wget       |                 |
+|      yarn       |      yarn       |
+|                 |    net-tools    |
 
-#### cask
+### cask
 
-##### 設置
+#### 設置
 
 ```zsh
 brew tap caskroom/cask # 安裝caskroom/cask
 ```
 
-##### 命令
+#### 命令
 
 ```zsh
 brew cask list # 查詢已安裝程式清單
@@ -128,6 +181,8 @@ brew cask uninstall 程式 # 解除安裝該程式
 brew cask upgrade 程式 # 升級該程式
 brew cask upgrade # 升級所有程式
 ```
+
+#### 插件
 
 |           cask           |
 | :----------------------: |
@@ -156,17 +211,15 @@ brew cask upgrade # 升級所有程式
 |        wireshark         |
 |         xquartz          |
 
-##### 插件
+### font
 
-#### font
-
-##### 設置
+#### 設置
 
 ```zsh
 brew tap caskroom/fonts # 安裝caskroom/fonts
 ```
 
-##### 命令
+#### 命令
 
 ```zsh
 brew cask list # 查詢已安裝程式清單
@@ -177,21 +230,21 @@ brew cask upgrade 程式 # 升級該程式
 brew cask upgrade # 升級所有程式
 ```
 
-##### 插件
+#### 插件
 
 |         font         |
 | :------------------: |
 | font-source-code-pro |
 
-### pip
+## pip
 
-#### 安裝
+### 安裝
 
 ```zsh
 brew install python # 安裝python（ pip ）
 ```
 
-#### 命令
+### 命令
 
 ```zsh
 pip3 search 插件 # 搜尋某插件與其相關插件
@@ -207,7 +260,7 @@ pip3 install -U 插件 # 升級該插件
 pip3 check # 檢查插件版本相容性
 ```
 
-#### 插件
+### 插件
 
 |    global    |
 | :----------: |
@@ -221,15 +274,15 @@ pip3 check # 檢查插件版本相容性
 |    pipenv    |
 |     yapf     |
 
-### yarn
+## yarn
 
-#### 安裝
+### 安裝
 
 ```zsh
 brew install yarn # 安裝yarn
 ```
 
-#### 命令
+### 命令
 
 ```zsh
 npm search 插件 # 搜尋某插件與其相關插件
@@ -246,7 +299,7 @@ yarn install # 用package.json安裝插件
 yarn cache clean # 清理暫存檔
 ```
 
-#### 插件
+### 插件
 
 |          global           |
 | :-----------------------: |
@@ -267,140 +320,17 @@ yarn cache clean # 清理暫存檔
 | stylelint-config-standard |
 |        typescript         |
 
-### go
+## go
 
-#### 命令
+### 命令
 
 ```
 go get -u xxx
 ```
 
-#### 插件
+### 插件
 
 |   go   |
 | :----: |
 | asmfmt |
 | shfmt  |
-
-## ubuntu
-
-### apt
-
-#### 命令
-
-```zsh
-sudo apt list --installed # 查詢已安裝插件清單
-sudo apt install # 安裝該插件
-sudo apt remove # 解除安裝該插件
-sudo apt update # 更新apt源
-sudo apt upgrade # 升級所有插件
-sudo apt autoclean # 清理暫存檔
-sudo apt autoremove # 清理依賴
-```
-
-#### 插件
-
-|        VM         |        WSL        |
-| :---------------: | :---------------: |
-|        zsh        | linuxbrew-wrapper |
-| linuxbrew-wrapper |        zsh        |
-|     net-tools     |                   |
-|  openssh-server   |                   |
-|  xfce4-terminal   |                   |
-|       hime        |                   |
-| chromium-browser  |                   |
-
-### brew
-
-#### cellar
-
-##### 安裝
-
-```zsh
-
-```
-
-##### 命令
-
-```zsh
-brew search 插件 # 搜尋某插件與其相關插件
-brew list # 查詢已安裝插件清單
-brew info # 查詢已安裝插件數量與大小
-brew info 插件 # 查詢該插件詳細資料
-brew install 插件 # 安裝該插件
-brew uninstall 插件 # 解除安裝該插件
-brew update # 更新brew源同時表列過期插件
-brew upgrade 插件 # 升級該插件
-brew upgrade # 升級所有插件
-brew cleanup # 清理暫存檔
-brew doctor # 檢查brew
-brew bundle # 從Brewfile安裝cellar / cask / font
-brew bundle dump # 生成Brewfile
-brew bundle dump --force # 複寫Brewfile
-brew link # 串連命令與插件
-brew unlink # 斷開命令與插件
-```
-
-##### 插件
-
-|     cellar      |
-| :-------------: |
-|     antigen     |
-|     astyle      |
-|      cmake      |
-|    cppcheck     |
-|       gdb       |
-| icarus-verilog  |
-|      llvm       |
-|      nasm       |
-|      ninja      |
-|     python      |
-|     ripgrep     |
-|   shellcheck    |
-|      sshfs      |
-|      tmux       |
-| universal-ctags |
-|       vim       |
-|      yarn       |
-
-## docker
-
-```zsh
-# system
-
-docker system df # 表列映像、容器、儲區
-
-docker system prune -f # 清理多餘映像、容器、儲區
-
-# build
-
-docker login # 登入用戶
-docker build -t 映像 路徑 # 建構映像
-docker tag 映像 用戶/映像 # tag映像
-docker push 用戶/映像 # 上傳映像
-
-# image
-
-docker search 映像 # 搜尋某映像
-
-docker images # 查詢已安裝映像
-
-docker pull 映像 # 安裝該映像
-docker rmi 映像 # 解除安裝該映像
-
-# container
-
-docker ps -a # 查詢已實體化的容器
-
-docker run --name 容器 -it -v 被掛載檔案系統路徑:掛載點 映像 # 實體化該映像為容器
-docker rm -v 容器 # 移除該容器與對應儲區
-
-docker start -i 容器 # 啟動該容器
-docker stop 容器 # 停止該容器
-
-# volume
-
-docker volume ls # 查詢已分配的儲區
-
-docker volume rm 儲區 # 移除已分配儲區
-```

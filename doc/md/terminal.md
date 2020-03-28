@@ -13,10 +13,9 @@
         + [命令](#命令)
     - [zsh](#zsh)
         + [設定](#設定)
+        + [安裝](#安裝-2)
+        + [命令](#命令-1)
         + [插件](#插件)
-            * [安裝](#安裝-2)
-            * [命令](#命令-1)
-            * [插件](#插件-1)
 
 <!-- vim-markdown-toc -->
 
@@ -72,15 +71,13 @@ tmux -CC kill-server # 卸載所有session
 chsh -s /bin/zsh # 將shell設定為zsh
 ```
 
-#### 插件
-
-##### 安裝
+#### 安裝
 
 ```zsh
 brew install antigen # 安裝antigen
 ```
 
-##### 命令
+#### 命令
 
 ```zsh
 antigen list # 查詢已安裝插件清單
@@ -89,7 +86,7 @@ antigen update # 升級所有插件
 antigen reset # 重設所有插件
 ```
 
-##### 插件
+#### 插件
 
 |              antigen              |
 | :-------------------------------: |

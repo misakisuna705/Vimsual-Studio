@@ -8,7 +8,7 @@
 + [手動配置](#手動配置)
     * [終端環境](#終端環境)
     * [依賴環境](#依賴環境)
-    * [編程環境 (vim)](#編程環境-vim)
+    * [編程環境](#編程環境)
         - [vim](#vim)
             + [映射](#映射)
         - [cpp](#cpp)
@@ -65,7 +65,7 @@ docker pull misakisuna705/vimsual-studio
 
 -   [詳情按此](doc/md/package.md)
 
-## 編程環境 (vim)
+## 編程環境
 
 -   [詳情按此](doc/md/vim.md)
 
