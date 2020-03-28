@@ -7,11 +7,7 @@
     * [docker](#docker)
 + [手動配置](#手動配置)
     * [終端環境](#終端環境)
-        - [macOS (iterm + tmux + zsh)](#macos-iterm--tmux--zsh)
     * [依賴環境](#依賴環境)
-        - [macOS (xcode + brew + pip + yarn)](#macos-xcode--brew--pip--yarn)
-        - [linux (apt + brew)](#linux-apt--brew)
-        - [docker](#docker-1)
     * [編程環境 (vim)](#編程環境-vim)
         - [vim](#vim)
             + [映射](#映射)
@@ -65,17 +61,9 @@ docker pull misakisuna705/vimsual-studio
 
 -   [詳情按此](doc/md/terminal.md)
 
-### macOS (iterm + tmux + zsh)
-
 ## 依賴環境
 
 -   [詳情按此](doc/md/package.md)
-
-### macOS (xcode + brew + pip + yarn)
-
-### linux (apt + brew)
-
-### docker
 
 ## 編程環境 (vim)
 
