@@ -34,6 +34,7 @@
         - [assembly](#assembly)
             + [配置](#配置-7)
         - [shellscript](#shellscript)
+            + [配置](#配置-8)
 
 <!-- vim-markdown-toc -->
 
@@ -264,6 +265,8 @@ docker pull misakisuna705/vimsual-studio
 |   插件   | vim-autoformat |
 
 ### shellscript
+
+#### 配置
 
 | shellscript |    偵錯    |      排版      |
 | :---------: | :--------: | :------------: |
