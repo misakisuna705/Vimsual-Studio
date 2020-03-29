@@ -71,6 +71,7 @@
 | coc-omnisharp |
 |   coc-json    |
 |   coc-html    |
+|  coc-docker   |
 |    coc-css    |
 |   coc-cmake   |
 |  coc-clangd   |
