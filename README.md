@@ -33,7 +33,7 @@
             + [映射](#映射-6)
         - [assembly](#assembly)
             + [配置](#配置-7)
-        - [shellscript](#shellscript)
+        - [shell](#shell)
             + [配置](#配置-8)
 
 <!-- vim-markdown-toc -->
@@ -195,10 +195,11 @@ docker pull misakisuna705/vimsual-studio
 
 #### 配置
 
-| ios  | 環境  |   補全   | 偵錯 |      排版      | 編譯 | 執行 | 調試 |  發佈   |
-| :--: | :---: | :------: | :--: | :------------: | :--: | :--: | :--: | :-----: |
-| 依賴 | xcode |    x     |  x   |  swiftformat   |  x   |  x   |  x   |   git   |
-| 插件 |   x   | coc.nvim |  x   | vim-autoformat |  x   |  x   |  x   | neoterm |
+| ios  | 環境  |   補全   |   偵錯    |      排版      | 編譯 | 執行 | 調試 |  發佈   |
+| :--: | :---: | :------: | :-------: | :------------: | :--: | :--: | :--: | :-----: |
+| 依賴 | xcode |   llvm   | swiftlint |  swiftformat   |  x   |  x   |  x   |   git   |
+| 依賴 |   x   |    x     |     x     |       x        |  x   |  x   |  x   |    x    |
+| 插件 |   x   | coc.nvim |    ale    | vim-autoformat |  x   |  x   |  x   | neoterm |
 
 ### csharp
 
@@ -264,11 +265,11 @@ docker pull misakisuna705/vimsual-studio
 |   依賴   |     asmfmt     |
 |   插件   | vim-autoformat |
 
-### shellscript
+### shell
 
 #### 配置
 
-| shellscript |    偵錯    |      排版      |
-| :---------: | :--------: | :------------: |
-|    依賴     | shellcheck |     shfmt      |
-|    插件     |    ale     | vim-autoformat |
+| shell |   補全   |    偵錯    |      排版      |
+| :---: | :------: | :--------: | :------------: |
+| 依賴  |    x     | shellcheck |     shfmt      |
+| 插件  | coc.nvim |    ale     | vim-autoformat |

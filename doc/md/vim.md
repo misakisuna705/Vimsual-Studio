@@ -59,17 +59,18 @@
 
 ### 插件
 
-```vim
-coc-clangd
-coc-python
-coc-html
-coc-css
-coc-tsserver
-coc-json
-coc-yaml
-coc-sourcekit
-coc-omnisharp
-```
+|      coc      |
+| :-----------: |
+|   coc-yaml    |
+| coc-tsserver  |
+| coc-sourcekit |
+|    coc-sh     |
+|  coc-python   |
+| coc-omnisharp |
+|   coc-json    |
+|   coc-html    |
+|    coc-css    |
+|  coc-clangd   |
 
 ## ale
 
@@ -102,10 +103,8 @@ p &變數 # 印變數位址
 pipenv install # 在該專案初始化虛擬環境
 pipenv graph # 查詢虛擬環境已安裝插件清單
 pipenv --rm # 在該專案卸載虛擬環境
-
 pipenv install 插件 # 在虛擬環境安裝該插件
 pipenv uninstall 插件 # 在虛擬環境解除安裝該插件
-
 pipenv shell # 載入虛擬環境
 ```
 

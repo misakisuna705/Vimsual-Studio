@@ -44,7 +44,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim', {'for': 'html'}
 
 " 偵錯插件
-Plug 'w0rp/ale', {'for': ['c', 'cpp', 'python', 'html', 'css', 'javascript', 'typescript', 'verilog_systemverilog', 'sh']}
+Plug 'w0rp/ale', {'for': ['c', 'cpp', 'python', 'swift', 'html', 'css', 'javascript', 'typescript', 'verilog_systemverilog', 'sh']}
 
 " 排版插件
 Plug 'Chiel92/vim-autoformat', {'on': 'Autoformat'}
@@ -471,6 +471,7 @@ let g:ale_linters = {
             \   'c': ['clang', 'cppcheck'],
             \   'cpp': ['clang', 'cppcheck'],
             \   'python': ['flake8'],
+            \   'swift': ['swiftlint'],
             \   'html': ['htmlhint'],
             \   'css': ['stylelint'],
             \   'javascript': ['tsserver'],
