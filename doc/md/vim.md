@@ -3,15 +3,17 @@
 <!-- vim-markdown-toc GFM -->
 
 * [vim-plug](#vim-plug)
-    - [命令](#命令)
-    - [插件](#插件)
+  - [命令](#命令)
+  - [插件](#插件)
 * [coc.nvim](#cocnvim)
-    - [命令](#命令-1)
-    - [插件](#插件-1)
+  - [命令](#命令-1)
+  - [插件](#插件-1)
 * [ale](#ale)
 * [gdb 8.0.1](#gdb-801)
+  - [安裝](#安裝)
+  - [命令](#命令-2)
 * [pipenv](#pipenv)
-    - [命令](#命令-2)
+  - [命令](#命令-3)
 * [yarn](#yarn)
 * [typescript](#typescript)
 * [gulp](#gulp)
@@ -80,6 +82,15 @@
 ```
 
 ## gdb 8.0.1
+
+### 安裝
+
+```zsh
+brew unlink gdb
+brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/9ec9fb27a33698fc7636afce5c1c16787e9ce3f3/Formula/gdb.rb
+```
+
+### 命令
 
 ```zsh
 b 行數 # 在main.c某行設置斷點

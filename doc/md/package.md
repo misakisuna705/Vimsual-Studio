@@ -155,6 +155,7 @@ brew unlink # 斷開命令與插件
 |   shellcheck    |   shellcheck    |
 |      sshfs      |      sshfs      |
 |   swiftformat   |                 |
+|    swiftlint    |                 |
 |      tmux       |      tmux       |
 |      tree       |                 |
 | universal-ctags | universal-ctags |

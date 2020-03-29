@@ -2,19 +2,19 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "2a2b7e2767f64fa74f42afc9a9f3745d2ce7f8aa"
+        "revision": "d5c4386febcca5cebdee4d0c9aba83bcc177c512"
       },
       "homebrew/bundle": {
         "revision": "20e7cee19a59595d72a1b1886bd57fc69d97506e"
       },
       "homebrew/cask": {
-        "revision": "2a2b7e2767f64fa74f42afc9a9f3745d2ce7f8aa"
+        "revision": "d5c4386febcca5cebdee4d0c9aba83bcc177c512"
       },
       "homebrew/cask-fonts": {
         "revision": "0f19e6f54a7a08df0db2787b11b45d57dc63fd50"
       },
       "homebrew/core": {
-        "revision": "1930cd2cbf1f9c00382dfea41a18fc0c47291c2f"
+        "revision": "08443c021a9a1d5d8e2d44daf94b4a1ff18173be"
       },
       "mattisg/mattisg": {
         "revision": "a65b6c99617598d79a9a0957192569bb9b6b6d62"
@@ -691,6 +691,23 @@
             }
           }
         }
+      },
+      "swiftlint": {
+        "version": "0.39.1",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/swiftlint-0.39.1.catalina.bottle.tar.gz",
+              "sha256": "5c51f9a46a0ab28229460afd1037825bf1bef6b577113303057602487a898553"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/swiftlint-0.39.1.mojave.bottle.tar.gz",
+              "sha256": "408d3baeeb687da9cb753abf154835d71672eb29f1288538e5fa576f6d8880d1"
+            }
+          }
+        }
       }
     }
   },
@@ -699,7 +716,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "1930cd2cbf1f9c00382dfea41a18fc0c47291c2f",
+        "Homebrew/homebrew-core": "08443c021a9a1d5d8e2d44daf94b4a1ff18173be",
         "CLT": "11.0.33.8",
         "Xcode": "11.4",
         "macOS": "10.15.4"

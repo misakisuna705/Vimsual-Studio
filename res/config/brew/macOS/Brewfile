@@ -25,6 +25,7 @@ brew "ruby", link: true
 brew "shellcheck"
 brew "sshfs"
 brew "swiftformat"
+brew "swiftlint"
 brew "tmux"
 brew "tree"
 brew "vim"

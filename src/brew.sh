@@ -33,12 +33,14 @@ setup_brew() {
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         brew bundle --file="$HOME/.dotfiles/res/config/brew/linux/Brewfile"
     fi
-    brew upgrade
-    #printf "Install gdb 8.0.1..."
-    #brew unlink gdb
-    #brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/9ec9fb27a33698fc7636afce5c1c16787e9ce3f3/Formula/gdb.rb
-    #printf "Succeed to install gdb 8.0.1!"
     printf "Succeeded to setup brew bundle!\n\n"
+
+    printf "Upgrade brew bundle...\n"
+    brew upgrade
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        brew cask upgrade
+    fi
+    printf "Succeeded to upgrade brew bundle!\n\n"
 
     printf "Clean brew cache...\n"
     brew cleanup
