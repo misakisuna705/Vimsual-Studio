@@ -35,6 +35,8 @@
             + [配置](#配置-7)
         - [shell](#shell)
             + [配置](#配置-8)
+        - [cmake](#cmake)
+            + [配置](#配置-9)
 
 <!-- vim-markdown-toc -->
 
@@ -123,7 +125,7 @@ docker pull misakisuna705/vimsual-studio
 | c / c++ |   補全   |   偵錯   |      排版      |  編譯   |  執行   |   調試    |  發佈   |
 | :-----: | :------: | :------: | :------------: | :-----: | :-----: | :-------: | :-----: |
 |  依賴   |   llvm   |   llvm   |     astyle     |  llvm   |    x    |    gdb    |   git   |
-|         |    x     | cppcheck |  cmake_format  |  ninja  |    x    |     x     |    x    |
+|         |    x     | cppcheck |       x        |  ninja  |    x    |     x     |    x    |
 |         |    x     |    x     |       x        |  cmake  |    x    |     x     |    x    |
 |  插件   | coc.nvim |   ale    | vim-autoformat | neoterm | neoterm | termdebug | neoterm |
 
@@ -225,7 +227,7 @@ docker pull misakisuna705/vimsual-studio
 | :------: | :--: | :--------------: | :------------: | :----------------------: | :-----: |
 |   依賴   |  x   |        x         |    prettier    |            x             |   git   |
 |   插件   |  x   | vim-markdown-toc | vim-autoformat |     markdown-preview     | neoterm |
-|          |  x   |        x         |       x        | mathjax-support-for-mkdp |    x    |
+|          |  x   |     coc.nvim     |       x        | mathjax-support-for-mkdp |    x    |
 
 #### 映射
 
@@ -241,11 +243,11 @@ docker pull misakisuna705/vimsual-studio
 
 #### 配置
 
-| verilog |   環境   |     補全      | 偵錯 |           排版            |  編譯   |  執行   |  調試   |  發佈   |
-| :-----: | :------: | :-----------: | :--: | :-----------------------: | :-----: | :-----: | :-----: | :-----: |
-|  依賴   | iverilog |       x       |  x   |             x             |    x    |    x    | xquartz |   git   |
-|         |    x     |       x       |  x   |             x             |    x    |    x    | gtkwave |    x    |
-|  插件   |    x     | YouCompleteMe | ale  | verilog_systemverilog.vim | neoterm | neoterm | neoterm | neoterm |
+| verilog |   環境   |   補全   | 偵錯 |           排版            |  編譯   |  執行   |  調試   |  發佈   |
+| :-----: | :------: | :------: | :--: | :-----------------------: | :-----: | :-----: | :-----: | :-----: |
+|  依賴   | iverilog |    x     |  x   |             x             |    x    |    x    | xquartz |   git   |
+|         |    x     |    x     |  x   |             x             |    x    |    x    | gtkwave |    x    |
+|  插件   |    x     | coc.nvim | ale  | verilog_systemverilog.vim | neoterm | neoterm | neoterm | neoterm |
 
 #### 映射
 
@@ -273,3 +275,12 @@ docker pull misakisuna705/vimsual-studio
 | :---: | :------: | :--------: | :------------: |
 | 依賴  |    x     | shellcheck |     shfmt      |
 | 插件  | coc.nvim |    ale     | vim-autoformat |
+
+### cmake
+
+#### 配置
+
+| cmake |   補全   |      排版      |
+| :---: | :------: | :------------: |
+| 依賴  |          |  cmake_format  |
+| 插件  | coc.nvim | vim-autoformat |

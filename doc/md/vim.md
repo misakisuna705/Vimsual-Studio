@@ -3,17 +3,17 @@
 <!-- vim-markdown-toc GFM -->
 
 * [vim-plug](#vim-plug)
-  - [命令](#命令)
-  - [插件](#插件)
+    - [命令](#命令)
+    - [插件](#插件)
 * [coc.nvim](#cocnvim)
-  - [命令](#命令-1)
-  - [插件](#插件-1)
+    - [命令](#命令-1)
+    - [插件](#插件-1)
 * [ale](#ale)
 * [gdb 8.0.1](#gdb-801)
-  - [安裝](#安裝)
-  - [命令](#命令-2)
+    - [安裝](#安裝)
+    - [命令](#命令-2)
 * [pipenv](#pipenv)
-  - [命令](#命令-3)
+    - [命令](#命令-3)
 * [yarn](#yarn)
 * [typescript](#typescript)
 * [gulp](#gulp)
@@ -72,6 +72,7 @@
 |   coc-json    |
 |   coc-html    |
 |    coc-css    |
+|   coc-cmake   |
 |  coc-clangd   |
 
 ## ale
