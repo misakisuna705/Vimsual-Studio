@@ -9,9 +9,8 @@
     * [終端環境](#終端環境)
     * [依賴環境](#依賴環境)
     * [編程環境](#編程環境)
-        - [vim](#vim)
-            + [一般](#一般)
-            + [程式](#程式)
+        - [一般](#一般)
+        - [程式](#程式)
 
 <!-- vim-markdown-toc -->
 
@@ -39,17 +38,23 @@ docker pull misakisuna705/vimsual-studio
 
 -   [詳情按此](doc/md/terminal.md)
 
+|   OS   | macOS  |  Ubuntu（VM）  |  Ubuntu（WSL）   |
+| :----: | :----: | :------------: | :--------------: |
+| 終端機 | iterm2 | xfce4 terminal | windows terminal |
+
 ## 依賴環境
 
 -   [詳情按此](doc/md/package.md)
+
+|    package     |   system   | python | node | go  |   vim    | coc.nvim |
+| :------------: | :--------: | :----: | :--: | :-: | :------: | :------: |
+| macOS / Ubuntu | brew / apt |  pip   | yarn | go  | vim-plug |   coc    |
 
 ## 編程環境
 
 -   [詳情按此](doc/md/vim.md)
 
-### vim
-
-#### 一般
+### 一般
 
 | vim  |          按鍵           |                    功能                    |
 | :--: | :---------------------: | :----------------------------------------: |
@@ -82,7 +87,7 @@ docker pull misakisuna705/vimsual-studio
 |      |       `SHIFT`+`u`       |                    重做                    |
 |      |   `SPACE`+`e`+`ENTER`   |                    排版                    |
 
-#### 程式
+### 程式
 
 |      按鍵      |    cpp     |  python  | ios |      web       |  csharp  | markdown | verilog |
 | :------------: | :--------: | :------: | :-: | :------------: | :------: | :------: | :-----: |
