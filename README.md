@@ -12,33 +12,14 @@
         - [vim](#vim)
             + [映射](#映射)
         - [cpp](#cpp)
-            + [配置](#配置)
-            + [映射](#映射-1)
         - [python](#python)
-            + [配置](#配置-1)
-            + [映射](#映射-2)
-        - [webpage](#webpage)
-            + [配置](#配置-2)
-            + [映射](#映射-3)
+        - [web](#web)
         - [ios](#ios)
-            + [配置](#配置-3)
         - [csharp](#csharp)
-            + [配置](#配置-4)
-            + [映射](#映射-4)
         - [markdown](#markdown)
-            + [配置](#配置-5)
-            + [映射](#映射-5)
         - [verilog](#verilog)
-            + [配置](#配置-6)
-            + [映射](#映射-6)
         - [assembly](#assembly)
-            + [配置](#配置-7)
         - [shell](#shell)
-            + [配置](#配置-8)
-        - [cmake](#cmake)
-            + [配置](#配置-9)
-        - [docker](#docker-1)
-            + [配置](#配置-10)
 
 <!-- vim-markdown-toc -->
 
@@ -122,17 +103,6 @@ docker pull misakisuna705/vimsual-studio
 
 ### cpp
 
-#### 配置
-
-| c / c++ |   補全   |   偵錯   |      排版      |  編譯   |  執行   |   調試    |  發佈   |
-| :-----: | :------: | :------: | :------------: | :-----: | :-----: | :-------: | :-----: |
-|  依賴   |   llvm   |   llvm   |     astyle     |  llvm   |    x    |    gdb    |   git   |
-|         |    x     | cppcheck |       x        |  ninja  |    x    |     x     |    x    |
-|         |    x     |    x     |       x        |  cmake  |    x    |     x     |    x    |
-|  插件   | coc.nvim |   ale    | vim-autoformat | neoterm | neoterm | termdebug | neoterm |
-
-#### 映射
-
 | c / c++ | 按鍵  |    功能    |
 | :-----: | :---: | :--------: |
 |  編程   | `F1`  | 編譯發行版 |
@@ -149,17 +119,6 @@ docker pull misakisuna705/vimsual-studio
 
 ### python
 
-#### 配置
-
-| python |  環境  |   補全   |  偵錯  |      排版      |  直譯   |  發佈   |
-| :----: | :----: | :------: | :----: | :------------: | :-----: | :-----: |
-|  依賴  | pipenv |   jedi   | flake8 |      yapf      | ipython |   git   |
-|        |   x    |    x     |   x    |     isort      |    x    |    x    |
-|  插件  |   x    | coc.nvim |  ale   | vim-autoformat | neoterm | neoterm |
-|        |   x    |    x     |   x    |   vim-isort    |    x    |    x    |
-
-#### 映射
-
 | python | 按鍵  |   功能   |
 | :----: | :---: | :------: |
 |  編程  | `F1`  | 單行直譯 |
@@ -167,54 +126,18 @@ docker pull misakisuna705/vimsual-studio
 |        | `F3`  | 文件直譯 |
 |        | `F12` |   發佈   |
 
-### webpage
+### web
 
-#### 配置
-
-| webpage |    環境    |   補全    |           偵錯            |      排版      |       推播        | 調試 |  發佈   |
-| :-----: | :--------: | :-------: | :-----------------------: | :------------: | :---------------: | :--: | :-----: |
-|  依賴   |    yarn    |     x     |         htmlhint          |    prettier    |        del        |  x   |   git   |
-|         | typescript |     x     |         stylelint         |       x        |       gulp        |  x   |    x    |
-|         |     x      |     x     | stylelint-config-standard |       x        | gulp-html-replace |  x   |    x    |
-|         |     x      |     x     |             x             |       x        |   gulp-htmlmin    |  x   |    x    |
-|         |     x      |     x     |             x             |       x        |     gulp-sass     |  x   |    x    |
-|         |     x      |     x     |             x             |       x        |  gulp-clean-css   |  x   |    x    |
-|         |     x      |     x     |             x             |       x        |  gulp-typescript  |  x   |    x    |
-|         |     x      |     x     |             x             |       x        |    gulp-terser    |  x   |    x    |
-|         |     x      |     x     |             x             |       x        |    gulp-concat    |  x   |    x    |
-|         |     x      |     x     |             x             |       x        |   browser-sync    |  x   |    x    |
-|  插件   |     x      | coc.nvim  |            ale            | vim-autoformat |      neoterm      |  x   | neoterm |
-|         |     x      | emmet-vim |             x             |       x        |         x         |  x   |    x    |
-
-#### 映射
-
-| webpage |      按鍵      |   功能   |
-| :-----: | :------------: | :------: |
-|  編輯   | `CTRL`+`z`+`,` | 補全標籤 |
-|  編程   |      `F1`      | 開始推播 |
-|         |      `F2`      | 停止推播 |
-|         |     `F12`      |   發佈   |
+| web  |      按鍵      |      功能      |
+| :--: | :------------: | :------------: |
+| 編輯 | `CTRL`+`z`+`,` | 補全 html 標籤 |
+| 編程 |      `F1`      |    開始推播    |
+|      |      `F2`      |    停止推播    |
+|      |     `F12`      |      發佈      |
 
 ### ios
 
-#### 配置
-
-| ios  | 環境  |   補全   |   偵錯    |      排版      | 編譯 | 執行 | 調試 |  發佈   |
-| :--: | :---: | :------: | :-------: | :------------: | :--: | :--: | :--: | :-----: |
-| 依賴 | xcode |   llvm   | swiftlint |  swiftformat   |  x   |  x   |  x   |   git   |
-| 依賴 |   x   |    x     |     x     |       x        |  x   |  x   |  x   |    x    |
-| 插件 |   x   | coc.nvim |    ale    | vim-autoformat |  x   |  x   |  x   | neoterm |
-
 ### csharp
-
-#### 配置
-
-| csharp |    環境    |   補全   | 偵錯 |      排版      |    編譯    |    執行    |  發佈   |
-| :----: | :--------: | :------: | :--: | :------------: | :--------: | :--------: | :-----: |
-|  依賴  | dotnet-sdk |    x     |  x   |     astyle     | dotnet-sdk | dotnet-sdk |   git   |
-|  插件  |     x      | coc.nvim |  x   | vim-autoformat |  neoterm   |  neoterm   | neoterm |
-
-#### 映射
 
 | csharp | 按鍵  |   功能   |
 | :----: | :---: | :------: |
@@ -222,16 +145,6 @@ docker pull misakisuna705/vimsual-studio
 |        | `F12` |   發佈   |
 
 ### markdown
-
-#### 配置
-
-| markdown | 環境 |       補全       |      排版      |           推播           |  發佈   |
-| :------: | :--: | :--------------: | :------------: | :----------------------: | :-----: |
-|   依賴   |  x   |        x         |    prettier    |            x             |   git   |
-|   插件   |  x   | vim-markdown-toc | vim-autoformat |     markdown-preview     | neoterm |
-|          |  x   |     coc.nvim     |       x        | mathjax-support-for-mkdp |    x    |
-
-#### 映射
 
 | markdown | 按鍵  |   功能   |
 | :------: | :---: | :------: |
@@ -243,16 +156,6 @@ docker pull misakisuna705/vimsual-studio
 
 ### verilog
 
-#### 配置
-
-| verilog |   環境   |   補全   | 偵錯 |           排版            |  編譯   |  執行   |  調試   |  發佈   |
-| :-----: | :------: | :------: | :--: | :-----------------------: | :-----: | :-----: | :-----: | :-----: |
-|  依賴   | iverilog |    x     |  x   |             x             |    x    |    x    | xquartz |   git   |
-|         |    x     |    x     |  x   |             x             |    x    |    x    | gtkwave |    x    |
-|  插件   |    x     | coc.nvim | ale  | verilog_systemverilog.vim | neoterm | neoterm | neoterm | neoterm |
-
-#### 映射
-
 | verilog | 按鍵  | 功能 |
 | :-----: | :---: | :--: |
 |  編程   | `F1`  | 編譯 |
@@ -262,36 +165,4 @@ docker pull misakisuna705/vimsual-studio
 
 ### assembly
 
-#### 配置
-
-| assembly |      排版      |
-| :------: | :------------: |
-|   依賴   |     asmfmt     |
-|   插件   | vim-autoformat |
-
 ### shell
-
-#### 配置
-
-| shell |   補全   |    偵錯    |      排版      |
-| :---: | :------: | :--------: | :------------: |
-| 依賴  |    x     | shellcheck |     shfmt      |
-| 插件  | coc.nvim |    ale     | vim-autoformat |
-
-### cmake
-
-#### 配置
-
-| cmake |   補全   |      排版      |
-| :---: | :------: | :------------: |
-| 依賴  |          |  cmake_format  |
-| 插件  | coc.nvim | vim-autoformat |
-
-### docker
-
-#### 配置
-
-| cmake |   補全   |
-| :---: | :------: |
-| 依賴  |          |
-| 插件  | coc.nvim |
