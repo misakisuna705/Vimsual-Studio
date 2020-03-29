@@ -11,15 +11,7 @@
 * [typescript](#typescript)
 * [gulp](#gulp)
 * [dotnet-sdk](#dotnet-sdk)
-* [vim](#vim)
-    - [vim-plug](#vim-plug)
-        + [命令](#命令-2)
-        + [插件](#插件)
-    - [coc.nvim](#cocnvim)
-        + [命令](#命令-3)
-        + [插件](#插件-1)
-    - [ale](#ale)
-        + [命令](#命令-4)
+* [ale](#ale)
 * [cpp](#cpp)
 * [python](#python)
 * [ios](#ios)
@@ -48,17 +40,14 @@ brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/9ec9fb27a3
 ### 命令
 
 ```zsh
-b 行數 # 在main.c某行設置斷點
+b 行數       # 在main.c某行設置斷點
 b xxx.c:行數 # 在xxx.c某行設置斷點
-
-r # 開始調試
-c # 繼續調試
-
-n # 單步繼續
-s # 單步進入
-
-p 變數 # 印變數存值
-p &變數 # 印變數位址
+r            # 開始調試
+c            # 繼續調試
+n            # 單步繼續
+s            # 單步進入
+p 變數       # 印變數存值
+p &變數      # 印變數位址
 ```
 
 ## pipenv
@@ -99,64 +88,7 @@ dotnet new console # 初始化專案環境
 dotnet run # 編譯並執行該專案
 ```
 
-## vim
-
-### vim-plug
-
-#### 命令
-
-```vim
-:PlugStatus " 查詢插件安裝與載入狀態
-:PlugUpgrade " 升級 vim-plug
-:PlugUpdate " 升級所有插件
-```
-
-#### 插件
-
-|      瀏覽      |       編輯       |   補全    | 偵錯 |           排版            |           任務           |        環境         |
-| :------------: | :--------------: | :-------: | :--: | :-----------------------: | :----------------------: | :-----------------: |
-|  vim-quickui   | vim-visual-multi | coc.nvim  | ale  |      vim-autoformat       |   markdown-preview.vim   |    vim-polyglot     |
-|   vim-rooter   |  nerdcommenter   | emmet-vim |      |         vim-isort         | mathjax-support-for-mkdp |     indentLine      |
-|    LeaderF     |                  |           |      |     vim-markdown-toc      |         neoterm          |    lightline.vim    |
-|    nerdtree    |                  |           |      | verilog_systemverilog.vim |                          | vim-sublime-monokai |
-|     vista      |                  |           |      |                           |                          |                     |
-| vim-gutentags  |                  |           |      |                           |                          |                     |
-|   vim-cppman   |                  |           |      |                           |                          |                     |
-| vim-easymotion |                  |           |      |                           |                          |                     |
-|  vim-signify   |                  |           |      |                           |                          |                     |
-
-### coc.nvim
-
-#### 命令
-
-```vim
-:CocList extensions
-:CocInstall
-:CocUninstall
-:CocUpdate
-:CocConfig
-```
-
-#### 插件
-
-|      coc      |
-| :-----------: |
-|   coc-yaml    |
-| coc-tsserver  |
-| coc-sourcekit |
-|    coc-sh     |
-|  coc-python   |
-| coc-omnisharp |
-|   coc-json    |
-|   coc-html    |
-|  coc-docker   |
-|    coc-css    |
-|   coc-cmake   |
-|  coc-clangd   |
-
-### ale
-
-#### 命令
+## ale
 
 ```vim
 :ALEInfo " 查詢ale支援的linter

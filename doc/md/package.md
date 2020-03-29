@@ -31,6 +31,12 @@
 * [go](#go)
     - [命令](#命令-6)
     - [插件](#插件-6)
+* [vim-plug](#vim-plug)
+    - [命令](#命令-7)
+    - [插件](#插件-7)
+* [coc](#coc)
+    - [命令](#命令-8)
+    - [插件](#插件-8)
 
 <!-- vim-markdown-toc -->
 
@@ -335,3 +341,56 @@ go get -u xxx
 | :----: |
 | asmfmt |
 | shfmt  |
+
+## vim-plug
+
+### 命令
+
+```vim
+:PlugStatus " 查詢插件安裝與載入狀態
+:PlugUpgrade " 升級 vim-plug
+:PlugUpdate " 升級所有插件
+```
+
+### 插件
+
+|      瀏覽      |       編輯       |   補全    | 偵錯 |           排版            |           任務           |        環境         |
+| :------------: | :--------------: | :-------: | :--: | :-----------------------: | :----------------------: | :-----------------: |
+|  vim-quickui   | vim-visual-multi | coc.nvim  | ale  |      vim-autoformat       |   markdown-preview.vim   |    vim-polyglot     |
+|   vim-rooter   |  nerdcommenter   | emmet-vim |      |         vim-isort         | mathjax-support-for-mkdp |     indentLine      |
+|    LeaderF     |                  |           |      |     vim-markdown-toc      |         neoterm          |    lightline.vim    |
+|    nerdtree    |                  |           |      | verilog_systemverilog.vim |                          | vim-sublime-monokai |
+|     vista      |                  |           |      |                           |                          |                     |
+| vim-gutentags  |                  |           |      |                           |                          |                     |
+|   vim-cppman   |                  |           |      |                           |                          |                     |
+| vim-easymotion |                  |           |      |                           |                          |                     |
+|  vim-signify   |                  |           |      |                           |                          |                     |
+
+## coc
+
+### 命令
+
+```vim
+:CocList extensions
+:CocInstall
+:CocUninstall
+:CocUpdate
+:CocConfig
+```
+
+### 插件
+
+|      coc      |
+| :-----------: |
+|   coc-yaml    |
+| coc-tsserver  |
+| coc-sourcekit |
+|    coc-sh     |
+|  coc-python   |
+| coc-omnisharp |
+|   coc-json    |
+|   coc-html    |
+|  coc-docker   |
+|    coc-css    |
+|   coc-cmake   |
+|  coc-clangd   |
