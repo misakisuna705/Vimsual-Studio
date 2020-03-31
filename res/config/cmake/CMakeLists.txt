@@ -2,7 +2,9 @@
 cmake_minimum_required(VERSION 3.13)
 
 # project設定
-project(main)
+get_filename_component(Name ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+string(REPLACE " " "_" Name ${Name})
+project(${Name})
 
 # exe設定
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Weverything")

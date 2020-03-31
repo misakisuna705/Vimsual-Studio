@@ -597,7 +597,7 @@ au TerminalOpen * set list listchars=space:_
 " 建構c/cpp專案發行版
 au FileType c,cpp nnoremap <silent> <F1> :Tclear<CR>:T cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && ninja -C ./build/release<CR>
 " 執行c/cpp專案
-au FileType c,cpp nnoremap <silent> <F2> :Tclear<CR>:T [ "$(ls data/)" ] && bin/main < data/*.* \|\| bin/main<CR>
+au FileType c,cpp nnoremap <silent> <F2> :Tclear<CR>:T [ "$(ls data/)" ] && bin/* < data/*.* \|\| bin/*<CR>
 " 建構c/cpp專案測試版
 au FileType c,cpp nnoremap <silent> <F3> :Tclear<CR>:T cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug -Bbuild/test && ninja -C ./build/test<CR>
 
