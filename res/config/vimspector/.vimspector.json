@@ -1,20 +1,41 @@
 {
+  "adapters": {
+    "lldb-vscode": {
+      "variables": {
+        "LLVM": {
+          "shell": "brew --prefix llvm"
+        }
+      },
+
+      "command": ["${LLVM}/bin/lldb-vscode"],
+
+      "name": "lldb"
+    },
+
+    "vscode-cpptools": {
+      "attach": {
+        "pidProperty": "processId",
+        "pidSelect": "ask"
+      },
+      "command": ["${gadgetDir}/vscode-cpptools/debugAdapters/OpenDebugAD7"],
+      "name": "cppdbg"
+    }
+  },
+
   "configurations": {
-    "Cpp: Launch": {
+    "lldb-vscode": {
       "adapter": "lldb-vscode",
 
       "configuration": {
-        "name": "Cpp: Launch",
-        "type": "cppdbg",
+        "name": "lldb-vscode",
+        "type": "lldb-vscode",
         "request": "launch",
-        "program": "${workspaceRoot}/test/Test_C",
+        "stopOnEntry": true,
         "cwd": "${workspaceRoot}",
-        "MIMode": "lldb"
+        "program": "${workspaceRoot}/test/Test_C"
       },
 
       "breakpoints": {
-        "main": "Y",
-
         "exception": {
           "cpp_catch": "",
           "cpp_throw": "",
@@ -23,6 +44,20 @@
           "swift_catch": "",
           "swift_throw": ""
         }
+      }
+    },
+
+    "vscode-cpptools": {
+      "adapter": "vscode-cpptools",
+
+      "configuration": {
+        "name": "vscode-cpptools",
+        "type": "cppdbg",
+        "request": "launch",
+        "MIMode": "lldb",
+        "stopAtEntry": true,
+        "cwd": "${workspaceRoot}",
+        "program": "${workspaceRoot}/test/Test_C"
       }
     }
   }

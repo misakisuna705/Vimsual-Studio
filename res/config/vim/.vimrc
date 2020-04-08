@@ -45,7 +45,7 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 
 " 偵錯插件
 Plug 'w0rp/ale', {'for': ['c', 'cpp', 'python', 'swift', 'html', 'css', 'javascript', 'typescript', 'verilog_systemverilog', 'sh']}
-"Plug 'puremourning/vimspector', {'for': ['c', 'cpp'], 'do': './install_gadget.py --enable-c'}
+Plug 'puremourning/vimspector', {'for': ['c', 'cpp'], 'do': './install_gadget.py --enable-c'}
 
 " 排版插件
 Plug 'Chiel92/vim-autoformat', {'on': 'Autoformat'}
@@ -126,7 +126,7 @@ let g:Lf_FollowLinks = 1
 " 不搜尋的檔案與路徑
 let g:Lf_WildIgnore = {
             \ 'dir': ['.adobe', '.android', '.antigen', '.cache', '.config', '.dotfiles', '.dotnet', '.gradle', '.local', '.mitmproxy', '.mono', '.node-gyp', '.npm', '.nuget', '.omnisharp', '.oracle_jre_usage', '.ssh', '.subversion', '.swt', '.templateengine', '.Trash', '.vim', 'Documents', 'Music', 'Desktop', 'Pictures', 'Movies', 'Applications', 'Applications (Parallels)', 'Cache', 'go', 'Google Drive File Stream', 'bin', 'Library', 'node_modules', 'Server', 'temp', '.git', 'build', 'dist'],
-            \ 'file': ['.DS_Store', '*.pvm']
+            \ 'file': ['.DS_Store', '._.DS_Store']
             \}
 
 " 隱藏LeaderF的help提醒
@@ -660,50 +660,25 @@ endfunction
 
 " vim/termdebug
 
-"sign define vimspectorBP text=🔴 texthl=Normal
-"sign define vimspectorBPDisabled text=🔵 texthl=Normal
-"sign define vimspectorPC text=🔶 texthl=SpellBad
-
-" 版面配置
-"let g:termdebug_wide = 1
-
-" termdebug去背
-"au TerminalOpen * hi debugBreakpoint cterm=bold ctermbg=None
-"au TerminalOpen * hi debugPC ctermbg=242
-
-" 按下shift+k鍵時，游標移到下一段
-"au BufLeave * nnoremap <S-k> }
+sign define vimspectorBP text=🔴 texthl=Normal
+sign define vimspectorBPDisabled text=🔵 texthl=Normal
+sign define vimspectorPC text=🔶 texthl=SpellBad
 
 " 按下F4鍵時，測試c / cpp專案
-au FileType c,cpp nnoremap <silent> <F4> :!lldb test/*<CR>
-"au FileType c,cpp nnoremap <silent> <F4> :call Run_Cpp_Debugger()<CR>
-"au FileType c,cpp nnoremap <silent> <F4> :call vimspector#Launch()<CR>
+au FileType c,cpp nnoremap <silent> <F4> :call vimspector#Launch()<CR>
 " 按下F5鍵時，設置斷點
-"au FileType c,cpp nnoremap <silent> <F5> :Break<CR>
-"au FileType c,cpp nnoremap <silent> <F5> :call vimspector#ToggleBreakpoint()<CR>
+au FileType c,cpp nnoremap <silent> <F5> :call vimspector#ToggleBreakpoint()<CR>
 " 按下F6鍵時，清除斷點
-"au FileType c,cpp nnoremap <silent> <F6> :Clear<CR>
-"au FileType c,cpp nnoremap <silent> <F6> :call vimspector#ToggleBreakpoint()<CR>
+au FileType c,cpp nnoremap <silent> <F6> :call vimspector#ToggleBreakpoint()<CR>
 " 按下F7鍵時，執行調試
-"au FileType c,cpp nnoremap <silent> <F7> :Run<CR>
-"au FileType c,cpp nnoremap <silent> <F7> :call vimspector#Restart()<CR>
+au FileType c,cpp nnoremap <silent> <F7> :call vimspector#Restart()<CR>
 " 按下F8鍵時，繼續調試
-"au FileType c,cpp nnoremap <silent> <F8> :Continue<CR>
-"au FileType c,cpp nnoremap <silent> <F8> :call vimspector#Continue()<CR>
+au FileType c,cpp nnoremap <silent> <F8> :call vimspector#Continue()<CR>
 " 按下F9鍵時，單步繼續
-"au FileType c,cpp nnoremap <silent> <F9> :Over<CR>
-"au FileType c,cpp nnoremap <silent> <F9> :call vimspector#StepOver()<CR>
+au FileType c,cpp nnoremap <silent> <F9> :call vimspector#StepOver()<CR>
 " 按下F10鍵時，單步進入
-"au FileType c,cpp nnoremap <silent> <F10> :Step<CR>
-"au FileType c,cpp nnoremap <silent> <F10> :call vimspector#StepInto()<CR>
-"au FileType c,cpp nnoremap <silent> <F11> :VimspectorReset<CR>
-
-"function! Run_Cpp_Debugger()
-"packadd termdebug
-"Termdebug test/Test_C
-"wincmd h
-"aunmenu WinBar
-"endfunction
+au FileType c,cpp nnoremap <silent> <F10> :call vimspector#StepInto()<CR>
+au FileType c,cpp nnoremap <silent> <F11> :VimspectorReset<CR>
 
 " ==================================================================================================================== "
 
