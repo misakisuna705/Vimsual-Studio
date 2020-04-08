@@ -32,7 +32,7 @@
         "request": "launch",
         "stopOnEntry": true,
         "cwd": "${workspaceRoot}",
-        "program": "${workspaceRoot}/test/Test_C"
+        "program": "${workspaceRoot}/test/main"
       },
 
       "breakpoints": {
@@ -57,7 +57,7 @@
         "MIMode": "lldb",
         "stopAtEntry": true,
         "cwd": "${workspaceRoot}",
-        "program": "${workspaceRoot}/test/Test_C"
+        "program": "${workspaceRoot}/test/main"
       }
     }
   }
