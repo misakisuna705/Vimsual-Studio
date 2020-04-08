@@ -45,6 +45,7 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 
 " 偵錯插件
 Plug 'w0rp/ale', {'for': ['c', 'cpp', 'python', 'swift', 'html', 'css', 'javascript', 'typescript', 'verilog_systemverilog', 'sh']}
+"Plug 'puremourning/vimspector', {'for': ['c', 'cpp'], 'do': './install_gadget.py --enable-c'}
 
 " 排版插件
 Plug 'Chiel92/vim-autoformat', {'on': 'Autoformat'}
@@ -130,6 +131,8 @@ let g:Lf_WildIgnore = {
 
 " 隱藏LeaderF的help提醒
 let g:Lf_HideHelp = 1
+" 隱藏LeaderF的圖標
+let g:Lf_ShowDevIcons = 0
 " 顯示模糊搜索文件的絕對路徑
 let g:Lf_ShowRelativePath = 0
 " 設定主視窗
@@ -657,40 +660,50 @@ endfunction
 
 " vim/termdebug
 
+"sign define vimspectorBP text=🔴 texthl=Normal
+"sign define vimspectorBPDisabled text=🔵 texthl=Normal
+"sign define vimspectorPC text=🔶 texthl=SpellBad
+
 " 版面配置
-let g:termdebug_wide = 1
+"let g:termdebug_wide = 1
 
 " termdebug去背
-au TerminalOpen * hi debugBreakpoint cterm=bold ctermbg=None
-au TerminalOpen * hi debugPC ctermbg=242
+"au TerminalOpen * hi debugBreakpoint cterm=bold ctermbg=None
+"au TerminalOpen * hi debugPC ctermbg=242
 
 " 按下shift+k鍵時，游標移到下一段
-au BufLeave * nnoremap <S-k> }
+"au BufLeave * nnoremap <S-k> }
 
 " 按下F4鍵時，測試c / cpp專案
-au FileType c,cpp nnoremap <silent> <F4> :call Run_Cpp_Debugger()<CR>
+au FileType c,cpp nnoremap <silent> <F4> :!lldb test/*<CR>
+"au FileType c,cpp nnoremap <silent> <F4> :call Run_Cpp_Debugger()<CR>
+"au FileType c,cpp nnoremap <silent> <F4> :call vimspector#Launch()<CR>
 " 按下F5鍵時，設置斷點
-au FileType c,cpp nnoremap <silent> <F5> :Break<CR>
+"au FileType c,cpp nnoremap <silent> <F5> :Break<CR>
+"au FileType c,cpp nnoremap <silent> <F5> :call vimspector#ToggleBreakpoint()<CR>
 " 按下F6鍵時，清除斷點
-au FileType c,cpp nnoremap <silent> <F6> :Clear<CR>
+"au FileType c,cpp nnoremap <silent> <F6> :Clear<CR>
+"au FileType c,cpp nnoremap <silent> <F6> :call vimspector#ToggleBreakpoint()<CR>
 " 按下F7鍵時，執行調試
-au FileType c,cpp nnoremap <silent> <F7> :Run<CR>
+"au FileType c,cpp nnoremap <silent> <F7> :Run<CR>
+"au FileType c,cpp nnoremap <silent> <F7> :call vimspector#Restart()<CR>
 " 按下F8鍵時，繼續調試
-au FileType c,cpp nnoremap <silent> <F8> :Continue<CR>
+"au FileType c,cpp nnoremap <silent> <F8> :Continue<CR>
+"au FileType c,cpp nnoremap <silent> <F8> :call vimspector#Continue()<CR>
 " 按下F9鍵時，單步繼續
-au FileType c,cpp nnoremap <silent> <F9> :Over<CR>
+"au FileType c,cpp nnoremap <silent> <F9> :Over<CR>
+"au FileType c,cpp nnoremap <silent> <F9> :call vimspector#StepOver()<CR>
 " 按下F10鍵時，單步進入
-au FileType c,cpp nnoremap <silent> <F10> :Step<CR>
+"au FileType c,cpp nnoremap <silent> <F10> :Step<CR>
+"au FileType c,cpp nnoremap <silent> <F10> :call vimspector#StepInto()<CR>
+"au FileType c,cpp nnoremap <silent> <F11> :VimspectorReset<CR>
 
-function! Run_Cpp_Debugger()
-    cd %:p:h
-    packadd termdebug
-    wincmd j
-    q
-    Termdebug test/%:t:r
-    wincmd h
-    aunmenu WinBar
-endfunction
+"function! Run_Cpp_Debugger()
+"packadd termdebug
+"Termdebug test/Test_C
+"wincmd h
+"aunmenu WinBar
+"endfunction
 
 " ==================================================================================================================== "
 

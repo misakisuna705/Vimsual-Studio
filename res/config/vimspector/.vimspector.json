@@ -1,0 +1,29 @@
+{
+  "configurations": {
+    "Cpp: Launch": {
+      "adapter": "lldb-vscode",
+
+      "configuration": {
+        "name": "Cpp: Launch",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceRoot}/test/Test_C",
+        "cwd": "${workspaceRoot}",
+        "MIMode": "lldb"
+      },
+
+      "breakpoints": {
+        "main": "Y",
+
+        "exception": {
+          "cpp_catch": "",
+          "cpp_throw": "",
+          "objc_catch": "",
+          "objc_throw": "",
+          "swift_catch": "",
+          "swift_throw": ""
+        }
+      }
+    }
+  }
+}

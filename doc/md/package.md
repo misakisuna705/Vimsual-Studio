@@ -100,14 +100,16 @@ sudo apt autoremove # 清理依賴
 
 ### 插件
 
-|        VM         |        WSL        |
-| :---------------: | :---------------: |
-|        zsh        | linuxbrew-wrapper |
-| linuxbrew-wrapper |        zsh        |
-|  openssh-server   |                   |
-|  xfce4-terminal   |                   |
-|       hime        |                   |
-| chromium-browser  |                   |
+|        VM         |
+| :---------------: |
+|        zsh        |
+| linuxbrew-wrapper |
+|  openssh-server   |
+|  xfce4-terminal   |
+|       hime        |
+| chromium-browser  |
+|   gnome-tweaks    |
+|       plank       |
 
 ## brew
 

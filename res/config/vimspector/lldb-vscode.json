@@ -1,0 +1,15 @@
+{
+  "adapters": {
+    "lldb-vscode": {
+      "variables": {
+        "LLVM": {
+          "shell": "brew --prefix llvm"
+        }
+      },
+
+      "command": ["${LLVM}/bin/lldb-vscode"],
+
+      "name": "lldb"
+    }
+  }
+}

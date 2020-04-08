@@ -1,14 +1,10 @@
 # zmodload zsh/zprof
 
-if grep -q Microsoft /proc/version; then
-    [ "$(ls /mnt/e/)" ] || sudo mount -t drvfs E: /mnt/e
-fi
-
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"
 
-umask 002
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # antigen啟用
 source /home/linuxbrew/.linuxbrew/Cellar/antigen/2.2.3/share/antigen/antigen.zsh

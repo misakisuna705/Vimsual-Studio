@@ -7,7 +7,7 @@ install_brew() {
         if [[ "$OSTYPE" == "darwin"* ]]; then
             /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-            sudo apt-get install linuxbrew-wrapper
+            sudo apt-get install -y linuxbrew-wrapper
 
             brew
             {

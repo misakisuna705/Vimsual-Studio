@@ -39,10 +39,7 @@ USER vimer
 ENV USER vimer
 
 #setup zsh
-RUN \
-        echo "export PATH='/home/linuxbrew/.linuxbrew/bin:$PATH'" >> ~/.zshrc && \
-        echo "export MANPATH='/home/linuxbrew/.linuxbrew/share/man:$MANPATH'" >> ~/.zshrc && \
-        echo "export INFOPATH='/home/linuxbrew/.linuxbrew/share/info:$INFOPATH'" >> ~/.zshrc
+RUN echo "export PATH='/home/linuxbrew/.linuxbrew/bin:$PATH'" >> ~/.zshrc
 
 #setup brew
 RUN \

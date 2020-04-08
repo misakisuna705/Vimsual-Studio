@@ -3,6 +3,8 @@
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # antigen啟用
 source /usr/local/share/antigen/antigen.zsh
 

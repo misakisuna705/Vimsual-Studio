@@ -39,7 +39,7 @@ setup_env() {
     printf "Setup zsh...\n"
     if [[ "$0" == "zsh" ]]; then
         printf "Setup zsh..."
-        chsh -s /bin/zsh
+        chsh -s "$(which zsh)"
         printf "Succeeded to setup zsh!\n\n"
     else
         printf "Already setup zsh!\n\n"
