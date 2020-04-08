@@ -658,13 +658,13 @@ endfunction
 
 " =========================================================== "
 
-" vim/termdebug
+" puremourning/vimspector
 
-sign define vimspectorBP text=🔴 texthl=Normal
-sign define vimspectorBPDisabled text=🔵 texthl=Normal
-sign define vimspectorPC text=🔶 texthl=SpellBad
+" 主題配置
+sign define vimspectorBP text=🚩 texthl=Normal
+sign define vimspectorPC text=👉 texthl=Normal
 
-" 按下F4鍵時，測試c / cpp專案
+" 按下F4鍵時，開始調試
 au FileType c,cpp nnoremap <silent> <F4> :call vimspector#Launch()<CR>
 " 按下F5鍵時，設置斷點
 au FileType c,cpp nnoremap <silent> <F5> :call vimspector#ToggleBreakpoint()<CR>
@@ -678,7 +678,8 @@ au FileType c,cpp nnoremap <silent> <F8> :call vimspector#Continue()<CR>
 au FileType c,cpp nnoremap <silent> <F9> :call vimspector#StepOver()<CR>
 " 按下F10鍵時，單步進入
 au FileType c,cpp nnoremap <silent> <F10> :call vimspector#StepInto()<CR>
-au FileType c,cpp nnoremap <silent> <F11> :VimspectorReset<CR>
+" 按下F11鍵時，結束調試
+au FileType c,cpp nnoremap <silent> <F11> :call vimspector#ClearBreakpoints()<CR>:VimspectorReset<CR>
 
 " ==================================================================================================================== "
 
