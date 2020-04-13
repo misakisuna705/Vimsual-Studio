@@ -28,9 +28,8 @@
 
       "configuration": {
         "name": "lldb-vscode",
-        "type": "lldb-vscode",
+        "type": "lldb",
         "request": "launch",
-        "stopOnEntry": true,
         "cwd": "${workspaceRoot}",
         "program": "${workspaceRoot}/test/main"
       },

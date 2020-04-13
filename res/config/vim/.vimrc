@@ -600,9 +600,9 @@ au TerminalOpen * set list listchars=space:_
 " 建構c/cpp專案發行版
 au FileType c,cpp nnoremap <silent> <F1> :Tclear<CR>:T cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && ninja -C ./build/release<CR>
 " 執行c/cpp專案
-au FileType c,cpp nnoremap <silent> <F2> :Tclear<CR>:T [ "$(ls data/)" ] && bin/main < data/*.* \|\| bin/main<CR>
+au FileType c,cpp nnoremap <silent> <F2> :Tclear<CR>:T cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug -Bbuild/test && ninja -C ./build/test<CR>
 " 建構c/cpp專案測試版
-au FileType c,cpp nnoremap <silent> <F3> :Tclear<CR>:T cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug -Bbuild/test && ninja -C ./build/test<CR>
+au FileType c,cpp nnoremap <silent> <F3> :Tclear<CR>:T [ "$(ls data/)" ] && test/main < data/*.* \|\| test/main<CR>
 
 " 按下F1鍵時，直譯該行
 au FileType python nnoremap <silent> <F1> :Tclear<CR>:TREPLSendLine<CR>
@@ -665,7 +665,7 @@ sign define vimspectorBP text=🚩 texthl=Normal
 sign define vimspectorPC text=👉 texthl=Normal
 
 " 按下F4鍵時，開始調試
-au FileType c,cpp nnoremap <silent> <F4> :call vimspector#Launch()<CR>
+au FileType c,cpp nnoremap <silent> <F4> :call vimspector#AddFunctionBreakpoint("main")<CR>:call vimspector#LaunchWithSettings(#{configuration: "lldb-vscode"})<CR>
 " 按下F5鍵時，設置斷點
 au FileType c,cpp nnoremap <silent> <F5> :call vimspector#ToggleBreakpoint()<CR>
 " 按下F6鍵時，清除斷點
@@ -679,7 +679,8 @@ au FileType c,cpp nnoremap <silent> <F9> :call vimspector#StepOver()<CR>
 " 按下F10鍵時，單步進入
 au FileType c,cpp nnoremap <silent> <F10> :call vimspector#StepInto()<CR>
 " 按下F11鍵時，結束調試
-au FileType c,cpp nnoremap <silent> <F11> :call vimspector#ClearBreakpoints()<CR>:VimspectorReset<CR>
+"au FileType c,cpp nnoremap <silent> <F11> :call vimspector#ClearBreakpoints()<CR>:VimspectorReset<CR>
+au FileType c,cpp nnoremap <silent> <F11> :call vimspector#ClearBreakpoints()<CR>:call vimspector#Stop()<CR>:VimspectorReset<CR>
 
 " ==================================================================================================================== "
 
