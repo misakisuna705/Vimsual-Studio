@@ -2,6 +2,7 @@
 
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+#export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 

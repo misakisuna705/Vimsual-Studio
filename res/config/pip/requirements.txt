@@ -6,4 +6,5 @@ isort
 jedi
 lizard
 pipenv
+pwntools
 yapf
