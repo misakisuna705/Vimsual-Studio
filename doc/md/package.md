@@ -155,6 +155,7 @@ brew unlink # 斷開命令與插件
 |     global      |                 |
 |       go        |                 |
 | icarus-verilog  | icarus-verilog  |
+|    inetutils    |                 |
 |      llvm       |      llvm       |
 |      nasm       |      nasm       |
 |      ninja      |      ninja      |
