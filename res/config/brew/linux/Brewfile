@@ -1,6 +1,4 @@
-hello, world
-/bundle"
-tap "homebrew/cask"
+tap "homebrew/bundle"
 tap "homebrew/core"
 tap "universal-ctags/universal-ctags"
 brew "antigen"
