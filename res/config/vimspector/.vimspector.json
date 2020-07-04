@@ -53,7 +53,7 @@
         "name": "vscode-cpptools",
         "type": "cppdbg",
         "request": "launch",
-        "MIMode": "lldb",
+        "MIMode": "gdb",
         "stopAtEntry": true,
         "cwd": "${workspaceRoot}",
         "program": "${workspaceRoot}/test/main"

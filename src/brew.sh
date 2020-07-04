@@ -2,20 +2,16 @@
 
 install_brew() {
     printf "Test Homebrew...\n"
-    if test ! "$(brew -v)"; then
-        printf "Install Homebrew...\n"
-        if [[ "$OSTYPE" == "darwin"* ]]; then
-            /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-            sudo apt-get install -y linuxbrew-wrapper
+    if [[ "$OSTYPE" == "linux-gnu" ]]; then
+        export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+        export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
+        export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
+    fi
 
-            brew
-            {
-                echo "export PATH='/home/linuxbrew/.linuxbrew/bin:$PATH'"
-                echo "export MANPATH='/home/linuxbrew/.linuxbrew/share/man:$MANPATH'"
-                echo "export INFOPATH='/home/linuxbrew/.linuxbrew/share/info:$INFOPATH'"
-            } >>~/.zshrc
-        fi
+    if ! brew -v || false; then
+        printf "Install Homebrew...\n"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
         printf "Succeeded to install Homebrew!\n\n"
     else
         printf "Already have Homebrew!\n\n"

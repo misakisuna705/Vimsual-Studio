@@ -214,6 +214,7 @@ brew cask upgrade # 升級所有程式
 |        mediainfo         |
 |         megasync         |
 |          motrix          |
+|      mysqlworkbench      |
 |         osxfuse          |
 |         tickeys          |
 |        unity-hub         |

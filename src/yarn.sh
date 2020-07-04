@@ -5,6 +5,7 @@ setup_yarn() {
         printf "Setup yarn...\n"
         cd "$HOME/.config/yarn/global" || exit
         yarn install
+        ln -sf "$HOME/.config/yarn/global/node_modules/" "$HOME/"
         printf "Succeeded to setup yarn!\n\n"
 
         printf "Upgrade yarn...\n"

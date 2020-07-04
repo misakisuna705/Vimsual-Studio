@@ -11,7 +11,7 @@ symlink() {
 
     printf "Symlink coc-settings.json...\n"
     if [ ! -d "$HOME/.vim/" ]; then
-        mkdir "$HOME/.vim/"
+        mkdir -p "$HOME/.vim/"
     fi
 
     ln -sf "$HOME/.dotfiles/res/config/coc/coc-settings.json" "$HOME/.vim/"
@@ -36,7 +36,7 @@ symlink() {
     printf "Symlink package.json...\n"
     if [[ "$OSTYPE" == "darwin"* ]]; then
         if [ ! -d "$HOME/.config/yarn/global/" ]; then
-            mkdir "$HOME/.config/yarn/global/"
+            mkdir -p "$HOME/.config/yarn/global/"
         fi
 
         ln -sf "$HOME/.dotfiles/res/config/yarn/package.json" "$HOME/.config/yarn/global/"
