@@ -8,13 +8,13 @@
         "revision": "9a3850f055cbb0eceec5b57d68334388594793ce"
       },
       "homebrew/cask": {
-        "revision": "2369ee19c8b725685b453833abeffd7e5ae5ddeb"
+        "revision": "9bd8cfa0f235a97940dec365119cab7d2cb8d6cc"
       },
       "homebrew/cask-fonts": {
         "revision": "25d915075752d5350f917b5438b13e24ed7c9043"
       },
       "homebrew/core": {
-        "revision": "2820accc9a0486a8d5f0766bcf01fb560b9d3f9f"
+        "revision": "bc53daee964234f1d06e147668825c0debd68c77"
       },
       "mattisg/mattisg": {
         "revision": "a65b6c99617598d79a9a0957192569bb9b6b6d62"
@@ -25,7 +25,7 @@
     },
     "cask": {
       "osxfuse": {
-        "version": "3.10.6",
+        "version": "3.11.0",
         "options": {
           "full_name": "osxfuse"
         }
@@ -354,22 +354,22 @@
         }
       },
       "python": {
-        "version": "3.7.7",
+        "version": "3.7.8",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/python-3.7.7.catalina.bottle.tar.gz",
-              "sha256": "acd595852aecc2bfa46c57d86db716e64d57bb2753c45ff7f745b46c7655dd65"
+              "url": "https://homebrew.bintray.com/bottles/python-3.7.8.catalina.bottle.tar.gz",
+              "sha256": "f7fb660ba03f202d739f38ded3ac5952569103855d8a8e9aa1a7bfff764bdfc2"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/python-3.7.7.mojave.bottle.tar.gz",
-              "sha256": "cc8177d823b39d099e1f1a6f2e0fccb16e531508b59580f1fd44f659b54eeb84"
+              "url": "https://homebrew.bintray.com/bottles/python-3.7.8.mojave.bottle.tar.gz",
+              "sha256": "41f002aafc187556d0f247590d4b554ca9b361a66c7b14341cf63a21eaee1b0f"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/python-3.7.7.high_sierra.bottle.tar.gz",
-              "sha256": "079ace2d46b98d9931f14fbb6e02d883fedf0333faabcbaf552b12553325f4b6"
+              "url": "https://homebrew.bintray.com/bottles/python-3.7.8.high_sierra.bottle.tar.gz",
+              "sha256": "d2315dbe4f3266b7c6efe8bfda3ae0bedc60792cfff00f4bcdf87e5923274ef3"
             }
           }
         }
@@ -803,7 +803,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.4.3",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "2820accc9a0486a8d5f0766bcf01fb560b9d3f9f",
+        "Homebrew/homebrew-core": "bc53daee964234f1d06e147668825c0debd68c77",
         "CLT": "11.5.0.0.1.1588476445",
         "Xcode": "11.5",
         "macOS": "10.15.5"

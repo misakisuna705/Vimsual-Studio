@@ -283,6 +283,7 @@ pip3 check # 檢查插件版本相容性
 |     jedi     |
 |    lizard    |
 |    pipenv    |
+|  pipdeptree  |
 |   pwntools   |
 |     yapf     |
 

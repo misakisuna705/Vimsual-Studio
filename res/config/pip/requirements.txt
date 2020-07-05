@@ -6,5 +6,6 @@ isort
 jedi
 lizard
 pipenv
+pipdeptree
 pwntools
 yapf
