@@ -8,6 +8,7 @@
     - [命令](#命令)
     - [插件](#插件)
 * [brew](#brew)
+    - [設定](#設定)
     - [cellar](#cellar)
         + [安裝](#安裝)
         + [命令](#命令-1)
@@ -112,6 +113,12 @@ sudo apt autoremove # 清理依賴
 |       plank       |
 
 ## brew
+
+### 設定
+
+```zsh
+export HOMEBREW_NO_AUTO_UPDATE=1
+```
 
 ### cellar
 

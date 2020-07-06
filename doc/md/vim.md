@@ -6,6 +6,7 @@
     - [安裝](#安裝)
     - [命令](#命令)
 * [pipenv](#pipenv)
+    - [設定](#設定)
     - [命令](#命令-1)
 * [yarn](#yarn)
 * [typescript](#typescript)
@@ -51,6 +52,12 @@ p &變數      # 印變數位址
 ```
 
 ## pipenv
+
+### 設定
+
+```zsh
+export PIPENV_VENV_IN_PROJECT=1
+```
 
 ### 命令
 

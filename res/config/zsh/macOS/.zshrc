@@ -1,11 +1,5 @@
 # zmodload zsh/zprof
 
-export PATH="$HOME/go/bin:$PATH"
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-#export PATH="/usr/local/opt/python@3.8/bin:$PATH"
-
-export HOMEBREW_NO_AUTO_UPDATE=1
-
 # antigen啟用
 source /usr/local/share/antigen/antigen.zsh
 
@@ -21,5 +15,11 @@ antigen bundle zsh-users/zsh-autosuggestions
 
 # antigen啟用終點
 antigen apply
+
+export PATH="$HOME/go/bin:$PATH"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+export HOMEBREW_NO_AUTO_UPDATE=1
+export PIPENV_VENV_IN_PROJECT=1
 
 # zprof
