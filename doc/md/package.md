@@ -156,6 +156,7 @@ brew unlink # 斷開命令與插件
 |     allegro     |                 |
 |     antigen     |     antigen     |
 |     astyle      |     astyle      |
+|      bower      |                 |
 |      cmake      |      cmake      |
 |    cppcheck     |    cppcheck     |
 |       gdb       |       gdb       |
@@ -164,9 +165,10 @@ brew unlink # 斷開命令與插件
 | icarus-verilog  | icarus-verilog  |
 |    inetutils    |                 |
 |      llvm       |      llvm       |
+|      mono       |                 |
 |      nasm       |      nasm       |
 |      ninja      |      ninja      |
-|     python      |     python      |
+|                 |     python      |
 |     ripgrep     |     ripgrep     |
 |   shellcheck    |   shellcheck    |
 |      sshfs      |      sshfs      |
@@ -204,8 +206,11 @@ brew cask upgrade # 升級所有程式
 |           cask           |
 | :----------------------: |
 |        1password         |
+|   adobe-creative-cloud   |
+|        airserver         |
 |      android-studio      |
 |        appcleaner        |
+|       baidunetdisk       |
 |         calibre          |
 |          docker          |
 |        dotnet-sdk        |
@@ -220,13 +225,17 @@ brew cask upgrade # 升級所有程式
 |           keka           |
 |        mediainfo         |
 |         megasync         |
+|     microsoft-office     |
+|     microsoft-teams      |
 |          motrix          |
 |      mysqlworkbench      |
 |         osxfuse          |
+|          steam           |
 |         tickeys          |
 |        unity-hub         |
 |      vmware-fusion       |
 |        wireshark         |
+|           xld            |
 |         xquartz          |
 
 ### font
