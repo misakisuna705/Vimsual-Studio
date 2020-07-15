@@ -231,6 +231,7 @@ brew cask upgrade # 升級所有程式
 |      mysqlworkbench      |
 |         osxfuse          |
 |          steam           |
+|       tunnelblick        |
 |         tickeys          |
 |        unity-hub         |
 |      vmware-fusion       |
