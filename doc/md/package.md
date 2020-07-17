@@ -165,6 +165,7 @@ brew unlink # 斷開命令與插件
 | icarus-verilog  | icarus-verilog  |
 |    inetutils    |                 |
 |      llvm       |      llvm       |
+|     masscan     |                 |
 |      mono       |                 |
 |      nasm       |      nasm       |
 |      ninja      |      ninja      |
@@ -211,6 +212,7 @@ brew cask upgrade # 升級所有程式
 |      android-studio      |
 |        appcleaner        |
 |       baidunetdisk       |
+|         blender          |
 |         calibre          |
 |          docker          |
 |        dotnet-sdk        |
@@ -223,12 +225,15 @@ brew cask upgrade # 升級所有程式
 |          iterm2          |
 |           java           |
 |           keka           |
+|     logitech-options     |
 |        mediainfo         |
 |         megasync         |
 |     microsoft-office     |
 |     microsoft-teams      |
 |          motrix          |
 |      mysqlworkbench      |
+|        parallels         |
+|          parsec          |
 |         osxfuse          |
 |          steam           |
 |       tunnelblick        |

@@ -5,16 +5,16 @@
         "revision": "bc305e384e958b4e43357b9a51e55b169a8c0b34"
       },
       "homebrew/bundle": {
-        "revision": "f760551841012ee20c90f2afd336c15423b23479"
+        "revision": "300394523a2060a2d8293163779d442cdbfbe5a4"
       },
       "homebrew/cask": {
-        "revision": "ca797976887365199645eca5bb4c52fec7a89578"
+        "revision": "ff753a0d1b54464268f14429801ee0d230464691"
       },
       "homebrew/cask-fonts": {
-        "revision": "70b06df1704d77baca7c43e4d5446df1c23d52a3"
+        "revision": "e93145f41a29a2547a1894f84086b69293b8d4cc"
       },
       "homebrew/core": {
-        "revision": "feeb38f6e7b9c04c37b7ab499e2f161025d12afa"
+        "revision": "04943302eff16871a929686a5c6a97f9dcb3db7b"
       },
       "mattisg/mattisg": {
         "revision": "a65b6c99617598d79a9a0957192569bb9b6b6d62"
@@ -23,7 +23,10 @@
         "revision": "faaef55ab7b513529e06d454d49d973ede007151"
       },
       "homebrew/services": {
-        "revision": "a379971f8cbca1875f625a47a93efeafc6512091"
+        "revision": "a578043dfd7a2f6836b6eb7860a63db6ddb4ef42"
+      },
+      "homebrew/cask-drivers": {
+        "revision": "b9aa337617d5977d1d80154a41356d2968b3e31d"
       }
     },
     "cask": {
@@ -52,7 +55,7 @@
         }
       },
       "calibre": {
-        "version": "4.20.0",
+        "version": "4.21.0",
         "options": {
           "full_name": "calibre"
         }
@@ -64,7 +67,7 @@
         }
       },
       "dotnet-sdk": {
-        "version": "3.1.301,aad9adc7-90bb-4294-a378-00f4cc5fb695:89cfc771a783b1441c34ac925aee7141",
+        "version": "3.1.302,fff497aa-e6f6-4556-b67b-d139e772156f:4efa99b6bf0cb59104920dfd5f65f8a8",
         "options": {
           "full_name": "dotnet-sdk"
         }
@@ -190,7 +193,7 @@
         }
       },
       "mysqlworkbench": {
-        "version": "8.0.20",
+        "version": "8.0.21",
         "options": {
           "full_name": "mysqlworkbench"
         }
@@ -202,7 +205,7 @@
         }
       },
       "baidunetdisk": {
-        "version": "3.3.1",
+        "version": "3.3.2",
         "options": {
           "full_name": "baidunetdisk"
         }
@@ -241,6 +244,18 @@
         "version": "latest",
         "options": {
           "full_name": "steam"
+        }
+      },
+      "tunnelblick": {
+        "version": "3.8.2a,5481",
+        "options": {
+          "full_name": "tunnelblick"
+        }
+      },
+      "logitech-options": {
+        "version": "8.20.233",
+        "options": {
+          "full_name": "logitech-options"
         }
       }
     },
@@ -409,22 +424,22 @@
         }
       },
       "go": {
-        "version": "1.14.4",
+        "version": "1.14.5",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/go-1.14.4.catalina.bottle.tar.gz",
-              "sha256": "935214ab166d8da148af812614545a25778e4ee11c2ea5cfd332bff72ec4046e"
+              "url": "https://homebrew.bintray.com/bottles/go-1.14.5.catalina.bottle.tar.gz",
+              "sha256": "bbecee76043eeb6d34f76565faaa856a9bbfb2dd052d63dcd5c6326059ab7898"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/go-1.14.4.mojave.bottle.tar.gz",
-              "sha256": "f1ef93181b0c4c97617b74d787ced8e18ceca12ee52d9559a8db0f21eb84fa43"
+              "url": "https://homebrew.bintray.com/bottles/go-1.14.5.mojave.bottle.tar.gz",
+              "sha256": "d653d2c8faf8b8c0e2152082e7d9cbfbae0d46c1c66f04d58517234d93bbe39e"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/go-1.14.4.high_sierra.bottle.tar.gz",
-              "sha256": "4b5e79d15f4bb768bc0cefe54a670a525f21257f2532697df76d44c8cc0e8a7a"
+              "url": "https://homebrew.bintray.com/bottles/go-1.14.5.high_sierra.bottle.tar.gz",
+              "sha256": "edd810c7103a4080220cc929820f1cdd56c8dc0c11cab53f5738d37532750e24"
             }
           }
         }
@@ -812,18 +827,47 @@
             }
           }
         }
+      },
+      "masscan": {
+        "version": "1.0.5",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/masscan-1.0.5.catalina.bottle.tar.gz",
+              "sha256": "480e77a29b46bf529743f0d4e21a8e69d55e41d19bbb4e3b1665d329c8b3e94f"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/masscan-1.0.5.mojave.bottle.tar.gz",
+              "sha256": "6de3b12cbe718062781ee5bddad15a3f4835dafe77210f3ecba59d4e11e733e3"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/masscan-1.0.5.high_sierra.bottle.tar.gz",
+              "sha256": "20a6281fb4adb9aec9fd7bddf8da30bc2ae8f5bec6daa5b468444916859017fd"
+            },
+            "sierra": {
+              "url": "https://homebrew.bintray.com/bottles/masscan-1.0.5.sierra.bottle.tar.gz",
+              "sha256": "729b4ce06557da726edbf7e6e570ed1ff96ca3e0bc42d9399f9ed96aa48ef2a2"
+            },
+            "el_capitan": {
+              "url": "https://homebrew.bintray.com/bottles/masscan-1.0.5.el_capitan.bottle.tar.gz",
+              "sha256": "9aa4359e82e1b467f24d7e813ee8919dbc5cf32a182fd6eafcadc015bcd97955"
+            }
+          }
+        }
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.4.6",
+        "HOMEBREW_VERSION": "2.4.7",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "feeb38f6e7b9c04c37b7ab499e2f161025d12afa",
-        "CLT": "11.5.0.0.1.1588476445",
-        "Xcode": "11.5",
-        "macOS": "10.15.5"
+        "Homebrew/homebrew-core": "04943302eff16871a929686a5c6a97f9dcb3db7b",
+        "CLT": "1103.0.32.62",
+        "Xcode": "11.6",
+        "macOS": "10.15.6"
       }
     }
   }
