@@ -41,7 +41,7 @@ Plug 'scrooloose/nerdcommenter', {'on': '<plug>NERDCommenterToggle'}
 
 " 補全插件
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mattn/emmet-vim', {'for': 'html'}
+Plug 'mattn/emmet-vim', {'for': ['html', 'js']}
 
 " 偵錯插件
 Plug 'w0rp/ale', {'for': ['c', 'cpp', 'python', 'swift', 'html', 'css', 'javascript', 'typescript', 'verilog_systemverilog', 'sh']}
