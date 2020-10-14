@@ -89,13 +89,13 @@ let share = [
             \ ]
 
 let goto = [
+            \ [ 'find keyword', 'Leaderf rg' ],
             \ [ 'find definition', 'exec "Leaderf gtags --path-style absolute -d " . expand("<cword>")' ],
             \ [ 'find reference', 'exec "Leaderf gtags --path-style absolute -r " . expand("<cword>")' ],
-            \ [ 'find keyword', 'Leaderf rg' ],
             \ ]
 
 " 搜尋標籤
-nnoremap <silent> <C-f> :call quickui#context#open(goto, {'index':g:quickui#context#cursor})<CR>
+nnoremap <silent> <C-f> :call quickui#context#open(goto, {'index':g:quickui#context#cursor})<CR><DOWN>
 " 預覽標籤
 nnoremap <S-m> :call quickui#tools#preview_tag('')<CR>
 nnoremap <S-h> :call quickui#preview#scroll(-1)<CR>
@@ -125,7 +125,7 @@ let g:Lf_ShowHidden = 1
 let g:Lf_FollowLinks = 1
 " 不搜尋的檔案與路徑
 let g:Lf_WildIgnore = {
-            \ 'dir': ['.adobe', '.android', '.antigen', '.cache', '.config', '.dotnet', '.gradle', '.local', '.mitmproxy', '.mono', '.node-gyp', '.npm', '.nuget', '.omnisharp', '.oracle_jre_usage', '.ssh', '.subversion', '.swt', '.templateengine', '.Trash', '.vim', 'Documents', 'Music', 'Desktop', 'Pictures', 'Movies', 'Applications', 'Applications (Parallels)', 'Cache', 'go', 'Google Drive File Stream', 'bin', 'Library', 'node_modules', 'Server', 'temp', '.git', 'build', 'dist'],
+            \ 'dir': ['.adobe', '.android', '.antigen', '.cache', '.config', '.dotnet', '.gradle', '.local', '.mitmproxy', '.mono', '.node-gyp', '.npm', '.nuget', '.omnisharp', '.oracle_jre_usage', '.ssh', '.subversion', '.swt', '.templateengine', '.Trash', '.vim', 'Documents', 'Music', 'Desktop', 'Pictures', 'Movies', 'Applications', 'Applications (Parallels)', 'Cache', 'go', 'Google Drive File Stream', 'bin', 'Library', 'node_modules', 'Server', 'temp', '.git', '.venv', 'build', 'dist'],
             \ 'file': ['.DS_Store', '._.DS_Store']
             \}
 
@@ -267,7 +267,7 @@ let g:Lf_PopupPalette = {
 " 搜尋文件
 nnoremap <silent> <C-p> :LeaderfFile<CR>
 " 其他快捷鍵
-let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<C-t>': ['<CR>'], '<ESC>': ['<C-p>', '<C-f>'], '<C-p>': ['<C-n>']}
+let g:Lf_CommandMap = {'<C-]>': ['<C-o>'], '<C-t>': ['<CR>'], '<ESC>': ['<C-p>', '<C-f>', '<ESC>'], '<C-p>': ['<C-n>']}
 
 " =========================================================== "
 
@@ -354,8 +354,8 @@ let g:cppman_open_mode = "vertical"
 
 " 按下q鍵時，開啟cppman
 au FileType cpp nnoremap q :Cppman <C-r><C-w><CR>
-au FileType c nnoremap q :Cppman! 2 <C-r><C-w><CR>
-au FileType c nnoremap <S-q> :Cppman! 3 <C-r><C-w><CR>
+au FileType c nnoremap q :Cppman! 3 <C-r><C-w><CR>
+au FileType c nnoremap <S-q> :Cppman! 2 <C-r><C-w><CR>
 
 " =========================================================== "
 
@@ -398,6 +398,9 @@ let g:VM_reselect_first = 1
 " 關閉預設訊息
 let g:VM_set_statusline = 0
 let g:VM_silent_exit = 1
+
+" 區分大小寫
+let g:VM_case_setting = 'sensitive'
 
 " 關閉預設映射
 let g:VM_default_mappings = 0
@@ -587,6 +590,9 @@ au FileType markdown nmap <F2> <Plug>StopMarkdownPreview
 
 " kassio/neoterm
 
+" 在每個tab共用neoterm
+let g:neoterm_term_per_tab = 1
+
 " 設定neoterm位置
 let g:neoterm_default_mod = 'botright'
 
@@ -598,10 +604,10 @@ hi NonText ctermfg=242 ctermbg=NONE
 au TerminalOpen * set list listchars=space:_
 
 " 建構c/cpp專案發行版
-au FileType c,cpp nnoremap <silent> <F1> :Tclear<CR>:T cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && ninja -C ./build/release<CR>
-" 執行c/cpp專案
-au FileType c,cpp nnoremap <silent> <F2> :Tclear<CR>:T cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug -Bbuild/test && ninja -C ./build/test<CR>
+" au FileType c,cpp nnoremap <silent> <F1> :Tclear<CR>:T cmake . -GNinja -DCMAKE_BUILD_TYPE=Release -Bbuild/release && ninja -C ./build/release<CR>
 " 建構c/cpp專案測試版
+au FileType c,cpp nnoremap <silent> <F2> :Tclear<CR>:T cmake . -GNinja -DCMAKE_BUILD_TYPE=Debug -Bbuild/test && ninja -C ./build/test<CR>
+" 執行c/cpp專案
 au FileType c,cpp nnoremap <silent> <F3> :Tclear<CR>:T [ "$(ls data/)" ] && test/main < data/*.* \|\| test/main<CR>
 
 " 按下F1鍵時，直譯該行
@@ -686,8 +692,7 @@ au FileType c,cpp nnoremap <silent> <F11> :call vimspector#ClearBreakpoints()<CR
 
 " sheerun/vim-polyglot
 
-" 語法禁用
-let g:polyglot_disabled = ['markdown', 'v']
+let g:polyglot_disabled = ['markdown', 'v'] " 語法禁用
 
 " =========================================================== "
 

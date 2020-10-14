@@ -68,6 +68,7 @@ pipenv --rm # 在該專案卸載虛擬環境
 pipenv install 插件 # 在虛擬環境安裝該插件
 pipenv uninstall 插件 # 在虛擬環境解除安裝該插件
 pipenv shell # 載入虛擬環境
+pipenv run 命令 # 在虛擬環境中執行命令
 ```
 
 ## yarn

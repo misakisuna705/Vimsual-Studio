@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-main() {
+setup() {
     bash "$HOME/.dotfiles/src/env.sh"
     bash "$HOME/.dotfiles/src/brew.sh"
     bash "$HOME/.dotfiles/src/symlink.sh"
@@ -8,4 +8,4 @@ main() {
     bash "$HOME/.dotfiles/src/pip.sh"
 }
 
-main
+setup

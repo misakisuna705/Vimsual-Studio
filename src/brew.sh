@@ -34,7 +34,7 @@ setup_brew() {
     printf "Upgrade brew bundle...\n"
     brew upgrade
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        brew cask upgrade
+        brew upgrade --cask
     fi
     printf "Succeeded to upgrade brew bundle!\n\n"
 
