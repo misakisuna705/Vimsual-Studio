@@ -1,5 +1,12 @@
 " ==================================================================================================================== "
 
+" 前處理
+
+" sheerun/vim-polyglot
+let g:polyglot_disabled = ['markdown'] " 語法禁用
+
+" ==================================================================================================================== "
+
 " 插件安裝
 
 " ==================================================================================================================== "
@@ -51,7 +58,7 @@ Plug 'puremourning/vimspector', {'for': ['c', 'cpp'], 'do': './install_gadget.py
 Plug 'Chiel92/vim-autoformat', {'on': 'Autoformat'}
 Plug 'fisadev/vim-isort', {'on': 'Isort'}
 Plug 'mzlogin/vim-markdown-toc', {'on': ['GenTocGFM', 'RemoveToc']}
-Plug 'vhda/verilog_systemverilog.vim', {'for': 'verilog_systemverilog'}
+Plug 'vhda/verilog_systemverilog.vim'
 
 " 建構插件
 Plug 'iamcco/markdown-preview.vim', {'on': '<Plug>MarkdownPreview'}
@@ -95,7 +102,7 @@ let goto = [
             \ ]
 
 " 搜尋標籤
-nnoremap <silent> <C-f> :call quickui#context#open(goto, {'index':g:quickui#context#cursor})<CR><DOWN>
+nnoremap <silent> <C-f> :call quickui#context#open(goto, {'index':0})<CR>
 " 預覽標籤
 nnoremap <S-m> :call quickui#tools#preview_tag('')<CR>
 nnoremap <S-h> :call quickui#preview#scroll(-1)<CR>
@@ -126,7 +133,7 @@ let g:Lf_FollowLinks = 1
 " 不搜尋的檔案與路徑
 let g:Lf_WildIgnore = {
             \ 'dir': ['.adobe', '.android', '.antigen', '.cache', '.config', '.dotnet', '.gradle', '.local', '.mitmproxy', '.mono', '.node-gyp', '.npm', '.nuget', '.omnisharp', '.oracle_jre_usage', '.ssh', '.subversion', '.swt', '.templateengine', '.Trash', '.vim', 'Documents', 'Music', 'Desktop', 'Pictures', 'Movies', 'Applications', 'Applications (Parallels)', 'Cache', 'go', 'Google Drive File Stream', 'bin', 'Library', 'node_modules', 'Server', 'temp', '.git', '.venv', 'build', 'dist'],
-            \ 'file': ['.DS_Store', '._.DS_Store']
+            \ 'file': ['._*', '.DS_Store', '._.DS_Store']
             \}
 
 " 隱藏LeaderF的help提醒
@@ -471,6 +478,7 @@ let g:ale_lint_on_insert_leave = 1
 " 設定linter參數
 let g:ale_cpp_clang_options = '-std=c++17 -Wall'
 let g:ale_python_flake8_options = '--ignore=E501,E302,E225,E226,E251,E201,E305,E711,E117,E101,F403,F405,W191,W291,W293'
+let g:ale_verilog_iverilog_options = '-Wno-sensitivity-entire-array'
 
 " 設定linter
 let g:ale_linters = {
@@ -521,7 +529,7 @@ let g:formatters_cs = ['misakisuna_astyle']
 let g:formatters_cmake = ['cmake_format']
 
 " 載入yapf的google風格排版py檔案
-let g:formatdef_misakisuna_yapf = '"yapf --style=''{based_on_style: google, column_limit: 150}''"'
+let g:formatdef_misakisuna_yapf = '"yapf --style=''{based_on_style: google, column_limit: 130}''"'
 let g:formatters_python = ['misakisuna_yapf']
 
 " 載入prettier排版web/md檔案
@@ -690,12 +698,6 @@ au FileType c,cpp nnoremap <silent> <F11> :call vimspector#ClearBreakpoints()<CR
 
 " ==================================================================================================================== "
 
-" sheerun/vim-polyglot
-
-let g:polyglot_disabled = ['markdown', 'v'] " 語法禁用
-
-" =========================================================== "
-
 " itchyny/lightline.vim
 
 " 顯示tab列
@@ -764,7 +766,7 @@ set whichwrap=b,s,<,>,[,]
 set mouse=a
 
 " 設定行數
-set textwidth=150
+set textwidth=130
 " 自動對齊縮排
 set autoindent
 " 按下tab鍵或自動對齊縮排時，電腦辨認為space語法
@@ -871,7 +873,5 @@ nnoremap <CR> o<ESC>
 inoremap {<CR> {<CR>}<ESC><UP>$<LEFT><LEFT>
 " 按下begin+enter鍵時，自動換行縮進補全end
 au filetype verilog_systemverilog inoremap begin<cr> begin<cr>end<esc><up>$<left><left><left><left><left><left>
-" 按下(+enter鍵時，自動換行縮進補全)
-au filetype verilog_systemverilog inoremap (<cr> (<cr>);<esc><up>o
 
 " ==================================================================================================================== "

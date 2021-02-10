@@ -1,42 +1,18 @@
-//system
-
 const gulp = require("gulp");
 const del = require("del");
-
-//html
-
 const gulp_html_replace = require("gulp-html-replace");
 const gulp_htmlmin = require("gulp-htmlmin");
-
-//css + scss
-
-const gulp_sass = require("gulp-sass");
 const gulp_clean_css = require("gulp-clean-css");
-
-//js + ts
-
-const gulp_typescript = require("gulp-typescript");
 const gulp_concat = require("gulp-concat");
 const gulp_terser = require("gulp-terser");
-
-//browser
-
 const browser_sync = require("browser-sync").create();
-
-//src
 
 const src = {
   html: "src/index.html",
   css: "src/**/*.css",
-  scss: "src/**/*.scss",
   js: "src/**/*.js",
-  ts: "src/**/*.ts",
-  png: "src/**/*.png",
-  mp3: "src/**/*.mp3",
-  mp4: "src/**/*.mp4"
+  assets: ["src/**/*.png", "src/**/*.jpg", "src/**/*.mp3", "src/**/*.mp4"]
 };
-
-//build
 
 const build = {
   html: "build/index.html",
@@ -44,32 +20,18 @@ const build = {
   js: "build/**/*.js"
 };
 
-//init
-
-exports.default = gulp.series(
-  clean,
-  gulp.parallel(replace_html, mov_css, trans_scss, minify_js, trans_ts),
-  gulp.parallel(minify_html, minify_css, concat_js, mov_png, mov_mp3, mov_mp4),
-  init_server,
-  watch
-);
-
-//system
-
 function clean() {
   return del(["build/", "dist/"]);
 }
 
-//html
-
-function replace_html() {
+function tagHTML() {
   return gulp
     .src(src.html)
-    .pipe(gulp_html_replace({ js: "script.min.js" }))
+    .pipe(gulp_html_replace({ css: "style.min.css", js: "script.min.js" }))
     .pipe(gulp.dest("build/"));
 }
 
-function minify_html() {
+function minHTML() {
   return gulp
     .src(build.html)
     .pipe(gulp_htmlmin())
@@ -77,45 +39,29 @@ function minify_html() {
     .pipe(browser_sync.stream());
 }
 
-//css + scss
-
-function mov_css() {
-  return gulp.src(src.css).pipe(gulp.dest("build/"));
-}
-
-function trans_scss() {
+function minCSS() {
   return gulp
-    .src(src.scss)
-    .pipe(gulp_sass())
+    .src(src.css)
+    .pipe(gulp_clean_css())
     .pipe(gulp.dest("build/"));
 }
 
-function minify_css() {
-  return gulp
-    .src(build.css)
-    .pipe(gulp_clean_css())
-    .pipe(gulp.dest("dist/"))
-    .pipe(browser_sync.stream());
-}
-
-//js + ts
-
-function minify_js() {
+function minJS() {
   return gulp
     .src(src.js)
     .pipe(gulp_terser())
     .pipe(gulp.dest("build/"));
 }
 
-function trans_ts() {
+function mergCSS() {
   return gulp
-    .src(src.ts)
-    .pipe(gulp_typescript())
-    .pipe(gulp_terser())
-    .pipe(gulp.dest("build/"));
+    .src(build.css)
+    .pipe(gulp_concat("style.min.css"))
+    .pipe(gulp.dest("dist/"))
+    .pipe(browser_sync.stream());
 }
 
-function concat_js() {
+function mergeJS() {
   return gulp
     .src(build.js)
     .pipe(gulp_concat("script.min.js"))
@@ -123,30 +69,14 @@ function concat_js() {
     .pipe(browser_sync.stream());
 }
 
-//assets
-
-function mov_png() {
+function movAssets() {
   return gulp
-    .src(src.png)
+    .src(src.assets)
     .pipe(gulp.dest("dist/"))
     .pipe(browser_sync.stream());
 }
 
-function mov_mp3() {
-  return gulp
-    .src(src.mp3)
-    .pipe(gulp.dest("dist/"))
-    .pipe(browser_sync.stream());
-}
-
-function mov_mp4() {
-  return gulp
-    .src(src.mp4)
-    .pipe(gulp.dest("dist/"))
-    .pipe(browser_sync.stream());
-}
-
-function init_server(done) {
+function runServer(done) {
   browser_sync.init({
     server: "dist/"
   });
@@ -161,17 +91,19 @@ function init_server(done) {
   done();
 }
 
-//browser
-
 function watch() {
-  gulp.watch(src.html, replace_html);
-  gulp.watch(build.html, minify_html);
-
-  gulp.watch(src.css, mov_css);
-  gulp.watch(src.scss, trans_scss);
-  gulp.watch(build.css, minify_css);
-
-  gulp.watch(src.js, minify_js);
-  gulp.watch(src.ts, trans_ts);
-  gulp.watch(build.js, concat_js);
+  gulp.watch(src.html, tagHTML);
+  gulp.watch(build.html, minHTML);
+  gulp.watch(src.css, minCSS);
+  gulp.watch(build.css, mergCSS);
+  gulp.watch(src.js, minJS);
+  gulp.watch(build.js, mergeJS);
 }
+
+exports.default = gulp.series(
+  clean,
+  gulp.parallel(tagHTML, minCSS, minJS),
+  gulp.parallel(minHTML, mergCSS, mergeJS, movAssets),
+  runServer,
+  watch
+);

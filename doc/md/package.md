@@ -9,35 +9,33 @@
     - [插件](#插件)
 * [brew](#brew)
     - [設定](#設定)
-    - [cellar](#cellar)
+    - [formulae](#formulae)
         + [安裝](#安裝)
         + [命令](#命令-1)
-        + [插件](#插件-1)
     - [cask](#cask)
         + [設置](#設置)
         + [命令](#命令-2)
-        + [插件](#插件-2)
     - [font](#font)
         + [設置](#設置-1)
         + [命令](#命令-3)
-        + [插件](#插件-3)
+    - [插件](#插件-1)
 * [pip](#pip)
     - [安裝](#安裝-1)
     - [命令](#命令-4)
-    - [插件](#插件-4)
+    - [插件](#插件-2)
 * [yarn](#yarn)
     - [安裝](#安裝-2)
     - [命令](#命令-5)
-    - [插件](#插件-5)
+    - [插件](#插件-3)
 * [go](#go)
     - [命令](#命令-6)
-    - [插件](#插件-6)
+    - [插件](#插件-4)
 * [vim-plug](#vim-plug)
     - [命令](#命令-7)
-    - [插件](#插件-7)
+    - [插件](#插件-5)
 * [coc](#coc)
     - [命令](#命令-8)
-    - [插件](#插件-8)
+    - [插件](#插件-6)
 
 <!-- vim-markdown-toc -->
 
@@ -120,7 +118,7 @@ sudo apt autoremove # 清理依賴
 export HOMEBREW_NO_AUTO_UPDATE=1
 ```
 
-### cellar
+### formulae
 
 #### 安裝
 
@@ -142,45 +140,12 @@ brew upgrade 插件 # 升級該插件
 brew upgrade # 升級所有插件
 brew cleanup # 清理暫存檔
 brew doctor # 檢查brew
-brew bundle # 從Brewfile安裝cellar / cask / font
+brew bundle # 從Brewfile安裝formulae / cask / font
 brew bundle dump # 生成Brewfile
 brew bundle dump --force # 複寫Brewfile
 brew link # 串連命令與插件
 brew unlink # 斷開命令與插件
 ```
-
-#### 插件
-
-|      macOS      |     ubuntu      |
-| :-------------: | :-------------: |
-|     allegro     |                 |
-|     antigen     |     antigen     |
-|     astyle      |     astyle      |
-|      cmake      |      cmake      |
-|    cppcheck     |    cppcheck     |
-|       gdb       |       gdb       |
-|     global      |                 |
-|       go        |                 |
-| icarus-verilog  | icarus-verilog  |
-|    inetutils    |                 |
-|      llvm       |      llvm       |
-|     masscan     |                 |
-|      mono       |                 |
-|      nasm       |      nasm       |
-|      ninja      |      ninja      |
-|                 |     python      |
-|     ripgrep     |     ripgrep     |
-|   shellcheck    |   shellcheck    |
-|      sshfs      |      sshfs      |
-|   swiftformat   |                 |
-|    swiftlint    |                 |
-|      tmux       |      tmux       |
-|      tree       |                 |
-| universal-ctags | universal-ctags |
-|       vim       |       vim       |
-|      wget       |                 |
-|      yarn       |      yarn       |
-|                 |    net-tools    |
 
 ### cask
 
@@ -201,49 +166,6 @@ brew cask upgrade 程式 # 升級該程式
 brew cask upgrade # 升級所有程式
 ```
 
-#### 插件
-
-|           cask           |
-| :----------------------: |
-|        1password         |
-|   adobe-creative-cloud   |
-|        airserver         |
-|      android-studio      |
-|        appcleaner        |
-|       baidunetdisk       |
-|         blender          |
-|         calibre          |
-|          docker          |
-|        dotnet-sdk        |
-|           duet           |
-|  google-backup-and-sync  |
-| google-drive-file-stream |
-|         gtkwave          |
-|        handbrake         |
-|           iina           |
-|          iterm2          |
-|           java           |
-|    karabiner-elements    |
-|           keka           |
-|     logitech-options     |
-|        mediainfo         |
-|         megasync         |
-|     microsoft-office     |
-|     microsoft-teams      |
-|          motrix          |
-|      mysqlworkbench      |
-|        parallels         |
-|          parsec          |
-|         osxfuse          |
-|          steam           |
-|       tunnelblick        |
-|         tickeys          |
-|        unity-hub         |
-|      vmware-fusion       |
-|        wireshark         |
-|           xld            |
-|         xquartz          |
-
 ### font
 
 #### 設置
@@ -263,11 +185,9 @@ brew cask upgrade 程式 # 升級該程式
 brew cask upgrade # 升級所有程式
 ```
 
-#### 插件
+### 插件
 
-|         font         |
-| :------------------: |
-| font-source-code-pro |
+-   [Brewfile](https://github.com/misakisuna705/Vimsual-Studio/blob/master/res/config/brew/macOS/Brewfile)
 
 ## pip
 
@@ -295,19 +215,7 @@ pip3 check # 檢查插件版本相容性
 
 ### 插件
 
-|    global    |
-| :----------: |
-| cmake_format |
-|    cppman    |
-|    flake8    |
-|   ipython    |
-|    isort     |
-|     jedi     |
-|    lizard    |
-|    pipenv    |
-|  pipdeptree  |
-|   pwntools   |
-|     yapf     |
+-   [requirements.txt](https://github.com/misakisuna705/Vimsual-Studio/blob/master/res/config/pip/requirements.txt)
 
 ## yarn
 
@@ -338,25 +246,7 @@ yarn run 腳本 命令       # 執行package.json中script的命令 / yarn 命�
 
 ### 插件
 
-|          global           |
-| :-----------------------: |
-|       browser-sync        |
-|     create-react-app      |
-|            del            |
-|      firebase-tools       |
-|           gulp            |
-|      gulp-clean-css       |
-|        gulp-concat        |
-|     gulp-html-replace     |
-|       gulp-htmlmin        |
-|         gulp-sass         |
-|        gulp-terser        |
-|      gulp-typescript      |
-|         htmlhint          |
-|         prettier          |
-|         stylelint         |
-| stylelint-config-standard |
-|        typescript         |
+-   [package.json](https://github.com/misakisuna705/Vimsual-Studio/blob/master/res/config/yarn/package.json)
 
 ## go
 

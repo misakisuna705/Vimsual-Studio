@@ -39,11 +39,11 @@ brew cask install font-source-code-pro # 安裝Adobe Source Code Pro
 
 #### 主題
 
--   [Monokai_Soda.itermcolors](https://github.com/misakisuna705/Vimsual-Studio/blob/master/res/theme/Monokai_Soda.itermcolors)
+-   [Monokai_Soda.itermcolors](https://github.com/misakisuna705/Vimsual-Studio/blob/master/res/theme/iterm/Monokai_Soda.itermcolors)
 
 #### 背景
 
--   [iCloud](https://github.com/misakisuna705/Vimsual-Studio/blob/master/res/picture/iCloud.jpg)
+-   [terminal.jpg](https://github.com/misakisuna705/Vimsual-Studio/blob/master/res/img/terminal.jpg)
 
 ### tmux
 
@@ -88,8 +88,4 @@ antigen reset # 重設所有插件
 
 #### 插件
 
-|              antigen              |
-| :-------------------------------: |
-|         sindresorhus/pure         |
-| zsh-users/zsh-syntax-highlighting |
-|   zsh-users/zsh-autosuggestions   |
+-   [.zshrc](https://github.com/misakisuna705/Vimsual-Studio/blob/master/res/config/zsh/macOS/.zshrc)
