@@ -1,4 +1,5 @@
-cmake_format
+cmakelang
+cmakelint
 cppman
 flake8
 ipython

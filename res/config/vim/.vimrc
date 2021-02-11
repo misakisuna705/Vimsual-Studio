@@ -51,7 +51,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim', {'for': ['html', 'js']}
 
 " 偵錯插件
-Plug 'w0rp/ale', {'for': ['c', 'cpp', 'python', 'swift', 'html', 'css', 'javascript', 'typescript', 'verilog_systemverilog', 'sh']}
+Plug 'dense-analysis/ale', {'for': ['c', 'cpp', 'cmake', 'python', 'swift', 'html', 'css', 'javascript', 'typescript', 'verilog_systemverilog', 'sh']}
 Plug 'puremourning/vimspector', {'for': ['c', 'cpp'], 'do': './install_gadget.py --enable-c'}
 
 " 排版插件
@@ -468,7 +468,7 @@ let g:user_emmet_leader_key = '<C-z>'
 
 " ==================================================================================================================== "
 
-" w0rp/ale
+" dense-analysis/ale
 
 " 設定偵錯時機
 let g:ale_linters_explicit = 1
@@ -484,6 +484,7 @@ let g:ale_verilog_iverilog_options = '-Wno-sensitivity-entire-array'
 let g:ale_linters = {
             \   'c': ['clang', 'cppcheck'],
             \   'cpp': ['clang', 'cppcheck'],
+            \   'cmake': ['cmakelint'],
             \   'python': ['flake8'],
             \   'swift': ['swiftlint'],
             \   'html': ['htmlhint'],
@@ -516,6 +517,9 @@ nmap f <Plug>(ale_next_wrap)
 
 " 顯示格式化詳細資料
 " let g:autoformat_verbosemode=1
+
+" 預設不自動縮排
+let g:autoformat_autoindent = 0
 
 " 按下空白鍵+e時，自動排版
 nnoremap <silent> <SPACE>e :Autoformat
