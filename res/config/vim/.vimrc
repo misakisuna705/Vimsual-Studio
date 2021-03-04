@@ -516,7 +516,7 @@ nmap f <Plug>(ale_next_wrap)
 " Chiel92/vim-autoformat
 
 " 顯示格式化詳細資料
-" let g:autoformat_verbosemode=1
+let g:autoformat_verbosemode=1
 
 " 預設不自動縮排
 let g:autoformat_autoindent = 0
@@ -524,36 +524,11 @@ let g:autoformat_autoindent = 0
 " 按下空白鍵+e時，自動排版
 nnoremap <silent> <SPACE>e :Autoformat
 
-" 載入astyle的google風格排版c/cpp/cs檔案
-let g:formatdef_misakisuna_astyle = '"astyle --style=google --indent-switches --indent-namespaces -p"'
-let g:formatters_c = ['misakisuna_astyle']
-let g:formatters_cpp = ['misakisuna_astyle']
-let g:formatters_cs = ['misakisuna_astyle']
-" 載入cmake_format排版cmake檔案
-let g:formatters_cmake = ['cmake_format']
-
-" 載入yapf的google風格排版py檔案
-let g:formatdef_misakisuna_yapf = '"yapf --style=''{based_on_style: google, column_limit: 130}''"'
-let g:formatters_python = ['misakisuna_yapf']
-
-" 載入prettier排版web/md檔案
+" 設定排版工具
+let g:formatdef_clangformat = "(" . "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=\"{BasedOnStyle: google, AlignTrailingComments: true, '.(&textwidth ? 'ColumnLimit: '.&textwidth.', ' : '').(&expandtab ? 'UseTab: Never, IndentWidth: '.shiftwidth() : 'UseTab: Always').'}\"'" . ")"
+let g:formatter_yapf_style = 'google'
 let g:formatters_html = ['prettier']
-let g:formatters_css = ['prettier']
-let g:formatters_javascript = ['prettier']
-let g:formatters_typescript = ['prettier']
-let g:formatters_json = ['prettier']
-let g:formatters_markdown = ['prettier']
-
-" 載入swiftformat排版swift檔案
-let g:formatdef_misakisuna_swiftformat = '"swiftformat"'
-let g:formatters_swift = ['misakisuna_swiftformat']
-
-" 載入asm_format排版asm檔案
-let g:formatdef_asm_format = '"asmfmt"'
-let g:formatters_asm = ['asm_format']
-
-" 載入shfmt排版sh檔案
-let g:formatters_sh = ['shfmt']
+let g:formatters_swift = '"swiftformat"'
 
 " 在web檔案中，按下tab鍵時，電腦顯示為2個空格(不一定辨認為space語法)
 au FileType html,css,javascript,json,yaml set softtabstop=2
@@ -634,9 +609,6 @@ au FileType html nnoremap <silent> <F1> :call Run_Web()<CR>
 " 按下F2鍵時，停止推播webpage專案
 au FileType html nnoremap <silent> <F2> :Tkill<CR>
 
-" 按下F1鍵時，編譯執行csharp專案
-au FileType cs nnoremap <silent> <F1> :call Run_Csharp()<CR>
-
 " 建構verilog專案發行版
 au FileType verilog_systemverilog nnoremap <silent> <F1> :Tclear<CR>:T iverilog -o main main.v<CR>
 " 執行verilog專案
@@ -650,13 +622,6 @@ tnoremap <silent> <SPACE>q exit
 function! Run_Web()
     Tclear
     T gulp
-endfunction
-
-function! Run_Csharp()
-    "let save_view = winsaveview()
-    Tclear
-    T dotnet run
-    "call winrestview(save_view)
 endfunction
 
 function! Push_Github()
