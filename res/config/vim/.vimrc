@@ -36,7 +36,6 @@ call plug#end()
 " 關閉多餘模式提醒
 set noshowmode
 
-
 " 設定狀態列高度
 set laststatus=2
 
