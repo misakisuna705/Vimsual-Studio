@@ -32,11 +32,15 @@ setup_brew() {
     printf "Succeeded to setup brew bundle!\n\n"
 
     printf "Upgrade brew bundle...\n"
-    brew upgrade
+    brew upgrade --greedy
     if [[ "$OSTYPE" == "darwin"* ]]; then
         brew upgrade --cask
     fi
     printf "Succeeded to upgrade brew bundle!\n\n"
+
+    printf "Clean brew dependency"
+    brew autoremove
+    printf "Succeeded to clean brew dependency!\n\n"
 
     printf "Clean brew cache...\n"
     brew cleanup
