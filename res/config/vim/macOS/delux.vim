@@ -83,17 +83,19 @@ let g:coc_global_extensions = ['coc-clangd', 'coc-python', 'coc-html', 'coc-css'
 
 " 按下tab鍵或shift+tab鍵時，上下瀏覽補全視窗
 inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " 按下enter鍵時，自動選中當前選項，並關閉補全視窗
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " =========================================================== "
 
@@ -164,6 +166,7 @@ nnoremap <silent> <SPACE>e :Autoformat
 let g:formatdef_clangformat = "(" . "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=\"{BasedOnStyle: google, AlignTrailingComments: true, '.(&textwidth ? 'ColumnLimit: '.&textwidth.', ' : '').(&expandtab ? 'UseTab: Never, IndentWidth: '.shiftwidth() : 'UseTab: Always').'}\"'" . ")"
 let g:formatter_yapf_style = 'google'
 let g:formatters_html = ['prettier']
+let g:formatters_markdown = ['prettier']
 let g:formatters_swift = '"swiftformat"'
 
 " 在web檔案中，按下tab鍵時，電腦顯示為2個空格(不一定辨認為space語法)

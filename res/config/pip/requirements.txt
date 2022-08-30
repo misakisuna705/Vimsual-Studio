@@ -1,6 +1,5 @@
 cmakelang
 cmakelint
-cppman
 flake8
 ipython
 isort
