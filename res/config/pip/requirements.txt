@@ -4,8 +4,6 @@ flake8
 ipython
 isort
 jedi
-lizard
 pipenv
 pipdeptree
-pwntools
 yapf

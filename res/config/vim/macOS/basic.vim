@@ -73,7 +73,7 @@ let g:Lf_ShowHidden = 1
 let g:Lf_FollowLinks = 1
 " 不搜尋的檔案與路徑
 let g:Lf_WildIgnore = {
-            \ 'dir': ['.cache', '.Trash', 'Documents', 'Music', 'Desktop', 'Pictures', 'Movies', 'Cache', '*Google Drive', 'bin', 'Library', 'node_modules', '.git', '.venv', 'build', 'dist'],
+            \ 'dir': ['.cache', '.Trash', 'Documents', 'Music', 'Desktop', 'Pictures', 'Movies', 'Cache', '*Google Drive', 'Server', 'bin', 'Library', 'node_modules', '.git', '.venv', 'build', 'dist'],
             \ 'file': ['._*', '.DS_Store', '._.DS_Store']
             \}
 
