@@ -131,6 +131,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 ```zsh
 brew search 插件 # 搜尋某插件與其相關插件
 brew list # 查詢已安裝插件清單
+brew deps --tree --installed
 brew info # 查詢已安裝插件數量與大小
 brew info 插件 # 查詢該插件詳細資料
 brew install 插件 # 安裝該插件
@@ -206,7 +207,7 @@ pip3 show pip # 查詢pip詳細資料
 pip3 show 插件 # 查詢該插件詳細資料
 pip3 install 插件 # 安裝該插件
 pip3 install "插件<版本,>=版本" # 安裝該插件指定版本
-pip3 uninstall 插件 # 解除安裝該插件
+pip3 uninstall -y 插件 # 解除安裝該插件
 pip3 list --outdated # 表列過期插件
 pip3 install -U pip # 升級pip
 pip3 install -U 插件 # 升級該插件
@@ -301,17 +302,4 @@ go get -u xxx
 
 ### 插件
 
-|      coc      |
-| :-----------: |
-|   coc-yaml    |
-| coc-tsserver  |
-| coc-sourcekit |
-|    coc-sh     |
-|  coc-python   |
-| coc-omnisharp |
-|   coc-json    |
-|   coc-html    |
-|  coc-docker   |
-|    coc-css    |
-|   coc-cmake   |
-|  coc-clangd   |
+-   [requirements.txt](https://github.com/misakisuna705/Vimsual-Studio/blob/master/res/config/coc/coc-settings.json)

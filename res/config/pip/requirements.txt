@@ -1,9 +1,5 @@
 cmakelang
 cmakelint
-flake8
 ipython
 isort
-jedi
-pipenv
 pipdeptree
-yapf

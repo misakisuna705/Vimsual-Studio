@@ -5,16 +5,16 @@
         "revision": "bc305e384e958b4e43357b9a51e55b169a8c0b34"
       },
       "homebrew/bundle": {
-        "revision": "89ecc8a5c6d4c29bf646255b8b06588c5479b61f"
+        "revision": "73b77351709591cadc3f4a918b3276ee82cafbad"
       },
       "homebrew/cask": {
-        "revision": "b9570a8169dfa627bb05b5395ff26947916a6c39"
+        "revision": "91f5fb626dcd3e6b2df4e3c3b8e62e750e1872f5"
       },
       "homebrew/cask-fonts": {
-        "revision": "0818a271325ae5df979f02839db5341dca05eb8b"
+        "revision": "8683b9b9bd619a79e51916062fc9b362ef16604e"
       },
       "homebrew/core": {
-        "revision": "796afdb14815f5aaeceb91a76a80c41e0418b84e"
+        "revision": "3cd488d00e395f4a66d844c1a4ada4af5ca4b4d1"
       },
       "mattisg/mattisg": {
         "revision": "a65b6c99617598d79a9a0957192569bb9b6b6d62"
@@ -26,10 +26,10 @@
         "revision": "953a962d37c2cecc01f56d3e5d89814e5772abfb"
       },
       "homebrew/cask-drivers": {
-        "revision": "373a7fa284354e94e6e80db62294162e826b033e"
+        "revision": "06443f44ee1b62025a010d84eec50a10186e5de8"
       },
       "homebrew/cask-versions": {
-        "revision": "f47553f13364cb30c00508941ad694bcf6afe191"
+        "revision": "d8737cd6d1a1d6481e94b45a28096b28c48b8307"
       },
       "fluxcd/tap": {
         "revision": "03e866a6c32cbf94cdb78c200d253687fa9b2b90"
@@ -214,7 +214,7 @@
         }
       },
       "baidunetdisk": {
-        "version": "4.13.1",
+        "version": "4.14.0",
         "options": {
           "full_name": "baidunetdisk"
         }
@@ -244,7 +244,7 @@
         }
       },
       "xld": {
-        "version": "20220910,155.0",
+        "version": "20220917,155.1",
         "options": {
           "full_name": "xld"
         }
@@ -334,7 +334,7 @@
         }
       },
       "google-drive": {
-        "version": "63.0.5",
+        "version": "63.0.6",
         "options": {
           "full_name": "google-drive"
         }
@@ -430,7 +430,7 @@
         }
       },
       "xcodes": {
-        "version": "1.7.0,15",
+        "version": "1.8.0,16",
         "options": {
           "full_name": "xcodes"
         }
@@ -463,6 +463,12 @@
         "version": "4.4.1",
         "options": {
           "full_name": "macfuse"
+        }
+      },
+      "android-platform-tools": {
+        "version": "33.0.3",
+        "options": {
+          "full_name": "android-platform-tools"
         }
       }
     },
@@ -2323,9 +2329,9 @@
         "macOS": "11.6"
       },
       "monterey": {
-        "HOMEBREW_VERSION": "3.6.1",
+        "HOMEBREW_VERSION": "3.6.2",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "796afdb14815f5aaeceb91a76a80c41e0418b84e",
+        "Homebrew/homebrew-core": "3cd488d00e395f4a66d844c1a4ada4af5ca4b4d1",
         "CLT": "14.0.0.0.1.1661618636",
         "Xcode": "14.0",
         "macOS": "12.6"

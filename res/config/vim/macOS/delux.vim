@@ -79,7 +79,7 @@ vmap <silent> // <plug>NERDCommenterToggle
 " neoclide/coc.nvim
 
 " 安裝coc插件
-let g:coc_global_extensions = ['coc-clangd', 'coc-python', 'coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-omnisharp', 'coc-sourcekit']
+let g:coc_global_extensions = ['coc-clangd', 'coc-pyright', 'coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-omnisharp', 'coc-sourcekit']
 
 " 按下tab鍵或shift+tab鍵時，上下瀏覽補全視窗
 inoremap <silent><expr> <TAB>
@@ -165,6 +165,7 @@ nnoremap <silent> <SPACE>e :Autoformat
 " 設定排版工具
 let g:formatdef_clangformat = "(" . "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=\"{BasedOnStyle: google, AlignTrailingComments: true, '.(&textwidth ? 'ColumnLimit: '.&textwidth.', ' : '').(&expandtab ? 'UseTab: Never, IndentWidth: '.shiftwidth() : 'UseTab: Always').'}\"'" . ")"
 let g:formatter_yapf_style = 'google'
+let g:formatters_python = ['yapf']
 let g:formatters_html = ['prettier']
 let g:formatters_markdown = ['prettier']
 let g:formatters_swift = '"swiftformat"'

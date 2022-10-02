@@ -116,7 +116,7 @@ dotnet run # 編譯並執行該專案
 
 | python |  環境  |   補全   |  偵錯  |      排版      |  直譯   |  發佈   |
 | :----: | :----: | :------: | :----: | :------------: | :-----: | :-----: |
-|  依賴  | pipenv |   jedi   | flake8 |      yapf      | ipython |   git   |
+|  依賴  | pipenv |    x     | flake8 |      yapf      | ipython |   git   |
 |        |   x    |    x     |   x    |     isort      |    x    |    x    |
 |  插件  |   x    | coc.nvim |  ale   | vim-autoformat | neoterm | neoterm |
 |        |   x    |    x     |   x    |   vim-isort    |    x    |    x    |
