@@ -86,7 +86,7 @@ set whichwrap=b,s,<,>,[,]
 set mouse=a
 
 " 設定行數
-set textwidth=186
+set textwidth=173
 " 自動對齊縮排
 set autoindent
 " 按下tab鍵或自動對齊縮排時，電腦辨認為space語法
@@ -187,6 +187,13 @@ tnoremap <C-k> <C-w><C-j>
 
 " 按下shift+u鍵時，重做上一個動作
 nnoremap <S-u> <C-r>
+
+" 按下tab鍵時，多行縮排
+xnoremap <Tab> >
+" 按下shift+tab鍵時，多行凸排
+xnoremap <S-Tab> <
+
+
 " 按下enter鍵時，在普通模式新增空白行
 nnoremap <CR> o<ESC>
 " 按下{+enter鍵時，自動換行縮進補全}

@@ -115,7 +115,7 @@ let g:ale_lint_on_insert_leave = 1
 
 " 設定linter參數
 let g:ale_cpp_clang_options = '-std=c++17 -Wall'
-let g:ale_python_flake8_options = '--ignore=E501,E302,E225,E226,E251,E201,E305,E711,E117,E101,F403,F405,W191,W291,W293'
+let g:ale_python_flake8_options = '--ignore=E501,E302,E225,E226,E251,E201,E305,E711,E117,E101,F403,F405,W191,W291,W293,W504'
 let g:ale_verilog_iverilog_options = '-Wno-sensitivity-entire-array'
 
 " 設定linter
