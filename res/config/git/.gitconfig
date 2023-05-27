@@ -3,3 +3,5 @@
     email = <misakisuna705@gmail.com>
 [credential]
 	helper = osxkeychain
+[sendpack]
+	sideband = false

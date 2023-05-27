@@ -13,9 +13,12 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen apply
 
 export PATH="/opt/homebrew/bin:$PATH"
+
 export PATH="$HOME/go/bin:$PATH"
 
 export FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_FORCE_BREWED_CURL=1

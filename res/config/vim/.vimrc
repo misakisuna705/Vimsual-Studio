@@ -86,7 +86,7 @@ set whichwrap=b,s,<,>,[,]
 set mouse=a
 
 " 設定行數
-set textwidth=173
+set textwidth=130
 " 自動對齊縮排
 set autoindent
 " 按下tab鍵或自動對齊縮排時，電腦辨認為space語法

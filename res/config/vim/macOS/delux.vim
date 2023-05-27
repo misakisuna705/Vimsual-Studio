@@ -70,6 +70,9 @@ let g:VM_maps['c'] = 'a'
 
 " scrooloose/nerdcommenter
 
+" 禁止縮排註解
+let g:NERDDefaultAlign="left"
+
 " 按下/+/鍵增刪註解
 nmap <silent> // <plug>NERDCommenterToggle
 vmap <silent> // <plug>NERDCommenterToggle
@@ -115,7 +118,7 @@ let g:ale_lint_on_insert_leave = 1
 
 " 設定linter參數
 let g:ale_cpp_clang_options = '-std=c++17 -Wall'
-let g:ale_python_flake8_options = '--ignore=E501,E302,E225,E226,E251,E201,E305,E711,E117,E101,F403,F405,W191,W291,W293,W504'
+let g:ale_python_flake8_options = '--ignore=E501,E302,E225,E226,E251,E201,E303,E305,E711,E117,E101,E116,E126,E124,E131,F403,F405,W191,W291,W293,W504'
 let g:ale_verilog_iverilog_options = '-Wno-sensitivity-entire-array'
 
 " 設定linter
