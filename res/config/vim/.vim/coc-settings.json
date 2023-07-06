@@ -1,0 +1,7 @@
+{
+  "coc.source.around.firstMatch": false,
+  "coc.source.buffer.firstMatch": false,
+  "minTriggerInputLength": 2,
+  "diagnostic.enable": false,
+  "clangd.disableProgressNotifications": true
+}
