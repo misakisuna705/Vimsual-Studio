@@ -11,7 +11,7 @@
         "revision": "8a41398bb1c3fc8d0120247217d5e34bf5de04fd"
       },
       "homebrew/cask-fonts": {
-        "revision": "def3484a8b452eb5afd3ea68fda23c8859004a84"
+        "revision": "1313353d95deba6a14a089aae230ab17863c696a"
       },
       "homebrew/core": {
         "revision": "24b557524b975cd7c5f458c147a1abcc9f511acf"
@@ -29,7 +29,7 @@
         "revision": "70340b616bf57bfff6f36d779a17eba3fd205667"
       },
       "homebrew/cask-versions": {
-        "revision": "bd30ac9dec24b48a385704b11e13534bcd00f920"
+        "revision": "84540c9fc47cdccc3da2b18e805710f89329a7c7"
       },
       "fluxcd/tap": {
         "revision": "879909d429ea379635bd20db3d1bf8122c11a856"
@@ -118,7 +118,7 @@
         }
       },
       "iina": {
-        "version": "1.3.2",
+        "version": "1.3.2,135",
         "options": {
           "full_name": "iina"
         }
